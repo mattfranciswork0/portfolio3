@@ -68,7 +68,7 @@ export const NextButton = ({ enabled, onClick }) => (
 const slides = [
     { dotTitle: "Intro", component: <Overwatch2SlideLanding /> },
     { dotTitle: "Explore", component: <Overwatch2SlideExplore /> },
-    // { dotTitle: "Story", component: <Overwatch2SlideStory /> },
+    { dotTitle: "Career", component: <Overwatch2SlideStory /> },
     // { dotTitle: "What's Next", component: <Overwatch2SlideNext /> },
 ];
 

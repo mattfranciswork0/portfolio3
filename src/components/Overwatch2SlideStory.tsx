@@ -17,26 +17,15 @@ const stories = [
         countries developed advanced defense initiatives, such
         as the United States’ Enhanced Soldier Program and
         Germany’s Crusaders.`,
-        image:
-            "https://overwatch2-static.playoverwatch.com/9bff17453c4b61344f201071908821fc391221ca/static/images/timeline/2560/omnic-crisis.jpg",
-        fallbackImage:
-            "https://res.cloudinary.com/du8n2aa4p/image/upload/v1617315414/blizzard/overwatch2/slide%203%20-%20story/omnic_lg.jpg",
     },
     {
         title: `Honor and Glory`,
         desc: `Reinhardt reflects on a decisive battle during the Omnic Crisis that led him to join Overwatch.`,
-        image: `https://overwatch2-static.playoverwatch.com/9bff17453c4b61344f201071908821fc391221ca/static/images/timeline/2560/honor-and-glory.jpg`,
-        fallbackImage:
-            "https://res.cloudinary.com/du8n2aa4p/image/upload/v1617642996/blizzard/overwatch2/slide%203%20-%20story/honor_and_glory_lg.jpg",
     },
     {
         title: `Overwatch Established`,
         desc: `As the conflict escalated, the United Nations recruited heroes from around the world to form “Overwatch.” Through a series of dangerous raids, Overwatch managed to shut down the omniums and win the war. For the next decades, Overwatch’s influence grew. In addition to military peacekeeping efforts, Overwatch pioneered scientific initiatives to eradicate epidemics, reverse ecological damage, and develop new breakthroughs in medicine. For many years, 
         the organization was a symbol of hope for the world.`,
-        image:
-            "https://overwatch2-static.playoverwatch.com/9bff17453c4b61344f201071908821fc391221ca/static/images/timeline/2560/overwatch-established.jpg",
-        fallbackImage:
-            "https://res.cloudinary.com/du8n2aa4p/image/upload/v1617316075/blizzard/overwatch2/slide%203%20-%20story/overwatch_established_lg.jpg",
     },
 ];
 
@@ -112,10 +101,10 @@ const Overwatch2SlideStory: React.FC<{}> = () => {
 
     const fill = useSpring({
         from: {
-            width: "0%",
+            height: "0%",
         },
         to: {
-            width: `${progress.percentage}%`,
+            height: `${progress.percentage}%`,
         },
 
         config: {
@@ -123,41 +112,9 @@ const Overwatch2SlideStory: React.FC<{}> = () => {
         },
     });
 
-    const renderBackground = () => {
-        return stories[progress.storiesArrayIndex].image;
-    };
     return (
         <React.Fragment>
             <div className="overwatch2StoryContainer">
-                {fadeBackground((style, index) => {
-                    return (
-                        <animated.img
-                            style={style}
-                            className="overwatch2StoryBackgroundImage"
-                            src={renderBackground()}
-                            alt="background"
-                            onError={(e: any) => {
-                                e.target.onError = null;
-                                e.target.src = `${
-                                    stories[progress.storiesArrayIndex]
-                                        .fallbackImage
-                                }`;
-                            }}
-                        />
-                    );
-                })}
-                {/* Example of height auto animation
-                <animated.div className="autoWrap" style={autoSpring}>
-                    <div {...bind} className="overwatch2StoryTextWrap">
-                        <h3 className="overwatch2StoryTitle">
-                            {stories[progress.storiesArrayIndex].title}
-                        </h3>
-                        <p className="overwatch2StoryDesc">
-                            {stories[progress.storiesArrayIndex].desc}
-                        </p>
-                    </div>
-                </animated.div> */}
-
                 {centerText((style, item) => {
                     return (
                         <animated.div
@@ -203,40 +160,7 @@ const Overwatch2SlideStory: React.FC<{}> = () => {
                                             <animated.div
                                                 className="overwatch2StoryTimelineControlImageWrap"
                                                 style={style}
-                                            >
-                                                <img
-                                                    src="https://overwatch2-static.playoverwatch.com/9bff17453c4b61344f201071908821fc391221ca/static/images/timeline/thumbnails/omnic-crisis.jpg"
-                                                    alt=""
-                                                    onClick={(e) => {
-                                                        e.stopPropagation();
-
-                                                        setProgress({
-                                                            percentage: 25,
-                                                            storiesArrayIndex: 0,
-                                                        });
-                                                    }}
-                                                    onError={(e: any) => {
-                                                        e.target.onError = null;
-                                                        e.target.src = `https://res.cloudinary.com/du8n2aa4p/image/upload/v1617315276/blizzard/overwatch2/slide%203%20-%20story/omnic-crisis.jpg`;
-                                                    }}
-                                                />
-                                                <img
-                                                    src="https://overwatch2-static.playoverwatch.com/9bff17453c4b61344f201071908821fc391221ca/static/images/timeline/thumbnails/honor-and-glory.jpg"
-                                                    alt=""
-                                                    onClick={(e) => {
-                                                        e.stopPropagation();
-
-                                                        setProgress({
-                                                            percentage: 25,
-                                                            storiesArrayIndex: 1,
-                                                        });
-                                                    }}
-                                                    onError={(e: any) => {
-                                                        e.target.onError = null;
-                                                        e.target.src = `https://res.cloudinary.com/du8n2aa4p/image/upload/v1617315572/blizzard/overwatch2/slide%203%20-%20story/honor-and-glory.jpg`;
-                                                    }}
-                                                />
-                                            </animated.div>
+                                            ></animated.div>
                                         )
                                     );
                                 })}
@@ -262,24 +186,7 @@ const Overwatch2SlideStory: React.FC<{}> = () => {
                                             <animated.div
                                                 className="overwatch2StoryTimelineControlImageWrap"
                                                 style={style}
-                                            >
-                                                <img
-                                                    src="https://overwatch2-static.playoverwatch.com/9bff17453c4b61344f201071908821fc391221ca/static/images/timeline/thumbnails/overwatch-established.jpg"
-                                                    alt=""
-                                                    onClick={(e) => {
-                                                        e.stopPropagation();
-
-                                                        setProgress({
-                                                            percentage: 25,
-                                                            storiesArrayIndex: 2,
-                                                        });
-                                                    }}
-                                                    onError={(e: any) => {
-                                                        e.target.onError = null;
-                                                        e.target.src = `https://res.cloudinary.com/du8n2aa4p/image/upload/v1617315695/blizzard/overwatch2/slide%203%20-%20story/overwatch-established.jpg`;
-                                                    }}
-                                                />
-                                            </animated.div>
+                                            ></animated.div>
                                         )
                                     );
                                 })}
