@@ -1410,24 +1410,24 @@ body {
   color: white;
 }
 
-.overwatch2StoryTimelineContainer {
+.storyTimelineContainer {
   position: relative;
   width: 35%;
   height: 100%;
   background: blue;
 }
 @media screen and (min-width: 520px) {
-  .overwatch2StoryTimelineContainer {
+  .storyTimelineContainer {
     width: 40%;
   }
 }
 @media screen and (min-width: 992px) {
-  .overwatch2StoryTimelineContainer {
+  .storyTimelineContainer {
     width: 50%;
   }
 }
 
-.overwatch2StoryTimelineProgress {
+.storyTimelineProgress {
   position: absolute;
   top: 0;
   left: 50%;
@@ -1438,11 +1438,11 @@ body {
   background: red;
 }
 
-.overwatch2StoryTimelineProgressNotFilled {
+.storyTimelineProgressNotFilled {
   background-color: rgba(231, 222, 222, 0.8);
 }
 
-.overwatch2StoryTimelineProgressControl {
+.storyTimelineProgressControl {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1451,7 +1451,7 @@ body {
   z-index: 1;
 }
 
-.overwatch2StoryTimelineProgressControlSectionWrap {
+.storyTimelineProgressControlSectionWrap {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1460,7 +1460,7 @@ body {
   height: 50%;
   cursor: pointer;
 }
-.overwatch2StoryTimelineProgressControlSectionWrap:before {
+.storyTimelineProgressControlSectionWrap:before {
   content: "";
   background: black;
   cursor: pointer;
@@ -1474,7 +1474,7 @@ body {
   z-index: -1;
 }
 
-.overWatch2StoryTimelineProgressTitleAndImageWrap {
+.storyTimelineProgressTitleWrap {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1483,7 +1483,7 @@ body {
   text-align: right;
 }
 
-.overWatch2StoryTimlineProgressTitle {
+.storyTimelineProgressTitle {
   font-size: 1.2rem;
   text-transform: lowercase;
   font-weight: 700;
@@ -1491,37 +1491,28 @@ body {
   margin-right: 13rem;
 }
 @media screen and (min-width: 768px) {
-  .overWatch2StoryTimlineProgressTitle {
+  .storyTimelineProgressTitle {
     font-size: 1.4rem;
     width: 12rem;
     margin-right: 16rem;
   }
 }
 
-.overwatch2StoryTimelineControlImageWrap {
-  display: flex;
-}
-
-.overwatch2StoryContainer {
+.storyContainer {
   background: white;
   display: flex;
   color: black;
   position: relative;
   height: 100%;
   width: 100%;
-  font-family: "Config", sans-serif;
-}
-.overwatch2StoryContainer .overwatch2StoryBackgroundImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  font-family: sans-serif;
 }
 
-.overwatch2StoryTextInnerWrap {
+.storyTextInnerWrap {
   width: 100%;
 }
 
-.overwatch2StoryTextWrap {
+.storyTextWrap {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1531,28 +1522,28 @@ body {
   height: 100%;
 }
 @media screen and (min-width: 520px) {
-  .overwatch2StoryTextWrap {
+  .storyTextWrap {
     width: 60%;
     padding-right: 0rem;
   }
 }
 @media screen and (min-width: 992px) {
-  .overwatch2StoryTextWrap {
+  .storyTextWrap {
     width: 50%;
     padding: 1rem 4rem;
   }
 }
-.overwatch2StoryTextWrap .overwatch2StoryTitle {
+.storyTextWrap .storyTitle {
   margin: 0;
   font-size: 1.4rem;
   font-weight: bold;
 }
 @media screen and (min-width: 992px) {
-  .overwatch2StoryTextWrap .overwatch2StoryTitle {
+  .storyTextWrap .storyTitle {
     font-size: 2rem;
   }
 }
-.overwatch2StoryTextWrap .overwatch2StoryDesc {
+.storyTextWrap .storyDesc {
   margin-top: 1rem;
   font-size: 1.2rem;
   line-height: 2.1rem;
@@ -1561,11 +1552,11 @@ body {
   line-height: 1.3;
 }
 @media screen and (min-width: 992px) {
-  .overwatch2StoryTextWrap .overwatch2StoryDesc {
+  .storyTextWrap .storyDesc {
     font-size: 1.6rem;
   }
 }
-.overwatch2StoryTextWrap .overwatch2StoryDesc li {
+.storyTextWrap .storyDesc li {
   margin-bottom: 0.5rem;
 }
 

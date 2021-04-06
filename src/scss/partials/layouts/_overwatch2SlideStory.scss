@@ -1,4 +1,4 @@
-.overwatch2StoryTimelineContainer {
+.storyTimelineContainer {
     // display: flex;
     // align-items: center;
     position: relative;
@@ -17,7 +17,7 @@
     background: blue;
 }
 
-.overwatch2StoryTimelineProgress {
+.storyTimelineProgress {
     position: absolute;
     top: 0;
     left: 50%;
@@ -28,11 +28,11 @@
     background: red;
 }
 
-.overwatch2StoryTimelineProgressNotFilled {
+.storyTimelineProgressNotFilled {
     background-color: rgb(231, 222, 222, 0.8);
 }
 
-.overwatch2StoryTimelineProgressControl {
+.storyTimelineProgressControl {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -41,7 +41,7 @@
     z-index: 1;
 }
 
-.overwatch2StoryTimelineProgressControlSectionWrap {
+.storyTimelineProgressControlSectionWrap {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -65,7 +65,7 @@
     }
 }
 
-.overWatch2StoryTimelineProgressTitleAndImageWrap {
+.storyTimelineProgressTitleWrap {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -74,7 +74,7 @@
     // top: 2rem;
     text-align: right;
 }
-.overWatch2StoryTimlineProgressTitle {
+.storyTimelineProgressTitle {
     font-size: 1.2rem;
     text-transform: lowercase;
     font-weight: 700;
@@ -89,11 +89,8 @@
     // margin: 0;
     // margin-top: 2rem;
 }
-.overwatch2StoryTimelineControlImageWrap {
-    display: flex;
-}
 
-.overwatch2StoryContainer {
+.storyContainer {
     background: white;
     display: flex;
     color: black;
@@ -101,18 +98,13 @@
     height: 100%;
 
     width: 100%;
-    font-family: "Config", sans-serif;
-    .overwatch2StoryBackgroundImage {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+    font-family: sans-serif;
 }
 
-.overwatch2StoryTextInnerWrap {
+.storyTextInnerWrap {
     width: 100%;
 }
-.overwatch2StoryTextWrap {
+.storyTextWrap {
     display: flex;
 
     flex-direction: column;
@@ -134,7 +126,7 @@
         width: 50%;
         padding: 1rem 4rem;
     }
-    .overwatch2StoryTitle {
+    .storyTitle {
         margin: 0;
         font-size: 1.4rem;
         @media screen and (min-width: $lg_breakpoint) {
@@ -142,7 +134,7 @@
         }
         font-weight: bold;
     }
-    .overwatch2StoryDesc {
+    .storyDesc {
         margin-top: 1rem;
         font-size: 1.2rem;
         line-height: 2.1rem;

@@ -24,7 +24,7 @@ const stories = [
     },
 ];
 
-const Overwatch2SlideStory: React.FC<{}> = () => {
+const SlideStory: React.FC<{}> = () => {
     const [progress, setProgress] = useState({
         percentage: 25,
         storiesArrayIndex: 0,
@@ -109,21 +109,21 @@ const Overwatch2SlideStory: React.FC<{}> = () => {
 
     return (
         <React.Fragment>
-            <div className="overwatch2StoryContainer">
+            <div className="storyContainer">
                 {centerText((style, item) => {
                     return (
                         <animated.div
                             // style={style}
-                            className="overwatch2StoryTextWrap"
+                            className="storyTextWrap"
                         >
                             <animated.div
                                 style={style}
-                                className="overwatch2StoryTextInnerWrap"
+                                className="storyTextInnerWrap"
                             >
-                                <h3 className="overwatch2StoryTitle">
+                                <h3 className="storyTitle">
                                     {stories[progress.storiesArrayIndex].title}
                                 </h3>
-                                <ul className="overwatch2StoryDesc">
+                                <ul className="storyDesc">
                                     {stories[
                                         progress.storiesArrayIndex
                                     ].desc.map((point, index) => {
@@ -135,14 +135,14 @@ const Overwatch2SlideStory: React.FC<{}> = () => {
                     );
                 })}
 
-                <div className="overwatch2StoryTimelineContainer">
-                    <div className="overwatch2StoryTimelineProgress overwatch2StoryTimelineProgressNotFilled"></div>
+                <div className="storyTimelineContainer">
+                    <div className="storyTimelineProgress storyTimelineProgressNotFilled"></div>
                     <animated.div
                         style={fill}
-                        className="overwatch2StoryTimelineProgress"
+                        className="storyTimelineProgress"
                     ></animated.div>
 
-                    <div className="overwatch2StoryTimelineProgressControl">
+                    <div className="storyTimelineProgressControl">
                         <div
                             onClick={() => {
                                 setProgress({
@@ -150,21 +150,10 @@ const Overwatch2SlideStory: React.FC<{}> = () => {
                                     storiesArrayIndex: 0,
                                 });
                             }}
-                            className="overwatch2StoryTimelineProgressControlSectionWrap"
+                            className="storyTimelineProgressControlSectionWrap"
                         >
-                            <div className="overWatch2StoryTimelineProgressTitleAndImageWrap">
-                                {fadeControlImages((style, item) => {
-                                    return (
-                                        item === 25 && (
-                                            <animated.div
-                                                className="overwatch2StoryTimelineControlImageWrap"
-                                                style={style}
-                                            ></animated.div>
-                                        )
-                                    );
-                                })}
-
-                                <p className="overWatch2StoryTimlineProgressTitle">
+                            <div className="storyTimelineProgressTitleWrap">
+                                <p className="storyTimelineProgressTitle">
                                     {stories[0].title}
                                 </p>
                             </div>
@@ -176,21 +165,10 @@ const Overwatch2SlideStory: React.FC<{}> = () => {
                                     storiesArrayIndex: 1,
                                 });
                             }}
-                            className="overwatch2StoryTimelineProgressControlSectionWrap"
+                            className="storyTimelineProgressControlSectionWrap"
                         >
-                            <div className="overWatch2StoryTimelineProgressTitleAndImageWrap">
-                                {fadeControlImages((style, item) => {
-                                    return (
-                                        item === 100 && (
-                                            <animated.div
-                                                className="overwatch2StoryTimelineControlImageWrap"
-                                                style={style}
-                                            ></animated.div>
-                                        )
-                                    );
-                                })}
-
-                                <p className="overWatch2StoryTimlineProgressTitle">
+                            <div className="storyTimelineProgressTitleWrap">
+                                <p className="storyTimelineProgressTitle">
                                     {stories[1].title}
                                 </p>
                             </div>
@@ -202,4 +180,4 @@ const Overwatch2SlideStory: React.FC<{}> = () => {
     );
 };
 
-export default Overwatch2SlideStory;
+export default SlideStory;
