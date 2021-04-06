@@ -6,26 +6,21 @@ const timer = 1000;
 
 const stories = [
     {
-        title: "The Omnic Crisis",
-        desc: `The Omnica Corporation revolutionized robotic
-        manufacturing with the creation of “omniums.” But the
-        factories’ self-improving algorithms were fraught with
-        malfunctions, and were eventually shut down. After a
-        period of dormancy, the omniums reactivated, producing
-        an army of highly-adaptable “omnics” that attacked
-        humanity, beginning the Omnic Crisis. In response, many
-        countries developed advanced defense initiatives, such
-        as the United States’ Enhanced Soldier Program and
-        Germany’s Crusaders.`,
+        title: "2018 - Enrolled In University",
+
+        desc: [
+            `Enrolled for BSc Computer Science at,  Wilfrid Laurier's University, Canada.`,
+        ],
     },
     {
-        title: `Honor and Glory`,
-        desc: `Reinhardt reflects on a decisive battle during the Omnic Crisis that led him to join Overwatch.`,
-    },
-    {
-        title: `Overwatch Established`,
-        desc: `As the conflict escalated, the United Nations recruited heroes from around the world to form “Overwatch.” Through a series of dangerous raids, Overwatch managed to shut down the omniums and win the war. For the next decades, Overwatch’s influence grew. In addition to military peacekeeping efforts, Overwatch pioneered scientific initiatives to eradicate epidemics, reverse ecological damage, and develop new breakthroughs in medicine. For many years, 
-        the organization was a symbol of hope for the world.`,
+        title: `2020 - Web Dev Lead For School's Comp Sci Club`,
+
+        desc: [
+            `Leading a group of individuals new to web development in creating a 'mock-site' for the club.`,
+            `Held meetings to explain web development concepts and keep team on-track.`,
+            `Grew as a 'leader' by constantly putting myself in the other person's "shoes"; by doing so, I'm able to create good interpersonal relationships and
+             communicate clearly.`,
+        ],
     },
 ];
 
@@ -128,9 +123,13 @@ const Overwatch2SlideStory: React.FC<{}> = () => {
                                 <h3 className="overwatch2StoryTitle">
                                     {stories[progress.storiesArrayIndex].title}
                                 </h3>
-                                <p className="overwatch2StoryDesc">
-                                    {stories[progress.storiesArrayIndex].desc}
-                                </p>
+                                <ul className="overwatch2StoryDesc">
+                                    {stories[
+                                        progress.storiesArrayIndex
+                                    ].desc.map((point, index) => {
+                                        return <li>{point}</li>;
+                                    })}
+                                </ul>
                             </animated.div>
                         </animated.div>
                     );
@@ -166,7 +165,7 @@ const Overwatch2SlideStory: React.FC<{}> = () => {
                                 })}
 
                                 <p className="overWatch2StoryTimlineProgressTitle">
-                                    Omnic Crisis
+                                    {stories[0].title}
                                 </p>
                             </div>
                         </div>
@@ -174,7 +173,7 @@ const Overwatch2SlideStory: React.FC<{}> = () => {
                             onClick={() => {
                                 setProgress({
                                     percentage: 100,
-                                    storiesArrayIndex: 2,
+                                    storiesArrayIndex: 1,
                                 });
                             }}
                             className="overwatch2StoryTimelineProgressControlSectionWrap"
@@ -192,7 +191,7 @@ const Overwatch2SlideStory: React.FC<{}> = () => {
                                 })}
 
                                 <p className="overWatch2StoryTimlineProgressTitle">
-                                    Overwatch Established
+                                    {stories[1].title}
                                 </p>
                             </div>
                         </div>
