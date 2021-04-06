@@ -12,101 +12,60 @@
     height: 100%;
     width: 100%;
 }
-.overwatch2Sky {
+.meBackground {
     position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.overwatch2LandingRein {
-    position: absolute;
-    bottom: 0;
-    left: -40%;
-    width: 50rem;
-    height: 40rem;
-    @media screen and (min-width: 420px) {
-        left: -20%;
-    }
-    @media screen and (min-width: $sm_breakpoint) {
-        left: -10%;
-        width: 60rem;
-        height: 50rem;
-    }
-
-    @media screen and (min-width: $md_breakpoint) {
-        left: 5%;
-        width: 65rem;
-        height: 55rem;
-    }
-
-    @media screen and (min-width: $xl_breakpoint) {
-        left: 15%;
-        width: 70.6rem;
-        height: 62rem;
-    }
-}
-
-.overwatch2LandingTracer {
+.landingNameAndRoleWrap {
     position: absolute;
     width: 36rem;
     height: 36rem;
     position: absolute;
-    bottom: 0;
-    left: 0;
-    transform: translateX(30%);
-    @media screen and (min-width: 420px) {
+    top: 20%;
+    left: 10%;
+    text-shadow: 0 10px 30px rgb(2 11 22 / 50%);
+    width: 50%;
+    @media screen and (min-width: $sm_breakpoint) {
+        width: 35%;
+    }
+    // @media screen and (min-width: $md_breakpoint) {
+    // }
+    @media screen and (min-width: $lg_breakpoint) {
+        width: 30%;
+        top: 10%;
         left: 10%;
     }
-    @media screen and (min-width: $sm_breakpoint) {
-        left: 15%;
-        width: 46rem;
-        height: 46rem;
+
+    @media screen and (min-width: $xl_breakpoint) {
     }
+}
+.landingName {
+    font-size: 3.8rem;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.6rem;
+    font-weight: normal;
     @media screen and (min-width: $md_breakpoint) {
-        left: 25%;
-        width: 51rem;
-        height: 51rem;
+        font-size: 7.6rem;
     }
     @media screen and (min-width: $lg_breakpoint) {
-        left: 30%;
-        width: 51rem;
-        height: 51rem;
-    }
-
-    @media screen and (min-width: $xl_breakpoint) {
-        left: 40%;
-        width: 43rem;
-        height: 56rem;
+        font-size: 12rem;
     }
 }
 
-.overwatch2LandingCity {
-    position: absolute;
-    bottom: -10%;
-    left: -30rem;
-    width: 120%;
-    height: 100%;
-}
-
-.OW2LogoSvg {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 15%;
-    width: 15rem;
-    height: 9.5rem;
-    fill: white;
-    @media screen and (min-width: $sm_breakpoint) {
-        width: 20rem;
-        height: 12.5rem;
-    }
+.landingRole {
+    text-transform: lowercase;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+    text-shadow: 0 10px 30px rgb(2 11 22 / 50%);
     @media screen and (min-width: $md_breakpoint) {
-        width: 22rem;
-        height: 14.5rem;
+        font-size: 2.8rem;
     }
-    @media screen and (min-width: $xl_breakpoint) {
-        width: 27rem;
-        height: 16.5rem;
+    @media screen and (min-width: $lg_breakpoint) {
+        font-size: 2.8rem;
     }
 }

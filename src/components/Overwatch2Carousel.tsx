@@ -7,9 +7,9 @@ import Overwatch2SlideStory from "./Overwatch2SlideStory";
 import Overwatch2SlideNext from "./Overwatch2SlideNext";
 import Overwatch2SlideExploreDetails from "./Overwatch2SlideExploreDetails";
 import { useTransition, animated, useSpring, useTrail } from "react-spring";
-import { setupWheelGestures } from "embla-carousel-wheel-gestures";
+
 import { RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
-import Overwatch2DotAccordion from "./Overwatch2DotAccordion";
+
 import { useMeasure } from "react-use";
 
 //Instead of level up tuts / scott's way, you could use this for accordion : https://www.chrisberry.io/Animate-Auto-With-React-Spring/

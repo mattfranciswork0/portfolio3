@@ -344,6 +344,9 @@ const Overwatch2SlideExplore: React.FC<{}> = () => {
                                 e.target.src = `https://res.cloudinary.com/du8n2aa4p/image/upload/v1617223738/blizzard/overwatch2/slide%202%20-%20explore/menu-flier-2-LG.webp`;
                             }}
                         />
+                        <h1 className="glimpseText">
+                            A glimpse of my work and me
+                        </h1>
                     </div>
                 </div>
             )}

@@ -272,3 +272,24 @@
         font-size: 4rem;
     }
 }
+
+.glimpseText {
+    position: absolute;
+    // width: 36rem;
+    // height: 36rem;
+    top: 10%;
+    left: 10%;
+    font-size: 3.8rem;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.6rem;
+    font-weight: normal;
+    @media screen and (min-width: $md_breakpoint) {
+        font-size: 7.6rem;
+        width: 35%;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        font-size: 12rem;
+        width: 35%;
+    }
+}

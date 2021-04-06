@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useTransition, animated, useSpring, to } from "react-spring";
-import _ from "lodash";
 import useWindowDimensions from "../windowDimensions";
 import Overwatch2SlideExplore from "./Overwatch2SlideExplore";
-import anime from "animejs/lib/anime.es.js";
 import Overwatch2Carousel from "./Overwatch2Carousel";
 import { LG_SCREEN_SIZE, MED_SCREEN_SIZE } from "../constants";
 import useMeasure from "../useMeasure";

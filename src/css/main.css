@@ -360,6 +360,10 @@ body {
   font: 1.1rem "Futura Medium", helvetica, arial, sans-serif;
 }
 
+@font-face {
+  font-family: "Futura Medium";
+  src: url(../fonts/FuturaMedium.otf) format("opentype");
+}
 .overwatch2SlideExploreDetailsContainer {
   position: relative;
   font-family: "Config", sans-serif;
@@ -569,7 +573,6 @@ body {
   position: relative;
   width: 100vw;
   overflow: hidden;
-  font-family: "Config", sans-serif;
 }
 
 .overwatch2SlideNextParentContainer {
@@ -753,123 +756,68 @@ body {
   width: 100%;
 }
 
-.overwatch2Sky {
+.meBackground {
   position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.overwatch2LandingRein {
-  position: absolute;
-  bottom: 0;
-  left: -40%;
-  width: 50rem;
-  height: 40rem;
-}
-@media screen and (min-width: 420px) {
-  .overwatch2LandingRein {
-    left: -20%;
-  }
-}
-@media screen and (min-width: 520px) {
-  .overwatch2LandingRein {
-    left: -10%;
-    width: 60rem;
-    height: 50rem;
-  }
-}
-@media screen and (min-width: 768px) {
-  .overwatch2LandingRein {
-    left: 5%;
-    width: 65rem;
-    height: 55rem;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .overwatch2LandingRein {
-    left: 15%;
-    width: 70.6rem;
-    height: 62rem;
-  }
-}
-
-.overwatch2LandingTracer {
+.landingNameAndRoleWrap {
   position: absolute;
   width: 36rem;
   height: 36rem;
   position: absolute;
-  bottom: 0;
-  left: 0;
-  transform: translateX(30%);
-}
-@media screen and (min-width: 420px) {
-  .overwatch2LandingTracer {
-    left: 10%;
-  }
+  top: 20%;
+  left: 10%;
+  text-shadow: 0 10px 30px rgba(2, 11, 22, 0.5);
+  width: 50%;
 }
 @media screen and (min-width: 520px) {
-  .overwatch2LandingTracer {
-    left: 15%;
-    width: 46rem;
-    height: 46rem;
-  }
-}
-@media screen and (min-width: 768px) {
-  .overwatch2LandingTracer {
-    left: 25%;
-    width: 51rem;
-    height: 51rem;
+  .landingNameAndRoleWrap {
+    width: 35%;
   }
 }
 @media screen and (min-width: 992px) {
-  .overwatch2LandingTracer {
-    left: 30%;
-    width: 51rem;
-    height: 51rem;
+  .landingNameAndRoleWrap {
+    width: 30%;
+    top: 10%;
+    left: 10%;
   }
 }
-@media screen and (min-width: 1200px) {
-  .overwatch2LandingTracer {
-    left: 40%;
-    width: 43rem;
-    height: 56rem;
-  }
-}
-
-.overwatch2LandingCity {
-  position: absolute;
-  bottom: -10%;
-  left: -30rem;
-  width: 120%;
-  height: 100%;
-}
-
-.OW2LogoSvg {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 15%;
-  width: 15rem;
-  height: 9.5rem;
-  fill: white;
-}
-@media screen and (min-width: 520px) {
-  .OW2LogoSvg {
-    width: 20rem;
-    height: 12.5rem;
-  }
+.landingName {
+  font-size: 3.8rem;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.6rem;
+  font-weight: normal;
 }
 @media screen and (min-width: 768px) {
-  .OW2LogoSvg {
-    width: 22rem;
-    height: 14.5rem;
+  .landingName {
+    font-size: 7.6rem;
   }
 }
-@media screen and (min-width: 1200px) {
-  .OW2LogoSvg {
-    width: 27rem;
-    height: 16.5rem;
+@media screen and (min-width: 992px) {
+  .landingName {
+    font-size: 12rem;
+  }
+}
+
+.landingRole {
+  text-transform: lowercase;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  text-shadow: 0 10px 30px rgba(2, 11, 22, 0.5);
+}
+@media screen and (min-width: 768px) {
+  .landingRole {
+    font-size: 2.8rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .landingRole {
+    font-size: 2.8rem;
   }
 }
 
@@ -1188,6 +1136,29 @@ body {
 @media screen and (min-width: 768px) {
   .overwatch2MobileArrow {
     font-size: 4rem;
+  }
+}
+
+.glimpseText {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  font-size: 3.8rem;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.6rem;
+  font-weight: normal;
+}
+@media screen and (min-width: 768px) {
+  .glimpseText {
+    font-size: 7.6rem;
+    width: 35%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .glimpseText {
+    font-size: 12rem;
+    width: 35%;
   }
 }
 

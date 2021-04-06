@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useTransition, animated, useSpring, to } from "react-spring";
-import _ from "lodash";
 import useWindowDimensions from "../windowDimensions";
 import { useMeasure } from "react-use";
 const timer = 1000;
