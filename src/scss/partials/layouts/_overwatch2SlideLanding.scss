@@ -1,0 +1,112 @@
+.overwatch2SlideLandingParentContainer {
+    // height: 55rem;
+    // @media screen and (min-width: $sm_breakpoint) {
+    //     height: 65rem;
+    // }
+    // @media screen and (min-width: $md_breakpoint) {
+    //     min-height: 80rem;
+    // }
+    // @media screen and (min-width: $xl_breakpoint) {
+    //     min-height: 100rem;
+    // }
+    height: 100%;
+    width: 100%;
+}
+.overwatch2Sky {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overwatch2LandingRein {
+    position: absolute;
+    bottom: 0;
+    left: -40%;
+    width: 50rem;
+    height: 40rem;
+    @media screen and (min-width: 420px) {
+        left: -20%;
+    }
+    @media screen and (min-width: $sm_breakpoint) {
+        left: -10%;
+        width: 60rem;
+        height: 50rem;
+    }
+
+    @media screen and (min-width: $md_breakpoint) {
+        left: 5%;
+        width: 65rem;
+        height: 55rem;
+    }
+
+    @media screen and (min-width: $xl_breakpoint) {
+        left: 15%;
+        width: 70.6rem;
+        height: 62rem;
+    }
+}
+
+.overwatch2LandingTracer {
+    position: absolute;
+    width: 36rem;
+    height: 36rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateX(30%);
+    @media screen and (min-width: 420px) {
+        left: 10%;
+    }
+    @media screen and (min-width: $sm_breakpoint) {
+        left: 15%;
+        width: 46rem;
+        height: 46rem;
+    }
+    @media screen and (min-width: $md_breakpoint) {
+        left: 25%;
+        width: 51rem;
+        height: 51rem;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        left: 30%;
+        width: 51rem;
+        height: 51rem;
+    }
+
+    @media screen and (min-width: $xl_breakpoint) {
+        left: 40%;
+        width: 43rem;
+        height: 56rem;
+    }
+}
+
+.overwatch2LandingCity {
+    position: absolute;
+    bottom: -10%;
+    left: -30rem;
+    width: 120%;
+    height: 100%;
+}
+
+.OW2LogoSvg {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 15%;
+    width: 15rem;
+    height: 9.5rem;
+    fill: white;
+    @media screen and (min-width: $sm_breakpoint) {
+        width: 20rem;
+        height: 12.5rem;
+    }
+    @media screen and (min-width: $md_breakpoint) {
+        width: 22rem;
+        height: 14.5rem;
+    }
+    @media screen and (min-width: $xl_breakpoint) {
+        width: 27rem;
+        height: 16.5rem;
+    }
+}

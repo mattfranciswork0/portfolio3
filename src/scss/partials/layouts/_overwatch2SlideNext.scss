@@ -1,0 +1,163 @@
+.overwatch2SlideParentContainer {
+    position: relative;
+    width: 100vw;
+    overflow: hidden;
+    font-family: "Config", sans-serif;
+}
+
+.overwatch2SlideNextParentContainer {
+    // height: 30rem;
+    // @media screen and (min-width: $sm_breakpoint) {
+    //     height: 51rem;
+    // }
+    // @media screen and (min-width: $md_breakpoint) {
+    //     min-height: 80rem;
+    // }
+    // @media screen and (min-width: $xl_breakpoint) {
+    //     min-height: 100rem;
+    // }
+    height: 100%;
+}
+.overwatch2NextSlideContainer {
+    position: absolute;
+    top: -20%;
+    @media screen and (min-width: $sm_breakpoint) {
+        top: -15%;
+    }
+}
+
+.overwatch2NextTitle {
+    position: absolute;
+    text-align: center;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    max-width: 60%;
+    font-style: italic;
+    font-weight: bold;
+    text-transform: uppercase;
+    @media screen and (min-width: $sm_breakpoint) {
+        font-size: 3rem;
+    }
+    @media screen and (min-width: $md_breakpoint) {
+        font-size: 4.5rem;
+    }
+    @media screen and (min-width: $xl_breakpoint) {
+        font-size: 5.5rem;
+    }
+}
+.overwatch2NextSky {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overwatch2NextRein {
+    position: absolute;
+    bottom: 5rem;
+    left: 15%;
+    width: 35rem;
+    height: 23rem;
+
+    @media screen and (min-width: 420px) {
+        left: 20%;
+    }
+
+    @media screen and (min-width: $sm_breakpoint) {
+        left: 20%;
+        width: 50rem;
+        height: 23rem;
+    }
+
+    @media screen and (min-width: $md_breakpoint) {
+        bottom: 0;
+        left: 25%;
+        width: 70rem;
+        height: 33rem;
+    }
+
+    @media screen and (min-width: $lg_breakpoint) {
+        left: 25%;
+        width: 90rem;
+        height: 43rem;
+    }
+
+    @media screen and (min-width: $xl_breakpoint) {
+        left: 29%;
+        width: 115rem;
+        height: 51rem;
+    }
+}
+
+.overwatch2NextTracer {
+    position: absolute;
+    bottom: 5rem;
+    width: 22rem;
+    height: 22rem;
+    position: absolute;
+    left: -25%;
+
+    @media screen and (min-width: 420px) {
+        left: -15%;
+    }
+
+    @media screen and (min-width: $sm_breakpoint) {
+        left: -15%;
+        width: 32rem;
+        height: 32rem;
+    }
+    @media screen and (min-width: $md_breakpoint) {
+        bottom: 0;
+        left: -10%;
+        width: 42rem;
+        height: 42rem;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        width: 51rem;
+        height: 53rem;
+    }
+    transform: translateX(30%);
+    @media screen and (min-width: $xl_breakpoint) {
+        left: -5%;
+        width: 65rem;
+        height: 68rem;
+    }
+}
+
+.overwatch2NextMei {
+    position: absolute;
+    bottom: 5rem;
+    right: 10%;
+    width: 26rem;
+    height: 26rem;
+    transform: translateX(30%);
+
+    @media screen and (min-width: 420px) {
+        right: 15%;
+    }
+
+    @media screen and (min-width: $sm_breakpoint) {
+        right: 10%;
+        width: 36rem;
+        height: 36rem;
+    }
+    @media screen and (min-width: $md_breakpoint) {
+        // right: 5%;
+        width: 46rem;
+        height: 36rem;
+        bottom: 3rem;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        right: 5%;
+        width: 63rem;
+        height: 48rem;
+    }
+
+    @media screen and (min-width: $xl_breakpoint) {
+        bottom: 0;
+        width: 80rem;
+        height: 61rem;
+    }
+}

@@ -1,0 +1,177 @@
+.overwatch2SlideExploreDetailsContainer {
+    position: relative;
+    font-family: "Config", sans-serif;
+    color: black;
+    background: white;
+    @media screen and (min-width: $lg_breakpoint) {
+        display: flex;
+        flex-direction: row-reverse;
+        height: 80rem;
+    }
+}
+
+.overwatch2SlideExploreDetailsTextContainer {
+    padding: 2rem 4rem;
+    padding-top: 0rem;
+    @media screen and (min-width: $sm_breakpoint) {
+        padding: 2rem 6rem;
+        padding-top: 0rem;
+    }
+
+    @media screen and (min-width: $lg_breakpoint) {
+        padding: 2rem 4rem;
+        padding-top: 0rem;
+        width: 40%;
+    }
+    @media screen and (min-width: $xl_breakpoint) {
+        padding: 2rem 5rem;
+        padding-top: 0rem;
+    }
+}
+.overwatch2SlideExploreDetailsText {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    @media screen and (min-width: $sm_breakpoint) {
+        font-size: 2.4rem;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        font-size: rem;
+    }
+}
+
+.overwatch2SlideExploreDetailsTitleWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 2rem;
+    @media screen and (min-width: $sm_breakpoint) {
+        padding: 2rem 5rem;
+    }
+    @media screen and (min-width: $md_breakpoint) {
+        padding: 2rem 15rem;
+    }
+
+    @media screen and (min-width: $lg_breakpoint) {
+        display: block;
+        cursor: pointer;
+        position: relative;
+        color: white;
+        background: black;
+        margin-top: 1rem;
+        padding: 0.8rem;
+    }
+}
+
+.overwatch2SlideExploreDetailsTitleSelected {
+    @media screen and (min-width: $lg_breakpoint) {
+        border-left: 8px solid #f06414;
+    }
+}
+
+.overwatch2SlideExploreDetailsHeader {
+    font-style: italic;
+    font-size: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 2rem;
+    z-index: -1;
+}
+.overwatch2SlideExploreDetailsTitle {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0;
+    margin-right: auto;
+    @media screen and (min-width: $sm_breakpoint) {
+        font-size: 2.3rem;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        margin-right: 0;
+    }
+}
+
+.overwatch2SlideExploreDetailsSlideImage {
+    width: 100%;
+    object-fit: cover;
+    @media screen and (min-width: $lg_breakpoint) {
+        width: 60%;
+    }
+}
+
+.overwatch2SideExploreDetailsBackButton {
+    position: absolute;
+    cursor: pointer;
+    left: 2rem;
+    top: 20rem;
+    font-size: 4rem;
+    color: white;
+    @media screen and (min-width: $sm_breakpoint) {
+        top: 20rem;
+        font-size: 6rem;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        left: 90%;
+        top: 3rem;
+        font-size: 8rem;
+    }
+    transition: all 0.4s ease;
+    &:hover {
+        transition: all 0.4s ease;
+        transform: scale(1.1);
+    }
+}
+
+.overwatch2SlideCurrentExploreDetailWrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 1rem;
+    .overwatch2SlideCurrentExploreDetailDropdownText {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 1.9rem;
+        margin: 0;
+        margin-right: 0.5rem;
+        padding-top: 2rem;
+        width: 100%;
+        background: white;
+        z-index: 1;
+        @media screen and (min-width: $lg_breakpoint) {
+            font-size: 2.4rem;
+        }
+    }
+    .overwatch2SlideCurrentExploreDetailArrowDown {
+        font-size: 2rem;
+        cursor: pointer;
+    }
+}
+
+.overwatch2SlideCurrentExploreDetailDropdown {
+    position: absolute;
+    top: 100%;
+
+    border: 1px solid black;
+    background: white;
+    p {
+        cursor: pointer;
+        font-size: 1.9rem;
+        margin: 0;
+        padding: 0 1.5rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+
+        &:hover {
+            background: black;
+            color: white;
+        }
+    }
+}

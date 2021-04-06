@@ -1,0 +1,18 @@
+.overwatch2SlideContainer {
+    position: absolute;
+    top: -10%;
+    // right: -10rem;
+    right: -10vw;
+    width: 120vw;
+    height: 120%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.overwatch2CarouselArrowUp,
+.overwatch2CarouselArrowDown {
+    font-size: 2rem;
+}

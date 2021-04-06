@@ -1,0 +1,178 @@
+.overwatch2StoryTimelineContainer {
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(6px);
+    // position: relative;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 15rem;
+}
+
+.overwatch2StoryTimelineProgress {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 0.8rem;
+    background-color: hsla(0, 0%, 100%, 0.8);
+}
+
+.overwatch2StoryTimelineProgressNotFilled {
+    background-color: grey;
+}
+
+.overwatch2StoryTimelineProgressControl {
+    position: relative;
+    display: flex;
+    width: 100%;
+    z-index: 1;
+    img {
+        width: 6rem;
+        height: 5rem;
+        @media screen and (min-width: $sm_breakpoint) {
+            width: 10rem;
+            height: 5.7rem;
+        }
+
+        object-fit: cover;
+    }
+}
+
+.overwatch2StoryTimelineProgressControlSectionWrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    cursor: pointer;
+    &:before {
+        content: "";
+        background: white;
+        cursor: pointer;
+        width: 1.2rem;
+        height: 1.2rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        z-index: -1;
+    }
+}
+
+.overWatch2StoryTimelineProgressTitleAndImageWrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 2rem;
+}
+.overWatch2StoryTimlineProgressTitle {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    // margin: 0;
+    // margin-top: 2rem;
+}
+.overwatch2StoryTimelineControlImageWrap {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    img {
+        position: relative;
+        z-index: 2;
+        cursor: pointer;
+        margin-right: 0.5rem;
+        transition: all 0.4 ease-in;
+        border: 1px solid transparent;
+        &:hover {
+            border: 1px solid white;
+            transition: all 0.4s ease-in;
+        }
+    }
+}
+
+.overwatch2StoryContainer {
+    background: black;
+    position: relative;
+    height: 100%;
+    // height: 60rem;
+    // @media screen and (min-width: $sm_breakpoint) {
+    //     height: 70rem;
+    // }
+    // @media screen and (min-width: $md_breakpoint) {
+    //     height: 70rem;
+    // }
+    // @media screen and (min-width: $lg_breakpoint) {
+    //     height: 75rem;
+    // }
+    width: 100%;
+    font-family: "Config", sans-serif;
+    .overwatch2StoryBackgroundImage {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.overwatch2StoryTextInnerWrap {
+    width: 100%;
+}
+.overwatch2StoryTextWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    // position: relative; //used for height auto animation
+    max-width: 80%;
+    height: 100%;
+    @media screen and (min-width: $sm_breakpoint) {
+        max-width: 60%;
+    }
+    @media screen and (min-width: $md_breakpoint) {
+        // max-width: 50%;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        max-width: 50%;
+    }
+    .overwatch2StoryTitle {
+        margin: 0;
+        font-size: 4rem;
+        @media screen and (min-width: $sm_breakpoint) {
+            font-size: 5.4rem;
+            line-height: 5rem;
+        }
+        @media screen and (min-width: $md_breakpoint) {
+            font-size: 6.4rem;
+            line-height: 6rem;
+        }
+    }
+    .overwatch2StoryDesc {
+        margin-top: 1rem;
+        font-size: 1.6rem;
+        line-height: 2.1rem;
+        @media screen and (min-width: $sm_breakpoint) {
+            font-size: 2rem;
+            line-height: 2.6rem;
+        }
+        @media screen and (min-width: $md_breakpoint) {
+            font-size: 2.5rem;
+            line-height: 3.3rem;
+        }
+    }
+}
+
+// .autoWrap {
+//     position: absolute;
+//     left: 5%;
+//     top: 5%;
+//     background: blue;
+// }
