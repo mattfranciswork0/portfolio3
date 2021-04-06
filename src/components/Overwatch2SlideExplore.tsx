@@ -70,6 +70,14 @@ const Overwatch2SlideExplore: React.FC<{}> = () => {
         <React.Fragment>
             {width <= LG_SCREEN_SIZE && (
                 <div className="overwatch2ExploreMobile">
+                    <div className="glimpseWrap">
+                        <h1 className="glimpseText">
+                            A glimpse of my work and me
+                        </h1>
+                        <p className="glimpseTakenText">
+                            This is taken from my 'Blizzard' project...
+                        </p>
+                    </div>
                     <div
                         className="overwatch2ExploreMobileCard"
                         onClick={() => {
@@ -88,10 +96,10 @@ const Overwatch2SlideExplore: React.FC<{}> = () => {
                         </div>
                         <div className="overwatch2ExploreMobileTextWrap">
                             <p className="overwatch2ExploreMobileCardSubTitle">
-                                Team vs Team
+                                Projects
                             </p>
                             <h1 className="overwatch2ExploreMobileCardTitle">
-                                Epic Team Competition
+                                Show More
                             </h1>
                         </div>
                         <div className="overwatch2MobileArrowWrap">
@@ -116,10 +124,10 @@ const Overwatch2SlideExplore: React.FC<{}> = () => {
                         </div>
                         <div className="overwatch2ExploreMobileTextWrap">
                             <p className="overwatch2ExploreMobileCardSubTitle">
-                                Co-op Missions
+                                About Me
                             </p>
                             <h1 className="overwatch2ExploreMobileCardTitle">
-                                Save the world
+                                Show More
                             </h1>
                         </div>
                         <div className="overwatch2MobileArrowWrap">
@@ -272,7 +280,7 @@ const Overwatch2SlideExplore: React.FC<{}> = () => {
                             }}
                         >
                             <AiFillPlusCircle className="overwatch2PlusCircleExplore" />
-                            <h3>Team Vs. Team</h3>
+                            <h3>Projects</h3>
                         </div>
                         <img
                             onMouseEnter={() => {
@@ -328,7 +336,7 @@ const Overwatch2SlideExplore: React.FC<{}> = () => {
                             }}
                         >
                             <AiFillPlusCircle className="overwatch2PlusCircleExplore" />
-                            <h3>Co-op Missions</h3>
+                            <h3>About Me</h3>
                         </div>
 
                         <animated.img
@@ -344,9 +352,14 @@ const Overwatch2SlideExplore: React.FC<{}> = () => {
                                 e.target.src = `https://res.cloudinary.com/du8n2aa4p/image/upload/v1617223738/blizzard/overwatch2/slide%202%20-%20explore/menu-flier-2-LG.webp`;
                             }}
                         />
-                        <h1 className="glimpseText">
-                            A glimpse of my work and me
-                        </h1>
+                        <div className="glimpseWrap">
+                            <h1 className="glimpseText">
+                                A glimpse of my work and me
+                            </h1>
+                            <p className="glimpseTakenText">
+                                This is taken from my 'Blizzard' project...
+                            </p>
+                        </div>
                     </div>
                 </div>
             )}

@@ -273,23 +273,55 @@
     }
 }
 
+.glimpseWrap {
+    @media screen and (min-width: $lg_breakpoint) {
+        position: absolute;
+        top: 15%;
+        left: 10%;
+        width: 30%;
+    }
+}
+
 .glimpseText {
-    position: absolute;
-    // width: 36rem;
-    // height: 36rem;
-    top: 10%;
-    left: 10%;
-    font-size: 3.8rem;
+    font-size: 2.8rem;
     line-height: 1;
     letter-spacing: 0.1em;
     margin-bottom: 1.6rem;
     font-weight: normal;
+    margin: 0;
+    @media screen and (min-width: $sm_breakpoint) {
+        font-size: 3.8rem;
+    }
     @media screen and (min-width: $md_breakpoint) {
-        font-size: 7.6rem;
-        width: 35%;
+        font-size: 5rem;
     }
     @media screen and (min-width: $lg_breakpoint) {
-        font-size: 12rem;
-        width: 35%;
+        font-size: 6rem;
+    }
+    @media screen and (min-width: $xl_breakpoint) {
+        font-size: 7rem;
+    }
+}
+
+.glimpseTakenText {
+    margin: 0;
+    margin: 1rem 0;
+    text-transform: lowercase;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+    text-shadow: 0 10px 30px rgb(2 11 22 / 50%);
+    margin-bottom: 3rem;
+
+    @media screen and (min-width: $md_breakpoint) {
+        font-size: 1.5rem;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        margin-bottom: 0;
+        font-size: 1.8rem;
+    }
+    @media screen and (min-width: $xl_breakpoint) {
+        font-size: 2.8rem;
+        padding-right: 30%;
     }
 }
