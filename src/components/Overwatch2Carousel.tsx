@@ -59,12 +59,6 @@ export const NextButton = ({ enabled, onClick }) => (
     </button>
 );
 
-// const slides = [
-//     "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*",
-//     "https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png",
-//     "https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png",
-// ];
-
 const slides = [
     { dotTitle: "Intro", component: <Overwatch2SlideLanding /> },
     { dotTitle: "Explore", component: <Overwatch2SlideExplore /> },

@@ -48,12 +48,12 @@ const SlideStory: React.FC<{}> = () => {
 
     const centerText = useTransition(progress.storiesArrayIndex, {
         from: {
-            transform: "translate3d(0%,0%,0px)",
+            transform: "translate3d(0%,10%,0px)",
 
             // opacity: "0",
         },
         enter: {
-            transform: "translate3d(0%,-20%,0px)",
+            transform: "translate3d(0%,0%,0px)",
             // opacity: "1",
         },
 
@@ -62,35 +62,6 @@ const SlideStory: React.FC<{}> = () => {
             duration: 300,
             tension: 200,
             friction: 50,
-        },
-    });
-
-    const fadeBackground = useTransition(progress, {
-        from: {
-            opacity: 0,
-        },
-        enter: {
-            opacity: 1,
-        },
-
-        config: {
-            duration: timer,
-        },
-    });
-
-    const fadeControlImages = useTransition(progress.percentage, {
-        from: {
-            opacity: 0,
-        },
-        enter: {
-            opacity: 1,
-        },
-        leave: {
-            opacity: 0,
-        },
-
-        config: {
-            duration: timer,
         },
     });
 

@@ -39,7 +39,7 @@ const Overwatch2SlideLanding: React.FC<{}> = () => {
                                 : "translate3d(0px,0px,0px)",
                     }}
                 >
-                    <img className="meBackground" src={me1} alt="" />
+                    <img className="meBackground" src={me2} alt="" />
                     <div className="landingNameAndRoleWrap">
                         <h1 className="landingName">Matthew Francis</h1>
                         <p className="landingRole">

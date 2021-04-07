@@ -68,17 +68,24 @@
     text-align: right;
 }
 .storyTimelineProgressTitle {
-    font-size: 1.2rem;
+    font-size: 1rem;
     letter-spacing: 0.1rem;
     font-weight: normal;
     text-transform: lowercase;
     font-weight: 700;
     width: 8rem;
-    margin-right: 13rem;
+    margin-right: 11rem;
     @media screen and (min-width: $md_breakpoint) {
         font-size: 1.4rem;
-        width: 12rem;
+        min-width: 12rem;
         margin-right: 16rem;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        font-size: 1.8rem;
+    }
+    @media screen and (min-width: $xl_breakpoint) {
+        font-size: 2rem;
+        display: inline;
     }
 }
 
@@ -100,7 +107,7 @@
     flex-direction: column;
     justify-content: center;
     padding: 1rem 2rem;
-    padding-right: 4rem;
+    padding-right: 6rem;
     width: 80%;
     height: 100%;
     @media screen and (min-width: $sm_breakpoint) {
@@ -115,26 +122,42 @@
     .storyTitle {
         margin: 0;
         letter-spacing: 0.3rem;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        @media screen and (min-width: $sm_breakpoint) {
+            font-size: 2.2rem;
+        }
         @media screen and (min-width: $lg_breakpoint) {
-            font-size: 2rem;
+            font-size: 2.6rem;
+        }
+        @media screen and (min-width: $xl_breakpoint) {
+            font-size: 3rem;
         }
         font-weight: bold;
     }
     .storyDesc {
         margin-top: 1rem;
-        font-size: 1.2rem;
+        font-size: 1rem;
         line-height: 2.1rem;
         padding-left: 2rem;
+        @media screen and (min-width: $sm_breakpoint) {
+            font-size: 1.2rem;
+        }
+        @media screen and (min-width: $md_breakpoint) {
+            font-size: 2.1rem;
+        }
 
         @media screen and (min-width: $lg_breakpoint) {
-            font-size: 1.6rem;
+            font-size: 2.4rem;
+        }
+        @media screen and (min-width: $xl_breakpoint) {
+            font-size: 2.7rem;
         }
 
         letter-spacing: 0.2rem;
         line-height: 1.3;
         li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 2rem;
         }
     }
 }
