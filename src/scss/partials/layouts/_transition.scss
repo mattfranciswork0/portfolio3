@@ -1,0 +1,19 @@
+.transitionRed {
+    background-color: red;
+    height: 100%;
+    width: 5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.transitionDark {
+    position: absolute;
+    top: 25rem;
+    left: 40rem;
+    // background-image: $background-dark;
+    background: yellow;
+    width: 10rem;
+    height: 5rem;
+    overflow: hidden;
+}

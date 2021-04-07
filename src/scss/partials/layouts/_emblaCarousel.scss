@@ -102,13 +102,17 @@
     &:first-of-type {
         margin-top: 3rem;
     }
-    &:last-of-type {
-        .overwatch2DotBackground {
-            min-width: 12rem;
-        }
-    }
+    // &:last-of-type {
+    //     .overwatch2DotBackground {
+    //         min-width: 8rem;
+    //     }
+    // }
 }
 .overwatch2DotBackground {
+    display: none;
+    @media screen and (min-width: $lg_breakpoint) {
+        display: block;
+    }
     background-image: $background-dark;
     position: absolute;
     top: 50%;
@@ -122,7 +126,7 @@
         font-family: "Config", sans-serif;
         margin: 0;
         margin-right: 1rem;
-        text-transform: uppercase;
+        text-transform: lowercase;
         font-weight: bold;
         font-size: 1.7rem;
         display: block;

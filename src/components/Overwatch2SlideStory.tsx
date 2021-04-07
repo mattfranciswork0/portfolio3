@@ -108,7 +108,7 @@ const SlideStory: React.FC<{}> = () => {
         return (
             <div className="overwatch2SlideCurrentExploreDetailWrap">
                 <p className="overwatch2SlideCurrentExploreDetailDropdownText">
-                    Enrolled
+                    Timeline
                     <animated.div
                         style={rotateArrow}
                         onMouseEnter={() => setDropdownClicked(true)}

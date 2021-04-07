@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useTransition, animated, useSpring, to } from "react-spring";
-
+import TransitionBg from "./TransitionBg";
+import { StoreState } from "../reducers";
 import {
     LG_SCREEN_SIZE,
     XL_SCREEN_SIZE,
     MED_SCREEN_SIZE,
     SM_SCREEN_SIZE,
 } from "../constants";
+import { fetchSlideIndex } from "../actions";
+import { connect } from "react-redux";
 import useWindowDimensions from "../windowDimensions";
 import me1 from "../img/me1.jpg";
 import me2 from "../img/me2.jpg";
+import MeCard from "./MeCard";
 const timer = 3000;
 //const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
 //@ts-ignore
@@ -32,13 +36,15 @@ const Overwatch2SlideLanding: React.FC<{}> = () => {
                         //Code below does not work, so I used hooks above
                         // xy.to((xy) => [x, y])
                     }}
-                    style={{
-                        transform:
-                            width >= MED_SCREEN_SIZE
-                                ? trans1(xHook, yHook)
-                                : "translate3d(0px,0px,0px)",
-                    }}
+                    // style={{
+                    //     transform:
+                    //         width >= MED_SCREEN_SIZE
+                    //             ? trans1(xHook, yHook)
+                    //             : "translate3d(0px,0px,0px)",
+                    // }}
                 >
+                    <TransitionBg />
+                    {/* <MeCard /> */}
                     <img className="meBackground" src={me2} alt="" />
                     <div className="landingNameAndRoleWrap">
                         <h1 className="landingName">Matthew Francis</h1>
@@ -53,4 +59,12 @@ const Overwatch2SlideLanding: React.FC<{}> = () => {
     );
 };
 
-export default Overwatch2SlideLanding;
+const mapStateToProps = (state: StoreState) => {
+    return {
+        carousel: state,
+    };
+};
+
+export default connect(mapStateToProps, {
+    fetchSlideIndex,
+})(Overwatch2SlideLanding);

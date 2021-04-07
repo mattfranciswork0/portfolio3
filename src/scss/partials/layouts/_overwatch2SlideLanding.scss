@@ -35,10 +35,11 @@
     @media screen and (min-width: $lg_breakpoint) {
         width: 30%;
         top: 10%;
-        left: 10%;
+        left: 15%;
     }
 
     @media screen and (min-width: $xl_breakpoint) {
+        left: 15%;
     }
 }
 .landingName {

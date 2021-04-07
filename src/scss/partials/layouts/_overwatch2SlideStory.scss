@@ -73,18 +73,14 @@
     font-weight: normal;
     text-transform: lowercase;
     font-weight: 700;
-    width: 8rem;
-    margin-right: 11rem;
-    @media screen and (min-width: $md_breakpoint) {
-        font-size: 1.4rem;
-        min-width: 12rem;
+
+    @media screen and (min-width: $lg_breakpoint) {
+        font-size: 1.3rem;
+        width: 12rem;
         margin-right: 16rem;
     }
-    @media screen and (min-width: $lg_breakpoint) {
-        font-size: 1.8rem;
-    }
     @media screen and (min-width: $xl_breakpoint) {
-        font-size: 2rem;
+        font-size: 1.3rem;
         display: inline;
     }
 }

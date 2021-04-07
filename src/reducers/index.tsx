@@ -1,4 +1,8 @@
 import { combineReducers } from "redux";
-
-export interface StoreState {}
-export default combineReducers<StoreState>({});
+import carouselReducer from "./carouselReducer";
+export interface StoreState {
+    carousel: number;
+}
+export default combineReducers<StoreState>({
+    carousel: carouselReducer,
+});

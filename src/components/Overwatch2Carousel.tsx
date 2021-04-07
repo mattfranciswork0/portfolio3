@@ -5,37 +5,14 @@ import Overwatch2SlideLanding from "./Overwatch2SlideLanding";
 import Overwatch2SlideExplore from "./Overwatch2SlideExplore";
 import Overwatch2SlideStory from "./Overwatch2SlideStory";
 import Overwatch2SlideNext from "./Overwatch2SlideNext";
-import Overwatch2SlideExploreDetails from "./Overwatch2SlideExploreDetails";
 import { useTransition, animated, useSpring, useTrail } from "react-spring";
-
 import { RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
-
 import { useMeasure } from "react-use";
-
+import { fetchSlideIndex } from "../actions";
+import { connect } from "react-redux";
+import { StoreState } from "../reducers";
 //Instead of level up tuts / scott's way, you could use this for accordion : https://www.chrisberry.io/Animate-Auto-With-React-Spring/
 //Much cleaner code
-
-//@ts-ignore
-// export const DotButton = React.forwardRef(
-//     ({ style, selected, onClick }, ref) => (
-//         <React.Fragment>
-//             <animated.div style={style} className="overwatch2DotBackground">
-//                 <p ref={ref} className="overwatch2DotText">
-//                     Story
-//                 </p>
-//                 <div
-//                     className={`embla__dot ${
-//                         selected ? "is-selected" : ""
-//                     } overwatch2Dot`}
-//                     // type="button"
-//                     onClick={onClick}
-//                 ></div>
-//             </animated.div>
-
-//             {/* <Overwatch2DotAccordion toggle={toggle} /> */}
-//         </React.Fragment>
-//     )
-// );
 
 //@ts-ignore
 export const PrevButton = ({ enabled, onClick }) => (
@@ -66,7 +43,10 @@ const slides = [
     { dotTitle: "Contact", component: <Overwatch2SlideNext /> },
 ];
 
-const EmblaCarousel = () => {
+interface EmblaCarouselProps {
+    fetchSlideIndex: any;
+}
+const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
     const [showDotText, setShowDotText] = useState(false);
     //height auto the link above:
     // const defaultHeight = "0px";
@@ -141,7 +121,7 @@ const EmblaCarousel = () => {
                 <div className="embla__container">
                     {slides.map((slide, index) => {
                         return (
-                            <div className="embla__slide" key={index}>
+                            <div key={index} className="embla__slide">
                                 <div className="overwatch2SlideInner">
                                     {slide.component}
                                 </div>
@@ -149,28 +129,6 @@ const EmblaCarousel = () => {
                         );
                     })}
                 </div>
-                {/* <div className="embla__container">
-                    <div className="embla__slide" key={0}>
-                        <div className="embla__slide__inner">
-                            <img
-                                className="embla__slide__img"
-                                src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*"
-                                alt=""
-                            ></img>
-                        </div>
-                        Slide 2
-                    </div>
-                    <div className="embla__slide" key={1}>
-                        <div className="embla__slide__inner">
-                            <img
-                                className="embla__slide__img"
-                                src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png"
-                                alt=""
-                            ></img>
-                        </div>
-                        Slide 1
-                    </div>
-                </div> */}
             </div>
             <div className="overwatch2DotWrapAndButton">
                 <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
@@ -181,19 +139,18 @@ const EmblaCarousel = () => {
                     onClick={() => setShowDotText(false)}
                 >
                     {dotTextTrail.map((animation, index) => (
-                        // <DotButton
-                        //     style={animation}
-                        //     key={index}
-                        //     selected={index === selectedIndex}
-                        //     onClick={() => scrollTo(index)}
-                        //     ref={ref}
-                        // />
                         <React.Fragment>
-                            <div className="overwatch2DotParentWrap">
+                            <div
+                                key={index}
+                                className="overwatch2DotParentWrap"
+                            >
                                 <animated.div
                                     style={animation}
                                     className="overwatch2DotBackground"
-                                    onClick={() => scrollTo(index)}
+                                    onClick={() => {
+                                        scrollTo(index);
+                                        props.fetchSlideIndex(index);
+                                    }}
                                 >
                                     <p className="overwatch2DotText">
                                         {slides[index].dotTitle}
@@ -208,14 +165,18 @@ const EmblaCarousel = () => {
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         scrollTo(index);
+                                        props.fetchSlideIndex(index);
                                     }}
                                 ></div>
                             </div>
                         </React.Fragment>
                     ))}
                 </div>
-                {/* <div ref={ref}
-                     <p >Hello </p>></div> */}
+                {/* 
+                    <animated.div style={expand}>
+                    <div ref={ref}>
+                     <p >Hello </p>></div> 
+                      <animated.div style={expand}>*/}
 
                 <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
             </div>
@@ -223,4 +184,12 @@ const EmblaCarousel = () => {
     );
 };
 
-export default EmblaCarousel;
+const mapStateToProps = (state: StoreState) => {
+    return {
+        carousel: state,
+    };
+};
+
+export default connect(mapStateToProps, {
+    fetchSlideIndex,
+})(EmblaCarousel);
