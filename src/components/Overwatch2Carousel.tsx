@@ -178,6 +178,7 @@ const EmblaCarousel = () => {
                     className="embla__dots overwatch2DotWrap"
                     onMouseEnter={() => setShowDotText(true)}
                     onMouseLeave={() => setShowDotText(false)}
+                    onClick={() => setShowDotText(false)}
                 >
                     {dotTextTrail.map((animation, index) => (
                         // <DotButton

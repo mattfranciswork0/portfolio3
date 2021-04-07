@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useTransition, animated, useSpring, to } from "react-spring";
 import useWindowDimensions from "../windowDimensions";
 import { useMeasure } from "react-use";
+import { LG_SCREEN_SIZE } from "../constants";
+import { RiArrowDownSLine, RiArrowUpSLine } from "react-icons/ri";
 const timer = 1000;
 
 const stories = [
@@ -18,7 +20,7 @@ const stories = [
         desc: [
             `Leading a group of individuals new to web development in creating a 'mock-site' for the club.`,
             `Held meetings to explain web development concepts and keep team on-track.`,
-            `Grew as a 'leader' by constantly putting myself in the other person's "shoes"; by doing so, I'm able to create good interpersonal relationships and
+            `By constantly putting myself in the other person's "shoes";  I'm able to create good interpersonal relationships and
              communicate clearly.`,
         ],
     },
@@ -29,22 +31,46 @@ const SlideStory: React.FC<{}> = () => {
         percentage: 25,
         storiesArrayIndex: 0,
     });
+    const { width } = useWindowDimensions();
+    const [dropdownClicked, setDropdownClicked] = useState(false);
 
-    //For height auto animation
-    //@ts-ignore
-    //const [bind, { height }] = useMeasure();
-    // const autoSpring = useSpring({
-    //     from: {
-    //         overflow: "hidden",
-    //         height: 0,
-    //     },
-    //     to: {
-    //         height: height,
-    //     },
-    //     config: {
-    //         duration: timer,
-    //     },
-    // });
+    const defaultHeight = "0px";
+    const [ref, { height, top, bottom }] = useMeasure<any>();
+
+    const [contentHeight, setContentHeight] = useState(defaultHeight);
+    const expand = useSpring({
+        config: { friction: 10 },
+        height: dropdownClicked ? `${contentHeight}px` : defaultHeight,
+    });
+    useEffect(() => {
+        //Sets initial height
+        //@ts-ignore
+        setContentHeight(height);
+
+        //Adds resize event listener
+
+        window.addEventListener(
+            "resize",
+            //@ts-ignore
+            setContentHeight(height + top * 2)
+        );
+
+        // Clean-up
+        //@ts-ignore
+        return window.removeEventListener(
+            "resize",
+            //@ts-ignore
+            setContentHeight(height + top * 2)
+        );
+    }, [height, top]);
+
+    const rotateArrow = useSpring({
+        transform: dropdownClicked ? "rotate(360deg)" : "rotate(270deg)",
+
+        config: {
+            duration: 250,
+        },
+    });
 
     const centerText = useTransition(progress.storiesArrayIndex, {
         from: {
@@ -78,6 +104,50 @@ const SlideStory: React.FC<{}> = () => {
         },
     });
 
+    const renderDropdown = () => {
+        return (
+            <div className="overwatch2SlideCurrentExploreDetailWrap">
+                <p className="overwatch2SlideCurrentExploreDetailDropdownText">
+                    Enrolled
+                    <animated.div
+                        style={rotateArrow}
+                        onMouseEnter={() => setDropdownClicked(true)}
+                        onMouseLeave={() => setDropdownClicked(false)}
+                        onClick={() => setDropdownClicked(!dropdownClicked)}
+                    >
+                        <RiArrowDownSLine className="overwatch2SlideCurrentExploreDetailArrowDown" />
+                    </animated.div>
+                </p>
+
+                <animated.div
+                    style={expand}
+                    className="overwatch2SlideCurrentExploreDetailDropdown"
+                    onMouseEnter={() => setDropdownClicked(true)}
+                    onMouseLeave={() => setDropdownClicked(false)}
+                    onClick={() => setDropdownClicked(!dropdownClicked)}
+                >
+                    <div ref={ref}>
+                        {stories.map((story, index) => {
+                            return (
+                                <p
+                                    key={index}
+                                    onClick={() => {
+                                        setProgress({
+                                            percentage: index === 0 ? 25 : 100,
+                                            storiesArrayIndex: index,
+                                        });
+                                    }}
+                                >
+                                    {story.title}
+                                </p>
+                            );
+                        })}
+                    </div>
+                </animated.div>
+            </div>
+        );
+    };
+
     return (
         <React.Fragment>
             <div className="storyContainer">
@@ -106,46 +176,49 @@ const SlideStory: React.FC<{}> = () => {
                     );
                 })}
 
-                <div className="storyTimelineContainer">
-                    <div className="storyTimelineProgress storyTimelineProgressNotFilled"></div>
-                    <animated.div
-                        style={fill}
-                        className="storyTimelineProgress"
-                    ></animated.div>
+                {width < LG_SCREEN_SIZE && renderDropdown()}
+                {width >= LG_SCREEN_SIZE && (
+                    <div className="storyTimelineContainer">
+                        <div className="storyTimelineProgress storyTimelineProgressNotFilled"></div>
+                        <animated.div
+                            style={fill}
+                            className="storyTimelineProgress"
+                        ></animated.div>
 
-                    <div className="storyTimelineProgressControl">
-                        <div
-                            onClick={() => {
-                                setProgress({
-                                    percentage: 25,
-                                    storiesArrayIndex: 0,
-                                });
-                            }}
-                            className="storyTimelineProgressControlSectionWrap"
-                        >
-                            <div className="storyTimelineProgressTitleWrap">
-                                <p className="storyTimelineProgressTitle">
-                                    {stories[0].title}
-                                </p>
+                        <div className="storyTimelineProgressControl">
+                            <div
+                                onClick={() => {
+                                    setProgress({
+                                        percentage: 25,
+                                        storiesArrayIndex: 0,
+                                    });
+                                }}
+                                className="storyTimelineProgressControlSectionWrap"
+                            >
+                                <div className="storyTimelineProgressTitleWrap">
+                                    <p className="storyTimelineProgressTitle">
+                                        {stories[0].title}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <div
-                            onClick={() => {
-                                setProgress({
-                                    percentage: 100,
-                                    storiesArrayIndex: 1,
-                                });
-                            }}
-                            className="storyTimelineProgressControlSectionWrap"
-                        >
-                            <div className="storyTimelineProgressTitleWrap">
-                                <p className="storyTimelineProgressTitle">
-                                    {stories[1].title}
-                                </p>
+                            <div
+                                onClick={() => {
+                                    setProgress({
+                                        percentage: 100,
+                                        storiesArrayIndex: 1,
+                                    });
+                                }}
+                                className="storyTimelineProgressControlSectionWrap"
+                            >
+                                <div className="storyTimelineProgressTitleWrap">
+                                    <p className="storyTimelineProgressTitle">
+                                        {stories[1].title}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                )}
             </div>
         </React.Fragment>
     );
