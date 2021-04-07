@@ -69,7 +69,7 @@ const slides = [
     { dotTitle: "Intro", component: <Overwatch2SlideLanding /> },
     { dotTitle: "Explore", component: <Overwatch2SlideExplore /> },
     { dotTitle: "Career", component: <Overwatch2SlideStory /> },
-    { dotTitle: "What's Next", component: <Overwatch2SlideNext /> },
+    { dotTitle: "Contact", component: <Overwatch2SlideNext /> },
 ];
 
 const EmblaCarousel = () => {

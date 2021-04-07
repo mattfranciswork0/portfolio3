@@ -1,7 +1,7 @@
 .embla {
     position: relative;
     // background-color: #f7f7f7;
-    background: black;
+    background-image: $background-dark;
     // max-width: 670px;
     margin-left: auto;
     margin-right: auto;
@@ -112,7 +112,6 @@
     top: 50%;
     transform: translateY(-50%);
     right: -0.5rem;
-    background: black;
     cursor: pointer;
     border-radius: 0.2rem;
     padding-top: 0.25rem;

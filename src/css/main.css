@@ -341,7 +341,7 @@ template,
  */
 body {
   margin: 0;
-  background-color: #121212;
+  background-color: white;
   color: white;
 }
 
@@ -578,6 +578,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);
 }
 
 .overwatch2SlideParentContainer {
@@ -647,29 +648,40 @@ body {
 
 .contactImage {
   display: block;
-  margin-top: 13rem;
+  margin-top: 5rem;
   width: 100%;
   object-fit: cover;
 }
 @media screen and (min-width: 520px) {
   .contactImage {
+    margin-top: 13rem;
     position: absolute;
     right: 5rem;
     top: 0;
     width: 70%;
+    height: 70%;
   }
 }
 @media screen and (min-width: 768px) {
   .contactImage {
     width: 60%;
+    right: 7rem;
   }
 }
+@media screen and (min-width: 1200px) {
+  .contactImage {
+    right: 10rem;
+  }
+}
+
 .contactTextWrap {
+  position: relative;
+  top: -2rem;
   width: 100%;
   height: 100%;
   text-align: left;
   margin-top: 1rem;
-  color: black;
+  color: white;
   letter-spacing: 0.1rem;
   text-align: left;
 }
@@ -704,13 +716,24 @@ body {
 .overwatch2SlideLandingParentContainer {
   height: 100%;
   width: 100%;
+  background-image: linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);
 }
 
 .meBackground {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  border-radius: 0.25rem;
+  top: 60%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  width: 70%;
   object-fit: cover;
+  object-position: 50% 0%;
+}
+@media screen and (min-width: 520px) {
+  .meBackground {
+    top: 50%;
+    width: 50%;
+  }
 }
 
 .landingNameAndRoleWrap {
@@ -719,7 +742,7 @@ body {
   height: 36rem;
   position: absolute;
   top: 20%;
-  left: 10%;
+  left: 15%;
   text-shadow: 0 10px 30px rgba(2, 11, 22, 0.5);
   width: 50%;
 }
@@ -741,6 +764,11 @@ body {
   letter-spacing: 0.1em;
   margin-bottom: 1.6rem;
   font-weight: normal;
+}
+@media screen and (min-width: 520px) {
+  .landingName {
+    font-size: 6rem;
+  }
 }
 @media screen and (min-width: 768px) {
   .landingName {
@@ -1364,7 +1392,6 @@ body {
   position: relative;
   width: 35%;
   height: 100%;
-  background: blue;
 }
 @media screen and (min-width: 520px) {
   .storyTimelineContainer {
@@ -1385,7 +1412,6 @@ body {
   height: 100%;
   width: 0.8rem;
   background-color: rgba(255, 255, 255, 0.8);
-  background: red;
 }
 
 .storyTimelineProgressNotFilled {
@@ -1412,7 +1438,7 @@ body {
 }
 .storyTimelineProgressControlSectionWrap:before {
   content: "";
-  background: black;
+  background: white;
   cursor: pointer;
   width: 1.2rem;
   height: 1.2rem;
@@ -1435,6 +1461,8 @@ body {
 
 .storyTimelineProgressTitle {
   font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  font-weight: normal;
   text-transform: lowercase;
   font-weight: 700;
   width: 8rem;
@@ -1449,13 +1477,12 @@ body {
 }
 
 .storyContainer {
-  background: white;
+  background-image: linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);
   display: flex;
-  color: black;
+  color: white;
   position: relative;
   height: 100%;
   width: 100%;
-  font-family: sans-serif;
 }
 
 .storyTextInnerWrap {
@@ -1464,6 +1491,7 @@ body {
 
 .storyTextWrap {
   display: flex;
+  letter-spacing: 0.1rem;
   flex-direction: column;
   justify-content: center;
   padding: 1rem 2rem;
@@ -1485,6 +1513,7 @@ body {
 }
 .storyTextWrap .storyTitle {
   margin: 0;
+  letter-spacing: 0.3rem;
   font-size: 1.4rem;
   font-weight: bold;
 }
@@ -1522,12 +1551,13 @@ body {
 
 .overwatch2CarouselArrowUp,
 .overwatch2CarouselArrowDown {
+  color: black;
   font-size: 2rem;
 }
 
 .embla {
   position: relative;
-  background: black;
+  background-image: linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);
   margin-left: auto;
   margin-right: auto;
 }
@@ -1631,7 +1661,6 @@ body {
   top: 50%;
   transform: translateY(-50%);
   right: -0.5rem;
-  background: black;
   cursor: pointer;
   border-radius: 0.2rem;
   padding-top: 0.25rem;

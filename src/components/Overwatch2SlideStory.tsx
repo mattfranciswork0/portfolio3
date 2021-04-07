@@ -9,7 +9,7 @@ const stories = [
         title: "2018 - Enrolled In University",
 
         desc: [
-            `Enrolled for BSc Computer Science at,  Wilfrid Laurier's University, Canada.`,
+            `Enrolled for BSc Computer Science at Wilfrid Laurier's University, Canada.`,
         ],
     },
     {

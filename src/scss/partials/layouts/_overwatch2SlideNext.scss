@@ -7,6 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: $background-dark;
 }
 .overwatch2SlideParentContainer {
     position: relative;
@@ -65,27 +66,32 @@
 
 .contactImage {
     display: block;
-
-    margin-top: 13rem;
+    margin-top: 5rem;
     width: 100%;
 
     object-fit: cover;
     @media screen and (min-width: $sm_breakpoint) {
+        margin-top: 13rem;
         position: absolute;
         right: 5rem;
         top: 0;
         width: 70%;
+        height: 70%;
     }
 
     @media screen and (min-width: $md_breakpoint) {
         width: 60%;
+        right: 7rem;
     }
     @media screen and (min-width: $xl_breakpoint) {
         // left: 29%;
+        right: 10rem;
     }
 }
 
 .contactTextWrap {
+    position: relative;
+    top: -2rem;
     width: 100%;
     height: 100%;
     text-align: left;
@@ -95,7 +101,7 @@
         left: 2rem;
         top: 6rem;
     }
-    color: black;
+    color: white;
 
     letter-spacing: 0.1rem;
     text-align: left;
