@@ -594,31 +594,14 @@ body {
 }
 
 .contactImage {
-  display: block;
+  position: relative;
   margin-top: 5rem;
   width: 100%;
+}
+.contactImage img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-}
-@media screen and (min-width: 520px) {
-  .contactImage {
-    margin-top: 13rem;
-    position: absolute;
-    right: 5rem;
-    top: 0;
-    width: 60%;
-    max-height: 70%;
-  }
-}
-@media screen and (min-width: 768px) {
-  .contactImage {
-    width: 60%;
-    right: 7rem;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .contactImage {
-    right: 10rem;
-  }
 }
 
 .contactTextWrap {
@@ -1728,12 +1711,13 @@ body {
 
 .transitionDark {
   position: absolute;
-  top: 25rem;
-  left: 40rem;
-  background: yellow;
-  width: 10rem;
-  height: 5rem;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background-image: linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);
+  height: 100%;
   overflow: hidden;
+  z-index: 200;
 }
 
 /*# sourceMappingURL=main.css.map */

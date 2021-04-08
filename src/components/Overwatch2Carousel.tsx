@@ -8,7 +8,7 @@ import Overwatch2SlideNext from "./Overwatch2SlideNext";
 import { useTransition, animated, useSpring, useTrail } from "react-spring";
 import { RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
 import { useMeasure } from "react-use";
-import { fetchSlideIndex } from "../actions";
+import { updateSlideIndex } from "../actions";
 import { connect } from "react-redux";
 import { StoreState } from "../reducers";
 //Instead of level up tuts / scott's way, you could use this for accordion : https://www.chrisberry.io/Animate-Auto-With-React-Spring/
@@ -44,7 +44,7 @@ const slides = [
 ];
 
 interface EmblaCarouselProps {
-    fetchSlideIndex: any;
+    updateSlideIndex: any;
 }
 const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
     const [showDotText, setShowDotText] = useState(false);
@@ -148,8 +148,8 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                                     style={animation}
                                     className="overwatch2DotBackground"
                                     onClick={() => {
+                                        props.updateSlideIndex(index);
                                         scrollTo(index);
-                                        props.fetchSlideIndex(index);
                                     }}
                                 >
                                     <p className="overwatch2DotText">
@@ -164,8 +164,8 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                                     } overwatch2Dot`}
                                     onClick={(e) => {
                                         e.stopPropagation();
+                                        props.updateSlideIndex(index);
                                         scrollTo(index);
-                                        props.fetchSlideIndex(index);
                                     }}
                                 ></div>
                             </div>
@@ -186,10 +186,10 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
 
 const mapStateToProps = (state: StoreState) => {
     return {
-        carousel: state,
+        carouselSlideIndex: state,
     };
 };
 
 export default connect(mapStateToProps, {
-    fetchSlideIndex,
+    updateSlideIndex,
 })(EmblaCarousel);

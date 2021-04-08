@@ -1,14 +1,14 @@
 import { ActionTypes } from "./types";
 import { Dispatch } from "redux";
 
-export interface FetchSlideIndexAction {
+export interface UpdateSlideIndexAction {
     type: ActionTypes.FETCH_SLIDE_INDEX;
     payload: number;
 }
-export const fetchSlideIndex = (slideIndex: number) => async (
+export const updateSlideIndex = (slideIndex: number) => async (
     dispatch: Dispatch
 ) => {
-    dispatch<FetchSlideIndexAction>({
+    dispatch<UpdateSlideIndexAction>({
         type: ActionTypes.FETCH_SLIDE_INDEX,
         payload: slideIndex,
     });

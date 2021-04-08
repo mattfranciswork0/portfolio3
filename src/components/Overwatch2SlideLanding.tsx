@@ -8,7 +8,7 @@ import {
     MED_SCREEN_SIZE,
     SM_SCREEN_SIZE,
 } from "../constants";
-import { fetchSlideIndex } from "../actions";
+import { updateSlideIndex } from "../actions";
 import { connect } from "react-redux";
 import useWindowDimensions from "../windowDimensions";
 import me1 from "../img/me1.jpg";
@@ -61,10 +61,10 @@ const Overwatch2SlideLanding: React.FC<{}> = () => {
 
 const mapStateToProps = (state: StoreState) => {
     return {
-        carousel: state,
+        carouselSlideIndex: state,
     };
 };
 
 export default connect(mapStateToProps, {
-    fetchSlideIndex,
+    updateSlideIndex,
 })(Overwatch2SlideLanding);

@@ -9,11 +9,12 @@
 
 .transitionDark {
     position: absolute;
-    top: 25rem;
-    left: 40rem;
-    // background-image: $background-dark;
-    background: yellow;
-    width: 10rem;
-    height: 5rem;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background-image: $background-dark;
+
+    height: 100%;
     overflow: hidden;
+    z-index: 200;
 }

@@ -10,8 +10,11 @@ import {
 } from "../constants";
 import useWindowDimensions from "../windowDimensions";
 import { RiArrowRightSLine, RiArrowLeftSLine } from "react-icons/ri";
-
 import history from "../browserHistory";
+import { updateSlideIndex } from "../actions";
+import { connect } from "react-redux";
+import { StoreState } from "../reducers";
+
 const timer = 3000;
 const HIGHLIGHT_TEAM = "HIGHLIGHT_TEAM";
 const HIGHLIGHT_MISSIONS = "HIGHLIGHT_MISSIONS";
@@ -21,7 +24,12 @@ const trans1 = (x, y) => `translate3d(${x / 10}px,${y / 10}px,0)`;
 //@ts-ignore
 const podTrans1 = (x, y, z) => `translate3d(${x}rem,${y}rem,${z}px)`;
 const podTimer = 13000;
-const Overwatch2SlideExplore: React.FC<{}> = () => {
+interface Overwatch2SlideExploreProps {
+    carouselSlideIndex: any;
+}
+const Overwatch2SlideExplore: React.FC<Overwatch2SlideExploreProps> = (
+    props
+) => {
     const [xHook, setX] = useState(0);
     const [yHook, setY] = useState(0);
     const [renderOverlay, setRenderOverlay] = useState<any>({
@@ -52,9 +60,11 @@ const Overwatch2SlideExplore: React.FC<{}> = () => {
             // friction: 140,
         },
     });
-    useEffect(() => {
-        setStartPod(true);
-    }, []);
+    // useEffect(() => {
+    //     setStartPod(false);
+
+    //     console.log("startPod", startPod);
+    // }, [props.carouselSlideIndex]);
 
     useEffect(() => {
         const fillTimeOut = setTimeout(() => {
@@ -367,4 +377,12 @@ const Overwatch2SlideExplore: React.FC<{}> = () => {
     );
 };
 
-export default Overwatch2SlideExplore;
+const mapStateToProps = (state: StoreState) => {
+    return {
+        carouselSlideIndex: state.carouselSlideIndex,
+    };
+};
+
+export default connect(mapStateToProps, {
+    updateSlideIndex,
+})(Overwatch2SlideExplore);

@@ -10,7 +10,7 @@ import {
     SM_SCREEN_SIZE,
 } from "../constants";
 import contact from "../img/contact.jpg";
-
+import TransitionBg from "./TransitionBg";
 const timer = 3000;
 
 const Overwatch2: React.FC<{}> = () => {
@@ -20,7 +20,10 @@ const Overwatch2: React.FC<{}> = () => {
             <div className="overwatch2SlideParentContainer ">
                 <animated.div className="overwatch2NextSlideContainer">
                     <div className="contentImageAndTextWrap">
-                        <img className="contactImage" src={contact} alt="" />
+                        <div className="contactImage">
+                            <img src={contact} alt="" />
+                            <TransitionBg />
+                        </div>
                         <div className="contactTextWrap">
                             <h1 className="getInTouchTitle">Get in touch</h1>
                             <a

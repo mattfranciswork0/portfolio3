@@ -4,6 +4,9 @@ import useWindowDimensions from "../windowDimensions";
 import { useMeasure } from "react-use";
 import { LG_SCREEN_SIZE } from "../constants";
 import { RiArrowDownSLine, RiArrowUpSLine } from "react-icons/ri";
+import { updateSlideIndex } from "../actions";
+import { connect } from "react-redux";
+import { StoreState } from "../reducers";
 const timer = 1000;
 
 const stories = [
@@ -25,6 +28,9 @@ const stories = [
         ],
     },
 ];
+interface SlideStoryProps {
+    carouselSlideIndex: any;
+}
 
 const SlideStory: React.FC<{}> = () => {
     const [progress, setProgress] = useState({
@@ -224,4 +230,12 @@ const SlideStory: React.FC<{}> = () => {
     );
 };
 
-export default SlideStory;
+const mapStateToProps = (state: StoreState) => {
+    return {
+        carouselSlideIndex: state.carouselSlideIndex,
+    };
+};
+
+export default connect(mapStateToProps, {
+    updateSlideIndex,
+})(SlideStory);
