@@ -13,6 +13,7 @@ interface SlideContentProps {
     desc?: string;
     imgSrc: any;
 }
+const MIN_DELAY = 280;
 const FIRST_SLIDE = 0;
 const LAST_SLIDE = 3;
 const SlideContent: React.FC<SlideContentProps> = (props) => {
@@ -33,7 +34,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
         },
         enter: {
             width: "0%",
-            delay: 270,
+            delay: MIN_DELAY,
         },
         leave: {
             width: "0%",
@@ -53,7 +54,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
         },
         enter: {
             width: "30%",
-            delay: 270,
+            delay: MIN_DELAY,
         },
 
         config: {
@@ -63,53 +64,82 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
             friction: 50,
         },
     });
+
+    const imgTranslate = useTransition(slideIndex, {
+        from: {
+            transform: "translate3d(50%,0px,0px) scale(0.7)",
+        },
+        enter: {
+            transform: "translate3d(0px,0px,0px) scale(1)",
+            delay: MIN_DELAY,
+        },
+        config: {
+            mass: 1,
+            tension: 300,
+            friction: 100,
+        },
+    });
+
     const titleTranslate = useTransition(slideIndex, {
         from: {
-            transform: "translate3d(-100px,0px,0px)",
+            transform: "translate3d(-125%,0%,0px)",
         },
         enter: {
             transform: "translate3d(0px,0px,0px)",
+            delay: MIN_DELAY,
         },
         config: {
-            duration: 1000,
+            mass: 1,
+            tension: 300,
+            friction: 100,
         },
     });
     const descTranslate = useTransition(slideIndex, {
         from: {
-            transform: "translate3d(-100px,0px,0px)",
+            transform: "translate3d(-120%,0px,0px) ",
         },
         enter: {
             transform: "translate3d(0px,0px,0px)",
-            delay: 1000,
+
+            delay: 600,
         },
         config: {
-            duration: 1000,
+            tension: 200,
+            friction: 50,
         },
     });
 
     return (
         <React.Fragment>
             <div className="contentImageAndTextWrap">
-                <div className="contentImage">
-                    <img src={props.imgSrc} alt="" />
-                    {minimize((animation, item) => {
-                        return (
-                            <animated.div
-                                style={animation}
-                                className="transitionDark"
-                            >
-                                {redExpand((animation, item) => {
-                                    return (
-                                        <animated.div
-                                            style={animation}
-                                            className="transitionRed"
-                                        ></animated.div>
-                                    );
-                                })}
-                            </animated.div>
-                        );
-                    })}
-                </div>
+                {imgTranslate((animation, item) => {
+                    return (
+                        <animated.div
+                            style={animation}
+                            className="contentImage"
+                        >
+                            <img src={props.imgSrc} alt="" />
+
+                            {minimize((animation, item) => {
+                                return (
+                                    <animated.div
+                                        style={animation}
+                                        className="transitionDark"
+                                    >
+                                        {redExpand((animation, item) => {
+                                            return (
+                                                <animated.div
+                                                    style={animation}
+                                                    className="transitionRed"
+                                                ></animated.div>
+                                            );
+                                        })}
+                                    </animated.div>
+                                );
+                            })}
+                        </animated.div>
+                    );
+                })}
                 <div className="contentTextWrap">
                     {titleTranslate((animation, item) => {
                         return (
@@ -136,18 +166,24 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
 
                     {slideIndex === LAST_SLIDE && (
                         <React.Fragment>
-                            <a
-                                className="mailto"
-                                href="mailto:mattfrancis888@gmail.com"
-                            >
-                                <h3 className="email">
-                                    Email: mattfrancis888@gmail.com
-                                </h3>
-                            </a>
+                            {descTranslate((animation, item) => {
+                                return (
+                                    <animated.div style={animation}>
+                                        <a
+                                            className="mailto"
+                                            href="mailto:mattfrancis888@gmail.com"
+                                        >
+                                            <h3 className="email">
+                                                Email: mattfrancis888@gmail.com
+                                            </h3>
+                                        </a>
 
-                            <h3 className="contactPhone">
-                                Phone: 289-772-7465
-                            </h3>
+                                        <h3 className="contactPhone">
+                                            Phone: 289-772-7465
+                                        </h3>
+                                    </animated.div>
+                                );
+                            })}
                         </React.Fragment>
                     )}
                 </div>

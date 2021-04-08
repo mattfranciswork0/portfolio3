@@ -287,7 +287,8 @@
     line-height: 1;
     letter-spacing: 0.1em;
     margin-bottom: 1.6rem;
-    font-weight: normal;
+    font-weight: bold;
+    text-transform: uppercase;
     margin: 0;
     @media screen and (min-width: $sm_breakpoint) {
         font-size: 3.8rem;

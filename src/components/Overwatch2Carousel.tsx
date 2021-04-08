@@ -15,28 +15,6 @@ import SlideContentCareer from "./SlideContentCareer";
 //Instead of level up tuts / scott's way, you could use this for accordion : https://www.chrisberry.io/Animate-Auto-With-React-Spring/
 //Much cleaner code
 
-//@ts-ignore
-export const PrevButton = ({ enabled, onClick }) => (
-    <button
-        className="embla__button embla__button--prev overwatch2CarouselButton"
-        onClick={onClick}
-        disabled={!enabled}
-    >
-        <RiArrowUpSLine className="overwatch2CarouselArrow" />
-    </button>
-);
-
-//@ts-ignore
-export const NextButton = ({ enabled, onClick }) => (
-    <button
-        className="embla__button embla__button--next overwatch2CarouselButton"
-        onClick={onClick}
-        disabled={!enabled}
-    >
-        <RiArrowDownSLine className="overwatch2CarouselArrow" />
-    </button>
-);
-
 const slides = [
     { dotTitle: "Intro", component: <Overwatch2SlideLanding /> },
     { dotTitle: "Explore", component: <Overwatch2SlideExplore /> },
@@ -132,7 +110,7 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                 </div>
             </div>
             <div className="overwatch2DotWrapAndButton">
-                <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
+                {/* <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} /> */}
                 <div
                     className="embla__dots overwatch2DotWrap"
                     onMouseEnter={() => setShowDotText(true)}
@@ -160,7 +138,7 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                                 <div
                                     className={`embla__dot ${
                                         index === selectedIndex
-                                            ? "is-selected"
+                                            ? "is-selected dot-is-selected"
                                             : ""
                                     } overwatch2Dot`}
                                     onClick={(e) => {
@@ -178,8 +156,6 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                     <div ref={ref}>
                      <p >Hello </p>></div> 
                       <animated.div style={expand}>*/}
-
-                <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
             </div>
         </div>
     );

@@ -14,7 +14,7 @@ import history from "../browserHistory";
 import { updateSlideIndex } from "../actions";
 import { connect } from "react-redux";
 import { StoreState } from "../reducers";
-
+import titleTranslate from "./Overwatch2SlideExplore";
 const timer = 3000;
 const HIGHLIGHT_TEAM = "HIGHLIGHT_TEAM";
 const HIGHLIGHT_MISSIONS = "HIGHLIGHT_MISSIONS";
@@ -30,6 +30,37 @@ interface Overwatch2SlideExploreProps {
 const Overwatch2SlideExplore: React.FC<Overwatch2SlideExploreProps> = (
     props
 ) => {
+    // const [exploreSlideClicked, setExploreSlideClicked] = useState(false);
+    // useEffect(() => {
+    //     if (props.carouselSlideIndex === 1) setExploreSlideClicked(true);
+    //     else setExploreSlideClicked(false);
+    // }, [props.carouselSlideIndex]);
+    const [slideIndex, setSlideIndex] = useState<any>(-1);
+
+    useEffect(() => {
+        // if (
+        //     props.carouselSlideIndex === FIRST_SLIDE ||
+        //     props.carouselSlideIndex === LAST_SLIDE - 1 ||
+        //     props.carouselSlideIndex === LAST_SLIDE
+        // )
+        setSlideIndex(props.carouselSlideIndex);
+    }, [props.carouselSlideIndex]);
+
+    const titleTranslate = useTransition(slideIndex, {
+        from: {
+            transform: "translate3d(-125%,0%,0px)",
+        },
+        enter: {
+            transform: "translate3d(0px,0px,0px)",
+            delay: 700,
+        },
+        config: {
+            mass: 1,
+            tension: 300,
+            friction: 100,
+        },
+    });
+
     const [xHook, setX] = useState(0);
     const [yHook, setY] = useState(0);
     const [renderOverlay, setRenderOverlay] = useState<any>({
@@ -80,14 +111,22 @@ const Overwatch2SlideExplore: React.FC<Overwatch2SlideExploreProps> = (
         <React.Fragment>
             {width <= LG_SCREEN_SIZE && (
                 <div className="overwatch2ExploreMobile">
-                    <div className="glimpseWrap">
-                        <h1 className="glimpseText">
-                            A glimpse of my work and me
-                        </h1>
-                        <p className="glimpseTakenText">
-                            This is taken from my 'Blizzard' project...
-                        </p>
-                    </div>
+                    {titleTranslate((animation, item) => {
+                        return (
+                            <animated.div
+                                className="glimpseWrap"
+                                style={animation}
+                            >
+                                <h1 className="glimpseText">
+                                    A glimpse of my work and me
+                                </h1>
+                                <p className="glimpseTakenText">
+                                    This is taken from my 'Blizzard' project...
+                                </p>
+                            </animated.div>
+                        );
+                    })}
+
                     <div
                         className="overwatch2ExploreMobileCard"
                         onClick={() => {
@@ -362,14 +401,22 @@ const Overwatch2SlideExplore: React.FC<Overwatch2SlideExploreProps> = (
                                 e.target.src = `https://res.cloudinary.com/du8n2aa4p/image/upload/v1617223738/blizzard/overwatch2/slide%202%20-%20explore/menu-flier-2-LG.webp`;
                             }}
                         />
-                        <div className="glimpseWrap">
-                            <h1 className="glimpseText">
-                                A glimpse of my work and me
-                            </h1>
-                            <p className="glimpseTakenText">
-                                This is taken from my 'Blizzard' project...
-                            </p>
-                        </div>
+                        {titleTranslate((animation, item) => {
+                            return (
+                                <animated.div
+                                    className="glimpseWrap"
+                                    style={animation}
+                                >
+                                    <h1 className="glimpseText">
+                                        A glimpse of my work and me
+                                    </h1>
+                                    <p className="glimpseTakenText">
+                                        This is taken from my 'Blizzard'
+                                        project...
+                                    </p>
+                                </animated.div>
+                            );
+                        })}
                     </div>
                 </div>
             )}
