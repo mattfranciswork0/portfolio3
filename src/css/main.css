@@ -516,21 +516,16 @@ body {
   transform: scale(1.1);
 }
 
-.overwatch2NextSlideContainer {
+.contentSlideContainer {
   position: absolute;
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-image: linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);
 }
 
 .overwatch2SlideParentContainer {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 100%;
   overflow: hidden;
 }
@@ -563,12 +558,12 @@ body {
   }
 }
 
-.getInTouchTitle {
+.contentTitle {
   position: relative;
   margin: 0;
-  font-weight: normal;
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 5rem;
+  font-weight: bold;
   bottom: 0;
   left: 0;
   line-height: 1;
@@ -578,35 +573,60 @@ body {
   text-shadow: 0 10px 30px rgba(2, 11, 22, 0.5);
 }
 @media screen and (min-width: 520px) {
-  .getInTouchTitle {
+  .contentTitle {
+    font-weight: normal;
     font-size: 6rem;
   }
 }
 @media screen and (min-width: 768px) {
-  .getInTouchTitle {
+  .contentTitle {
     font-size: 10rem;
   }
 }
 @media screen and (min-width: 1200px) {
-  .getInTouchTitle {
+  .contentTitle {
     font-size: 12rem;
   }
 }
 
-.contactImage {
+.contentImage {
   position: relative;
   margin-top: 5rem;
   width: 100%;
 }
-.contactImage img {
+@media screen and (min-width: 520px) {
+  .contentImage {
+    margin-top: 13rem;
+    position: absolute;
+    height: 55%;
+    top: 0;
+    width: 60%;
+    max-height: 70%;
+    margin-right: 5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .contentImage {
+    width: 60%;
+    height: 55%;
+    margin-right: 10rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .contentImage {
+    margin-right: 10rem;
+    height: 65%;
+  }
+}
+.contentImage img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.contactTextWrap {
+.contentTextWrap {
   position: relative;
-  top: -2rem;
+  top: -3rem;
   width: 100%;
   height: 100%;
   text-align: left;
@@ -616,28 +636,28 @@ body {
   text-align: left;
 }
 @media screen and (min-width: 520px) {
-  .contactTextWrap {
+  .contentTextWrap {
     position: relative;
     left: 2rem;
     top: 6rem;
   }
 }
-.contactTextWrap .email,
-.contactTextWrap .contactPhone {
+.contentTextWrap .email,
+.contentTextWrap .contactPhone {
   text-shadow: 0 10px 30px rgba(2, 11, 22, 0.5);
   font-weight: normal;
   font-size: 1.2rem;
 }
 @media screen and (min-width: 520px) {
-  .contactTextWrap .email,
-.contactTextWrap .contactPhone {
+  .contentTextWrap .email,
+.contentTextWrap .contactPhone {
     font-size: 2.4rem;
     line-height: 1.4;
   }
 }
 @media screen and (min-width: 768px) {
-  .contactTextWrap .email,
-.contactTextWrap .contactPhone {
+  .contentTextWrap .email,
+.contentTextWrap .contactPhone {
     width: 60%;
     font-size: 2.8rem;
     letter-spacing: 0.1rem;

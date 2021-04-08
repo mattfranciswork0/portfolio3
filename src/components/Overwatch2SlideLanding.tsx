@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTransition, animated, useSpring, to } from "react-spring";
-import TransitionBg from "./TransitionBg";
+import SlideContent from "./SlideContent";
 import { StoreState } from "../reducers";
 import {
     LG_SCREEN_SIZE,
@@ -13,7 +13,6 @@ import { connect } from "react-redux";
 import useWindowDimensions from "../windowDimensions";
 import me1 from "../img/me1.jpg";
 import me2 from "../img/me2.jpg";
-import MeCard from "./MeCard";
 const timer = 3000;
 //const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
 //@ts-ignore
@@ -27,32 +26,27 @@ const Overwatch2SlideLanding: React.FC<{}> = () => {
     const { width } = useWindowDimensions();
     return (
         <React.Fragment>
-            <div className="overwatch2SlideParentContainer overwatch2SlideLandingParentContainer">
-                <animated.div
-                    className="overwatch2SlideContainer"
-                    onMouseMove={({ clientX: x, clientY: y }) => {
-                        setX(x - window.innerWidth / 2);
-                        setY(y - window.innerHeight / 2);
-                        //Code below does not work, so I used hooks above
-                        // xy.to((xy) => [x, y])
-                    }}
-                    // style={{
-                    //     transform:
-                    //         width >= MED_SCREEN_SIZE
-                    //             ? trans1(xHook, yHook)
-                    //             : "translate3d(0px,0px,0px)",
-                    // }}
-                >
-                    <TransitionBg />
-                    {/* <MeCard /> */}
-                    <img className="meBackground" src={me2} alt="" />
-                    <div className="landingNameAndRoleWrap">
-                        <h1 className="landingName">Matthew Francis</h1>
-                        <p className="landingRole">
-                            3rd Year Student - BSc Computer Science at Wilfrid
-                            Laurier University.
-                        </p>
-                    </div>
+            <div className="overwatch2SlideParentContainer">
+                <animated.div className="contentSlideContainer">
+                    <SlideContent
+                        imgSrc={me1}
+                        title="Matthew Francis"
+                        desc="BSc Computer Science, 3rd Year Student, Wilfrid Laurier University"
+                    />
+                    {/* <div
+                                onMouseMove={({ clientX: x, clientY: y }) => {
+                                    setX(x - window.innerWidth / 2);
+                                    setY(y - window.innerHeight / 2);
+                                    //Code below does not work, so I used hooks above
+                                    // xy.to((xy) => [x, y])
+                                }}
+                                style={{
+                                    transform:
+                                        width >= MED_SCREEN_SIZE
+                                            ? trans1(xHook, yHook)
+                                            : "translate3d(0px,0px,0px)",
+                                }}
+                            ></div> */}
                 </animated.div>
             </div>
         </React.Fragment>

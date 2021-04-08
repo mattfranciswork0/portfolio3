@@ -1,17 +1,17 @@
-.overwatch2NextSlideContainer {
+.contentSlideContainer {
     position: absolute;
     width: 100%;
     height: 100%;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    // overflow-x: hidden;
+    // overflow-y: hidden;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
     background-image: $background-dark;
 }
 .overwatch2SlideParentContainer {
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: 100%;
     overflow: hidden;
 }
@@ -39,15 +39,17 @@
     }
 }
 
-.getInTouchTitle {
+.contentTitle {
     position: relative;
     margin: 0;
-    font-weight: normal;
+
     text-transform: uppercase;
-    font-size: 2rem;
+    font-size: 5rem;
+    font-weight: bold;
     bottom: 0;
     left: 0;
     @media screen and (min-width: $sm_breakpoint) {
+        font-weight: normal;
         font-size: 6rem;
     }
     @media screen and (min-width: $md_breakpoint) {
@@ -64,27 +66,31 @@
     text-shadow: 0 10px 30px rgb(2 11 22 / 50%);
 }
 
-.contactImage {
+.contentImage {
     position: relative;
     margin-top: 5rem;
     width: 100%;
 
-    // @media screen and (min-width: $sm_breakpoint) {
-    //     margin-top: 13rem;
-    //     position: absolute;
-    //     right: 5rem;
-    //     top: 0;
-    //     width: 60%;
-    //     max-height: 70%;
-    // }
+    @media screen and (min-width: $sm_breakpoint) {
+        margin-top: 13rem;
+        position: absolute;
+        // right: 5rem;
+        height: 55%;
+        top: 0;
+        width: 60%;
+        max-height: 70%;
+        margin-right: 5rem;
+    }
 
-    // @media screen and (min-width: $md_breakpoint) {
-    //     width: 60%;
-    //     right: 7rem;
-    // }
-    // @media screen and (min-width: $xl_breakpoint) {
-    //     right: 10rem;
-    // }
+    @media screen and (min-width: $md_breakpoint) {
+        width: 60%;
+        height: 55%;
+        margin-right: 10rem;
+    }
+    @media screen and (min-width: $xl_breakpoint) {
+        margin-right: 10rem;
+        height: 65%;
+    }
     img {
         width: 100%;
         height: 100%;
@@ -92,9 +98,9 @@
     }
 }
 
-.contactTextWrap {
+.contentTextWrap {
     position: relative;
-    top: -2rem;
+    top: -3rem;
     width: 100%;
     height: 100%;
     text-align: left;
