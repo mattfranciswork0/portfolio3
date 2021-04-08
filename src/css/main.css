@@ -576,11 +576,13 @@ body {
   .contentTitle {
     font-weight: normal;
     font-size: 6rem;
+    width: 70%;
   }
 }
 @media screen and (min-width: 768px) {
   .contentTitle {
     font-size: 10rem;
+    width: 40%;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -663,6 +665,25 @@ body {
     letter-spacing: 0.1rem;
   }
 }
+.contentDesc {
+  text-shadow: 0 10px 30px rgba(2, 11, 22, 0.5);
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+@media screen and (min-width: 520px) {
+  .contentDesc {
+    font-size: 2.4rem;
+    line-height: 1.4;
+    width: 40%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .contentDesc {
+    font-size: 2.8rem;
+    letter-spacing: 0.1rem;
+  }
+}
+
 .overwatch2SlideLandingParentContainer {
   height: 100%;
   width: 100%;

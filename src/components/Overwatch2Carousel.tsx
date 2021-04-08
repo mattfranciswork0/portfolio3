@@ -11,6 +11,7 @@ import { useMeasure } from "react-use";
 import { updateSlideIndex } from "../actions";
 import { connect } from "react-redux";
 import { StoreState } from "../reducers";
+import SlideContentCareer from "./SlideContentCareer";
 //Instead of level up tuts / scott's way, you could use this for accordion : https://www.chrisberry.io/Animate-Auto-With-React-Spring/
 //Much cleaner code
 
@@ -39,7 +40,7 @@ export const NextButton = ({ enabled, onClick }) => (
 const slides = [
     { dotTitle: "Intro", component: <Overwatch2SlideLanding /> },
     { dotTitle: "Explore", component: <Overwatch2SlideExplore /> },
-    { dotTitle: "Career", component: <Overwatch2SlideStory /> },
+    { dotTitle: "Career", component: <SlideContentCareer /> },
     { dotTitle: "Contact", component: <Overwatch2SlideNext /> },
 ];
 

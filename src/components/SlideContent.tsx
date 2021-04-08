@@ -19,6 +19,11 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
     const [slideIndex, setSlideIndex] = useState<any>(-1);
 
     useEffect(() => {
+        // if (
+        //     props.carouselSlideIndex === FIRST_SLIDE ||
+        //     props.carouselSlideIndex === LAST_SLIDE - 1 ||
+        //     props.carouselSlideIndex === LAST_SLIDE
+        // )
         setSlideIndex(props.carouselSlideIndex);
     }, [props.carouselSlideIndex]);
 
@@ -28,6 +33,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
         },
         enter: {
             width: "0%",
+            delay: 270,
         },
         leave: {
             width: "0%",
@@ -47,6 +53,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
         },
         enter: {
             width: "30%",
+            delay: 270,
         },
 
         config: {
@@ -54,6 +61,29 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
             duration: 200,
             tension: 200,
             friction: 50,
+        },
+    });
+    const titleTranslate = useTransition(slideIndex, {
+        from: {
+            transform: "translate3d(-100px,0px,0px)",
+        },
+        enter: {
+            transform: "translate3d(0px,0px,0px)",
+        },
+        config: {
+            duration: 1000,
+        },
+    });
+    const descTranslate = useTransition(slideIndex, {
+        from: {
+            transform: "translate3d(-100px,0px,0px)",
+        },
+        enter: {
+            transform: "translate3d(0px,0px,0px)",
+            delay: 1000,
+        },
+        config: {
+            duration: 1000,
         },
     });
 
@@ -64,29 +94,46 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                     <img src={props.imgSrc} alt="" />
                     {minimize((animation, item) => {
                         return (
-                            (item === FIRST_SLIDE || item === LAST_SLIDE) && (
-                                <animated.div
-                                    style={animation}
-                                    className="transitionDark"
-                                >
-                                    {redExpand((animation, item) => {
-                                        return (
-                                            <animated.div
-                                                style={animation}
-                                                className="transitionRed"
-                                            ></animated.div>
-                                        );
-                                    })}
-                                </animated.div>
-                            )
+                            <animated.div
+                                style={animation}
+                                className="transitionDark"
+                            >
+                                {redExpand((animation, item) => {
+                                    return (
+                                        <animated.div
+                                            style={animation}
+                                            className="transitionRed"
+                                        ></animated.div>
+                                    );
+                                })}
+                            </animated.div>
                         );
                     })}
                 </div>
                 <div className="contentTextWrap">
-                    <h1 className="contentTitle">{props.title}</h1>
-                    {slideIndex !== LAST_SLIDE && (
-                        <h3 className="email">{props.desc}</h3>
-                    )}
+                    {titleTranslate((animation, item) => {
+                        return (
+                            <animated.h1
+                                className="contentTitle"
+                                style={animation}
+                            >
+                                {props.title}
+                            </animated.h1>
+                        );
+                    })}
+
+                    {slideIndex !== LAST_SLIDE &&
+                        descTranslate((animation, item) => {
+                            return (
+                                <animated.h3
+                                    style={animation}
+                                    className="contentDesc"
+                                >
+                                    {props.desc}
+                                </animated.h3>
+                            );
+                        })}
+
                     {slideIndex === LAST_SLIDE && (
                         <React.Fragment>
                             <a

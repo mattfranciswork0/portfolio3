@@ -51,9 +51,11 @@
     @media screen and (min-width: $sm_breakpoint) {
         font-weight: normal;
         font-size: 6rem;
+        width: 70%;
     }
     @media screen and (min-width: $md_breakpoint) {
         font-size: 10rem;
+        width: 40%;
     }
     @media screen and (min-width: $xl_breakpoint) {
         font-size: 12rem;
@@ -131,5 +133,21 @@
         }
         @media screen and (min-width: $xl_breakpoint) {
         }
+    }
+}
+
+.contentDesc {
+    text-shadow: 0 10px 30px rgb(2 11 22 / 50%);
+    font-weight: normal;
+    font-size: 1.2rem;
+    @media screen and (min-width: $sm_breakpoint) {
+        font-size: 2.4rem;
+        line-height: 1.4;
+        width: 40%;
+    }
+
+    @media screen and (min-width: $md_breakpoint) {
+        font-size: 2.8rem;
+        letter-spacing: 0.1rem;
     }
 }
