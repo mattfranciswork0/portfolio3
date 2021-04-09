@@ -9,6 +9,7 @@
         object-fit: cover;
         @media screen and (min-width: $sm_breakpoint) {
             width: 60%;
+            height: 100vh;
         }
         width: 100%;
         height: 100%;
@@ -21,6 +22,7 @@
     margin: 0;
     top: -5rem;
     left: 2.5rem;
+    display: inline;
     font-size: 3.8rem;
     letter-spacing: 1rem;
     font-weight: normal;
@@ -40,5 +42,24 @@
         font-size: 12rem;
         left: 8%;
         width: 50%;
+    }
+}
+
+.careerDate {
+    text-transform: uppercase;
+}
+.careerColWrap {
+    color: #828c96;
+}
+
+.accomplishmentColWrap {
+    ul {
+        padding-left: 2rem;
+
+        li {
+            margin-bottom: 1rem;
+
+            font-size: 1.4rem;
+        }
     }
 }

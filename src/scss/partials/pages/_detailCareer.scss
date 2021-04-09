@@ -1,0 +1,49 @@
+.detailCareerContainer {
+    background: white;
+}
+.careerContentWrap {
+    color: black;
+    padding: 1rem 2rem;
+    @media screen and (min-width: $md_breakpoint) {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 5rem 10rem;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 5rem 20rem;
+    }
+}
+.detailCareerGrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    @media screen and (min-width: $md_breakpoint) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.careerGridTitle {
+    text-transform: uppercase;
+    @media screen and (min-width: $sm_breakpoint) {
+        font-size: 2rem;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        font-size: 2.4rem;
+    }
+    font-size: 2rem;
+    font-weight: bold;
+    color: #072142;
+    letter-spacing: 0.2em;
+    line-height: 1.2;
+}
+
+.careerColWrap {
+    p {
+        margin: 0;
+        line-height: 2;
+        font-size: 1.3rem;
+        color: grey;
+        @media screen and (min-width: $md_breakpoint) {
+            font-size: 1.8rem;
+        }
+    }
+}
