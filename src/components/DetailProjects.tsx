@@ -403,8 +403,17 @@ const DetailProjects: React.FC<{}> = () => {
 
     return (
         <div className="detailProjectsContainer">
-            <DetailBanner />
-            <div>{renderDisco()}</div>
+            <DetailBanner
+                title="Projects"
+                imgSrc={
+                    "https://image.freepik.com/free-photo/stylish-workspace-dark-leather-desk-workplace-with-keyboard-computer_67155-175.jpg"
+                }
+            />
+            <div className="projectsWrap">{renderDisco()}</div>
+            <div className="backWrap">
+                <div className="backBox"></div>
+                <h1>Back</h1>
+            </div>
         </div>
     );
 };
