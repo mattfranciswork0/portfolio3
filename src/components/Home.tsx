@@ -1,7 +1,7 @@
 import React from "react";
-import Overwatch2Carousel from "./Overwatch2Carousel";
+import Carousel from "./Carousel";
 const Home: React.FC<{}> = () => {
-    return <Overwatch2Carousel />;
+    return <Carousel />;
 };
 
 export default Home;

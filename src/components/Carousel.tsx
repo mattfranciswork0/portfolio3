@@ -1,25 +1,24 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useEmblaCarousel } from "embla-carousel/react";
 import useScrollDirection from "../useScrollDirection";
-import Overwatch2SlideLanding from "./Overwatch2SlideLanding";
+import SlideLanding from "./SlideLanding";
 import Overwatch2SlideExplore from "./Overwatch2SlideExplore";
-import Overwatch2SlideStory from "./Overwatch2SlideStory";
-import Overwatch2SlideNext from "./Overwatch2SlideNext";
+import SlideContact from "./SlideContact";
 import { useTransition, animated, useSpring, useTrail } from "react-spring";
 import { RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
 import { useMeasure } from "react-use";
 import { updateSlideIndex } from "../actions";
 import { connect } from "react-redux";
 import { StoreState } from "../reducers";
-import SlideContentCareer from "./SlideContentCareer";
+import SlideCareer from "./SlideCareer";
 //Instead of level up tuts / scott's way, you could use this for accordion : https://www.chrisberry.io/Animate-Auto-With-React-Spring/
 //Much cleaner code
 
 const slides = [
-    { dotTitle: "Intro", component: <Overwatch2SlideLanding /> },
+    { dotTitle: "Intro", component: <SlideLanding /> },
     { dotTitle: "Explore", component: <Overwatch2SlideExplore /> },
-    { dotTitle: "Career", component: <SlideContentCareer /> },
-    { dotTitle: "Contact", component: <Overwatch2SlideNext /> },
+    { dotTitle: "Career", component: <SlideCareer /> },
+    { dotTitle: "Contact", component: <SlideContact /> },
 ];
 
 interface EmblaCarouselProps {
@@ -58,8 +57,6 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
         axis: "y",
         draggable: false,
     });
-    const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
-    const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
 
     const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
     const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
@@ -73,11 +70,7 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
     const onSelect = useCallback(() => {
         if (!embla) return;
         setSelectedIndex(embla.selectedScrollSnap());
-        setPrevBtnEnabled(embla.canScrollPrev());
-        setNextBtnEnabled(embla.canScrollNext());
     }, [embla, setSelectedIndex]);
-
-    // useEffect(() => embla && setupWheelGestures(embla), [embla]);
 
     useEffect(() => {
         if (!embla) return;

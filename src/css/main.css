@@ -516,6 +516,26 @@ body {
   transform: scale(1.1);
 }
 
+.transitionRed {
+  background-color: red;
+  height: 100%;
+  width: 5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.transitionDark {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background-image: linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);
+  height: 100%;
+  overflow: hidden;
+  z-index: 200;
+}
+
 .contentSlideContainer {
   position: absolute;
   width: 100%;
@@ -1729,26 +1749,6 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-}
-
-.transitionRed {
-  background-color: red;
-  height: 100%;
-  width: 5rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.transitionDark {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  background-image: linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);
-  height: 100%;
-  overflow: hidden;
-  z-index: 200;
 }
 
 /*# sourceMappingURL=main.css.map */

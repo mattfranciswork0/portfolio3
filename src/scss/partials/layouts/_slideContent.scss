@@ -1,3 +1,24 @@
+.transitionRed {
+    background-color: red;
+    height: 100%;
+    width: 5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.transitionDark {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background-image: $background-dark;
+
+    height: 100%;
+    overflow: hidden;
+    z-index: 200;
+}
+
 .contentSlideContainer {
     position: absolute;
     width: 100%;
