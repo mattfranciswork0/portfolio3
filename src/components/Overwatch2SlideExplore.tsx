@@ -130,7 +130,7 @@ const Overwatch2SlideExplore: React.FC<Overwatch2SlideExploreProps> = (
                     <div
                         className="overwatch2ExploreMobileCard"
                         onClick={() => {
-                            history.push("/overwatch2-detail/team");
+                            history.push("/projects");
                         }}
                     >
                         <div className="overwatch2ExploreMobileCardImageWrap">
@@ -158,7 +158,7 @@ const Overwatch2SlideExplore: React.FC<Overwatch2SlideExploreProps> = (
                     <div
                         className="overwatch2ExploreMobileCard"
                         onClick={() => {
-                            history.push("/overwatch2-detail/mission");
+                            history.push("/me");
                         }}
                     >
                         <div className="overwatch2ExploreMobileCardImageWrap">
@@ -302,7 +302,7 @@ const Overwatch2SlideExplore: React.FC<Overwatch2SlideExploreProps> = (
                                 });
                             }}
                             onClick={() => {
-                                history.push("/overwatch2-detail/team");
+                                history.push("/projects");
                             }}
                         />
                         <div
@@ -351,7 +351,7 @@ const Overwatch2SlideExplore: React.FC<Overwatch2SlideExploreProps> = (
                                     : ""
                             }`}
                             onClick={() => {
-                                history.push("/overwatch2-detail/mission");
+                                history.push("/me");
                             }}
                             src="
                     https://overwatch2-static.playoverwatch.com/9bff17453c4b61344f201071908821fc391221ca/static/images/parallax/menu/menu-bot-main-LG.webp"

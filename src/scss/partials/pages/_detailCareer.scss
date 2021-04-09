@@ -3,6 +3,8 @@
 }
 
 .careerContentWrap {
+    position: relative;
+    z-index: 1;
     color: black;
     padding: 5rem 4rem;
     @media screen and (min-width: $md_breakpoint) {
