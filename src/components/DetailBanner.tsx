@@ -1,5 +1,7 @@
 import { render } from "react-dom";
 import React, { useState } from "react";
+import { BiArrowBack } from "react-icons/bi";
+import history from "../browserHistory";
 
 const DetailBanner: React.FC<{}> = () => {
     return (
@@ -10,7 +12,17 @@ const DetailBanner: React.FC<{}> = () => {
                 }
                 alt=""
             />
+
+            <BiArrowBack
+                onClick={() => history.goBack()}
+                className="backButton"
+            />
+
             <h1 className="detailTitle">About Me</h1>
+            <div className="scrollDownWrap">
+                <h1>Scroll Down</h1>
+                <div className="scrollDownBlock"></div>
+            </div>
         </div>
     );
 };

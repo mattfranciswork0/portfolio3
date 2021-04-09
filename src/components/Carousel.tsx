@@ -53,6 +53,10 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
     //     );
     // }, [width]);
 
+    useEffect(() => {
+        console.log("hi");
+    }, []);
+
     const [viewportRef, embla] = useEmblaCarousel({
         axis: "y",
         draggable: false,

@@ -1722,23 +1722,72 @@ body {
 .detailBanner {
   position: relative;
   width: 100%;
+  padding-bottom: 15rem;
   background: #020b16;
 }
 @media screen and (min-width: 520px) {
   .detailBanner {
     display: flex;
     flex-direction: row-reverse;
+    padding-bottom: 0rem;
   }
 }
 .detailBanner img {
   object-fit: cover;
   width: 100%;
-  height: 100%;
 }
 @media screen and (min-width: 520px) {
   .detailBanner img {
     width: 60%;
     height: 100vh;
+  }
+}
+
+.scrollDownWrap {
+  transform: rotate(90deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 65%;
+  top: 80%;
+}
+@media screen and (min-width: 400px) {
+  .scrollDownWrap {
+    left: 75%;
+  }
+}
+@media screen and (min-width: 520px) {
+  .scrollDownWrap {
+    left: -8rem;
+    top: 50%;
+  }
+}
+.scrollDownWrap h1 {
+  min-width: 8rem;
+  font-size: 1.4rem;
+  margin: 0;
+}
+.scrollDownWrap .scrollDownBlock {
+  margin-left: 2rem;
+  width: 10rem;
+  height: 0.1rem;
+  background-color: white;
+}
+
+.backButton {
+  cursor: pointer;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-size: 5rem;
+  color: white;
+}
+@media screen and (min-width: 520px) {
+  .backButton {
+    top: 80%;
+    font-size: 10rem;
+    font-size: 6rem;
   }
 }
 
@@ -1797,18 +1846,18 @@ body {
 
 .careerContentWrap {
   color: black;
-  padding: 1rem 2rem;
+  padding: 5rem 4rem;
 }
 @media screen and (min-width: 768px) {
   .careerContentWrap {
     grid-template-columns: repeat(3, 1fr);
-    padding: 5rem 10rem;
+    padding: 5rem 7rem;
   }
 }
 @media screen and (min-width: 992px) {
   .careerContentWrap {
     grid-template-columns: repeat(3, 1fr);
-    padding: 5rem 20rem;
+    padding: 5rem 15rem;
   }
 }
 
@@ -1836,6 +1885,11 @@ body {
   }
 }
 @media screen and (min-width: 992px) {
+  .careerGridTitle {
+    font-size: 2.2rem;
+  }
+}
+@media screen and (min-width: 1200px) {
   .careerGridTitle {
     font-size: 2.4rem;
   }

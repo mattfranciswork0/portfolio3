@@ -5,6 +5,7 @@ import { AiTwotoneRightSquare } from "react-icons/ai";
 import { updateSlideIndex } from "../actions";
 import { StoreState } from "../reducers";
 import { connect } from "react-redux";
+import history from "../browserHistory";
 import contact from "../img/contact.jpg";
 import me1 from "../img/me1.jpg";
 interface SlideContentProps {
@@ -205,6 +206,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                                         }}
                                         style={buttonHover}
                                         className="showMoreButton"
+                                        onClick={() => history.push("/career")}
                                     >
                                         Show
                                     </animated.button>

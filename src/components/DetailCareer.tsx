@@ -4,16 +4,10 @@ import DetailBanner from "./DetailBanner";
 
 const careerProgress = [
     {
-        title: "2018 - Enrolled In University",
-
-        desc: [
-            `Enrolled for BSc Computer Science at Wilfrid Laurier's University, Canada.`,
-        ],
-    },
-    {
-        title: `2020 - Web Dev Lead For School's Comp Sci Club`,
-
-        desc: [
+        company: `Wilfrid Laurier University's Comp Sci Club`,
+        date: `Sep 2020 - Present`,
+        position: `Web Dev Lead`,
+        accomplishments: [
             `Leading a group of individuals new to web development in creating a 'mock-site' for the club.`,
             `Held meetings to explain web development concepts and keep team on-track.`,
             `By constantly putting myself in the other person's "shoes";  I'm able to create good interpersonal relationships and
@@ -27,32 +21,41 @@ const DetailCareer: React.FC<{}> = () => {
         <div className="detailCareerContainer">
             <DetailBanner />
             <div className="careerContentWrap">
-                <h1 className="careerGridTitle">Company</h1>
-                <div className="detailCareerGrid">
-                    <div className="careerColWrap">
-                        <h1 className="careerGridTitle">Date</h1>
-                        <p className="careerDate">Sep 2020</p>
-                    </div>
-                    <div className="careerColWrap">
-                        <h1 className="careerGridTitle">Position</h1>
-                        <p> Hello World</p>
-                    </div>
-                    <div className="careerColWrap accomplishmentColWrap">
-                        <h1 className="careerGridTitle ">Accomplishments</h1>
-                        <ul>
-                            <li>
-                                Leading a group of individuals new to web
-                                development in creating a 'mock-site' for the
-                                club.
-                            </li>
-                            <li>
-                                Leading a group of individuals new to web
-                                development in creating a 'mock-site' for the
-                                club.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                {careerProgress.map((career, index) => {
+                    return (
+                        <React.Fragment>
+                            <h1 className="careerGridTitle">
+                                {career.company}
+                            </h1>
+                            <div className="detailCareerGrid">
+                                <div className="careerColWrap">
+                                    <h1 className="careerGridTitle">Date</h1>
+                                    <p className="careerDate">{career.date}</p>
+                                </div>
+                                <div className="careerColWrap">
+                                    <h1 className="careerGridTitle">
+                                        Position
+                                    </h1>
+                                    <p>{career.position}</p>
+                                </div>
+                                <div className="careerColWrap accomplishmentColWrap">
+                                    <h1 className="careerGridTitle ">
+                                        Accomplishments
+                                    </h1>
+                                    <ul>
+                                        {career.accomplishments.map(
+                                            (accomplishment, index) => {
+                                                return (
+                                                    <li>{accomplishment}</li>
+                                                );
+                                            }
+                                        )}
+                                    </ul>
+                                </div>
+                            </div>
+                        </React.Fragment>
+                    );
+                })}
             </div>
         </div>
     );

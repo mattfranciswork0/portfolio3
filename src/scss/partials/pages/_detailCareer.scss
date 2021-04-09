@@ -3,14 +3,14 @@
 }
 .careerContentWrap {
     color: black;
-    padding: 1rem 2rem;
+    padding: 5rem 4rem;
     @media screen and (min-width: $md_breakpoint) {
         grid-template-columns: repeat(3, 1fr);
-        padding: 5rem 10rem;
+        padding: 5rem 7rem;
     }
     @media screen and (min-width: $lg_breakpoint) {
         grid-template-columns: repeat(3, 1fr);
-        padding: 5rem 20rem;
+        padding: 5rem 15rem;
     }
 }
 .detailCareerGrid {
@@ -27,6 +27,9 @@
         font-size: 2rem;
     }
     @media screen and (min-width: $lg_breakpoint) {
+        font-size: 2.2rem;
+    }
+    @media screen and (min-width: $xl_breakpoint) {
         font-size: 2.4rem;
     }
     font-size: 2rem;
