@@ -1,0 +1,192 @@
+.projectContainer,
+discoPicture {
+    // opacity: 0;
+    position: relative;
+    background-color: white;
+    color: black;
+}
+
+.projectImageAndOverviewWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media screen and (min-width: $md_breakpoint) {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+}
+.projectOverviewWrap {
+    text-align: center;
+    .projectTitle {
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font-size: 1.8rem;
+        font-weight: 900;
+        letter-spacing: -0.04rem;
+
+        margin: 2rem 0 1rem 0;
+        @media screen and (min-width: $sm_breakpoint) {
+            font-size: 2rem;
+            margin: 3rem 0 1rem 0;
+        }
+        @media screen and (min-width: $md_breakpoint) {
+            font-size: 2.3rem;
+            line-height: 3.6rem;
+            margin: 0 0 1rem 0;
+        }
+        @media screen and (min-width: $lg_breakpoint) {
+            font-size: 2.5rem;
+        }
+    }
+    .projectStack {
+        text-align: left;
+        font-size: 1rem;
+        font-weight: 800;
+        margin: 0;
+
+        @media screen and (min-width: $sm_breakpoint) {
+            font-size: 1.4rem;
+        }
+        @media screen and (min-width: $md_breakpoint) {
+            font-size: 1.6rem;
+        }
+
+        @media screen and (min-width: $xl_breakpoint) {
+            font-size: 2rem;
+            line-height: 2.5rem;
+        }
+    }
+    @media screen and (min-width: $md_breakpoint) {
+        width: 50%;
+        text-align: left;
+    }
+}
+
+.projectImageContainer {
+    width: 100%;
+
+    height: 20rem;
+    @media screen and (min-width: $sm_breakpoint) {
+        height: 25rem;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @media screen and (min-width: $md_breakpoint) {
+        margin-right: 2rem;
+        width: 50%;
+        height: 35rem;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        width: 50%;
+        margin-right: 2.5rem;
+        height: 33rem;
+    }
+}
+
+.discoListWrap {
+    position: relative;
+    overflow: hidden;
+    max-height: 200rem;
+    .readMoreFade {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        z-index: 1;
+        background: linear-gradient(0deg, red, 0, rgba(4, 25, 57, 0));
+    }
+}
+
+.showMoreButton {
+    margin-top: 4rem;
+    margin-left: 2rem;
+    text-transform: uppercase;
+    padding: 1rem 5rem;
+    border: 2px solid red;
+    color: white;
+    background-color: transparent;
+    font-weight: 900;
+    outline: none !important;
+    border-radius: 5rem;
+    cursor: pointer;
+    @media screen and (min-width: $md_breakpoint) {
+        font-size: 1.4rem;
+    }
+    &:hover {
+        transform: scale(1.1, 1.1);
+        border: 2px solid white;
+        transition: all 0.1s ease;
+    }
+}
+.discoContainer {
+    margin-bottom: 6rem;
+    @media screen and (min-width: $sm_breakpoint) {
+        margin-bottom: 7rem;
+    }
+    @media screen and (min-width: $md_breakpoint) {
+        margin-bottom: 10rem;
+    }
+}
+
+.showProjectDesc {
+    display: block;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+
+    color: black;
+    text-align: left;
+
+    @media screen and (min-width: $sm_breakpoint) {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+    }
+    @media screen and (min-width: $md_breakpoint) {
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+    }
+    // @media screen and (min-width: $lg_breakpoint) {
+    //     font-size: 1.6rem;
+    //     line-height: 2.2rem;
+    // }
+    @media screen and (min-width: $xl_breakpoint) {
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+    }
+}
+
+.hideProjectDesc,
+.hideGitHubAndExternalWrap,
+.showMoreButtonHide {
+    display: none;
+}
+
+.showGitHubAndExternalWrap {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-top: 1rem;
+    h2 {
+        font-weight: 900;
+        font-size: 1.3rem;
+        margin-right: 1rem;
+    }
+}
+
+.githubAndExternalIcon {
+    font-weight: 400;
+    cursor: pointer;
+    font-size: 2.2rem;
+    margin-right: 2rem;
+    @media screen and (min-width: $md_breakpoint) {
+        font-size: 2.5rem;
+    }
+}

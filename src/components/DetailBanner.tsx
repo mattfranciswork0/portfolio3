@@ -18,7 +18,7 @@ const DetailBanner: React.FC<{}> = () => {
                 className="backButton"
             />
 
-            <h1 className="detailTitle">About Me</h1>
+            <h1 className="detailTitle">Career Experiences</h1>
             <div className="scrollDownWrap">
                 <h1>Scroll Down</h1>
                 <div className="scrollDownBlock"></div>
