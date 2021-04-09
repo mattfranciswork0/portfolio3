@@ -151,3 +151,15 @@
         letter-spacing: 0.1rem;
     }
 }
+
+.showMoreButton {
+    font-size: 1.8rem;
+    padding: 1.8rem 3.2rem;
+    border-radius: 5rem;
+    color: #fff;
+    background: $light-red;
+    cursor: pointer;
+    border: none;
+    outline: none !important;
+    box-shadow: none !important;
+}

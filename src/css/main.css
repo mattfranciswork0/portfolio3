@@ -684,6 +684,18 @@ body {
   }
 }
 
+.showMoreButton {
+  font-size: 1.8rem;
+  padding: 1.8rem 3.2rem;
+  border-radius: 5rem;
+  color: #fff;
+  background: #ff4d5a;
+  cursor: pointer;
+  border: none;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 .overwatch2SlideLandingParentContainer {
   height: 100%;
   width: 100%;
@@ -1589,15 +1601,6 @@ body {
   width: 100%;
 }
 
-.embla__viewport.is-draggable {
-  cursor: move;
-  cursor: grab;
-}
-
-.embla__viewport.is-dragging {
-  cursor: grabbing;
-}
-
 .embla__container {
   user-select: none;
   margin-top: -10px;
@@ -1649,7 +1652,7 @@ body {
 .dot-is-selected {
   background: white;
   transition: all 4s ease-in;
-  padding: 0.25rem 6rem 0 0 !important;
+  padding: 0rem 6.5rem 0 0 !important;
 }
 
 .overwatch2DotWrapAndButton {

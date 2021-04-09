@@ -13,14 +13,14 @@
     width: 100%;
 }
 
-.embla__viewport.is-draggable {
-    cursor: move;
-    cursor: grab;
-}
+// .embla__viewport.is-draggable {
+//     cursor: move;
+//     cursor: grab;
+// }
 
-.embla__viewport.is-dragging {
-    cursor: grabbing;
-}
+// .embla__viewport.is-dragging {
+//     cursor: grabbing;
+// }
 
 .embla__container {
     user-select: none;
@@ -82,7 +82,7 @@
     background: white;
     transition: all 4s ease-in;
 
-    padding: 0.25rem 6rem 0 0 !important;
+    padding: 0rem 6.5rem 0 0 !important;
 }
 .overwatch2DotWrapAndButton {
     position: absolute;

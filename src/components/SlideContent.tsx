@@ -13,11 +13,14 @@ interface SlideContentProps {
     desc?: string;
     imgSrc: any;
 }
+// const MIN_DELAY = 280;
 const MIN_DELAY = 280;
 const FIRST_SLIDE = 0;
 const LAST_SLIDE = 3;
+const THIRD_SLIDE = 2;
 const SlideContent: React.FC<SlideContentProps> = (props) => {
     const [slideIndex, setSlideIndex] = useState<any>(-1);
+    const [isButtonHovered, setIsButtonHovered] = useState(false);
 
     useEffect(() => {
         // if (
@@ -53,13 +56,12 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
             width: "0%",
         },
         enter: {
-            width: "30%",
-            delay: MIN_DELAY,
+            width: "35%",
+            delay: MIN_DELAY + 100,
         },
 
         config: {
             mass: 1,
-            duration: 200,
             tension: 200,
             friction: 50,
         },
@@ -103,6 +105,32 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
 
             delay: 600,
         },
+        config: {
+            tension: 200,
+            friction: 50,
+        },
+    });
+
+    const buttonTranslate = useTransition(slideIndex, {
+        from: {
+            transform: "translate3d(-120%,0px,0px) ",
+        },
+        enter: {
+            transform: "translate3d(0px,0px,0px)",
+
+            delay: 600,
+        },
+        config: {
+            tension: 200,
+            friction: 50,
+        },
+    });
+
+    const buttonHover = useSpring({
+        transform: isButtonHovered
+            ? "translate3d(0px,10%,0px) "
+            : "translate3d(0px,0px,0px)",
+
         config: {
             tension: 200,
             friction: 50,
@@ -161,6 +189,26 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                                 >
                                     {props.desc}
                                 </animated.h3>
+                            );
+                        })}
+
+                    {slideIndex === THIRD_SLIDE &&
+                        buttonTranslate((animation, item) => {
+                            return (
+                                <animated.div style={animation}>
+                                    <animated.button
+                                        onMouseOver={() => {
+                                            setIsButtonHovered(true);
+                                        }}
+                                        onMouseLeave={() => {
+                                            setIsButtonHovered(false);
+                                        }}
+                                        style={buttonHover}
+                                        className="showMoreButton"
+                                    >
+                                        Show
+                                    </animated.button>
+                                </animated.div>
                             );
                         })}
 

@@ -54,7 +54,10 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
     //     );
     // }, [width]);
 
-    const [viewportRef, embla] = useEmblaCarousel({ axis: "y" });
+    const [viewportRef, embla] = useEmblaCarousel({
+        axis: "y",
+        draggable: false,
+    });
     const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
     const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
 
@@ -85,9 +88,9 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
     }, [embla, setScrollSnaps, onSelect]);
 
     const dotTextTrail = useTrail(slides.length, {
-        paddingRight: showDotText ? `1rem` : `0rem`,
-        paddingLeft: showDotText ? `1rem` : `0rem`,
-        opacity: showDotText ? 1 : 0,
+        paddingRight: showDotText ? `2rem` : `0rem`,
+        paddingLeft: showDotText ? `2rem` : `0rem`,
+        // opacity: showDotText ? 1 : 0,
 
         config: {
             duration: 100,
@@ -110,7 +113,6 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                 </div>
             </div>
             <div className="overwatch2DotWrapAndButton">
-                {/* <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} /> */}
                 <div
                     className="embla__dots overwatch2DotWrap"
                     onMouseEnter={() => setShowDotText(true)}
@@ -125,17 +127,6 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                             >
                                 <animated.div
                                     style={animation}
-                                    className="overwatch2DotBackground"
-                                    onClick={() => {
-                                        props.updateSlideIndex(index);
-                                        scrollTo(index);
-                                    }}
-                                >
-                                    <p className="overwatch2DotText">
-                                        {slides[index].dotTitle}
-                                    </p>
-                                </animated.div>
-                                <div
                                     className={`embla__dot ${
                                         index === selectedIndex
                                             ? "is-selected dot-is-selected"
@@ -146,7 +137,7 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                                         props.updateSlideIndex(index);
                                         scrollTo(index);
                                     }}
-                                ></div>
+                                ></animated.div>
                             </div>
                         </React.Fragment>
                     ))}
