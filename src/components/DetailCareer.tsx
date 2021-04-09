@@ -1,7 +1,7 @@
 import { render } from "react-dom";
 import React, { useState } from "react";
 import DetailBanner from "./DetailBanner";
-
+import DetailBack from "./DetailBack";
 const careerProgress = [
     {
         company: `Wilfrid Laurier University's Comp Sci Club`,
@@ -60,6 +60,7 @@ const DetailCareer: React.FC<{}> = () => {
                     );
                 })}
             </div>
+            <DetailBack />
         </div>
     );
 };

@@ -1,0 +1,28 @@
+.backWrap {
+    display: flex;
+    padding: 2rem;
+    padding-bottom: 10rem;
+    display: flex;
+
+    justify-content: center;
+}
+
+.backInnerWrap {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    .backBox {
+        width: 10rem;
+        height: 0.25rem;
+        background-color: black;
+        margin-right: 2rem;
+    }
+    h1 {
+        font-size: 3rem;
+        text-transform: uppercase;
+        color: black;
+        font-weight: 200;
+        letter-spacing: 0.4rem;
+    }
+}

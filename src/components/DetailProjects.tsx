@@ -2,6 +2,7 @@ import { render } from "react-dom";
 import React, { useState } from "react";
 import { LG_SCREEN_SIZE, MED_SCREEN_SIZE, SM_SCREEN_SIZE } from "../constants";
 import BlurredUpImage from "./BlurredUpImage";
+import DetailBack from "./DetailBack";
 import useWindowDimensions from "../windowDimensions";
 import { FiExternalLink } from "react-icons/fi";
 import { AiFillGithub } from "react-icons/ai";
@@ -410,10 +411,7 @@ const DetailProjects: React.FC<{}> = () => {
                 }
             />
             <div className="projectsWrap">{renderDisco()}</div>
-            <div className="backWrap">
-                <div className="backBox"></div>
-                <h1>Back</h1>
-            </div>
+            <DetailBack />
         </div>
     );
 };

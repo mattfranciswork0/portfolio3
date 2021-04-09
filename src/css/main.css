@@ -1350,6 +1350,33 @@ body {
   transform: scale(1.1);
 }
 
+.backWrap {
+  display: flex;
+  padding: 2rem;
+  padding-bottom: 10rem;
+  display: flex;
+  justify-content: center;
+}
+
+.backInnerWrap {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.backInnerWrap .backBox {
+  width: 10rem;
+  height: 0.25rem;
+  background-color: black;
+  margin-right: 2rem;
+}
+.backInnerWrap h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: black;
+  font-weight: 200;
+  letter-spacing: 0.4rem;
+}
+
 .storyTimelineContainer {
   position: relative;
   width: 35%;
@@ -1840,7 +1867,7 @@ body {
   font-size: 1.4rem;
 }
 
-.detailProjectsContainer {
+.detailCareerContainer {
   background: white;
 }
 
@@ -1864,6 +1891,7 @@ body {
 .detailCareerGrid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
+  margin-bottom: 10rem;
 }
 @media screen and (min-width: 768px) {
   .detailCareerGrid {
@@ -1905,6 +1933,10 @@ body {
   .careerColWrap p {
     font-size: 1.8rem;
   }
+}
+
+.detailProjectsContainer {
+  background-color: white;
 }
 
 .projectsWrap {
