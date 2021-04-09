@@ -1880,11 +1880,21 @@ nav {
   background: transparent;
   padding: 1rem 4rem;
 }
+@media screen and (min-width: 520px) {
+  nav {
+    padding: 1rem 6rem;
+  }
+}
 
 .headerName {
-  font-size: 2.4rem;
+  font-size: 1.4rem;
   font-weight: normal;
   letter-spacing: 0.1rem;
+}
+@media screen and (min-width: 520px) {
+  .headerName {
+    font-size: 2.4rem;
+  }
 }
 
 .hamburger {
@@ -1895,22 +1905,94 @@ nav {
 
 .burger {
   position: relative;
-  width: 50px;
+  width: 2.5rem;
   height: 22px;
   cursor: pointer;
 }
+@media screen and (min-width: 520px) {
+  .burger {
+    width: 5rem;
+  }
+}
 .burger .firstLine {
   width: 100%;
-  height: 3px;
+  height: 0.2rem;
   background: #fff;
   position: absolute;
 }
+@media screen and (min-width: 520px) {
+  .burger .firstLine {
+    height: 0.3rem;
+  }
+}
 .burger .secondLine {
   width: 100%;
-  height: 3px;
+  height: 0.2rem;
   background: #fff;
   position: absolute;
   right: 0;
+}
+@media screen and (min-width: 520px) {
+  .burger .secondLine {
+    height: 0.3rem;
+  }
+}
+
+.burgerDropdown {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #072142, #8c2b7a 42%, #ff4d5a);
+}
+.burgerDropdown h1 {
+  position: relative;
+  overflow: hidden;
+  display: inline;
+  text-transform: uppercase;
+  color: white;
+  font-size: 3rem;
+  letter-spacing: 0.5rem;
+  text-align: center;
+  text-shadow: 0 10px 30px rgba(2, 11, 22, 0.2);
+}
+@media screen and (min-width: 768px) {
+  .burgerDropdown h1 {
+    letter-spacing: 1rem;
+    font-size: 5.5rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .burgerDropdown h1 {
+    letter-spacing: 2rem;
+    font-size: 6rem;
+  }
+}
+
+.dropdownTitleWrap {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.crossTitle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 100%;
+  height: 1rem;
+  background: white;
+}
+
+.dropdownTitleWrap {
+  cursor: pointer;
+  margin-bottom: 2rem;
 }
 
 .detailCareerContainer {
