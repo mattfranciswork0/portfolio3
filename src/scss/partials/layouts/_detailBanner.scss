@@ -1,0 +1,44 @@
+.detailBanner {
+    position: relative;
+    width: 100%;
+    @media screen and (min-width: $sm_breakpoint) {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    img {
+        object-fit: cover;
+        @media screen and (min-width: $sm_breakpoint) {
+            width: 60%;
+        }
+        width: 100%;
+        height: 100%;
+    }
+    background: #020b16;
+}
+
+.detailTitle {
+    position: relative;
+    margin: 0;
+    top: -5rem;
+    left: 2.5rem;
+    font-size: 3.8rem;
+    letter-spacing: 1rem;
+    font-weight: normal;
+    text-shadow: 0 3px 10px rgb(2 11 22 / 50%);
+    @media screen and (min-width: $sm_breakpoint) {
+        position: absolute;
+        width: 70%;
+        top: 10%;
+        left: 5%;
+        font-size: 6rem;
+    }
+
+    @media screen and (min-width: $lg_breakpoint) {
+        font-size: 7.6rem;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        font-size: 12rem;
+        left: 8%;
+        width: 50%;
+    }
+}
