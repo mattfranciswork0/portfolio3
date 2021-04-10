@@ -341,8 +341,12 @@ template,
  */
 body {
   margin: 0;
-  background-image: linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);
+  background: linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);
   color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 a {
@@ -1413,6 +1417,8 @@ body {
   background-image: transparent;
   margin-left: auto;
   margin-right: auto;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .embla__viewport {
@@ -1456,6 +1462,7 @@ body {
 }
 
 .overwatch2DotWrapAndButton {
+  pointer-events: visible;
   position: fixed;
   top: 80%;
   right: 20vw;
@@ -1524,6 +1531,34 @@ body {
   height: 100%;
   top: 0;
   left: 0;
+}
+
+.moonLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  color: white;
+  background: url(https://kuon.space/assets/img/moonlight.svg);
+  background-repeat: no-repeat;
+  background-size: 150% 200%;
+  background-position: 30% 0%;
+  width: 110vw;
+  height: 120vh;
+}
+
+.star {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  color: white;
+  background: url(https://kuon.space/assets/img/star.svg);
+  background-repeat: no-repeat;
+  background-size: 150% 200%;
+  background-position: 30% 0%;
+  width: 110vw;
+  height: 120vh;
 }
 
 .detailBanner {

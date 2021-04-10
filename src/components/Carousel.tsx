@@ -52,10 +52,17 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
     //         setContentWidth(width + left * 2)
     //     );
     // }, [width]);
-
-    useEffect(() => {
-        console.log("hi");
-    }, []);
+    const [didUserScroll, setDidUserScroll] = useState(false);
+    // window.addEventListener("wheel", (event) => {
+    //     console.log(event);
+    //     if (!didUserScroll === false && event.deltaY > 0) {
+    //         setDidUserScroll(true);
+    //         console.log("delta Y pos");
+    //     } else if (didUserScroll === false && event.deltaY < 0) {
+    //         setDidUserScroll(true);
+    //         console.log("delta Y neg");
+    //     }
+    // });
 
     const [viewportRef, embla] = useEmblaCarousel({
         axis: "y",
@@ -131,6 +138,9 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                                     } overwatch2Dot`}
                                     onClick={(e) => {
                                         e.stopPropagation();
+                                        // setTimeout(() => {
+                                        //     props.updateSlideIndex(index);
+                                        // }, 50);
                                         props.updateSlideIndex(index);
                                         scrollTo(index);
                                     }}

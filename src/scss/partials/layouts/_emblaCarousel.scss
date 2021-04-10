@@ -5,6 +5,8 @@
     // max-width: 670px;
     margin-left: auto;
     margin-right: auto;
+    z-index: 2;
+    pointer-events: none;
 }
 
 .embla__viewport {
@@ -77,6 +79,7 @@
     padding: 0rem 6.5rem 0 0 !important;
 }
 .overwatch2DotWrapAndButton {
+    pointer-events: visible;
     position: fixed;
     top: 80%;
     right: 20vw;
@@ -137,4 +140,32 @@
     height: 100%;
     top: 0;
     left: 0;
+}
+
+.moonLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    color: white;
+    background: url(https://kuon.space/assets/img/moonlight.svg);
+    background-repeat: no-repeat;
+    background-size: 150% 200%;
+    background-position: 30% 0%;
+    width: 110vw;
+    height: 120vh;
+}
+
+.star {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    color: white;
+    background: url(https://kuon.space/assets/img/star.svg);
+    background-repeat: no-repeat;
+    background-size: 150% 200%;
+    background-position: 30% 0%;
+    width: 110vw;
+    height: 120vh;
 }
