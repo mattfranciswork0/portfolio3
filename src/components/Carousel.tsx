@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import { useEmblaCarousel } from "embla-carousel/react";
 import useScrollDirection from "../useScrollDirection";
 import SlideLanding from "./SlideLanding";
@@ -11,12 +11,14 @@ import { updateSlideIndex } from "../actions";
 import { connect } from "react-redux";
 import { StoreState } from "../reducers";
 import SlideCareer from "./SlideCareer";
+import SlideProjects from "./SlideProjects";
+import _ from "lodash";
 //Instead of level up tuts / scott's way, you could use this for accordion : https://www.chrisberry.io/Animate-Auto-With-React-Spring/
 //Much cleaner code
 
 const slides = [
     { dotTitle: "Intro", component: <SlideLanding /> },
-    { dotTitle: "Explore", component: <Overwatch2SlideExplore /> },
+    { dotTitle: "Explore", component: <SlideProjects /> },
     { dotTitle: "Career", component: <SlideCareer /> },
     { dotTitle: "Contact", component: <SlideContact /> },
 ];
@@ -24,8 +26,22 @@ const slides = [
 interface EmblaCarouselProps {
     updateSlideIndex: any;
 }
+
+//@ts-ignore
+export const PrevButton = ({ enabled, onClick }) => (
+    <button
+        className="embla__button embla__button--prev overwatch2CarouselButton"
+        onClick={onClick}
+        disabled={!enabled}
+    >
+        <RiArrowUpSLine className="overwatch2CarouselArrow" />
+    </button>
+);
+
 const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
     const [showDotText, setShowDotText] = useState(false);
+    const prevRef = useRef<any>();
+    const nextRef = useRef<any>();
     //height auto the link above:
     // const defaultHeight = "0px";
     //const [ref, { width, left, right }] = useMeasure<any>();
@@ -64,10 +80,39 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
     //     }
     // });
 
+    // const debounce = useCallback(
+    //     _.debounce(() => {
+    //         console.log("delta Y neg");
+    //         //@ts-ignore
+    //         if (nextRef.current) nextRef.current.click();
+    //     }, 200),
+    //     []
+    // );
+
+    const throttle = useCallback(
+        _.throttle(() => {
+            console.log("delta Y neg");
+            // if(prevRef){
+            //     prevRef.current.click()
+            // }
+            if (nextRef) {
+                if (nextRef.current) nextRef.current.click();
+            }
+        }, 1000),
+        []
+    );
+
+    window.addEventListener("wheel", (event) => {
+        // debounce();
+        throttle();
+    });
+
     const [viewportRef, embla] = useEmblaCarousel({
         axis: "y",
         draggable: false,
     });
+    const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
+    const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
 
     const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
     const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
@@ -81,6 +126,8 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
     const onSelect = useCallback(() => {
         if (!embla) return;
         setSelectedIndex(embla.selectedScrollSnap());
+        setPrevBtnEnabled(embla.canScrollPrev());
+        setNextBtnEnabled(embla.canScrollNext());
     }, [embla, setSelectedIndex]);
 
     useEffect(() => {
@@ -117,6 +164,14 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                 </div>
             </div>
             <div className="overwatch2DotWrapAndButton">
+                <button
+                    className="embla__button embla__button--prev overwatch2CarouselButton"
+                    onClick={scrollPrev}
+                    disabled={!prevBtnEnabled}
+                    ref={prevRef}
+                >
+                    <RiArrowUpSLine className="overwatch2CarouselArrow" />
+                </button>
                 <div
                     className="embla__dots overwatch2DotWrap"
                     onMouseEnter={() => setShowDotText(true)}
@@ -149,6 +204,20 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                         </React.Fragment>
                     ))}
                 </div>
+                <button
+                    className="embla__button embla__button--next overwatch2CarouselButton"
+                    onClick={scrollNext}
+                    disabled={!nextBtnEnabled}
+                    ref={nextRef}
+                >
+                    <RiArrowDownSLine className="overwatch2CarouselArrow" />
+                </button>
+
+                {/* <NextButton
+                    onClick={scrollNext}
+                    enabled={nextBtnEnabled}
+                    ref={nextRef}
+                /> */}
                 {/* 
                     <animated.div style={expand}>
                     <div ref={ref}>

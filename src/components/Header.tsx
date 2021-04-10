@@ -5,7 +5,7 @@ const titles = ["Projects", "About Me", "Career Timeline", "Contact"];
 const Header: React.FC<{}> = () => {
     const [isBurgerClicked, setBurgerClicked] = useState(false);
 
-    const [titleIndex, setTitleIndex] = useState(false);
+    const [titleIndex, setTitleIndex] = useState<number>(-1);
     const translateTitle = useSpring({
         transform: isBurgerClicked
             ? "translate3d(0% , 0%, 0px)"
