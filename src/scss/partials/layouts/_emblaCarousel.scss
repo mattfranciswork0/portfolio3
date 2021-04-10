@@ -80,7 +80,7 @@
 }
 .overwatch2DotWrapAndButton {
     pointer-events: visible;
-    position: fixed;
+    position: absolute;
     top: 80%;
     right: 20vw;
     transform: translateX(-50%) rotate(270deg);
@@ -99,9 +99,6 @@
         top: 50%;
         transform: translateY(-50%);
         right: 2rem;
-    }
-    @media screen and (min-width: $lg_breakpoint) {
-        background: none;
     }
 }
 

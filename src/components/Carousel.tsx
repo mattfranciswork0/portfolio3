@@ -58,29 +58,23 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
     //     );
     // }, [width]);
 
-    // window.addEventListener("wheel", (event) => {
-    //     console.log(event);
-    //     if (!didUserScroll === false && event.deltaY > 0) {
-    //         setDidUserScroll(true);
-    //         console.log("delta Y pos");
-    //     } else if (didUserScroll === false && event.deltaY < 0) {
-    //         setDidUserScroll(true);
-    //         console.log("delta Y neg");
-    //     }
-    // });
-
-    // const debounce = useCallback(
-    //     _.debounce(
-    //         () => {
-    //             console.log("delta Y neg");
-    //             //@ts-ignore
-    //             if (nextRef.current) nextRef.current.click();
-    //         },
-    //         1000,
-    //         { leading: true, trailing:false}
-    //     ),
-    //     []
-    // );
+    const debounce = useCallback(
+        _.debounce(
+            (event) => {
+                if (prevRef && event.deltaY < 0) {
+                    if (nextRef.current) prevRef.current.click();
+                    return;
+                }
+                if (nextRef && event.deltaY > 0) {
+                    if (nextRef.current) nextRef.current.click();
+                    return;
+                }
+            },
+            250,
+            { leading: true, trailing: false }
+        ),
+        []
+    );
 
     //Without trailing, it will be executed twice:
     //https://stackoverflow.com/questions/53870969/lodash-throttle-prevent-function-from-being-called-an-extra-time-after-delay
@@ -89,9 +83,11 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
             (event) => {
                 if (prevRef && event.deltaY < 0) {
                     if (nextRef.current) prevRef.current.click();
+                    return;
                 }
                 if (nextRef && event.deltaY > 0) {
                     if (nextRef.current) nextRef.current.click();
+                    return;
                 }
             },
             1500,
@@ -101,8 +97,8 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
     );
 
     window.addEventListener("wheel", (event) => {
-        //debounce();
-        throttle(event);
+        debounce(event);
+        // throttle(event);
     });
 
     const [viewportRef, embla] = useEmblaCarousel({
