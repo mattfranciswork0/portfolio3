@@ -97,7 +97,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
             friction: 100,
         },
     });
-    const descTranslate = useTransition(slideIndex, {
+    const descAndRedBlockTranslate = useTransition(slideIndex, {
         from: {
             transform: "translate3d(-120%,0px,0px) ",
         },
@@ -181,8 +181,20 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                         );
                     })}
 
+                    {descAndRedBlockTranslate((animation, item) => {
+                        return (
+                            <animated.div
+                                className="redBlocksWrap"
+                                style={animation}
+                            >
+                                <div className="redBlock firstRedBlock"></div>
+                                <div className="redBlock secondRedBlock"></div>
+                            </animated.div>
+                        );
+                    })}
+
                     {slideIndex !== LAST_SLIDE &&
-                        descTranslate((animation, item) => {
+                        descAndRedBlockTranslate((animation, item) => {
                             return (
                                 <animated.h3
                                     style={animation}
@@ -216,7 +228,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
 
                     {slideIndex === LAST_SLIDE && (
                         <React.Fragment>
-                            {descTranslate((animation, item) => {
+                            {descAndRedBlockTranslate((animation, item) => {
                                 return (
                                     <animated.div style={animation}>
                                         <a

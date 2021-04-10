@@ -556,7 +556,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 1rem;
+  padding: 1.5rem 4rem;
 }
 @media screen and (min-width: 380px) {
   .contentImageAndTextWrap {
@@ -581,13 +581,12 @@ body {
 .contentTitle {
   position: relative;
   margin: 0;
-  text-transform: uppercase;
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: bold;
   bottom: 0;
   left: 0;
   line-height: 1;
-  letter-spacing: 0.1rem;
+  letter-spacing: 1rem;
   margin-bottom: 1.6rem;
   font-weight: normal;
   text-shadow: 0 10px 30px rgba(2, 11, 22, 0.5);
@@ -608,6 +607,7 @@ body {
 @media screen and (min-width: 1200px) {
   .contentTitle {
     font-size: 12rem;
+    letter-spacing: 1.5rem;
   }
 }
 
@@ -646,9 +646,25 @@ body {
   object-fit: cover;
 }
 
+.redBlocksWrap {
+  display: block;
+}
+
+.redBlock {
+  width: 8.8rem;
+  height: 0.4rem;
+  border-radius: 5px;
+  background: #ff4d5a;
+  margin-bottom: 1rem;
+}
+
+.secondRedBlock {
+  margin-left: 4rem;
+}
+
 .contentTextWrap {
   position: relative;
-  top: -3rem;
+  top: -4rem;
   width: 100%;
   height: 100%;
   text-align: left;
@@ -661,7 +677,7 @@ body {
   .contentTextWrap {
     position: relative;
     left: 2rem;
-    top: 6rem;
+    top: 20%;
   }
 }
 .contentTextWrap .email,
@@ -705,8 +721,9 @@ body {
 }
 
 .showMoreButton {
-  font-size: 1.8rem;
-  padding: 1.8rem 3.2rem;
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
   border-radius: 5rem;
   color: #fff;
   background: #ff4d5a;
@@ -714,6 +731,12 @@ body {
   border: none;
   outline: none !important;
   box-shadow: none !important;
+}
+@media screen and (min-width: 520px) {
+  .showMoreButton {
+    font-size: 1.8rem;
+    padding: 1.8rem 3.2rem;
+  }
 }
 
 .overwatch2SlideLandingParentContainer {
@@ -988,7 +1011,7 @@ body {
 .overwatch2Flier {
   position: absolute;
   right: 60rem;
-  top: 20rem;
+  top: 12rem;
   width: 10rem;
   height: 10rem;
   animation: floatingFlier 2s infinite alternate;
@@ -1017,12 +1040,16 @@ body {
   background: url(https://res.cloudinary.com/du8n2aa4p/image/upload/v1617242187/blizzard/overwatch2/slide%202%20-%20explore/menu-bg-SM.jpg);
   background-size: cover;
   height: 100%;
-  padding: 2rem 1rem;
-  padding-right: 6rem;
+  padding: 8rem 3rem;
+}
+@media screen and (min-width: 520px) {
+  .overwatch2ExploreMobile {
+    padding: 9rem 3rem;
+  }
 }
 @media screen and (min-width: 768px) {
   .overwatch2ExploreMobile {
-    padding: 4rem 6rem;
+    padding: 9rem 6rem;
   }
 }
 
@@ -1044,7 +1071,7 @@ body {
 }
 @media screen and (min-width: 768px) {
   .overwatch2ExploreMobileCardImageWrap {
-    width: 20rem;
+    width: 12rem;
   }
 }
 .overwatch2ExploreMobileCardImageWrap img {
@@ -1101,11 +1128,6 @@ body {
     font-size: 2.5rem;
   }
 }
-@media screen and (min-width: 768px) {
-  .overwatch2ExploreMobileCardTitle {
-    font-size: 3rem;
-  }
-}
 
 .overwatch2MobileArrowWrap {
   display: flex;
@@ -1133,7 +1155,7 @@ body {
 @media screen and (min-width: 992px) {
   .glimpseWrap {
     position: absolute;
-    top: 15%;
+    top: 30%;
     left: 10%;
     width: 30%;
   }
@@ -1141,11 +1163,10 @@ body {
 
 .glimpseText {
   font-size: 2.8rem;
-  line-height: 1;
-  letter-spacing: 0.1em;
+  line-height: 1.2;
+  letter-spacing: 1rem;
   margin-bottom: 1.6rem;
   font-weight: bold;
-  text-transform: uppercase;
   margin: 0;
 }
 @media screen and (min-width: 520px) {
@@ -1155,7 +1176,7 @@ body {
 }
 @media screen and (min-width: 768px) {
   .glimpseText {
-    font-size: 5rem;
+    font-size: 3.8rem;
   }
 }
 @media screen and (min-width: 992px) {
@@ -1165,7 +1186,7 @@ body {
 }
 @media screen and (min-width: 1200px) {
   .glimpseText {
-    font-size: 7rem;
+    font-size: 6rem;
   }
 }
 
@@ -1377,249 +1398,6 @@ body {
   letter-spacing: 0.4rem;
 }
 
-.storyTimelineContainer {
-  position: relative;
-  width: 35%;
-  height: 100%;
-}
-@media screen and (min-width: 520px) {
-  .storyTimelineContainer {
-    width: 40%;
-  }
-}
-@media screen and (min-width: 992px) {
-  .storyTimelineContainer {
-    width: 50%;
-  }
-}
-
-.storyTimelineProgress {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 100%;
-  width: 0.8rem;
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-.storyTimelineProgressNotFilled {
-  background-color: rgba(231, 222, 222, 0.8);
-}
-
-.storyTimelineProgressControl {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-.storyTimelineProgressControlSectionWrap {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 50%;
-  cursor: pointer;
-}
-.storyTimelineProgressControlSectionWrap:before {
-  content: "";
-  background: white;
-  cursor: pointer;
-  width: 1.2rem;
-  height: 1.2rem;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  z-index: -1;
-}
-
-.storyTimelineProgressTitleWrap {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: right;
-}
-
-.storyTimelineProgressTitle {
-  font-size: 1rem;
-  letter-spacing: 0.1rem;
-  font-weight: normal;
-  text-transform: lowercase;
-  font-weight: 700;
-}
-@media screen and (min-width: 992px) {
-  .storyTimelineProgressTitle {
-    font-size: 1.3rem;
-    width: 12rem;
-    margin-right: 16rem;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .storyTimelineProgressTitle {
-    font-size: 1.3rem;
-    display: inline;
-  }
-}
-
-.storyContainer {
-  background-image: linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);
-  position: relative;
-  height: 100%;
-  width: 100%;
-}
-@media screen and (min-width: 992px) {
-  .storyContainer {
-    display: flex;
-  }
-}
-
-.storyTextInnerWrap {
-  width: 100%;
-  display: flex;
-  letter-spacing: 0.1rem;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.storyTextWrap {
-  padding-top: 8rem;
-  width: 70%;
-  height: 70%;
-  margin: 0 auto;
-  overflow: hidden;
-}
-@media screen and (min-width: 520px) {
-  .storyTextWrap {
-    width: 85%;
-    height: 70%;
-    padding-right: 0rem;
-  }
-}
-@media screen and (min-width: 992px) {
-  .storyTextWrap {
-    width: 50%;
-    height: 100%;
-    padding: 1rem 4rem;
-    padding-top: 8rem;
-  }
-}
-.storyTextWrap .storyTitle {
-  margin: 0;
-  letter-spacing: 0.3rem;
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  font-weight: bold;
-}
-@media screen and (min-width: 520px) {
-  .storyTextWrap .storyTitle {
-    font-size: 2.2rem;
-  }
-}
-@media screen and (min-width: 992px) {
-  .storyTextWrap .storyTitle {
-    font-size: 2.6rem;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .storyTextWrap .storyTitle {
-    font-size: 3rem;
-  }
-}
-.storyTextWrap .storyDesc {
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  line-height: 2.1rem;
-  padding-left: 2rem;
-  letter-spacing: 0.2rem;
-  line-height: 1.3;
-}
-@media screen and (min-width: 520px) {
-  .storyTextWrap .storyDesc {
-    font-size: 1.8rem;
-  }
-}
-@media screen and (min-width: 768px) {
-  .storyTextWrap .storyDesc {
-    font-size: 2.1rem;
-  }
-}
-@media screen and (min-width: 992px) {
-  .storyTextWrap .storyDesc {
-    font-size: 2.4rem;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .storyTextWrap .storyDesc {
-    font-size: 2.7rem;
-  }
-}
-.storyTextWrap .storyDesc li {
-  margin-bottom: 2rem;
-}
-
-.overwatch2SlideCurrentExploreDetailWrap {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-.overwatch2SlideCurrentExploreDetailWrap .overwatch2SlideCurrentExploreDetailDropdownText {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 1.9rem;
-  margin: 0;
-  margin-right: 0.5rem;
-  padding-top: 2rem;
-  width: 100%;
-  height: 100%;
-}
-@media screen and (min-width: 992px) {
-  .overwatch2SlideCurrentExploreDetailWrap .overwatch2SlideCurrentExploreDetailDropdownText {
-    font-size: 2.4rem;
-  }
-}
-.overwatch2SlideCurrentExploreDetailWrap .overwatch2SlideCurrentExploreDetailArrowDown {
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-.overwatch2SlideCurrentExploreDetailDropdown {
-  position: absolute;
-  overflow: hidden;
-  top: 110%;
-  background: #ff4d5a;
-  border-radius: 0.25rem;
-}
-.overwatch2SlideCurrentExploreDetailDropdown p {
-  cursor: pointer;
-  font-size: 1.2rem;
-  margin: 0;
-  padding: 0.5rem 1.5rem;
-  text-transform: lowercase;
-  font-weight: bold;
-}
-@media screen and (min-width: 520px) {
-  .overwatch2SlideCurrentExploreDetailDropdown p {
-    font-size: 1.5rem;
-  }
-}
-.overwatch2SlideCurrentExploreDetailDropdown p:hover {
-  color: black;
-}
-
 .overwatch2SlideContainer {
   position: absolute;
   top: -10%;
@@ -1628,11 +1406,6 @@ body {
   height: 120%;
   overflow-x: hidden;
   overflow-y: hidden;
-}
-
-.overwatch2CarouselArrowUp,
-.overwatch2CarouselArrowDown {
-  font-size: 2rem;
 }
 
 .embla {
@@ -1649,23 +1422,8 @@ body {
 
 .embla__container {
   user-select: none;
-  margin-top: -10px;
-  height: 60rem;
-}
-@media screen and (min-width: 520px) {
-  .embla__container {
-    height: 70rem;
-  }
-}
-@media screen and (min-width: 768px) {
-  .embla__container {
-    height: 70rem;
-  }
-}
-@media screen and (min-width: 992px) {
-  .embla__container {
-    height: 75rem;
-  }
+  height: 100vh;
+  width: 100vw;
 }
 
 .embla__slide {
@@ -1698,12 +1456,34 @@ body {
 }
 
 .overwatch2DotWrapAndButton {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 2rem;
+  position: fixed;
+  top: 80%;
+  right: 20vw;
+  transform: translateX(-50%) rotate(270deg);
+}
+@media screen and (min-width: 380px) {
+  .overwatch2DotWrapAndButton {
+    right: 30vw;
+  }
+}
+@media screen and (min-width: 520px) {
+  .overwatch2DotWrapAndButton {
+    right: 35vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  .overwatch2DotWrapAndButton {
+    right: 38vw;
+  }
+}
+@media screen and (min-width: 992px) {
+  .overwatch2DotWrapAndButton {
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 2rem;
+  }
 }
 @media screen and (min-width: 992px) {
   .overwatch2DotWrapAndButton {

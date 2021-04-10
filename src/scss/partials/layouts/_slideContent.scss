@@ -37,7 +37,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 1rem;
+    padding: 1.5rem 4rem;
     @media screen and (min-width: 380px) {
         width: 100%;
         height: 100%;
@@ -58,8 +58,7 @@
     position: relative;
     margin: 0;
 
-    text-transform: uppercase;
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: bold;
     bottom: 0;
     left: 0;
@@ -74,10 +73,11 @@
     }
     @media screen and (min-width: $xl_breakpoint) {
         font-size: 12rem;
+        letter-spacing: 1.5rem;
     }
 
     line-height: 1;
-    letter-spacing: 0.1rem;
+    letter-spacing: 1rem;
     margin-bottom: 1.6rem;
     font-weight: normal;
     text-shadow: 0 10px 30px rgb(2 11 22 / 50%);
@@ -115,9 +115,23 @@
     }
 }
 
+.redBlocksWrap {
+    display: block;
+}
+.redBlock {
+    width: 8.8rem;
+    height: 0.4rem;
+    border-radius: 5px;
+    background: #ff4d5a;
+    margin-bottom: 1rem;
+}
+.secondRedBlock {
+    margin-left: 4rem;
+}
+
 .contentTextWrap {
     position: relative;
-    top: -3rem;
+    top: -4rem;
     width: 100%;
     height: 100%;
     text-align: left;
@@ -125,7 +139,7 @@
     @media screen and (min-width: $sm_breakpoint) {
         position: relative;
         left: 2rem;
-        top: 6rem;
+        top: 20%;
     }
     color: white;
 
@@ -168,8 +182,13 @@
 }
 
 .showMoreButton {
-    font-size: 1.8rem;
-    padding: 1.8rem 3.2rem;
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    @media screen and (min-width: $sm_breakpoint) {
+        font-size: 1.8rem;
+        padding: 1.8rem 3.2rem;
+    }
     border-radius: 5rem;
     color: #fff;
     background: $light-red;

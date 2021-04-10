@@ -46,7 +46,7 @@ const Header: React.FC<{}> = () => {
         },
     });
     const dropdownControl = useSpring({
-        transform: isBurgerClicked
+        transform: !isBurgerClicked
             ? "translate3d(0% , -100%, 0px)"
             : "translate3d(0px , 0%, 0px)",
 

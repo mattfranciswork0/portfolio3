@@ -9,14 +9,12 @@ const Overwatch2: React.FC<{}> = () => {
     const { width } = useWindowDimensions();
     return (
         <React.Fragment>
-            <div className="overwatch2SlideParentContainer  ">
-                <div className="contentSlideContainer">
-                    <SlideContent
-                        imgSrc={contact}
-                        title="Matthew Francis"
-                        desc="Bsc"
-                    />
-                </div>
+            <div className="contentSlideContainer">
+                <SlideContent
+                    imgSrc={contact}
+                    title="Matthew Francis"
+                    desc="Bsc"
+                />
             </div>
         </React.Fragment>
     );

@@ -155,7 +155,7 @@
 .overwatch2Flier {
     position: absolute;
     right: 60rem;
-    top: 20rem;
+    top: 12rem;
     width: 10rem;
     height: 10rem;
     animation: floatingFlier 2s infinite alternate;
@@ -181,10 +181,12 @@
     background: url(https://res.cloudinary.com/du8n2aa4p/image/upload/v1617242187/blizzard/overwatch2/slide%202%20-%20explore/menu-bg-SM.jpg);
     background-size: cover;
     height: 100%;
-    padding: 2rem 1rem;
-    padding-right: 6rem;
+    padding: 8rem 3rem;
+    @media screen and (min-width: $sm_breakpoint) {
+        padding: 9rem 3rem;
+    }
     @media screen and (min-width: $md_breakpoint) {
-        padding: 4rem 6rem;
+        padding: 9rem 6rem;
     }
 }
 
@@ -205,7 +207,7 @@
     width: 10rem;
 
     @media screen and (min-width: $md_breakpoint) {
-        width: 20rem;
+        width: 12rem;
     }
     img {
         width: 100%;
@@ -248,9 +250,9 @@
     @media screen and (min-width: $sm_breakpoint) {
         font-size: 2.5rem;
     }
-    @media screen and (min-width: $md_breakpoint) {
-        font-size: 3rem;
-    }
+    // @media screen and (min-width: $md_breakpoint) {
+    //     font-size: 3rem;
+    // }
 }
 
 .overwatch2MobileArrowWrap {
@@ -276,7 +278,7 @@
 .glimpseWrap {
     @media screen and (min-width: $lg_breakpoint) {
         position: absolute;
-        top: 15%;
+        top: 30%;
         left: 10%;
         width: 30%;
     }
@@ -284,23 +286,22 @@
 
 .glimpseText {
     font-size: 2.8rem;
-    line-height: 1;
-    letter-spacing: 0.1em;
+    line-height: 1.2;
+    letter-spacing: 1rem;
     margin-bottom: 1.6rem;
     font-weight: bold;
-    text-transform: uppercase;
     margin: 0;
     @media screen and (min-width: $sm_breakpoint) {
         font-size: 3.8rem;
     }
     @media screen and (min-width: $md_breakpoint) {
-        font-size: 5rem;
+        font-size: 3.8rem;
     }
     @media screen and (min-width: $lg_breakpoint) {
         font-size: 6rem;
     }
     @media screen and (min-width: $xl_breakpoint) {
-        font-size: 7rem;
+        font-size: 6rem;
     }
 }
 

@@ -147,9 +147,9 @@ const Overwatch2SlideExplore: React.FC<Overwatch2SlideExploreProps> = (
                             <p className="overwatch2ExploreMobileCardSubTitle">
                                 Projects
                             </p>
-                            <h1 className="overwatch2ExploreMobileCardTitle">
+                            {/* <h1 className="overwatch2ExploreMobileCardTitle">
                                 Show More
-                            </h1>
+                            </h1> */}
                         </div>
                         <div className="overwatch2MobileArrowWrap">
                             <RiArrowRightSLine className="overwatch2MobileArrow" />
@@ -175,9 +175,9 @@ const Overwatch2SlideExplore: React.FC<Overwatch2SlideExploreProps> = (
                             <p className="overwatch2ExploreMobileCardSubTitle">
                                 About Me
                             </p>
-                            <h1 className="overwatch2ExploreMobileCardTitle">
+                            {/* <h1 className="overwatch2ExploreMobileCardTitle">
                                 Show More
-                            </h1>
+                            </h1> */}
                         </div>
                         <div className="overwatch2MobileArrowWrap">
                             <RiArrowRightSLine className="overwatch2MobileArrow" />

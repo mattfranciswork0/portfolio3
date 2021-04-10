@@ -26,14 +26,13 @@ const Overwatch2SlideLanding: React.FC<{}> = () => {
     const { width } = useWindowDimensions();
     return (
         <React.Fragment>
-            <div className="overwatch2SlideParentContainer">
-                <animated.div className="contentSlideContainer">
-                    <SlideContent
-                        imgSrc={me1}
-                        title="Matthew Francis"
-                        desc="BSc Computer Science, 3rd Year Student, Wilfrid Laurier University"
-                    />
-                    {/* <div
+            <animated.div className="contentSlideContainer">
+                <SlideContent
+                    imgSrc={me1}
+                    title="Matthew Francis"
+                    desc="BSc Computer Science, 3rd Year Student, Wilfrid Laurier University"
+                />
+                {/* <div
                                 onMouseMove={({ clientX: x, clientY: y }) => {
                                     setX(x - window.innerWidth / 2);
                                     setY(y - window.innerHeight / 2);
@@ -47,8 +46,7 @@ const Overwatch2SlideLanding: React.FC<{}> = () => {
                                             : "translate3d(0px,0px,0px)",
                                 }}
                             ></div> */}
-                </animated.div>
-            </div>
+            </animated.div>
         </React.Fragment>
     );
 };
