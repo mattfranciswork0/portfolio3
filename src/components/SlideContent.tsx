@@ -24,11 +24,6 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
     const [isButtonHovered, setIsButtonHovered] = useState(false);
 
     useEffect(() => {
-        // if (
-        //     props.carouselSlideIndex === FIRST_SLIDE ||
-        //     props.carouselSlideIndex === LAST_SLIDE - 1 ||
-        //     props.carouselSlideIndex === LAST_SLIDE
-        // )
         setSlideIndex(props.carouselSlideIndex);
     }, [props.carouselSlideIndex]);
 

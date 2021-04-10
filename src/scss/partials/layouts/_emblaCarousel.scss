@@ -169,3 +169,8 @@
     width: 110vw;
     height: 120vh;
 }
+
+.carouselNextPrevButtonHide {
+    visibility: hidden;
+    pointer-events: none;
+}

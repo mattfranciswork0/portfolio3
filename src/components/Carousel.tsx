@@ -27,17 +27,6 @@ interface EmblaCarouselProps {
     updateSlideIndex: any;
 }
 
-//@ts-ignore
-export const PrevButton = ({ enabled, onClick }) => (
-    <button
-        className="embla__button embla__button--prev overwatch2CarouselButton"
-        onClick={onClick}
-        disabled={!enabled}
-    >
-        <RiArrowUpSLine className="overwatch2CarouselArrow" />
-    </button>
-);
-
 const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
     const [showDotText, setShowDotText] = useState(false);
     const prevRef = useRef<any>();
@@ -68,7 +57,7 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
     //         setContentWidth(width + left * 2)
     //     );
     // }, [width]);
-    const [didUserScroll, setDidUserScroll] = useState(false);
+
     // window.addEventListener("wheel", (event) => {
     //     console.log(event);
     //     if (!didUserScroll === false && event.deltaY > 0) {
@@ -81,30 +70,39 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
     // });
 
     // const debounce = useCallback(
-    //     _.debounce(() => {
-    //         console.log("delta Y neg");
-    //         //@ts-ignore
-    //         if (nextRef.current) nextRef.current.click();
-    //     }, 200),
+    //     _.debounce(
+    //         () => {
+    //             console.log("delta Y neg");
+    //             //@ts-ignore
+    //             if (nextRef.current) nextRef.current.click();
+    //         },
+    //         1000,
+    //         { leading: true, trailing:false}
+    //     ),
     //     []
     // );
 
+    //Without trailing, it will be executed twice:
+    //https://stackoverflow.com/questions/53870969/lodash-throttle-prevent-function-from-being-called-an-extra-time-after-delay
     const throttle = useCallback(
-        _.throttle(() => {
-            console.log("delta Y neg");
-            // if(prevRef){
-            //     prevRef.current.click()
-            // }
-            if (nextRef) {
-                if (nextRef.current) nextRef.current.click();
-            }
-        }, 1000),
+        _.throttle(
+            (event) => {
+                if (prevRef && event.deltaY < 0) {
+                    if (nextRef.current) prevRef.current.click();
+                }
+                if (nextRef && event.deltaY > 0) {
+                    if (nextRef.current) nextRef.current.click();
+                }
+            },
+            1500,
+            { trailing: false }
+        ),
         []
     );
 
     window.addEventListener("wheel", (event) => {
-        // debounce();
-        throttle();
+        //debounce();
+        throttle(event);
     });
 
     const [viewportRef, embla] = useEmblaCarousel({
@@ -165,8 +163,16 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
             </div>
             <div className="overwatch2DotWrapAndButton">
                 <button
-                    className="embla__button embla__button--prev overwatch2CarouselButton"
-                    onClick={scrollPrev}
+                    className="embla__button embla__button--prev overwatch2CarouselButton carouselNextPrevButtonHide"
+                    onClick={() => {
+                        scrollPrev();
+                        setTimeout(() => {
+                            if (embla)
+                                props.updateSlideIndex(
+                                    embla.selectedScrollSnap()
+                                );
+                        }, 0);
+                    }}
                     disabled={!prevBtnEnabled}
                     ref={prevRef}
                 >
@@ -205,8 +211,16 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                     ))}
                 </div>
                 <button
-                    className="embla__button embla__button--next overwatch2CarouselButton"
-                    onClick={scrollNext}
+                    className="embla__button embla__button--next carouselNextPrevButtonHide"
+                    onClick={() => {
+                        scrollNext();
+                        setTimeout(() => {
+                            if (embla)
+                                props.updateSlideIndex(
+                                    embla.selectedScrollSnap()
+                                );
+                        }, 0);
+                    }}
                     disabled={!nextBtnEnabled}
                     ref={nextRef}
                 >
