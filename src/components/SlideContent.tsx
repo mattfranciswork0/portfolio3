@@ -17,8 +17,9 @@ interface SlideContentProps {
 // const MIN_DELAY = 280;
 const MIN_DELAY = 280;
 const FIRST_SLIDE = 0;
-const LAST_SLIDE = 3;
+const SECOND_SLIDE = 1;
 const THIRD_SLIDE = 2;
+const LAST_SLIDE = 3;
 const SlideContent: React.FC<SlideContentProps> = (props) => {
     const [slideIndex, setSlideIndex] = useState<any>(-1);
     const [isButtonHovered, setIsButtonHovered] = useState(false);
@@ -200,7 +201,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                             );
                         })}
 
-                    {slideIndex === THIRD_SLIDE &&
+                    {slideIndex !== LAST_SLIDE &&
                         buttonTranslate((animation, item) => {
                             return (
                                 <animated.div style={animation}>
@@ -213,7 +214,16 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                                         }}
                                         style={buttonHover}
                                         className="showMoreButton"
-                                        onClick={() => history.push("/career")}
+                                        onClick={() => {
+                                            if (slideIndex === FIRST_SLIDE)
+                                                history.push("/me");
+                                            else if (
+                                                slideIndex === SECOND_SLIDE
+                                            )
+                                                history.push("/projects");
+                                            else if (slideIndex === THIRD_SLIDE)
+                                                history.push("/career");
+                                        }}
                                     >
                                         Show
                                     </animated.button>

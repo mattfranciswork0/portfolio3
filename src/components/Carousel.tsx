@@ -2,7 +2,6 @@ import React, { useState, useEffect, useCallback, useRef } from "react";
 import { useEmblaCarousel } from "embla-carousel/react";
 import useScrollDirection from "../useScrollDirection";
 import SlideLanding from "./SlideLanding";
-import Overwatch2SlideExplore from "./Overwatch2SlideExplore";
 import SlideContact from "./SlideContact";
 import { useTransition, animated, useSpring, useTrail } from "react-spring";
 import { RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
@@ -25,6 +24,7 @@ const slides = [
 
 interface EmblaCarouselProps {
     updateSlideIndex: any;
+    carouselSlideIndex: any;
 }
 
 const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
@@ -136,11 +136,15 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
         embla.on("select", onSelect);
     }, [embla, setScrollSnaps, onSelect]);
 
+    const itemEls = useRef(new Array());
+
+    useEffect(() => {
+        itemEls.current[props.carouselSlideIndex]?.click();
+    }, [props.carouselSlideIndex]);
+
     const dotTextTrail = useTrail(slides.length, {
         paddingRight: showDotText ? `2rem` : `0rem`,
         paddingLeft: showDotText ? `2rem` : `0rem`,
-        // opacity: showDotText ? 1 : 0,
-
         config: {
             duration: 100,
         },
@@ -192,6 +196,9 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                             >
                                 <animated.div
                                     style={animation}
+                                    ref={(element) =>
+                                        (itemEls.current[index] = element)
+                                    }
                                     className={`embla__dot ${
                                         index === selectedIndex
                                             ? "is-selected dot-is-selected"
@@ -244,7 +251,7 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
 
 const mapStateToProps = (state: StoreState) => {
     return {
-        carouselSlideIndex: state,
+        carouselSlideIndex: state.carouselSlideIndex,
     };
 };
 

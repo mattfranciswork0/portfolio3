@@ -1,8 +1,14 @@
 import { render } from "react-dom";
 import React, { useState } from "react";
+import { updateSlideIndex } from "../actions";
+import { connect } from "react-redux";
 import { useTransition, animated, useSpring, useTrail } from "react-spring";
-const titles = ["Projects", "About Me", "Career Timeline", "Contact"];
-const Header: React.FC<{}> = () => {
+const titles = ["About Me", "Projects", "Career Timeline", "Contact"];
+
+interface HeaderProps {
+    updateSlideIndex: any;
+}
+const Header: React.FC<HeaderProps> = (props) => {
     const [isBurgerClicked, setBurgerClicked] = useState(false);
 
     const [titleIndex, setTitleIndex] = useState<number>(-1);
@@ -79,10 +85,15 @@ const Header: React.FC<{}> = () => {
                             key={index}
                             className="dropdownTitleWrap"
                             style={translateTitle}
-                            onMouseEnter={() => setTitleIndex(index)}
-                            onMouseLeave={() => setTitleIndex(-1)}
                         >
-                            <h1>
+                            <h1
+                                onMouseEnter={() => setTitleIndex(index)}
+                                onMouseLeave={() => setTitleIndex(-1)}
+                                onClick={() => {
+                                    setBurgerClicked(false);
+                                    props.updateSlideIndex(index);
+                                }}
+                            >
                                 {title}
                                 {cross((style, item) => {
                                     return (
@@ -103,4 +114,6 @@ const Header: React.FC<{}> = () => {
     );
 };
 
-export default Header;
+export default connect(null, {
+    updateSlideIndex,
+})(Header);

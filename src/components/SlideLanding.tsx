@@ -20,7 +20,7 @@ const trans1 = (x, y) => `translate3d(${x / 10}px,${y / 10}px,0)`;
 //@ts-ignore
 const podTrans1 = (x, y, z) => `translate3d(${x}px,${y}px,${z}px)`;
 
-const Overwatch2SlideLanding: React.FC<{}> = () => {
+const SlideLanding: React.FC<{}> = () => {
     const [xHook, setX] = useState(0);
     const [yHook, setY] = useState(0);
     const { width } = useWindowDimensions();
@@ -59,4 +59,4 @@ const mapStateToProps = (state: StoreState) => {
 
 export default connect(mapStateToProps, {
     updateSlideIndex,
-})(Overwatch2SlideLanding);
+})(SlideLanding);

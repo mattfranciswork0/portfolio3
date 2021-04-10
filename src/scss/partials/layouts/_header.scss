@@ -109,6 +109,9 @@ nav {
     background: white;
 }
 .dropdownTitleWrap {
-    cursor: pointer;
+    // cursor: pointer;
     margin-bottom: 2rem;
+    h1 {
+        cursor: pointer;
+    }
 }

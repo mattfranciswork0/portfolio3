@@ -725,6 +725,7 @@ body {
 }
 
 .showMoreButton {
+  pointer-events: visible;
   font-size: 1.4rem;
   margin-top: 1rem;
   padding: 1rem 2rem;
@@ -1811,8 +1812,10 @@ nav {
 }
 
 .dropdownTitleWrap {
-  cursor: pointer;
   margin-bottom: 2rem;
+}
+.dropdownTitleWrap h1 {
+  cursor: pointer;
 }
 
 .detailCareerContainer {
