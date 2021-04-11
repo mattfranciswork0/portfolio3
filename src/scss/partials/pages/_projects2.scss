@@ -1,0 +1,108 @@
+.project2ImageContainer {
+    position: relative;
+    background: #3718cb;
+    width: 60vw;
+    height: 70rem;
+    overflow: hidden;
+    img {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+
+        width: 80%;
+        height: 80%;
+        object-fit: cover;
+    }
+}
+
+.projects2Wrap,
+.project2Container {
+    background: #02021e;
+}
+.project2Container {
+    position: relative;
+    color: white;
+    margin-bottom: 2rem;
+    &:nth-child(even) {
+        .projectImageAndOverviewWrap {
+            flex-direction: row-reverse;
+        }
+    }
+}
+
+.project2OverviewWrap {
+    text-align: center;
+    position: relative;
+    top: 15rem;
+    left: -5rem;
+    .projectTitle {
+        font-family: "Gramatika Bold";
+
+        font-size: 1.8rem;
+        font-weight: 900;
+        margin: 2rem 0 1rem 0;
+        @media screen and (min-width: $sm_breakpoint) {
+            font-size: 2rem;
+            margin: 3rem 0 1rem 0;
+        }
+        @media screen and (min-width: $md_breakpoint) {
+            font-size: 2.3rem;
+            line-height: 1.3;
+            margin: 0 0 1rem 0;
+        }
+        @media screen and (min-width: $lg_breakpoint) {
+            font-size: 2.5rem;
+        }
+    }
+    .projectStack {
+        font-family: "Gramatika Bold";
+        text-align: left;
+        font-weight: bold;
+        font-size: 1rem;
+        font-weight: normal;
+        margin: 0;
+        line-height: 1.3;
+
+        @media screen and (min-width: $sm_breakpoint) {
+            font-size: 1.4rem;
+        }
+        @media screen and (min-width: $md_breakpoint) {
+            font-size: 1.6rem;
+        }
+
+        @media screen and (min-width: $xl_breakpoint) {
+            font-size: 2rem;
+        }
+    }
+    @media screen and (min-width: $md_breakpoint) {
+        width: 50%;
+        text-align: left;
+    }
+
+    .showProjectDesc {
+        font-family: "Sofia Pro";
+        display: block;
+        font-weight: normal;
+        margin-top: 1rem;
+        font-size: 1.3rem;
+        line-height: 1.3;
+        color: #ccccd2;
+
+        text-align: left;
+
+        @media screen and (min-width: $sm_breakpoint) {
+            font-size: 1.3rem;
+        }
+        @media screen and (min-width: $md_breakpoint) {
+            font-size: 1.4rem;
+        }
+        // @media screen and (min-width: $lg_breakpoint) {
+        //     font-size: 1.6rem;
+        //     line-height: 2.2rem;
+        // }
+        @media screen and (min-width: $xl_breakpoint) {
+            font-size: 1.6rem;
+        }
+    }
+}

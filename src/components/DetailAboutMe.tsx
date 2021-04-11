@@ -1,11 +1,14 @@
 import { render } from "react-dom";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DetailBanner from "./DetailBanner";
 import DetailBack from "./DetailBack";
 import me1 from "../img/me1.jpg";
 import me2 from "../img/me2.jpg";
 import { SLIDE_ABOUT_ME_DESC } from "./SlideLanding";
 const DetailAboutMe: React.FC<{}> = () => {
+    useEffect(() => {
+        document.body.style.overflowY = "visible";
+    }, []);
     return (
         <div className="detailAboutMeContainer">
             <DetailBanner
