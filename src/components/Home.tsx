@@ -11,7 +11,7 @@ const Home: React.FC<{}> = () => {
     return (
         <React.Fragment>
             <Carousel />
-            <div
+            {/* <div
                 className="moonLayer"
                 onMouseMove={({ clientX: x, clientY: y }) => {
                     setX(x - window.innerWidth / 2);
@@ -30,7 +30,20 @@ const Home: React.FC<{}> = () => {
                 style={{
                     transform: trans1(xHook, yHook),
                 }}
-            ></div>
+            ></div> */}
+            <div
+                className="moonAndStarWrap"
+                onMouseMove={({ clientX: x, clientY: y }) => {
+                    setX(x - window.innerWidth / 2);
+                    setY(y - window.innerHeight / 2);
+                }}
+                style={{
+                    transform: trans1(xHook, yHook),
+                }}
+            >
+                <div className="moonLayer"></div>
+                <div className="star"></div>
+            </div>
         </React.Fragment>
     );
 };

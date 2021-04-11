@@ -57,6 +57,24 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
     //         setContentWidth(width + left * 2)
     //     );
     // }, [width]);
+    const [slideIndex, setSlideIndex] = useState<any>(-1);
+    const scrollTranslate = useTransition(slideIndex, {
+        from: {
+            transform: "translate3d(0px,100vh,0px) rotate(90deg)",
+        },
+        enter: {
+            transform: "translate3d(0px,30vh,0px) rotate(90deg)",
+        },
+        leave: {
+            transform: "translate3d(0px,100vh,0px) rotate(90deg)",
+        },
+
+        config: {
+            mass: 1,
+            tension: 50,
+            friction: 35,
+        },
+    });
 
     const debounce = useCallback(
         _.debounce(
@@ -100,7 +118,6 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
         debounce(event);
         // throttle(event);
     });
-    console.log(props.carouselSlideIndex);
 
     const [viewportRef, embla] = useEmblaCarousel({
         axis: "y",
@@ -138,7 +155,9 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
     const itemEls = useRef(new Array());
 
     useEffect(() => {
+        //For Burger Drodpown
         itemEls.current[props.carouselSlideIndex]?.click();
+        setSlideIndex(props.carouselSlideIndex);
     }, [props.carouselSlideIndex]);
 
     const dotTextTrail = useTrail(slides.length, {
@@ -164,6 +183,21 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                     })}
                 </div>
             </div>
+
+            {scrollTranslate((animation, item) => {
+                return (
+                    item === 0 && (
+                        <animated.div
+                            className="scrollDownWrap"
+                            style={animation}
+                        >
+                            <h1>Scroll Down</h1>
+                            <div className="scrollDownBlock"></div>
+                        </animated.div>
+                    )
+                );
+            })}
+
             <div className="overwatch2DotWrapAndButton">
                 <button
                     className="embla__button embla__button--prev overwatch2CarouselButton carouselNextPrevButtonHide"

@@ -17,28 +17,6 @@ interface SlideLandingProps {
     carouselSlideIndex: any;
 }
 const SlideLanding: React.FC<SlideLandingProps> = (props) => {
-    const [slideIndex, setSlideIndex] = useState<any>(-1);
-    useEffect(() => {
-        setSlideIndex(props.carouselSlideIndex);
-    }, [props.carouselSlideIndex]);
-    const scrollTranslate = useTransition(slideIndex, {
-        from: {
-            transform: "translate3d(0px,20rem,0px) rotate(90deg)",
-        },
-        enter: {
-            transform: "translate3d(0px,0rem,0px) rotate(90deg)",
-        },
-        leave: {
-            transform: "translate3d(0px,20rem,0px) rotate(90deg)",
-        },
-
-        config: {
-            mass: 10,
-            tension: 100,
-            friction: 100,
-        },
-    });
-
     const { width } = useWindowDimensions();
     return (
         <React.Fragment>
@@ -48,19 +26,6 @@ const SlideLanding: React.FC<SlideLandingProps> = (props) => {
                     title="Matthew Francis"
                     desc="BSc Computer Science, 3rd Year Student, Wilfrid Laurier University"
                 />
-                {scrollTranslate((animation, item) => {
-                    return (
-                        item === 0 && (
-                            <animated.div
-                                className="scrollDownWrap"
-                                style={animation}
-                            >
-                                <h1>Scroll Down</h1>
-                                <div className="scrollDownBlock"></div>
-                            </animated.div>
-                        )
-                    );
-                })}
 
                 {/* <div className="scrollDownWrap">
                     <h1>Scroll Down</h1>
