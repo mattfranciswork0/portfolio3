@@ -279,23 +279,11 @@ const DetailProjects: React.FC<{}> = () => {
                         <div className="project2OverviewWrap">
                             <h2 className="projectTitle">{disco.title}</h2>
                             <h2 className="projectStack">{disco.stack}</h2>
-                            <p
-                                className={
-                                    width > SM_SCREEN_SIZE
-                                        ? "showProjectDesc"
-                                        : "hideProjectDesc"
-                                }
-                            >
+                            <p className={"showProjectDesc"}>
                                 {disco.description}
                             </p>
                             {!disco.githubAPI && (
-                                <div
-                                    className={
-                                        width > MED_SCREEN_SIZE
-                                            ? "showGitHubAndExternalWrap"
-                                            : "hideGitHubAndExternalWrap"
-                                    }
-                                >
+                                <div className={"showGitHubAndExternalWrap"}>
                                     <a
                                         href={disco.github}
                                         target="_blank"
@@ -314,13 +302,7 @@ const DetailProjects: React.FC<{}> = () => {
                             )}
 
                             {disco.githubAPI && (
-                                <div
-                                    className={
-                                        width > MED_SCREEN_SIZE
-                                            ? "showGitHubAndExternalWrap"
-                                            : "hideGitHubAndExternalWrap"
-                                    }
-                                >
+                                <div className={"showGitHubAndExternalWrap"}>
                                     <h2>App:</h2>
                                     <a
                                         href={disco.github}
@@ -341,16 +323,8 @@ const DetailProjects: React.FC<{}> = () => {
                             )}
                         </div>
                     </div>
-                    <p
-                        className={
-                            width < SM_SCREEN_SIZE
-                                ? "showProjectDesc"
-                                : "hideProjectDesc"
-                        }
-                    >
-                        {disco.description}
-                    </p>
-                    {!disco.githubAPI && (
+
+                    {/* {!disco.githubAPI && (
                         <div
                             className={
                                 width < MED_SCREEN_SIZE
@@ -399,7 +373,7 @@ const DetailProjects: React.FC<{}> = () => {
                                 <AiFillGithub className="githubAndExternalIcon" />
                             </a>
                         </div>
-                    )}
+                    )} */}
                 </div>
             );
         });

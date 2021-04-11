@@ -1644,10 +1644,21 @@ discoPicture {
 
 .project2ImageContainer {
   position: relative;
+  transition: all 0.5s ease;
+  width: 100vw;
+  height: 46rem;
   background: #3718cb;
-  width: 60vw;
-  height: 70rem;
   overflow: hidden;
+}
+.project2ImageContainer:hover {
+  transition: all 0.5s ease;
+  transform: scale(0.9);
+}
+@media screen and (min-width: 768px) {
+  .project2ImageContainer {
+    width: 60vw;
+    height: 70rem;
+  }
 }
 .project2ImageContainer img {
   position: absolute;
@@ -1657,6 +1668,11 @@ discoPicture {
   width: 80%;
   height: 80%;
   object-fit: cover;
+}
+@media screen and (min-width: 768px) {
+  .project2ImageContainer img {
+    left: 45%;
+  }
 }
 
 .projects2Wrap,
@@ -1669,55 +1685,100 @@ discoPicture {
   color: white;
   margin-bottom: 2rem;
 }
-.project2Container:nth-child(even) .projectImageAndOverviewWrap {
-  flex-direction: row-reverse;
+@media screen and (min-width: 1200px) {
+  .project2Container {
+    margin-bottom: 15rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .project2Container:nth-child(even) .projectImageAndOverviewWrap {
+    flex-direction: row-reverse;
+  }
+}
+.project2Container:nth-child(even) .project2OverviewWrap {
+  left: initial;
+}
+@media screen and (min-width: 768px) {
+  .project2Container:nth-child(even) .project2OverviewWrap {
+    right: -2rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .project2Container:nth-child(even) .project2OverviewWrap {
+    right: -7rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .project2Container:nth-child(even) img {
+    left: 60%;
+  }
+}
+.project2Container .showGitHubAndExternalWrap {
+  display: flex;
+  align-items: center;
+  color: white;
+  margin-top: 1rem;
+}
+.project2Container .showGitHubAndExternalWrap h2 {
+  font-weight: 900;
+  font-size: 1.3rem;
+  margin-right: 1rem;
 }
 
 .project2OverviewWrap {
-  text-align: center;
   position: relative;
-  top: 15rem;
-  left: -5rem;
+  width: 100vw;
+  padding: 3rem;
+}
+@media screen and (min-width: 520px) {
+  .project2OverviewWrap {
+    padding: 4rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .project2OverviewWrap {
+    padding: 0;
+    top: 15rem;
+    width: 40vw;
+    left: -2rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .project2OverviewWrap {
+    left: -7rem;
+  }
 }
 .project2OverviewWrap .projectTitle {
   font-family: "Gramatika Bold";
   font-size: 1.8rem;
   font-weight: 900;
-  margin: 2rem 0 1rem 0;
 }
 @media screen and (min-width: 520px) {
   .project2OverviewWrap .projectTitle {
-    font-size: 2rem;
-    margin: 3rem 0 1rem 0;
+    font-size: 2.8rem;
   }
 }
 @media screen and (min-width: 768px) {
   .project2OverviewWrap .projectTitle {
-    font-size: 2.3rem;
+    font-size: 3rem;
     line-height: 1.3;
-    margin: 0 0 1rem 0;
   }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1200px) {
   .project2OverviewWrap .projectTitle {
-    font-size: 2.5rem;
+    font-size: 3.6rem;
   }
 }
 .project2OverviewWrap .projectStack {
   font-family: "Gramatika Bold";
   text-align: left;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.6rem;
   font-weight: normal;
   margin: 0;
   line-height: 1.3;
 }
 @media screen and (min-width: 520px) {
-  .project2OverviewWrap .projectStack {
-    font-size: 1.4rem;
-  }
-}
-@media screen and (min-width: 768px) {
   .project2OverviewWrap .projectStack {
     font-size: 1.6rem;
   }
@@ -1725,12 +1786,6 @@ discoPicture {
 @media screen and (min-width: 1200px) {
   .project2OverviewWrap .projectStack {
     font-size: 2rem;
-  }
-}
-@media screen and (min-width: 768px) {
-  .project2OverviewWrap {
-    width: 50%;
-    text-align: left;
   }
 }
 .project2OverviewWrap .showProjectDesc {
@@ -1739,13 +1794,13 @@ discoPicture {
   font-weight: normal;
   margin-top: 1rem;
   font-size: 1.3rem;
-  line-height: 1.3;
+  line-height: 1.5;
   color: #ccccd2;
   text-align: left;
 }
 @media screen and (min-width: 520px) {
   .project2OverviewWrap .showProjectDesc {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
   }
 }
 @media screen and (min-width: 768px) {
@@ -1755,7 +1810,7 @@ discoPicture {
 }
 @media screen and (min-width: 1200px) {
   .project2OverviewWrap .showProjectDesc {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 }
 
