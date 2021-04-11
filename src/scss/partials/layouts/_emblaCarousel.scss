@@ -153,7 +153,8 @@
     left: 0;
     z-index: 0;
     color: white;
-    background: url(https://kuon.space/assets/img/moonlight.svg);
+
+    background: url(../img/svg/moonlight.svg);
     background-repeat: no-repeat;
     background-size: 150% 200%;
     background-position: 30% 0%;
@@ -179,7 +180,8 @@
     left: 0;
     z-index: 0;
     color: white;
-    background: url(https://kuon.space/assets/img/star.svg);
+
+    background: url(../img/svg/star.svg);
     background-repeat: no-repeat;
     background-size: 150% 200%;
     background-position: 30% 0%;
@@ -193,4 +195,45 @@
 .carouselNextPrevButtonHide {
     visibility: hidden;
     pointer-events: none;
+}
+
+.scrollDownLandingWrap {
+    transform: rotate(90deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    // left: 63%;
+    right: -6rem;
+    top: 50%;
+
+    @media screen and (min-width: 400px) {
+        left: initial;
+        right: -5rem;
+    }
+    @media screen and (min-width: $sm_breakpoint) {
+        right: initial;
+        left: -9rem;
+        top: 50%;
+    }
+
+    h1 {
+        text-transform: uppercase;
+        min-width: 8rem;
+        font-size: 1.2rem;
+        margin: 0;
+        margin-right: 0.5rem;
+        width: 9rem;
+        @media screen and (min-width: $sm_breakpoint) {
+            width: 10rem;
+            font-size: 1.4rem;
+            margin-right: 2rem;
+        }
+    }
+    .scrollDownLandingBlock {
+        // margin-left: 2rem;
+        width: 10rem;
+        height: 0.1rem;
+        background-color: white;
+    }
 }

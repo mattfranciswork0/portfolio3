@@ -568,7 +568,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.5rem 4rem;
+  padding: 1.5rem 3.5rem;
 }
 @media screen and (min-width: 380px) {
   .contentImageAndTextWrap {
@@ -593,7 +593,7 @@ body {
 .contentTitle {
   position: relative;
   margin: 0;
-  font-size: 4rem;
+  font-size: 4.6rem;
   font-weight: bold;
   bottom: 0;
   left: 0;
@@ -606,14 +606,19 @@ body {
 @media screen and (min-width: 520px) {
   .contentTitle {
     font-weight: normal;
-    font-size: 6rem;
+    font-size: 7.6rem;
     width: 70%;
   }
 }
 @media screen and (min-width: 768px) {
   .contentTitle {
+    font-size: 8rem;
+    width: 70%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .contentTitle {
     font-size: 10rem;
-    width: 40%;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -627,22 +632,26 @@ body {
   position: relative;
   margin-top: 5rem;
   width: 100%;
+  height: 48vh;
 }
 @media screen and (min-width: 520px) {
   .contentImage {
     margin-top: 13rem;
     position: absolute;
-    height: 55%;
+    height: 60%;
     top: 0;
-    width: 60%;
-    max-height: 70%;
-    margin-right: 5rem;
+    width: 65%;
   }
 }
 @media screen and (min-width: 768px) {
   .contentImage {
     width: 60%;
-    height: 55%;
+    height: 60%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .contentImage {
+    height: 60%;
     margin-right: 10rem;
   }
 }
@@ -676,7 +685,8 @@ body {
 
 .contentTextWrap {
   position: relative;
-  top: -4rem;
+  top: -6rem;
+  left: -1.5rem;
   width: 100%;
   height: 100%;
   text-align: left;
@@ -720,14 +730,14 @@ body {
 }
 @media screen and (min-width: 520px) {
   .contentDesc {
-    font-size: 2.4rem;
+    font-size: 2rem;
     line-height: 1.4;
     width: 40%;
   }
 }
 @media screen and (min-width: 768px) {
   .contentDesc {
-    font-size: 2.8rem;
+    font-size: 2.4rem;
     letter-spacing: 0.1rem;
   }
 }
@@ -1552,7 +1562,7 @@ body {
   left: 0;
   z-index: 0;
   color: white;
-  background: url(https://kuon.space/assets/img/moonlight.svg);
+  background: url(../img/svg/moonlight.svg);
   background-repeat: no-repeat;
   background-size: 150% 200%;
   background-position: 30% 0%;
@@ -1575,7 +1585,7 @@ body {
   left: 0;
   z-index: 0;
   color: white;
-  background: url(https://kuon.space/assets/img/star.svg);
+  background: url(../img/svg/star.svg);
   background-repeat: no-repeat;
   background-size: 150% 200%;
   background-position: 30% 0%;
@@ -1587,6 +1597,49 @@ body {
 .carouselNextPrevButtonHide {
   visibility: hidden;
   pointer-events: none;
+}
+
+.scrollDownLandingWrap {
+  transform: rotate(90deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  right: -6rem;
+  top: 50%;
+}
+@media screen and (min-width: 400px) {
+  .scrollDownLandingWrap {
+    left: initial;
+    right: -5rem;
+  }
+}
+@media screen and (min-width: 520px) {
+  .scrollDownLandingWrap {
+    right: initial;
+    left: -9rem;
+    top: 50%;
+  }
+}
+.scrollDownLandingWrap h1 {
+  text-transform: uppercase;
+  min-width: 8rem;
+  font-size: 1.2rem;
+  margin: 0;
+  margin-right: 0.5rem;
+  width: 9rem;
+}
+@media screen and (min-width: 520px) {
+  .scrollDownLandingWrap h1 {
+    width: 10rem;
+    font-size: 1.4rem;
+    margin-right: 2rem;
+  }
+}
+.scrollDownLandingWrap .scrollDownLandingBlock {
+  width: 10rem;
+  height: 0.1rem;
+  background-color: white;
 }
 
 .detailBanner {
@@ -1604,6 +1657,7 @@ body {
 }
 .detailBanner img {
   object-fit: cover;
+  height: 70vh;
   width: 100%;
 }
 @media screen and (min-width: 520px) {
@@ -1619,12 +1673,12 @@ body {
   align-items: center;
   justify-content: center;
   position: fixed;
-  left: 55%;
-  top: 60%;
+  left: 60%;
+  top: 80%;
 }
 @media screen and (min-width: 400px) {
   .scrollDownWrap {
-    left: 75%;
+    left: 65%;
   }
 }
 @media screen and (min-width: 520px) {
@@ -1636,12 +1690,19 @@ body {
 .scrollDownWrap h1 {
   text-transform: uppercase;
   min-width: 8rem;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin: 0;
-  width: 10rem;
+  margin-right: 0.5rem;
+  width: 9rem;
+}
+@media screen and (min-width: 520px) {
+  .scrollDownWrap h1 {
+    width: 10rem;
+    font-size: 1.4rem;
+    margin-right: 2rem;
+  }
 }
 .scrollDownWrap .scrollDownBlock {
-  margin-left: 2rem;
   width: 10rem;
   height: 0.1rem;
   background-color: white;
@@ -1650,7 +1711,7 @@ body {
 .backButton {
   cursor: pointer;
   position: absolute;
-  top: 2rem;
+  top: 11rem;
   left: 2rem;
   font-size: 5rem;
   color: white;
@@ -1658,6 +1719,7 @@ body {
 @media screen and (min-width: 520px) {
   .backButton {
     top: 80%;
+    left: 5rem;
     font-size: 10rem;
     font-size: 6rem;
   }
@@ -1674,8 +1736,8 @@ body {
   .detailTitleWrap {
     position: absolute;
     width: 70%;
-    top: 10%;
-    left: 5%;
+    top: 15%;
+    left: 8%;
   }
 }
 @media screen and (min-width: 992px) {
@@ -1724,6 +1786,35 @@ body {
 .accomplishmentColWrap ul li {
   margin-bottom: 1rem;
   font-size: 1.4rem;
+}
+
+.detailDesc {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  line-height: 1.5;
+  letter-spacing: 0.1rem;
+  font-size: 1.2rem;
+  width: 60%;
+}
+@media screen and (min-width: 520px) {
+  .detailDesc {
+    font-size: 1.7rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .detailDesc {
+    font-size: 2.4rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .detailDesc {
+    font-size: 2.6rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .detailDesc {
+    font-size: 2.8rem;
+  }
 }
 
 nav {
@@ -2012,6 +2103,8 @@ nav {
 
 .detailProjectsContainer {
   background-color: white;
+  overflow: hidden;
+  position: relative;
 }
 
 .projectsWrap {
@@ -2228,6 +2321,13 @@ discoPicture {
   .githubAndExternalIcon {
     font-size: 2.5rem;
   }
+}
+
+.carouselAndSvgWrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=main.css.map */

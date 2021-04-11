@@ -9,6 +9,7 @@
     }
     img {
         object-fit: cover;
+        height: 70vh;
         @media screen and (min-width: $sm_breakpoint) {
             width: 60%;
             height: 100vh;
@@ -24,10 +25,10 @@
     align-items: center;
     justify-content: center;
     position: fixed;
-    left: 55%;
-    top: 60%;
+    left: 60%;
+    top: 80%;
     @media screen and (min-width: 400px) {
-        left: 75%;
+        left: 65%;
     }
     @media screen and (min-width: $sm_breakpoint) {
         left: -8rem;
@@ -36,12 +37,18 @@
     h1 {
         text-transform: uppercase;
         min-width: 8rem;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         margin: 0;
-        width: 10rem;
+        margin-right: 0.5rem;
+        width: 9rem;
+        @media screen and (min-width: $sm_breakpoint) {
+            width: 10rem;
+            font-size: 1.4rem;
+            margin-right: 2rem;
+        }
     }
     .scrollDownBlock {
-        margin-left: 2rem;
+        // margin-left: 2rem;
         width: 10rem;
         height: 0.1rem;
         background-color: white;
@@ -50,12 +57,13 @@
 .backButton {
     cursor: pointer;
     position: absolute;
-    top: 2rem;
+    top: 11rem;
     left: 2rem;
     font-size: 5rem;
     color: white;
     @media screen and (min-width: $sm_breakpoint) {
         top: 80%;
+        left: 5rem;
         font-size: 10rem;
         font-size: 6rem;
     }
@@ -70,8 +78,8 @@
     @media screen and (min-width: $sm_breakpoint) {
         position: absolute;
         width: 70%;
-        top: 10%;
-        left: 5%;
+        top: 15%;
+        left: 8%;
     }
 
     @media screen and (min-width: $lg_breakpoint) {
@@ -115,5 +123,31 @@
 
             font-size: 1.4rem;
         }
+    }
+}
+
+.detailDescWrap {
+}
+
+.detailDesc {
+    margin-top: 4rem;
+
+    margin-bottom: 4rem;
+    line-height: 1.5;
+    letter-spacing: 0.1rem;
+    font-size: 1.2rem;
+    width: 60%;
+    @media screen and (min-width: $sm_breakpoint) {
+        font-size: 1.7rem;
+    }
+
+    @media screen and (min-width: $md_breakpoint) {
+        font-size: 2.4rem;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        font-size: 2.6rem;
+    }
+    @media screen and (min-width: $xl_breakpoint) {
+        font-size: 2.8rem;
     }
 }

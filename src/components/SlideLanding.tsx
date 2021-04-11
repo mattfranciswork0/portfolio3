@@ -12,7 +12,8 @@ import { updateSlideIndex } from "../actions";
 import { connect } from "react-redux";
 import useWindowDimensions from "../windowDimensions";
 import me1 from "../img/me1.jpg";
-
+export const SLIDE_ABOUT_ME_DESC =
+    "BSc Computer Science, 3rd Year Student, Wilfrid Laurier University";
 interface SlideLandingProps {
     carouselSlideIndex: any;
 }
@@ -24,13 +25,8 @@ const SlideLanding: React.FC<SlideLandingProps> = (props) => {
                 <SlideContent
                     imgSrc={me1}
                     title="Matthew Francis"
-                    desc="BSc Computer Science, 3rd Year Student, Wilfrid Laurier University"
+                    desc={SLIDE_ABOUT_ME_DESC}
                 />
-
-                {/* <div className="scrollDownWrap">
-                    <h1>Scroll Down</h1>
-                    <div className="scrollDownBlock"></div>
-                </div> */}
             </animated.div>
         </React.Fragment>
     );

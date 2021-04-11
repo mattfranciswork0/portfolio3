@@ -4,10 +4,15 @@ import DetailBanner from "./DetailBanner";
 import DetailBack from "./DetailBack";
 import me1 from "../img/me1.jpg";
 import me2 from "../img/me2.jpg";
+import { SLIDE_ABOUT_ME_DESC } from "./SlideLanding";
 const DetailAboutMe: React.FC<{}> = () => {
     return (
         <div className="detailAboutMeContainer">
-            <DetailBanner title="About Me" imgSrc={me1} />
+            <DetailBanner
+                title="About Me"
+                imgSrc={me1}
+                desc={SLIDE_ABOUT_ME_DESC}
+            />
             <div className="aboutMeWrap">
                 <div className="myStoryWrap">
                     <div className="myStoryInnerWrap">

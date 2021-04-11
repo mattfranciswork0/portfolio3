@@ -9,7 +9,7 @@ const Home: React.FC<{}> = () => {
     const [xHook, setX] = useState(0);
     const [yHook, setY] = useState(0);
     return (
-        <React.Fragment>
+        <div className="carouselAndSvgWrap">
             <Carousel />
             {/* <div
                 className="moonLayer"
@@ -44,7 +44,7 @@ const Home: React.FC<{}> = () => {
                 <div className="moonLayer"></div>
                 <div className="star"></div>
             </div>
-        </React.Fragment>
+        </div>
     );
 };
 

@@ -39,7 +39,7 @@ import steamLg from "../img/steam_lg.jpg";
 import lowResSteamLg from "../img/lowRes/low_res_steam_lg.jpg";
 import blizzardLg from "../img/blizzard_lg.jpg";
 import lowResBlizzardLg from "../img/lowRes/low_res_blizzard_lg.jpg";
-
+import { SLIDE_PROJECTS_DESC } from "./SlideProjects";
 const discoData = [
     {
         title: `Blizzard (Currently working on)`,
@@ -415,6 +415,7 @@ const DetailProjects: React.FC<{}> = () => {
                 imgSrc={
                     "https://miro.medium.com/max/1400/1*nAZueDDk8s5ggBsxmkqfXg.jpeg"
                 }
+                desc={SLIDE_PROJECTS_DESC}
             />
             <div className="projectsWrap">{renderDisco()}</div>
             <DetailBack />

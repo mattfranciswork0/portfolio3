@@ -3,7 +3,8 @@ import { useTransition, animated, useSpring, to } from "react-spring";
 import useWindowDimensions from "../windowDimensions";
 import SlideContent from "./SlideContent";
 const timer = 3000;
-
+export const SLIDE_PROJECTS_DESC =
+    "Websites I've built (Kijij, Netflix, Steam, Overwatch and many more)";
 const SlideProjects: React.FC<{}> = () => {
     const { width } = useWindowDimensions();
     return (
@@ -20,7 +21,7 @@ const SlideProjects: React.FC<{}> = () => {
                     //     "https://www.techpowerup.com/img/iV49uN1wYR7O8Mqw.jpg"
                     // }
                     title="Projects"
-                    desc="Websites I've built (Kijij, Netflix, Steam, Overwatch and many more)"
+                    desc={SLIDE_PROJECTS_DESC}
                 />
             </div>
         </React.Fragment>

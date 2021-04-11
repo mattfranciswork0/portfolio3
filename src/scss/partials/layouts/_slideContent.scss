@@ -37,7 +37,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1.5rem 4rem;
+    padding: 1.5rem 3.5rem;
     @media screen and (min-width: 380px) {
         width: 100%;
         height: 100%;
@@ -58,18 +58,21 @@
     position: relative;
     margin: 0;
 
-    font-size: 4rem;
+    font-size: 4.6rem;
     font-weight: bold;
     bottom: 0;
     left: 0;
     @media screen and (min-width: $sm_breakpoint) {
         font-weight: normal;
-        font-size: 6rem;
+        font-size: 7.6rem;
         width: 70%;
     }
     @media screen and (min-width: $md_breakpoint) {
+        font-size: 8rem;
+        width: 70%;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
         font-size: 10rem;
-        width: 40%;
     }
     @media screen and (min-width: $xl_breakpoint) {
         font-size: 12rem;
@@ -87,21 +90,23 @@
     position: relative;
     margin-top: 5rem;
     width: 100%;
+    height: 48vh;
 
     @media screen and (min-width: $sm_breakpoint) {
         margin-top: 13rem;
         position: absolute;
-        // right: 5rem;
-        height: 55%;
+        // right
+        height: 60%;
         top: 0;
-        width: 60%;
-        max-height: 70%;
-        margin-right: 5rem;
+        width: 65%;
     }
 
     @media screen and (min-width: $md_breakpoint) {
         width: 60%;
-        height: 55%;
+        height: 60%;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        height: 60%;
         margin-right: 10rem;
     }
     @media screen and (min-width: $xl_breakpoint) {
@@ -131,7 +136,8 @@
 
 .contentTextWrap {
     position: relative;
-    top: -4rem;
+    top: -6rem;
+    left: -1.5rem;
     width: 100%;
     height: 100%;
     text-align: left;
@@ -170,13 +176,13 @@
     font-weight: normal;
     font-size: 1.2rem;
     @media screen and (min-width: $sm_breakpoint) {
-        font-size: 2.4rem;
+        font-size: 2rem;
         line-height: 1.4;
         width: 40%;
     }
 
     @media screen and (min-width: $md_breakpoint) {
-        font-size: 2.8rem;
+        font-size: 2.4rem;
         letter-spacing: 0.1rem;
     }
 }

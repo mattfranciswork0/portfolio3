@@ -2,6 +2,7 @@ import { render } from "react-dom";
 import React, { useState, useEffect } from "react";
 import DetailBanner from "./DetailBanner";
 import DetailBack from "./DetailBack";
+import { SLIDE_CAREER_DESC } from "./SlideCareer";
 const careerProgress = [
     {
         company: `Wilfrid Laurier University's Comp Sci Club`,
@@ -25,6 +26,7 @@ const DetailCareer: React.FC<{}> = () => {
             <DetailBanner
                 title="Career Experiences"
                 imgSrc="https://images.unsplash.com/photo-1542315192-1f61a1792f33?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+                desc={SLIDE_CAREER_DESC}
             />
             <div className="careerContentWrap">
                 {careerProgress.map((career, index) => {
