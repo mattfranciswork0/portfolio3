@@ -24,8 +24,8 @@
     align-items: center;
     justify-content: center;
     position: fixed;
-    left: 65%;
-    top: 80%;
+    left: 55%;
+    top: 60%;
     @media screen and (min-width: 400px) {
         left: 75%;
     }
@@ -34,9 +34,11 @@
         top: 50%;
     }
     h1 {
+        text-transform: uppercase;
         min-width: 8rem;
         font-size: 1.4rem;
         margin: 0;
+        width: 10rem;
     }
     .scrollDownBlock {
         margin-left: 2rem;
@@ -58,21 +60,34 @@
         font-size: 6rem;
     }
 }
-.detailTitle {
+
+.detailTitleWrap {
     position: relative;
     margin: 0;
+    display: inline;
     top: -2.5rem;
     left: 1.5rem;
-    display: inline;
-    font-size: 3.8rem;
-    letter-spacing: 1rem;
-    font-weight: normal;
-    text-shadow: 0 3px 10px rgb(2 11 22 / 50%);
     @media screen and (min-width: $sm_breakpoint) {
         position: absolute;
         width: 70%;
         top: 10%;
         left: 5%;
+    }
+
+    @media screen and (min-width: $lg_breakpoint) {
+        left: 8%;
+        width: 50%;
+    }
+}
+.detailTitle {
+    display: inline;
+    font-size: 3.8rem;
+    letter-spacing: 1rem;
+    font-weight: normal;
+    text-shadow: 0 3px 10px rgb(2 11 22 / 50%);
+    left: 1.5rem;
+    margin-bottom: 4rem;
+    @media screen and (min-width: $sm_breakpoint) {
         font-size: 6rem;
     }
 
@@ -81,8 +96,6 @@
     }
     @media screen and (min-width: $lg_breakpoint) {
         font-size: 12rem;
-        left: 8%;
-        width: 50%;
     }
 }
 

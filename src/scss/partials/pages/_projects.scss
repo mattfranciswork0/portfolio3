@@ -49,6 +49,7 @@ discoPicture {
 .projectOverviewWrap {
     text-align: center;
     .projectTitle {
+        font-family: "Futura-Dem";
         letter-spacing: 0.1rem;
         text-transform: uppercase;
         font-size: 1.8rem;
@@ -69,12 +70,14 @@ discoPicture {
         }
     }
     .projectStack {
+        font-family: "Futura-Boo";
         text-align: left;
         text-transform: uppercase;
         font-size: 1rem;
         font-weight: normal;
         margin: 0;
         line-height: 1.3;
+        letter-spacing: 0.15rem;
 
         @media screen and (min-width: $sm_breakpoint) {
             font-size: 1.4rem;
@@ -86,7 +89,7 @@ discoPicture {
         @media screen and (min-width: $xl_breakpoint) {
             font-size: 2rem;
 
-            letter-spacing: 0.25rem;
+            letter-spacing: 0.15rem;
         }
     }
     @media screen and (min-width: $md_breakpoint) {
@@ -97,10 +100,14 @@ discoPicture {
 
 .projectImageContainer {
     width: 100%;
-
+    // box-shadow: -40px 23px 104px -20px rgb(7 33 66 / 30%);
+    box-shadow: -4rem 2.3rem 10rem -2rem rgb(7 33 66 / 30%);
     height: 20rem;
     @media screen and (min-width: $sm_breakpoint) {
         height: 25rem;
+    }
+    @media screen and (min-width: $md_breakpoint) {
+        box-shadow: -4rem 6.3rem 10.4rem -2rem rgb(7 33 66 / 30%);
     }
     img {
         width: 100%;
@@ -121,18 +128,18 @@ discoPicture {
 }
 
 .showProjectDesc {
+    font-family: "Futura-Boo";
     display: block;
     font-weight: normal;
     margin-top: 1rem;
-    font-size: 1.1rem;
-    line-height: 1.5;
-    letter-spacing: 0.1rem;
+    font-size: 1.3rem;
+    line-height: 1.3;
 
     color: $grey;
     text-align: left;
 
     @media screen and (min-width: $sm_breakpoint) {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
     @media screen and (min-width: $md_breakpoint) {
         font-size: 1.4rem;

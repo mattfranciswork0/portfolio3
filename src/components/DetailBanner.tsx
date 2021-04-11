@@ -15,8 +15,13 @@ const DetailBanner: React.FC<DetailBannerProps> = (props) => {
                 onClick={() => history.goBack()}
                 className="backButton"
             />
-
-            <h1 className="detailTitle">{props.title}</h1>
+            <div className="detailTitleWrap">
+                <h1 className="detailTitle">{props.title}</h1>
+                <div className="redBlocksWrap">
+                    <div className="redBlock firstRedBlock"></div>
+                    <div className="redBlock secondRedBlock"></div>
+                </div>
+            </div>
             <div className="scrollDownWrap">
                 <h1>Scroll Down</h1>
                 <div className="scrollDownBlock"></div>

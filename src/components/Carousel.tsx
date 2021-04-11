@@ -100,10 +100,13 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
         debounce(event);
         // throttle(event);
     });
+    console.log(props.carouselSlideIndex);
 
     const [viewportRef, embla] = useEmblaCarousel({
         axis: "y",
         draggable: false,
+
+        startIndex: props.carouselSlideIndex,
     });
     const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
     const [nextBtnEnabled, setNextBtnEnabled] = useState(false);

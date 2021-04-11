@@ -1,5 +1,5 @@
 import { render } from "react-dom";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { LG_SCREEN_SIZE, MED_SCREEN_SIZE, SM_SCREEN_SIZE } from "../constants";
 import BlurredUpImage from "./BlurredUpImage";
 import DetailBack from "./DetailBack";
@@ -45,7 +45,7 @@ const discoData = [
         title: `Blizzard (Currently working on)`,
         stack: `React, React-Spring (v9), Typescript`,
         description: `Replication of Blizzard's Entertainment's website, known for developing and
-        publishing games such as Call of Duty and World of Warcraft.
+        publishing games such as Call of Duty, World of Warcraft, and Overwatch.
         Built to understand physics-based animations with React Spring.`,
         lowResLg: lowResBlizzardLg,
         imgLg: blizzardLg,
@@ -260,6 +260,9 @@ const discoData = [
 ];
 
 const DetailProjects: React.FC<{}> = () => {
+    useEffect(() => {
+        document.body.style.overflowY = "visible";
+    }, []);
     const { width } = useWindowDimensions();
     const renderDisco = (): JSX.Element | JSX.Element[] => {
         return discoData.map((disco, index) => {
@@ -406,8 +409,11 @@ const DetailProjects: React.FC<{}> = () => {
         <div className="detailProjectsContainer">
             <DetailBanner
                 title="Projects"
+                // imgSrc={
+                //     "https://image.freepik.com/free-photo/stylish-workspace-dark-leather-desk-workplace-with-keyboard-computer_67155-175.jpg"
+                // }
                 imgSrc={
-                    "https://image.freepik.com/free-photo/stylish-workspace-dark-leather-desk-workplace-with-keyboard-computer_67155-175.jpg"
+                    "https://miro.medium.com/max/1400/1*nAZueDDk8s5ggBsxmkqfXg.jpeg"
                 }
             />
             <div className="projectsWrap">{renderDisco()}</div>

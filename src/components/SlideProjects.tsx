@@ -14,8 +14,11 @@ const SlideProjects: React.FC<{}> = () => {
                     //     "https://cdn.statically.io/img/images.wallpapersden.com/image/download/overwatch-2-4k-8k_67463_1920x1080.jpg"
                     // }
                     imgSrc={
-                        "http://nerdreactor.com/wp-content/uploads/2014/11/Overwatch-Poster.jpg"
+                        "https://miro.medium.com/max/1400/1*nAZueDDk8s5ggBsxmkqfXg.jpeg"
                     }
+                    // imgSrc={
+                    //     "https://www.techpowerup.com/img/iV49uN1wYR7O8Mqw.jpg"
+                    // }
                     title="Projects"
                     desc="Websites I've built (Kijij, Netflix, Steam, Overwatch and many more)"
                 />

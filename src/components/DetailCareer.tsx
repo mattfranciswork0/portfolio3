@@ -1,5 +1,5 @@
 import { render } from "react-dom";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DetailBanner from "./DetailBanner";
 import DetailBack from "./DetailBack";
 const careerProgress = [
@@ -17,6 +17,9 @@ const careerProgress = [
 ];
 
 const DetailCareer: React.FC<{}> = () => {
+    useEffect(() => {
+        document.body.style.overflowY = "visible";
+    }, []);
     return (
         <div className="detailCareerContainer">
             <DetailBanner

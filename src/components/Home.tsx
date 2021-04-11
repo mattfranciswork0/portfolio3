@@ -3,6 +3,9 @@ import Carousel from "./Carousel";
 //@ts-ignore
 const trans1 = (x, y) => `translate3d(${x / 50}px,${y / 50}px,0)`;
 const Home: React.FC<{}> = () => {
+    useEffect(() => {
+        document.body.style.overflowY = "hidden";
+    }, []);
     const [xHook, setX] = useState(0);
     const [yHook, setY] = useState(0);
     return (

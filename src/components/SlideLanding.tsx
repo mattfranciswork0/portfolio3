@@ -12,17 +12,33 @@ import { updateSlideIndex } from "../actions";
 import { connect } from "react-redux";
 import useWindowDimensions from "../windowDimensions";
 import me1 from "../img/me1.jpg";
-import me2 from "../img/me2.jpg";
-const timer = 3000;
-//const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
-//@ts-ignore
-const trans1 = (x, y) => `translate3d(${x / 10}px,${y / 10}px,0)`;
-//@ts-ignore
-const podTrans1 = (x, y, z) => `translate3d(${x}px,${y}px,${z}px)`;
 
-const SlideLanding: React.FC<{}> = () => {
-    const [xHook, setX] = useState(0);
-    const [yHook, setY] = useState(0);
+interface SlideLandingProps {
+    carouselSlideIndex: any;
+}
+const SlideLanding: React.FC<SlideLandingProps> = (props) => {
+    const [slideIndex, setSlideIndex] = useState<any>(-1);
+    useEffect(() => {
+        setSlideIndex(props.carouselSlideIndex);
+    }, [props.carouselSlideIndex]);
+    const scrollTranslate = useTransition(slideIndex, {
+        from: {
+            transform: "translate3d(0px,20rem,0px) rotate(90deg)",
+        },
+        enter: {
+            transform: "translate3d(0px,0rem,0px) rotate(90deg)",
+        },
+        leave: {
+            transform: "translate3d(0px,20rem,0px) rotate(90deg)",
+        },
+
+        config: {
+            mass: 10,
+            tension: 100,
+            friction: 100,
+        },
+    });
+
     const { width } = useWindowDimensions();
     return (
         <React.Fragment>
@@ -32,20 +48,24 @@ const SlideLanding: React.FC<{}> = () => {
                     title="Matthew Francis"
                     desc="BSc Computer Science, 3rd Year Student, Wilfrid Laurier University"
                 />
-                {/* <div
-                                onMouseMove={({ clientX: x, clientY: y }) => {
-                                    setX(x - window.innerWidth / 2);
-                                    setY(y - window.innerHeight / 2);
-                                    //Code below does not work, so I used hooks above
-                                    // xy.to((xy) => [x, y])
-                                }}
-                                style={{
-                                    transform:
-                                        width >= MED_SCREEN_SIZE
-                                            ? trans1(xHook, yHook)
-                                            : "translate3d(0px,0px,0px)",
-                                }}
-                            ></div> */}
+                {scrollTranslate((animation, item) => {
+                    return (
+                        item === 0 && (
+                            <animated.div
+                                className="scrollDownWrap"
+                                style={animation}
+                            >
+                                <h1>Scroll Down</h1>
+                                <div className="scrollDownBlock"></div>
+                            </animated.div>
+                        )
+                    );
+                })}
+
+                {/* <div className="scrollDownWrap">
+                    <h1>Scroll Down</h1>
+                    <div className="scrollDownBlock"></div>
+                </div> */}
             </animated.div>
         </React.Fragment>
     );
@@ -53,7 +73,7 @@ const SlideLanding: React.FC<{}> = () => {
 
 const mapStateToProps = (state: StoreState) => {
     return {
-        carouselSlideIndex: state,
+        carouselSlideIndex: state.carouselSlideIndex,
     };
 };
 
