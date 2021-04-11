@@ -1426,6 +1426,53 @@ nav {
   position: relative;
 }
 
+.projectImageAndOverviewWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .projectImageAndOverviewWrap {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+
+.projectImageContainer {
+  position: relative;
+  transition: all 0.5s ease;
+  width: 100vw;
+  height: 46rem;
+  background: #3718cb;
+  overflow: hidden;
+}
+.projectImageContainer:hover {
+  transition: all 0.5s ease;
+  transform: scale(0.9);
+}
+@media screen and (min-width: 768px) {
+  .projectImageContainer {
+    width: 60vw;
+    height: 70rem;
+  }
+}
+.projectImageContainer img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+}
+@media screen and (min-width: 768px) {
+  .projectImageContainer img {
+    left: 45%;
+  }
+}
+
 .projectsWrap {
   position: relative;
   z-index: 1;
@@ -1453,175 +1500,49 @@ nav {
   }
 }
 
-.projectContainer,
-discoPicture {
-  position: relative;
-  background-color: white;
-  color: black;
+.projectsWrap,
+.projectContainer {
+  background: #02021e;
 }
 
 .projectContainer {
-  margin-bottom: 1rem;
-}
-@media screen and (min-width: 768px) {
-  .projectContainer {
-    margin-bottom: 3rem;
-  }
-}
-@media screen and (min-width: 992px) {
-  .projectContainer {
-    margin-bottom: 5rem;
-  }
-}
-
-.projectImageAndOverviewWrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-@media screen and (min-width: 768px) {
-  .projectImageAndOverviewWrap {
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-}
-
-.projectOverviewWrap {
-  text-align: center;
-}
-.projectOverviewWrap .projectTitle {
-  font-family: "Futura-Dem";
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
-  font-size: 1.8rem;
-  font-weight: 900;
-  margin: 2rem 0 1rem 0;
-}
-@media screen and (min-width: 520px) {
-  .projectOverviewWrap .projectTitle {
-    font-size: 2rem;
-    margin: 3rem 0 1rem 0;
-  }
-}
-@media screen and (min-width: 768px) {
-  .projectOverviewWrap .projectTitle {
-    font-size: 2.3rem;
-    line-height: 1.3;
-    margin: 0 0 1rem 0;
-  }
-}
-@media screen and (min-width: 992px) {
-  .projectOverviewWrap .projectTitle {
-    font-size: 2.5rem;
-    letter-spacing: 0.25rem;
-  }
-}
-.projectOverviewWrap .projectStack {
-  font-family: "Futura-Boo";
-  text-align: left;
-  text-transform: uppercase;
-  font-size: 1rem;
-  font-weight: normal;
-  margin: 0;
-  line-height: 1.3;
-  letter-spacing: 0.15rem;
-}
-@media screen and (min-width: 520px) {
-  .projectOverviewWrap .projectStack {
-    font-size: 1.4rem;
-  }
-}
-@media screen and (min-width: 768px) {
-  .projectOverviewWrap .projectStack {
-    font-size: 1.6rem;
-  }
+  position: relative;
+  color: white;
+  margin-bottom: 2rem;
 }
 @media screen and (min-width: 1200px) {
-  .projectOverviewWrap .projectStack {
-    font-size: 2rem;
-    letter-spacing: 0.15rem;
+  .projectContainer {
+    margin-bottom: 15rem;
   }
 }
 @media screen and (min-width: 768px) {
-  .projectOverviewWrap {
-    width: 50%;
-    text-align: left;
+  .projectContainer:nth-child(even) .projectImageAndOverviewWrap {
+    flex-direction: row-reverse;
   }
 }
-
-.projectImageContainer {
-  width: 100%;
-  box-shadow: -4rem 2.3rem 10rem -2rem rgba(7, 33, 66, 0.3);
-  height: 20rem;
-}
-@media screen and (min-width: 520px) {
-  .projectImageContainer {
-    height: 25rem;
-  }
+.projectContainer:nth-child(even) .projectOverviewWrap {
+  left: initial;
 }
 @media screen and (min-width: 768px) {
-  .projectImageContainer {
-    box-shadow: -4rem 6.3rem 10.4rem -2rem rgba(7, 33, 66, 0.3);
-  }
-}
-.projectImageContainer img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-@media screen and (min-width: 768px) {
-  .projectImageContainer {
-    margin-right: 2rem;
-    width: 50%;
-    height: 35rem;
+  .projectContainer:nth-child(even) .projectOverviewWrap {
+    right: -2rem;
   }
 }
 @media screen and (min-width: 992px) {
-  .projectImageContainer {
-    width: 50%;
-    margin-right: 2.5rem;
-    height: 33rem;
-  }
-}
-
-.showProjectDesc {
-  font-family: "Futura-Boo";
-  display: block;
-  font-weight: normal;
-  margin-top: 1rem;
-  font-size: 1.3rem;
-  line-height: 1.3;
-  color: #828c96;
-  text-align: left;
-}
-@media screen and (min-width: 520px) {
-  .showProjectDesc {
-    font-size: 1.3rem;
+  .projectContainer:nth-child(even) .projectOverviewWrap {
+    right: -7rem;
   }
 }
 @media screen and (min-width: 768px) {
-  .showProjectDesc {
-    font-size: 1.4rem;
+  .projectContainer:nth-child(even) img {
+    left: 60%;
   }
-}
-@media screen and (min-width: 1200px) {
-  .showProjectDesc {
-    font-size: 1.6rem;
-  }
-}
-
-.hideProjectDesc,
-.hideGitHubAndExternalWrap,
-.showMoreButtonHide {
-  display: none;
 }
 
 .showGitHubAndExternalWrap {
   display: flex;
   align-items: center;
-  color: black;
+  color: white;
   margin-top: 1rem;
 }
 .showGitHubAndExternalWrap h2 {
@@ -1629,114 +1550,30 @@ discoPicture {
   font-size: 1.3rem;
   margin-right: 1rem;
 }
-
-.githubAndExternalIcon {
+.showGitHubAndExternalWrap .githubAndExternalIcon {
   font-weight: 400;
   cursor: pointer;
   font-size: 2.2rem;
   margin-right: 2rem;
 }
 @media screen and (min-width: 768px) {
-  .githubAndExternalIcon {
+  .showGitHubAndExternalWrap .githubAndExternalIcon {
     font-size: 2.5rem;
   }
 }
 
-.project2ImageContainer {
-  position: relative;
-  transition: all 0.5s ease;
-  width: 100vw;
-  height: 46rem;
-  background: #3718cb;
-  overflow: hidden;
-}
-.project2ImageContainer:hover {
-  transition: all 0.5s ease;
-  transform: scale(0.9);
-}
-@media screen and (min-width: 768px) {
-  .project2ImageContainer {
-    width: 60vw;
-    height: 70rem;
-  }
-}
-.project2ImageContainer img {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 0;
-  width: 80%;
-  height: 80%;
-  object-fit: cover;
-}
-@media screen and (min-width: 768px) {
-  .project2ImageContainer img {
-    left: 45%;
-  }
-}
-
-.projects2Wrap,
-.project2Container {
-  background: #02021e;
-}
-
-.project2Container {
-  position: relative;
-  color: white;
-  margin-bottom: 2rem;
-}
-@media screen and (min-width: 1200px) {
-  .project2Container {
-    margin-bottom: 15rem;
-  }
-}
-@media screen and (min-width: 768px) {
-  .project2Container:nth-child(even) .projectImageAndOverviewWrap {
-    flex-direction: row-reverse;
-  }
-}
-.project2Container:nth-child(even) .project2OverviewWrap {
-  left: initial;
-}
-@media screen and (min-width: 768px) {
-  .project2Container:nth-child(even) .project2OverviewWrap {
-    right: -2rem;
-  }
-}
-@media screen and (min-width: 992px) {
-  .project2Container:nth-child(even) .project2OverviewWrap {
-    right: -7rem;
-  }
-}
-@media screen and (min-width: 768px) {
-  .project2Container:nth-child(even) img {
-    left: 60%;
-  }
-}
-.project2Container .showGitHubAndExternalWrap {
-  display: flex;
-  align-items: center;
-  color: white;
-  margin-top: 1rem;
-}
-.project2Container .showGitHubAndExternalWrap h2 {
-  font-weight: 900;
-  font-size: 1.3rem;
-  margin-right: 1rem;
-}
-
-.project2OverviewWrap {
+.projectOverviewWrap {
   position: relative;
   width: 100vw;
   padding: 3rem;
 }
 @media screen and (min-width: 520px) {
-  .project2OverviewWrap {
+  .projectOverviewWrap {
     padding: 4rem;
   }
 }
 @media screen and (min-width: 768px) {
-  .project2OverviewWrap {
+  .projectOverviewWrap {
     padding: 0;
     top: 15rem;
     width: 40vw;
@@ -1744,32 +1581,32 @@ discoPicture {
   }
 }
 @media screen and (min-width: 992px) {
-  .project2OverviewWrap {
+  .projectOverviewWrap {
     left: -7rem;
   }
 }
-.project2OverviewWrap .projectTitle {
+.projectOverviewWrap .projectTitle {
   font-family: "Gramatika Bold";
   font-size: 1.8rem;
   font-weight: 900;
 }
 @media screen and (min-width: 520px) {
-  .project2OverviewWrap .projectTitle {
+  .projectOverviewWrap .projectTitle {
     font-size: 2.8rem;
   }
 }
 @media screen and (min-width: 768px) {
-  .project2OverviewWrap .projectTitle {
+  .projectOverviewWrap .projectTitle {
     font-size: 3rem;
     line-height: 1.3;
   }
 }
 @media screen and (min-width: 1200px) {
-  .project2OverviewWrap .projectTitle {
+  .projectOverviewWrap .projectTitle {
     font-size: 3.6rem;
   }
 }
-.project2OverviewWrap .projectStack {
+.projectOverviewWrap .projectStack {
   font-family: "Gramatika Bold";
   text-align: left;
   font-weight: bold;
@@ -1779,16 +1616,16 @@ discoPicture {
   line-height: 1.3;
 }
 @media screen and (min-width: 520px) {
-  .project2OverviewWrap .projectStack {
+  .projectOverviewWrap .projectStack {
     font-size: 1.6rem;
   }
 }
 @media screen and (min-width: 1200px) {
-  .project2OverviewWrap .projectStack {
+  .projectOverviewWrap .projectStack {
     font-size: 2rem;
   }
 }
-.project2OverviewWrap .showProjectDesc {
+.projectOverviewWrap .showProjectDesc {
   font-family: "Sofia Pro";
   display: block;
   font-weight: normal;
@@ -1799,17 +1636,17 @@ discoPicture {
   text-align: left;
 }
 @media screen and (min-width: 520px) {
-  .project2OverviewWrap .showProjectDesc {
+  .projectOverviewWrap .showProjectDesc {
     font-size: 1.6rem;
   }
 }
 @media screen and (min-width: 768px) {
-  .project2OverviewWrap .showProjectDesc {
+  .projectOverviewWrap .showProjectDesc {
     font-size: 1.4rem;
   }
 }
 @media screen and (min-width: 1200px) {
-  .project2OverviewWrap .showProjectDesc {
+  .projectOverviewWrap .showProjectDesc {
     font-size: 1.8rem;
   }
 }

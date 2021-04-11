@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import DetailCareer from "./DetailCareer";
 import DetailProjects from "./DetailProjects";
-import DetailProjects2 from "./DetailProjects2";
+
 import DetailAboutMe from "./DetailAboutMe";
 import Header from "./Header";
 const Routes: React.FC<{}> = () => {
@@ -14,8 +14,6 @@ const Routes: React.FC<{}> = () => {
                 <Route path="/" exact component={Home} />
                 <Route path="/career" exact component={DetailCareer} />
                 <Route path="/projects" exact component={DetailProjects} />
-
-                <Route path="/projects2" exact component={DetailProjects2} />
                 <Route path="/me" exact component={DetailAboutMe} />
             </Switch>
         </React.Fragment>
