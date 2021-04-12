@@ -1,0 +1,21 @@
+.loadingContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    z-index: 999;
+    color: white;
+    h1 {
+        font-size: 1.4rem;
+        @media screen and (min-width: $md_breakpoint) {
+            font-size: 1.8rem;
+        }
+        font-weight: normal;
+
+        letter-spacing: 0.1rem;
+        margin: auto;
+    }
+}

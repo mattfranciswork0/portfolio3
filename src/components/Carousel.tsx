@@ -12,6 +12,7 @@ import SlideContent from "./SlideContent";
 import _ from "lodash";
 import me1 from "../img/me1.jpg";
 import contact from "../img/contact.jpg";
+import Loading from "./Loading";
 
 export const SLIDE_ABOUT_ME_DESC =
     "BSc Computer Science, 3rd Year Student, Wilfrid Laurier University";
@@ -42,6 +43,7 @@ interface EmblaCarouselProps {
 }
 
 const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
+    const [loadedImages, setLoadedImages] = useState(0);
     const [showDotText, setShowDotText] = useState(false);
     const prevRef = useRef<any>();
     const nextRef = useRef<any>();
@@ -159,129 +161,123 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
             duration: 100,
         },
     });
-
     return (
-        <div className="embla">
-            <div className="embla__viewport" ref={viewportRef}>
-                <div className="embla__container">
-                    {slides.map((slide, index) => {
-                        return (
-                            <div key={index} className="embla__slide">
-                                <div className="overwatch2SlideInner">
-                                    <div className="contentSlideContainer">
-                                        <SlideContent
-                                            slideIndex={index}
-                                            // imgSrc={
-                                            //     "https://images.unsplash.com/photo-1542315192-1f61a1792f33?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
-                                            // }
-
-                                            imgSrc={slide.imgSrc}
-                                            title={slide.title}
-                                            desc={slide.desc}
-                                        />
+        <React.Fragment>
+            <Loading imagesToLoad={slides.length} loadedImages={loadedImages} />
+            <div className="embla">
+                <div className="embla__viewport" ref={viewportRef}>
+                    <div className="embla__container">
+                        {slides.map((slide, index) => {
+                            return (
+                                <div key={index} className="embla__slide">
+                                    <div className="overwatch2SlideInner">
+                                        <div
+                                            className="contentSlideContainer"
+                                            onLoad={() => {
+                                                setLoadedImages(
+                                                    loadedImages + 1
+                                                );
+                                            }}
+                                        >
+                                            <SlideContent
+                                                slideIndex={index}
+                                                imgSrc={slide.imgSrc}
+                                                title={slide.title}
+                                                desc={slide.desc}
+                                            />
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        );
-                    })}
+                            );
+                        })}
+                    </div>
                 </div>
-            </div>
 
-            {scrollTranslate((animation, item) => {
-                return (
-                    item === 0 && (
-                        <animated.div
-                            className="scrollDownLandingWrap"
-                            style={animation}
-                        >
-                            <h1>Scroll Down</h1>
-                            <div className="scrollDownLandingBlock"></div>
-                        </animated.div>
-                    )
-                );
-            })}
-
-            <div className="overwatch2DotWrapAndButton">
-                <button
-                    className="embla__button embla__button--prev overwatch2CarouselButton carouselNextPrevButtonHide"
-                    onClick={() => {
-                        scrollPrev();
-                        setTimeout(() => {
-                            if (embla)
-                                props.updateSlideIndex(
-                                    embla.selectedScrollSnap()
-                                );
-                        }, 0);
-                    }}
-                    disabled={!prevBtnEnabled}
-                    ref={prevRef}
-                >
-                    <RiArrowUpSLine className="overwatch2CarouselArrow" />
-                </button>
-                <div
-                    className="embla__dots overwatch2DotWrap"
-                    onMouseEnter={() => setShowDotText(true)}
-                    onMouseLeave={() => setShowDotText(false)}
-                    onClick={() => setShowDotText(false)}
-                >
-                    {dotTextTrail.map((animation, index) => (
-                        <React.Fragment>
-                            <div
-                                key={index}
-                                className="overwatch2DotParentWrap"
+                {scrollTranslate((animation, item) => {
+                    return (
+                        item === 0 && (
+                            <animated.div
+                                className="scrollDownLandingWrap"
+                                style={animation}
                             >
-                                <animated.div
-                                    style={animation}
-                                    ref={(element) =>
-                                        (itemEls.current[index] = element)
-                                    }
-                                    className={`embla__dot ${
-                                        index === selectedIndex
-                                            ? "is-selected dot-is-selected"
-                                            : ""
-                                    } overwatch2Dot`}
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        // setTimeout(() => {
-                                        //     props.updateSlideIndex(index);
-                                        // }, 0);
-                                        scrollTo(index);
-                                        props.updateSlideIndex(index);
-                                    }}
-                                ></animated.div>
-                            </div>
-                        </React.Fragment>
-                    ))}
-                </div>
-                <button
-                    className="embla__button embla__button--next carouselNextPrevButtonHide"
-                    onClick={() => {
-                        scrollNext();
-                        setTimeout(() => {
-                            if (embla)
-                                props.updateSlideIndex(
-                                    embla.selectedScrollSnap()
-                                );
-                        }, 0);
-                    }}
-                    disabled={!nextBtnEnabled}
-                    ref={nextRef}
-                >
-                    <RiArrowDownSLine className="overwatch2CarouselArrow" />
-                </button>
+                                <h1>Scroll Down</h1>
+                                <div className="scrollDownLandingBlock"></div>
+                            </animated.div>
+                        )
+                    );
+                })}
 
-                {/* <NextButton
-                    onClick={scrollNext}
-                    enabled={nextBtnEnabled}
-                    ref={nextRef}
-                /> */}
-                {/* 
-                    <animated.div style={expand}>
-                    <div ref={ref}>
-                     <p >Hello </p>></div> 
-                      <animated.div style={expand}>*/}
+                <div className="overwatch2DotWrapAndButton">
+                    <button
+                        className="embla__button embla__button--prev overwatch2CarouselButton carouselNextPrevButtonHide"
+                        onClick={() => {
+                            scrollPrev();
+                            setTimeout(() => {
+                                if (embla)
+                                    props.updateSlideIndex(
+                                        embla.selectedScrollSnap()
+                                    );
+                            }, 0);
+                        }}
+                        disabled={!prevBtnEnabled}
+                        ref={prevRef}
+                    >
+                        <RiArrowUpSLine className="overwatch2CarouselArrow" />
+                    </button>
+                    <div
+                        className="embla__dots overwatch2DotWrap"
+                        onMouseEnter={() => setShowDotText(true)}
+                        onMouseLeave={() => setShowDotText(false)}
+                        onClick={() => setShowDotText(false)}
+                    >
+                        {dotTextTrail.map((animation, index) => (
+                            <React.Fragment>
+                                <div
+                                    key={index}
+                                    className="overwatch2DotParentWrap"
+                                >
+                                    <animated.div
+                                        style={animation}
+                                        ref={(element) =>
+                                            (itemEls.current[index] = element)
+                                        }
+                                        className={`embla__dot ${
+                                            index === selectedIndex
+                                                ? "is-selected dot-is-selected"
+                                                : ""
+                                        } overwatch2Dot`}
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            // setTimeout(() => {
+                                            //     props.updateSlideIndex(index);
+                                            // }, 0);
+                                            scrollTo(index);
+                                            props.updateSlideIndex(index);
+                                        }}
+                                    ></animated.div>
+                                </div>
+                            </React.Fragment>
+                        ))}
+                    </div>
+                    <button
+                        className="embla__button embla__button--next carouselNextPrevButtonHide"
+                        onClick={() => {
+                            scrollNext();
+                            setTimeout(() => {
+                                if (embla)
+                                    props.updateSlideIndex(
+                                        embla.selectedScrollSnap()
+                                    );
+                            }, 0);
+                        }}
+                        disabled={!nextBtnEnabled}
+                        ref={nextRef}
+                    >
+                        <RiArrowDownSLine className="overwatch2CarouselArrow" />
+                    </button>
+                </div>
             </div>
-        </div>
+        </React.Fragment>
     );
 };
 

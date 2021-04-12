@@ -22,14 +22,14 @@ const SECOND_SLIDE = 1;
 const THIRD_SLIDE = 2;
 const LAST_SLIDE = 3;
 const SlideContent: React.FC<SlideContentProps> = (props) => {
-    const [slideIndex, setSlideIndex] = useState<any>(-1);
+    const [carouselSlideIndex, setCarouselSlideIndex] = useState<any>(0);
     const [isButtonHovered, setIsButtonHovered] = useState(false);
 
     useEffect(() => {
-        setSlideIndex(props.carouselSlideIndex);
+        setCarouselSlideIndex(props.carouselSlideIndex);
     }, [props.carouselSlideIndex]);
 
-    const minimize = useTransition(slideIndex, {
+    const minimize = useTransition(carouselSlideIndex, {
         from: {
             width: "100%",
         },
@@ -49,7 +49,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
         },
     });
 
-    const redExpand = useTransition(slideIndex, {
+    const redExpand = useTransition(carouselSlideIndex, {
         from: {
             width: "0%",
         },
@@ -65,7 +65,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
         },
     });
 
-    const imgTranslate = useTransition(slideIndex, {
+    const imgTranslate = useTransition(carouselSlideIndex, {
         from: {
             // transform: "translate3d(50%,0px,0px) scale(0.7)",
             transform: "scale(0.7)",
@@ -86,7 +86,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
         },
     });
 
-    const titleTranslate = useTransition(slideIndex, {
+    const titleTranslate = useTransition(carouselSlideIndex, {
         from: {
             transform: "translate3d(-125%,0%,0px)",
         },
@@ -100,7 +100,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
             friction: 100,
         },
     });
-    const descAndRedBlockTranslate = useTransition(slideIndex, {
+    const descAndRedBlockTranslate = useTransition(carouselSlideIndex, {
         from: {
             transform: "translate3d(-120%,0px,0px) ",
         },
@@ -115,7 +115,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
         },
     });
 
-    const buttonTranslate = useTransition(slideIndex, {
+    const buttonTranslate = useTransition(carouselSlideIndex, {
         from: {
             transform: "translate3d(-120%,0px,0px) ",
         },
@@ -205,7 +205,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                         );
                     })}
 
-                    {slideIndex !== LAST_SLIDE &&
+                    {carouselSlideIndex !== LAST_SLIDE &&
                         descAndRedBlockTranslate((animation, item) => {
                             return (
                                 item === props.slideIndex && (
@@ -219,7 +219,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                             );
                         })}
 
-                    {slideIndex !== LAST_SLIDE &&
+                    {carouselSlideIndex !== LAST_SLIDE &&
                         buttonTranslate((animation, item) => {
                             return (
                                 item === props.slideIndex && (
@@ -234,14 +234,19 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                                             style={buttonHover}
                                             className="showMoreButton"
                                             onClick={() => {
-                                                if (slideIndex === FIRST_SLIDE)
+                                                if (
+                                                    carouselSlideIndex ===
+                                                    FIRST_SLIDE
+                                                )
                                                     history.push("/me");
                                                 else if (
-                                                    slideIndex === SECOND_SLIDE
+                                                    carouselSlideIndex ===
+                                                    SECOND_SLIDE
                                                 )
                                                     history.push("/projects");
                                                 else if (
-                                                    slideIndex === THIRD_SLIDE
+                                                    carouselSlideIndex ===
+                                                    THIRD_SLIDE
                                                 )
                                                     history.push("/career");
                                             }}
@@ -253,7 +258,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                             );
                         })}
 
-                    {slideIndex === LAST_SLIDE && (
+                    {carouselSlideIndex === LAST_SLIDE && (
                         <React.Fragment>
                             {descAndRedBlockTranslate((animation, item) => {
                                 return (

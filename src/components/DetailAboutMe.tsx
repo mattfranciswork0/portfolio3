@@ -7,41 +7,53 @@ import me2 from "../img/me2.jpg";
 import { SLIDE_ABOUT_ME_DESC } from "./Carousel";
 import { connect } from "react-redux";
 import { StoreState } from "../reducers";
+import Loading from "./Loading";
 interface DetailAboutMeProps {
     // changeHeaderBackIconToBlack: any;
     updateHeaderBackIconToBlack(setColorToBlack: boolean): void;
 }
 const DetailAboutMe: React.FC<DetailAboutMeProps> = (props) => {
+    const [loadedImages, setLoadedImages] = useState(0);
     useEffect(() => {
         document.body.style.overflowY = "visible";
     }, []);
 
     return (
-        <div className="detailAboutMeContainer">
-            <DetailBanner
-                title="About Me"
-                imgSrc={me1}
-                desc={SLIDE_ABOUT_ME_DESC}
-            />
-            {/* <span ref={ref}></span> */}
-            <div className="aboutMeWrap">
-                <div className="myStoryWrap">
-                    <div className="myStoryInnerWrap">
-                        <div className="myStoryBlock"></div>
-                        <h1>my Story</h1>
+        <React.Fragment>
+            <Loading imagesToLoad={1} loadedImages={loadedImages} />
+
+            <div className="detailAboutMeContainer">
+                <div
+                    onLoad={() => {
+                        setLoadedImages(loadedImages + 1);
+                    }}
+                >
+                    <DetailBanner
+                        title="About Me"
+                        imgSrc={me1}
+                        desc={SLIDE_ABOUT_ME_DESC}
+                    />
+                </div>
+                <div className="aboutMeWrap">
+                    <div className="myStoryWrap">
+                        <div className="myStoryInnerWrap">
+                            <div className="myStoryBlock"></div>
+                            <h1>my Story</h1>
+                        </div>
+                    </div>
+                    <div className="aboutMeImageAndDescWrap">
+                        <h1>Matthew Francis</h1>
+                        <p>
+                            Born and raised Jakarta, Indonesia in 2000. Moved to
+                            Ontario, Canada at 2011. Aspiring to be a web
+                            developer.
+                        </p>
+                        <img src={me2} alt="" />
                     </div>
                 </div>
-                <div className="aboutMeImageAndDescWrap">
-                    <h1>Matthew Francis</h1>
-                    <p>
-                        Born and raised Jakarta, Indonesia in 2000. Moved to
-                        Ontario, Canada at 2011. Aspiring to be a web developer.
-                    </p>
-                    <img src={me2} alt="" />
-                </div>
+                <DetailBack />
             </div>
-            <DetailBack />
-        </div>
+        </React.Fragment>
     );
 };
 

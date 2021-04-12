@@ -1296,6 +1296,29 @@ nav {
   cursor: pointer;
 }
 
+.loadingContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  z-index: 999;
+  color: white;
+}
+.loadingContainer h1 {
+  font-size: 1.4rem;
+  font-weight: normal;
+  letter-spacing: 0.1rem;
+  margin: auto;
+}
+@media screen and (min-width: 768px) {
+  .loadingContainer h1 {
+    font-size: 1.8rem;
+  }
+}
+
 .detailCareerContainer {
   background: white;
 }
