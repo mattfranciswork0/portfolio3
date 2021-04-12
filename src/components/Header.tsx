@@ -1,5 +1,5 @@
 import { render } from "react-dom";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { updateSlideIndex } from "../actions";
 import { connect } from "react-redux";
 import { useTransition, animated, useSpring, useTrail } from "react-spring";
@@ -14,7 +14,18 @@ interface HeaderProps {
     changeHeaderBackIconToBlack: boolean;
 }
 const Header: React.FC<HeaderProps> = (props) => {
+    const location = useLocation();
+
     const [isBurgerClicked, setBurgerClicked] = useState(false);
+    const [isBackButtonVisible, setIsBackButtonVisible] = useState(false);
+    useEffect(() => {
+        if (location.pathname === "/") {
+            setIsBackButtonVisible(false);
+        } else {
+            //User must've clicked detial page
+            setIsBackButtonVisible(true);
+        }
+    }, [location.pathname]);
 
     const [titleIndex, setTitleIndex] = useState<number>(-1);
     const translateTitle = useSpring({
@@ -67,7 +78,16 @@ const Header: React.FC<HeaderProps> = (props) => {
         },
     });
 
-    const location = useLocation();
+    const backButtonTranslate = useSpring({
+        transform: isBackButtonVisible
+            ? "translate3d(0% , 0%, 0px)"
+            : "translate3d(-100% , 0%, 0px)",
+
+        config: {
+            tension: 120,
+            friction: 20,
+        },
+    });
 
     return (
         <nav>
@@ -126,18 +146,20 @@ const Header: React.FC<HeaderProps> = (props) => {
                 </animated.div>
             </div>
             {location.pathname !== "/" && (
-                <BiArrowBack
-                    onClick={() => history.goBack()}
-                    className={`backButton ${
-                        location.pathname === "/projects"
-                            ? "backButtonWhite"
-                            : ""
-                    } ${
-                        props.changeHeaderBackIconToBlack
-                            ? "backButtonBlack"
-                            : "backButtonWhite"
-                    }`}
-                />
+                <animated.div style={backButtonTranslate}>
+                    <BiArrowBack
+                        onClick={() => history.goBack()}
+                        className={`backButton ${
+                            location.pathname === "/projects"
+                                ? "backButtonWhite"
+                                : ""
+                        } ${
+                            props.changeHeaderBackIconToBlack
+                                ? "backButtonBlack"
+                                : "backButtonWhite"
+                        }`}
+                    />
+                </animated.div>
             )}
         </nav>
     );

@@ -10,7 +10,7 @@ import { updateHeaderBackIconToBlack } from "../actions";
 import { connect } from "react-redux";
 import { StoreState } from "../reducers";
 interface DetailAboutMeProps {
-    changeHeaderBackIconToBlack: any;
+    // changeHeaderBackIconToBlack: any;
     updateHeaderBackIconToBlack(setColorToBlack: boolean): void;
 }
 const DetailAboutMe: React.FC<DetailAboutMeProps> = (props) => {
@@ -58,7 +58,7 @@ const DetailAboutMe: React.FC<DetailAboutMeProps> = (props) => {
 
 const mapStateToProps = (state: StoreState) => {
     return {
-        changeHeaderBackIconToBlack: state.changeHeaderBackIconToBlack,
+        // changeHeaderBackIconToBlack: state.changeHeaderBackIconToBlack,
     };
 };
 
