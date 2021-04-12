@@ -13,9 +13,10 @@ interface SlideContentProps {
     title?: string;
     desc?: string;
     imgSrc: any;
+    slideIndex?: number; //the index of the slide, different from carouselSlideIndex, which is the current slide index the carousel is at
 }
 // const MIN_DELAY = 280;
-const MIN_DELAY = 280;
+const MIN_DELAY = 0;
 const FIRST_SLIDE = 0;
 const SECOND_SLIDE = 1;
 const THIRD_SLIDE = 2;
@@ -71,6 +72,9 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
         enter: {
             transform: "translate3d(0px,0px,0px) scale(1)",
             delay: MIN_DELAY,
+        },
+        leave: {
+            transform: "translate3d(50%,0px,0px) scale(0.7)",
         },
         config: {
             mass: 1,
@@ -139,95 +143,116 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
             <div className="contentImageAndTextWrap">
                 {imgTranslate((animation, item) => {
                     return (
-                        <animated.div
-                            style={animation}
-                            className="contentImage"
-                        >
-                            <img src={props.imgSrc} alt="" />
+                        item === props.slideIndex && (
+                            <animated.div
+                                style={animation}
+                                className="contentImage"
+                            >
+                                <img src={props.imgSrc} alt="" />
 
-                            {minimize((animation, item) => {
-                                return (
-                                    <animated.div
-                                        style={animation}
-                                        className="transitionDark"
-                                    >
-                                        {redExpand((animation, item) => {
-                                            return (
-                                                <animated.div
-                                                    style={animation}
-                                                    className="transitionRed"
-                                                ></animated.div>
-                                            );
-                                        })}
-                                    </animated.div>
-                                );
-                            })}
-                        </animated.div>
+                                {minimize((animation, item) => {
+                                    return (
+                                        item === props.slideIndex && (
+                                            <animated.div
+                                                style={animation}
+                                                className="transitionDark"
+                                            >
+                                                {redExpand(
+                                                    (animation, item) => {
+                                                        return (
+                                                            item ===
+                                                                props.slideIndex && (
+                                                                <animated.div
+                                                                    style={
+                                                                        animation
+                                                                    }
+                                                                    className="transitionRed"
+                                                                ></animated.div>
+                                                            )
+                                                        );
+                                                    }
+                                                )}
+                                            </animated.div>
+                                        )
+                                    );
+                                })}
+                            </animated.div>
+                        )
                     );
                 })}
                 <div className="contentTextWrap">
                     {titleTranslate((animation, item) => {
                         return (
-                            <animated.h1
-                                className="contentTitle"
-                                style={animation}
-                            >
-                                {props.title}
-                            </animated.h1>
+                            item === props.slideIndex && (
+                                <animated.h1
+                                    className="contentTitle"
+                                    style={animation}
+                                >
+                                    {props.title}
+                                </animated.h1>
+                            )
                         );
                     })}
 
                     {descAndRedBlockTranslate((animation, item) => {
                         return (
-                            <animated.div
-                                className="redBlocksWrap"
-                                style={animation}
-                            >
-                                <div className="redBlock firstRedBlock"></div>
-                                <div className="redBlock secondRedBlock"></div>
-                            </animated.div>
+                            item === props.slideIndex && (
+                                <animated.div
+                                    className="redBlocksWrap"
+                                    style={animation}
+                                >
+                                    <div className="redBlock firstRedBlock"></div>
+                                    <div className="redBlock secondRedBlock"></div>
+                                </animated.div>
+                            )
                         );
                     })}
 
                     {slideIndex !== LAST_SLIDE &&
                         descAndRedBlockTranslate((animation, item) => {
                             return (
-                                <animated.h3
-                                    style={animation}
-                                    className="contentDesc"
-                                >
-                                    {props.desc}
-                                </animated.h3>
+                                item === props.slideIndex && (
+                                    <animated.h3
+                                        style={animation}
+                                        className="contentDesc"
+                                    >
+                                        {props.desc}
+                                    </animated.h3>
+                                )
                             );
                         })}
 
                     {slideIndex !== LAST_SLIDE &&
                         buttonTranslate((animation, item) => {
                             return (
-                                <animated.div style={animation}>
-                                    <animated.button
-                                        onMouseOver={() => {
-                                            setIsButtonHovered(true);
-                                        }}
-                                        onMouseLeave={() => {
-                                            setIsButtonHovered(false);
-                                        }}
-                                        style={buttonHover}
-                                        className="showMoreButton"
-                                        onClick={() => {
-                                            if (slideIndex === FIRST_SLIDE)
-                                                history.push("/me");
-                                            else if (
-                                                slideIndex === SECOND_SLIDE
-                                            )
-                                                history.push("/projects");
-                                            else if (slideIndex === THIRD_SLIDE)
-                                                history.push("/career");
-                                        }}
-                                    >
-                                        Show
-                                    </animated.button>
-                                </animated.div>
+                                item === props.slideIndex && (
+                                    <animated.div style={animation}>
+                                        <animated.button
+                                            onMouseOver={() => {
+                                                setIsButtonHovered(true);
+                                            }}
+                                            onMouseLeave={() => {
+                                                setIsButtonHovered(false);
+                                            }}
+                                            style={buttonHover}
+                                            className="showMoreButton"
+                                            onClick={() => {
+                                                if (slideIndex === FIRST_SLIDE)
+                                                    history.push("/me");
+                                                else if (
+                                                    slideIndex === SECOND_SLIDE
+                                                )
+                                                    history.push("/projects");
+                                                else if (
+                                                    slideIndex === THIRD_SLIDE
+                                                )
+                                                    history.push("/career");
+                                            }}
+                                        >
+                                            Show
+                                        </animated.button>
+                                    </animated.div>
+                                )
                             );
                         })}
 
@@ -235,23 +260,26 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                         <React.Fragment>
                             {descAndRedBlockTranslate((animation, item) => {
                                 return (
-                                    <animated.div
-                                        className="emailAndContactWrap"
-                                        style={animation}
-                                    >
-                                        <a
-                                            className="mailto"
-                                            href="mailto:mattfrancis888@gmail.com"
+                                    item === props.slideIndex && (
+                                        <animated.div
+                                            className="emailAndContactWrap"
+                                            style={animation}
                                         >
-                                            <h3 className="email">
-                                                Email: mattfrancis888@gmail.com
-                                            </h3>
-                                        </a>
+                                            <a
+                                                className="mailto"
+                                                href="mailto:mattfrancis888@gmail.com"
+                                            >
+                                                <h3 className="email">
+                                                    Email:
+                                                    mattfrancis888@gmail.com
+                                                </h3>
+                                            </a>
 
-                                        <h3 className="contactPhone">
-                                            Phone: 289-772-7465
-                                        </h3>
-                                    </animated.div>
+                                            <h3 className="contactPhone">
+                                                Phone: 289-772-7465
+                                            </h3>
+                                        </animated.div>
+                                    )
                                 );
                             })}
                         </React.Fragment>

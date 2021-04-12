@@ -2,7 +2,7 @@ import { render } from "react-dom";
 import React, { useState, useEffect, useRef } from "react";
 import DetailBanner from "./DetailBanner";
 import DetailBack from "./DetailBack";
-import { SLIDE_CAREER_DESC } from "./SlideCareer";
+import { SLIDE_CAREER_DESC } from "./Carousel";
 import { connect } from "react-redux";
 import { StoreState } from "../reducers";
 const careerProgress = [

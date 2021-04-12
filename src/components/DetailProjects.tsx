@@ -39,7 +39,7 @@ import steamLg from "../img/steam_lg.jpg";
 import lowResSteamLg from "../img/lowRes/low_res_steam_lg.jpg";
 import blizzardLg from "../img/blizzard_lg.jpg";
 import lowResBlizzardLg from "../img/lowRes/low_res_blizzard_lg.jpg";
-import { SLIDE_PROJECTS_DESC } from "./SlideProjects";
+import { SLIDE_PROJECTS_DESC } from "./Carousel";
 import { BiArrowBack } from "react-icons/bi";
 import history from "../browserHistory";
 const discoData = [

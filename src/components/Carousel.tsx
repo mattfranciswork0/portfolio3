@@ -1,25 +1,39 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { useEmblaCarousel } from "embla-carousel/react";
 import useScrollDirection from "../useScrollDirection";
-import SlideLanding from "./SlideLanding";
-import SlideContact from "./SlideContact";
+
 import { useTransition, animated, useSpring, useTrail } from "react-spring";
 import { RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
 import { useMeasure } from "react-use";
 import { updateSlideIndex } from "../actions";
 import { connect } from "react-redux";
 import { StoreState } from "../reducers";
-import SlideCareer from "./SlideCareer";
-import SlideProjects from "./SlideProjects";
+import SlideContent from "./SlideContent";
 import _ from "lodash";
-//Instead of level up tuts / scott's way, you could use this for accordion : https://www.chrisberry.io/Animate-Auto-With-React-Spring/
-//Much cleaner code
+import me1 from "../img/me1.jpg";
+import contact from "../img/contact.jpg";
+
+export const SLIDE_ABOUT_ME_DESC =
+    "BSc Computer Science, 3rd Year Student, Wilfrid Laurier University";
+export const SLIDE_PROJECTS_DESC =
+    "Websites I've built (Kijij, Netflix, Steam, Overwatch and many more)";
+export const SLIDE_CAREER_DESC = "Why I'm a great asset to your team";
 
 const slides = [
-    { dotTitle: "Intro", component: <SlideLanding /> },
-    { dotTitle: "Explore", component: <SlideProjects /> },
-    { dotTitle: "Career", component: <SlideCareer /> },
-    { dotTitle: "Contact", component: <SlideContact /> },
+    { imgSrc: me1, title: "Matthew Francis", desc: SLIDE_ABOUT_ME_DESC },
+    {
+        imgSrc:
+            "https://miro.medium.com/max/1400/1*nAZueDDk8s5ggBsxmkqfXg.jpeg",
+        title: "Projects",
+        desc: SLIDE_PROJECTS_DESC,
+    },
+    {
+        imgSrc:
+            "https://images.unsplash.com/photo-1542315192-1f61a1792f33?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        title: "Career Timeline",
+        desc: SLIDE_CAREER_DESC,
+    },
+    { imgSrc: contact, title: "Get In Touch", desc: "" },
 ];
 
 interface EmblaCarouselProps {
@@ -31,32 +45,7 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
     const [showDotText, setShowDotText] = useState(false);
     const prevRef = useRef<any>();
     const nextRef = useRef<any>();
-    //height auto the link above:
-    // const defaultHeight = "0px";
-    //const [ref, { width, left, right }] = useMeasure<any>();
-    // The height of the content inside of the accordion
-    // const [contentWidth, setContentWidth] = useState(defaultHeight);
-    // const expand = useSpring({
-    //     config: { friction: 10 },
-    //     width: showDotText ? `${contentWidth}px` : defaultHeight,
-    // });
-    // useEffect(() => {
-    //     //Sets initial height
-    //     //@ts-ignore
-    //     setContentWidth(width + left + right);
 
-    //     //Adds resize event listener
-    //     //@ts-ignore
-    //     window.addEventListener("resize", setContentWidth(width + left * 2));
-
-    //     // Clean-up
-    //     //@ts-ignore
-    //     return window.removeEventListener(
-    //         "resize",
-    //         //@ts-ignore
-    //         setContentWidth(width + left * 2)
-    //     );
-    // }, [width]);
     const [slideIndex, setSlideIndex] = useState<any>(-1);
     const scrollTranslate = useTransition(slideIndex, {
         from: {
@@ -123,7 +112,7 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
         axis: "y",
         draggable: false,
 
-        startIndex: props.carouselSlideIndex,
+        // startIndex: props.carouselSlideIndex,
     });
     const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
     const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
@@ -176,7 +165,18 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                         return (
                             <div key={index} className="embla__slide">
                                 <div className="overwatch2SlideInner">
-                                    {slide.component}
+                                    <div className="contentSlideContainer">
+                                        <SlideContent
+                                            slideIndex={index}
+                                            // imgSrc={
+                                            //     "https://images.unsplash.com/photo-1542315192-1f61a1792f33?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+                                            // }
+
+                                            imgSrc={slide.imgSrc}
+                                            title={slide.title}
+                                            desc={slide.desc}
+                                        />
+                                    </div>
                                 </div>
                             </div>
                         );
@@ -241,9 +241,9 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                                         e.stopPropagation();
                                         // setTimeout(() => {
                                         //     props.updateSlideIndex(index);
-                                        // }, 50);
-                                        props.updateSlideIndex(index);
+                                        // }, 0);
                                         scrollTo(index);
+                                        props.updateSlideIndex(index);
                                     }}
                                 ></animated.div>
                             </div>

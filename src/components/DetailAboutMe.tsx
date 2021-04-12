@@ -4,7 +4,7 @@ import DetailBanner from "./DetailBanner";
 import DetailBack from "./DetailBack";
 import me1 from "../img/me1.jpg";
 import me2 from "../img/me2.jpg";
-import { SLIDE_ABOUT_ME_DESC } from "./SlideLanding";
+import { SLIDE_ABOUT_ME_DESC } from "./Carousel";
 import { connect } from "react-redux";
 import { StoreState } from "../reducers";
 interface DetailAboutMeProps {
