@@ -6,10 +6,12 @@ import { useTransition, animated, useSpring, useTrail } from "react-spring";
 import { useLocation } from "react-router-dom";
 import history from "../browserHistory";
 import { BiArrowBack } from "react-icons/bi";
+import { StoreState } from "../reducers";
 const titles = ["About Me", "Projects", "Career Timeline", "Contact"];
 
 interface HeaderProps {
     updateSlideIndex: any;
+    changeHeaderBackIconToBlack: boolean;
 }
 const Header: React.FC<HeaderProps> = (props) => {
     const [isBurgerClicked, setBurgerClicked] = useState(false);
@@ -130,6 +132,10 @@ const Header: React.FC<HeaderProps> = (props) => {
                         location.pathname === "/projects"
                             ? "backButtonWhite"
                             : ""
+                    } ${
+                        props.changeHeaderBackIconToBlack
+                            ? "backButtonBlack"
+                            : "backButtonWhite"
                     }`}
                 />
             )}
@@ -137,6 +143,12 @@ const Header: React.FC<HeaderProps> = (props) => {
     );
 };
 
-export default connect(null, {
+const mapStateToProps = (state: StoreState) => {
+    return {
+        changeHeaderBackIconToBlack: state.changeHeaderBackIconToBlack,
+    };
+};
+
+export default connect(mapStateToProps, {
     updateSlideIndex,
 })(Header);

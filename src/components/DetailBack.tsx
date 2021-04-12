@@ -43,7 +43,13 @@ const DetailBack: React.FC<DetailBackProps> = (props) => {
                         location.pathname === "/projects" ? "whiteBackBox" : ""
                     }`}
                 ></div>
-                <h1>Back</h1>
+                <h1
+                    className={`${
+                        location.pathname === "/projects" ? "whiteBackText" : ""
+                    }`}
+                >
+                    Back
+                </h1>
             </animated.div>
         </div>
     );

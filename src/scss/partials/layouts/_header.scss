@@ -33,7 +33,12 @@ nav {
     }
 }
 .backButtonWhite {
+    transition: all 0.2s ease;
     color: white;
+}
+.backButtonBlack {
+    transition: all 0.2s ease;
+    color: black;
 }
 .headerName {
     font-size: 1.4rem;

@@ -725,7 +725,6 @@ body {
   cursor: pointer;
   display: flex;
   align-items: center;
-  color: inherit;
 }
 .backInnerWrap .backBox {
   width: 10rem;
@@ -736,7 +735,7 @@ body {
 .backInnerWrap h1 {
   font-size: 3rem;
   text-transform: uppercase;
-  color: inherit;
+  color: black;
   font-weight: 200;
   letter-spacing: 0.4rem;
 }
@@ -748,6 +747,10 @@ body {
 
 .whiteBackBox {
   background-color: white !important;
+}
+
+.whiteBackText {
+  color: white !important;
 }
 
 .overwatch2SlideContainer {
@@ -1171,7 +1174,13 @@ nav {
 }
 
 .backButtonWhite {
+  transition: all 0.2s ease;
   color: white;
+}
+
+.backButtonBlack {
+  transition: all 0.2s ease;
+  color: black;
 }
 
 .headerName {
