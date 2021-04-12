@@ -557,27 +557,45 @@ body {
     top: 20%;
   }
 }
-.contentTextWrap .email,
-.contentTextWrap .contactPhone {
+
+.emailAndContactWrap {
+  margin-top: 2.4rem;
+}
+.emailAndContactWrap .email,
+.emailAndContactWrap .contactPhone {
   text-shadow: 0 10px 30px rgba(2, 11, 22, 0.5);
   font-weight: normal;
   font-size: 1.2rem;
 }
 @media screen and (min-width: 520px) {
-  .contentTextWrap .email,
-.contentTextWrap .contactPhone {
+  .emailAndContactWrap .email,
+.emailAndContactWrap .contactPhone {
     font-size: 2.4rem;
     line-height: 1.4;
   }
 }
 @media screen and (min-width: 768px) {
-  .contentTextWrap .email,
-.contentTextWrap .contactPhone {
+  .emailAndContactWrap .email,
+.emailAndContactWrap .contactPhone {
     width: 60%;
     font-size: 2.8rem;
     letter-spacing: 0.1rem;
   }
 }
+.emailAndContactWrap .email {
+  display: inline;
+  cursor: pointer;
+  pointer-events: visible;
+  transition: all 0.2s ease;
+}
+.emailAndContactWrap .email:hover {
+  color: #828c96;
+  transition: all 0.2s ease;
+}
+.emailAndContactWrap .contactPhone {
+  margin-top: 1rem;
+}
+
 .contentDesc {
   text-shadow: 0 10px 30px rgba(2, 11, 22, 0.5);
   font-weight: normal;
@@ -1088,22 +1106,6 @@ body {
   }
 }
 
-.careerDate {
-  text-transform: uppercase;
-}
-
-.careerColWrap {
-  color: #828c96;
-}
-
-.accomplishmentColWrap ul {
-  padding-left: 2rem;
-}
-.accomplishmentColWrap ul li {
-  margin-bottom: 1rem;
-  font-size: 1.4rem;
-}
-
 .detailDesc {
   margin-top: 4rem;
   margin-bottom: 4rem;
@@ -1353,13 +1355,56 @@ nav {
 }
 
 .careerColWrap p {
+  font-family: "Futura-Boo";
   margin: 0;
   line-height: 2;
   font-size: 1.3rem;
   color: grey;
 }
+@media screen and (min-width: 520px) {
+  .careerColWrap p {
+    font-size: 1.5rem;
+  }
+}
 @media screen and (min-width: 768px) {
   .careerColWrap p {
+    font-size: 1.8rem;
+  }
+}
+
+.careerDate {
+  text-transform: uppercase;
+}
+
+.careerColWrap {
+  color: #828c96;
+}
+
+.accomplishmentColWrap ul {
+  padding-left: 0rem;
+  list-style: none;
+}
+@media screen and (min-width: 768px) {
+  .accomplishmentColWrap ul {
+    padding-left: 0rem;
+  }
+}
+.accomplishmentColWrap ul li {
+  font-family: "Futura-Boo";
+  line-height: 1.5;
+  margin-bottom: 1.3rem;
+  font-size: 1.3rem;
+}
+.accomplishmentColWrap ul li:before {
+  content: "- ";
+}
+@media screen and (min-width: 520px) {
+  .accomplishmentColWrap ul li {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .accomplishmentColWrap ul li {
     font-size: 1.8rem;
   }
 }
@@ -1419,7 +1464,12 @@ nav {
     padding-right: 5rem;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
+  .aboutMeImageAndDescWrap {
+    padding-right: 10rem;
+  }
+}
+@media screen and (min-width: 1200px) {
   .aboutMeImageAndDescWrap {
     padding-right: 15rem;
   }
@@ -1438,14 +1488,26 @@ nav {
   }
 }
 .aboutMeImageAndDescWrap p {
-  font-size: 1.4rem;
+  line-height: 2;
+  font-family: "Futura-Boo";
+  font-size: 1.3rem;
   color: #828c96;
 }
+@media screen and (min-width: 520px) {
+  .aboutMeImageAndDescWrap p {
+    font-size: 1.6rem;
+  }
+}
 .aboutMeImageAndDescWrap img {
-  margin-top: 5rem;
+  margin-top: 3rem;
   width: 100%;
   object-fit: cover;
   box-shadow: 0px 63px 154px -20px rgba(7, 33, 66, 0.5);
+}
+@media screen and (min-width: 520px) {
+  .aboutMeImageAndDescWrap img {
+    margin-top: 5rem;
+  }
 }
 
 .detailProjectsContainer {

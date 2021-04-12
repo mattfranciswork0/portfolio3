@@ -235,7 +235,10 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                         <React.Fragment>
                             {descAndRedBlockTranslate((animation, item) => {
                                 return (
-                                    <animated.div style={animation}>
+                                    <animated.div
+                                        className="emailAndContactWrap"
+                                        style={animation}
+                                    >
                                         <a
                                             className="mailto"
                                             href="mailto:mattfrancis888@gmail.com"

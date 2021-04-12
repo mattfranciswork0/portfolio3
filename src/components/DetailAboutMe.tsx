@@ -36,7 +36,6 @@ const DetailAboutMe: React.FC<DetailAboutMeProps> = (props) => {
             />
             <div className="aboutMeWrap">
                 <div className="myStoryWrap">
-                    <div>{isVisible && `Yep, I'm on screen`}</div>
                     <div className="myStoryInnerWrap">
                         <div className="myStoryBlock"></div>
                         <h1>my Story</h1>
@@ -45,8 +44,8 @@ const DetailAboutMe: React.FC<DetailAboutMeProps> = (props) => {
                 <div className="aboutMeImageAndDescWrap">
                     <h1>Matthew Francis</h1>
                     <p>
-                        1992年、沖縄県生まれ。大学を卒業後、県内の制作会社でDTPオペレーターとして就職後、大手紳士服量販店を中心に十数社のコーポレートサイトの運用業務を担当しました。
-                        2017年より、個人でもWebデザイナーとしての活動を開始し、写真撮影・デザイン・コーディングまでワンストップで対応しています。
+                        Born and raised Jakarta, Indonesia in 2000. Moved to
+                        Ontario, Canada at 2011. Aspiring to be a web developer.
                     </p>
                     <img ref={ref} src={me2} alt="" />
                 </div>

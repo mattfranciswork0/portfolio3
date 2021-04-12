@@ -151,6 +151,10 @@
 
     letter-spacing: 0.1rem;
     text-align: left;
+}
+
+.emailAndContactWrap {
+    margin-top: 2.4rem;
     .email,
     .contactPhone {
         text-shadow: 0 10px 30px rgb(2 11 22 / 50%);
@@ -169,8 +173,21 @@
         @media screen and (min-width: $xl_breakpoint) {
         }
     }
-}
+    .email {
+        display: inline;
+        cursor: pointer;
+        pointer-events: visible;
+        transition: all 0.2s ease;
+        &:hover {
+            color: $grey;
 
+            transition: all 0.2s ease;
+        }
+    }
+    .contactPhone {
+        margin-top: 1rem;
+    }
+}
 .contentDesc {
     text-shadow: 0 10px 30px rgb(2 11 22 / 50%);
     font-weight: normal;

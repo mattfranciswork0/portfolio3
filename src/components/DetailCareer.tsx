@@ -26,6 +26,8 @@ interface DetailCareerProps {
 }
 
 const DetailCareer: React.FC<DetailCareerProps> = (props) => {
+    const ref = useRef<any>();
+    const isVisible = useOnScreen(ref);
     useEffect(() => {
         document.body.style.overflowY = "visible";
         return () => {
@@ -33,8 +35,11 @@ const DetailCareer: React.FC<DetailCareerProps> = (props) => {
             props.updateHeaderBackIconToBlack(false);
         };
     }, []);
-    const ref = useRef<any>();
-    const isVisible = useOnScreen(ref);
+    useEffect(() => {
+        if (isVisible) props.updateHeaderBackIconToBlack(true);
+        else props.updateHeaderBackIconToBlack(false);
+    }, [props, isVisible]);
+
     return (
         <div className="detailCareerContainer">
             <DetailBanner
@@ -79,6 +84,7 @@ const DetailCareer: React.FC<DetailCareerProps> = (props) => {
                     );
                 })}
             </div>
+            <span ref={ref}></span>
             <DetailBack />
         </div>
     );

@@ -45,12 +45,50 @@
 
 .careerColWrap {
     p {
+        font-family: "Futura-Boo";
         margin: 0;
         line-height: 2;
         font-size: 1.3rem;
+        @media screen and (min-width: $sm_breakpoint) {
+            font-size: 1.5rem;
+        }
         color: grey;
         @media screen and (min-width: $md_breakpoint) {
             font-size: 1.8rem;
+        }
+    }
+}
+
+.careerDate {
+    text-transform: uppercase;
+}
+.careerColWrap {
+    color: #828c96;
+}
+
+.accomplishmentColWrap {
+    ul {
+        padding-left: 0rem;
+        list-style: none;
+
+        @media screen and (min-width: $md_breakpoint) {
+            padding-left: 0rem;
+        }
+        li {
+            font-family: "Futura-Boo";
+            line-height: 1.5;
+            margin-bottom: 1.3rem;
+
+            font-size: 1.3rem;
+            &:before {
+                content: "- ";
+            }
+            @media screen and (min-width: $sm_breakpoint) {
+                font-size: 1.5rem;
+            }
+            @media screen and (min-width: $md_breakpoint) {
+                font-size: 1.8rem;
+            }
         }
     }
 }
