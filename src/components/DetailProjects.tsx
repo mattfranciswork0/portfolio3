@@ -40,6 +40,8 @@ import lowResSteamLg from "../img/lowRes/low_res_steam_lg.jpg";
 import blizzardLg from "../img/blizzard_lg.jpg";
 import lowResBlizzardLg from "../img/lowRes/low_res_blizzard_lg.jpg";
 import { SLIDE_PROJECTS_DESC } from "./SlideProjects";
+import { BiArrowBack } from "react-icons/bi";
+import history from "../browserHistory";
 const discoData = [
     {
         title: `Blizzard (Currently working on)`,
@@ -269,13 +271,18 @@ const DetailProjects: React.FC<{}> = () => {
             return (
                 <div key={index} className={`projectContainer`}>
                     <div className="projectImageAndOverviewWrap">
-                        <div className={`projectImageContainer`}>
-                            <BlurredUpImage
-                                lowRes={disco.lowResLg}
-                                highRes={disco.imgLg}
-                            />
-                        </div>
-
+                        <a
+                            href={disco.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <div className={`projectImageContainer`}>
+                                <BlurredUpImage
+                                    lowRes={disco.lowResLg}
+                                    highRes={disco.imgLg}
+                                />
+                            </div>
+                        </a>
                         <div className="projectOverviewWrap">
                             <h2 className="projectTitle">{disco.title}</h2>
                             <h2 className="projectStack">{disco.stack}</h2>
@@ -340,6 +347,11 @@ const DetailProjects: React.FC<{}> = () => {
                 }
                 desc={SLIDE_PROJECTS_DESC}
             />
+
+            {/* <BiArrowBack
+                onClick={() => history.goBack()}
+                className="backButton2"
+            /> */}
             <div className="projectsWrap">{renderDisco()}</div>
             <DetailBack />
         </div>

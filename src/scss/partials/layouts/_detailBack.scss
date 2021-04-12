@@ -11,7 +11,7 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-
+    color: inherit;
     .backBox {
         width: 10rem;
         height: 0.25rem;
@@ -21,8 +21,16 @@
     h1 {
         font-size: 3rem;
         text-transform: uppercase;
-        color: black;
+        color: inherit;
         font-weight: 200;
         letter-spacing: 0.4rem;
     }
+}
+
+.backPurpleDarkBackground {
+    background: $background-purple-dark;
+    color: white;
+}
+.whiteBackBox {
+    background-color: white !important;
 }

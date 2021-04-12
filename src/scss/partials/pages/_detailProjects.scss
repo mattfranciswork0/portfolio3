@@ -1,6 +1,5 @@
 .detailProjectsContainer {
-    background-color: white;
-    overflow: hidden;
+    background-color: $background-purple-dark;
     position: relative;
 }
 
@@ -26,6 +25,7 @@
     width: 100vw;
     height: 46rem;
     background: #3718cb;
+    cursor: pointer;
     @media screen and (min-width: $md_breakpoint) {
         width: 60vw;
         height: 70rem;
@@ -51,25 +51,11 @@
 .projectsWrap {
     position: relative;
     z-index: 1;
-    padding: 5rem 1rem;
-    background-color: white;
-    @media screen and (min-width: $sm_breakpoint) {
-        padding: 5rem 5rem;
-    }
-    @media screen and (min-width: $md_breakpoint) {
-        padding: 5rem 3rem;
-    }
-    @media screen and (min-width: $lg_breakpoint) {
-        padding: 5rem 5rem;
-    }
-    @media screen and (min-width: $xl_breakpoint) {
-        padding: 5rem 8rem;
-    }
 }
 
 .projectsWrap,
 .projectContainer {
-    background: #02021e;
+    background: $background-purple-dark;
 }
 .projectContainer {
     position: relative;
@@ -79,8 +65,11 @@
     // @media screen and (min-width: $lg_breakpoint) {
     //     font-size: 2.5rem;
     // }
-    @media screen and (min-width: $xl_breakpoint) {
+    @media screen and (min-width: $md_breakpoint) {
         margin-bottom: 15rem;
+    }
+    @media screen and (min-width: $xl_breakpoint) {
+        margin-bottom: 20rem;
     }
 
     &:nth-child(even) {
@@ -93,7 +82,7 @@
             left: initial;
 
             @media screen and (min-width: $md_breakpoint) {
-                right: -2rem;
+                right: -5rem; //same as the one in .projectOverviewWrap below
             }
             @media screen and (min-width: $lg_breakpoint) {
                 right: -7rem;
@@ -140,18 +129,20 @@
         padding: 0;
         top: 15rem;
         width: 40vw;
-        left: -2rem;
+        left: -5rem;
     }
     @media screen and (min-width: $lg_breakpoint) {
         left: -7rem;
     }
     .projectTitle {
-        font-family: "Gramatika Bold";
+        font-family: "Gramatika Bold", "sans-serif";
 
-        font-size: 1.8rem;
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
         font-weight: 900;
 
         @media screen and (min-width: $sm_breakpoint) {
+            margin-bottom: 1rem;
             font-size: 2.8rem;
         }
         @media screen and (min-width: $md_breakpoint) {
@@ -164,7 +155,7 @@
         }
     }
     .projectStack {
-        font-family: "Gramatika Bold";
+        font-family: "Gramatika Bold", "sans-serif";
         text-align: left;
         font-weight: bold;
         font-size: 1.6rem;
@@ -172,9 +163,9 @@
         margin: 0;
         line-height: 1.3;
 
-        @media screen and (min-width: $sm_breakpoint) {
-            font-size: 1.6rem;
-        }
+        // @media screen and (min-width: $sm_breakpoint) {
+        //     font-size: 1.6rem;
+        // }
         // @media screen and (min-width: $md_breakpoint) {
         //     font-size: 1.6rem;
         // }
@@ -189,15 +180,15 @@
         display: block;
         font-weight: normal;
         margin-top: 1rem;
-        font-size: 1.3rem;
+        font-size: 1.6rem;
         line-height: 1.5;
         color: #ccccd2;
 
         text-align: left;
 
-        @media screen and (min-width: $sm_breakpoint) {
-            font-size: 1.6rem;
-        }
+        // @media screen and (min-width: $sm_breakpoint) {
+        //     font-size: 1.6rem;
+        // }
         @media screen and (min-width: $md_breakpoint) {
             font-size: 1.4rem;
         }

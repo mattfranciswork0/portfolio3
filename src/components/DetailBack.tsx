@@ -3,8 +3,13 @@ import React, { useState } from "react";
 import { BiArrowBack } from "react-icons/bi";
 import history from "../browserHistory";
 import { useTransition, animated, useSpring, useTrail } from "react-spring";
-
-const DetailBack: React.FC<{}> = () => {
+import { useLocation } from "react-router-dom";
+interface DetailBackProps {
+    customBackground?: string;
+    customBackColor?: string;
+    match?: any;
+}
+const DetailBack: React.FC<DetailBackProps> = (props) => {
     const [isBackHovered, setIsBackHovered] = useState(false);
     const backSpring = useSpring({
         transform: isBackHovered
@@ -16,9 +21,16 @@ const DetailBack: React.FC<{}> = () => {
             tension: 100,
         },
     });
+    const location = useLocation();
 
     return (
-        <div className="backWrap">
+        <div
+            className={`backWrap ${
+                location.pathname === "/projects"
+                    ? "backPurpleDarkBackground"
+                    : ""
+            }`}
+        >
             <animated.div
                 style={backSpring}
                 onClick={() => history.goBack()}
@@ -26,7 +38,11 @@ const DetailBack: React.FC<{}> = () => {
                 onMouseLeave={() => setIsBackHovered(false)}
                 className="backInnerWrap"
             >
-                <div className="backBox"></div>
+                <div
+                    className={`backBox ${
+                        location.pathname === "/projects" ? "whiteBackBox" : ""
+                    }`}
+                ></div>
                 <h1>Back</h1>
             </animated.div>
         </div>

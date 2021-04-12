@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { updateSlideIndex } from "../actions";
 import { connect } from "react-redux";
 import { useTransition, animated, useSpring, useTrail } from "react-spring";
+import { useLocation } from "react-router-dom";
+import history from "../browserHistory";
 const titles = ["About Me", "Projects", "Career Timeline", "Contact"];
 
 interface HeaderProps {
@@ -62,6 +64,8 @@ const Header: React.FC<HeaderProps> = (props) => {
         },
     });
 
+    const location = useLocation();
+
     return (
         <nav>
             <h4 className="headerName">Matthew Francis</h4>
@@ -92,6 +96,9 @@ const Header: React.FC<HeaderProps> = (props) => {
                                 onClick={() => {
                                     setBurgerClicked(false);
                                     props.updateSlideIndex(index);
+                                    if (location.pathname !== "/") {
+                                        history.goBack();
+                                    }
                                 }}
                             >
                                 {title}

@@ -725,6 +725,7 @@ body {
   cursor: pointer;
   display: flex;
   align-items: center;
+  color: inherit;
 }
 .backInnerWrap .backBox {
   width: 10rem;
@@ -735,9 +736,18 @@ body {
 .backInnerWrap h1 {
   font-size: 3rem;
   text-transform: uppercase;
-  color: black;
+  color: inherit;
   font-weight: 200;
   letter-spacing: 0.4rem;
+}
+
+.backPurpleDarkBackground {
+  background: #02021e;
+  color: white;
+}
+
+.whiteBackBox {
+  background-color: white !important;
 }
 
 .overwatch2SlideContainer {
@@ -963,6 +973,7 @@ body {
 
 .detailBanner {
   position: relative;
+  overflow: hidden;
   width: 100%;
   padding-bottom: 15rem;
   background: #020b16;
@@ -1112,7 +1123,7 @@ body {
   margin-bottom: 4rem;
   line-height: 1.5;
   letter-spacing: 0.1rem;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   width: 60%;
 }
 @media screen and (min-width: 520px) {
@@ -1421,8 +1432,7 @@ nav {
 }
 
 .detailProjectsContainer {
-  background-color: white;
-  overflow: hidden;
+  background-color: #02021e;
   position: relative;
 }
 
@@ -1446,6 +1456,7 @@ nav {
   width: 100vw;
   height: 46rem;
   background: #3718cb;
+  cursor: pointer;
   overflow: hidden;
 }
 .projectImageContainer:hover {
@@ -1476,28 +1487,6 @@ nav {
 .projectsWrap {
   position: relative;
   z-index: 1;
-  padding: 5rem 1rem;
-  background-color: white;
-}
-@media screen and (min-width: 520px) {
-  .projectsWrap {
-    padding: 5rem 5rem;
-  }
-}
-@media screen and (min-width: 768px) {
-  .projectsWrap {
-    padding: 5rem 3rem;
-  }
-}
-@media screen and (min-width: 992px) {
-  .projectsWrap {
-    padding: 5rem 5rem;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .projectsWrap {
-    padding: 5rem 8rem;
-  }
 }
 
 .projectsWrap,
@@ -1510,9 +1499,14 @@ nav {
   color: white;
   margin-bottom: 2rem;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
   .projectContainer {
     margin-bottom: 15rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .projectContainer {
+    margin-bottom: 20rem;
   }
 }
 @media screen and (min-width: 768px) {
@@ -1525,7 +1519,7 @@ nav {
 }
 @media screen and (min-width: 768px) {
   .projectContainer:nth-child(even) .projectOverviewWrap {
-    right: -2rem;
+    right: -5rem;
   }
 }
 @media screen and (min-width: 992px) {
@@ -1577,7 +1571,7 @@ nav {
     padding: 0;
     top: 15rem;
     width: 40vw;
-    left: -2rem;
+    left: -5rem;
   }
 }
 @media screen and (min-width: 992px) {
@@ -1586,12 +1580,14 @@ nav {
   }
 }
 .projectOverviewWrap .projectTitle {
-  font-family: "Gramatika Bold";
-  font-size: 1.8rem;
+  font-family: "Gramatika Bold", "sans-serif";
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
   font-weight: 900;
 }
 @media screen and (min-width: 520px) {
   .projectOverviewWrap .projectTitle {
+    margin-bottom: 1rem;
     font-size: 2.8rem;
   }
 }
@@ -1607,18 +1603,13 @@ nav {
   }
 }
 .projectOverviewWrap .projectStack {
-  font-family: "Gramatika Bold";
+  font-family: "Gramatika Bold", "sans-serif";
   text-align: left;
   font-weight: bold;
   font-size: 1.6rem;
   font-weight: normal;
   margin: 0;
   line-height: 1.3;
-}
-@media screen and (min-width: 520px) {
-  .projectOverviewWrap .projectStack {
-    font-size: 1.6rem;
-  }
 }
 @media screen and (min-width: 1200px) {
   .projectOverviewWrap .projectStack {
@@ -1630,15 +1621,10 @@ nav {
   display: block;
   font-weight: normal;
   margin-top: 1rem;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   line-height: 1.5;
   color: #ccccd2;
   text-align: left;
-}
-@media screen and (min-width: 520px) {
-  .projectOverviewWrap .showProjectDesc {
-    font-size: 1.6rem;
-  }
 }
 @media screen and (min-width: 768px) {
   .projectOverviewWrap .showProjectDesc {
