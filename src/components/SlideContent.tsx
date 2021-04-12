@@ -67,15 +67,18 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
 
     const imgTranslate = useTransition(slideIndex, {
         from: {
-            transform: "translate3d(50%,0px,0px) scale(0.7)",
+            // transform: "translate3d(50%,0px,0px) scale(0.7)",
+            transform: "scale(0.7)",
         },
         enter: {
-            transform: "translate3d(0px,0px,0px) scale(1)",
+            // transform: "translate3d(0px,0px,0px) scale(1)",
+            transform: "scale(1)",
             delay: MIN_DELAY,
         },
-        leave: {
-            transform: "translate3d(50%,0px,0px) scale(0.7)",
-        },
+
+        // leave: {
+        //     transform: "scale(0.7)",
+        // },
         config: {
             mass: 1,
             tension: 300,
@@ -143,41 +146,35 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
             <div className="contentImageAndTextWrap">
                 {imgTranslate((animation, item) => {
                     return (
-                        item === props.slideIndex && (
-                            <animated.div
-                                style={animation}
-                                className="contentImage"
-                            >
-                                <img src={props.imgSrc} alt="" />
+                        <animated.div
+                            style={item === props.slideIndex ? animation : {}}
+                            className="contentImage"
+                        >
+                            <img src={props.imgSrc} alt="" />
 
-                                {minimize((animation, item) => {
-                                    return (
-                                        item === props.slideIndex && (
-                                            <animated.div
-                                                style={animation}
-                                                className="transitionDark"
-                                            >
-                                                {redExpand(
-                                                    (animation, item) => {
-                                                        return (
-                                                            item ===
-                                                                props.slideIndex && (
-                                                                <animated.div
-                                                                    style={
-                                                                        animation
-                                                                    }
-                                                                    className="transitionRed"
-                                                                ></animated.div>
-                                                            )
-                                                        );
-                                                    }
-                                                )}
-                                            </animated.div>
-                                        )
-                                    );
-                                })}
-                            </animated.div>
-                        )
+                            {minimize((animation, item) => {
+                                return (
+                                    item === props.slideIndex && (
+                                        <animated.div
+                                            style={animation}
+                                            className="transitionDark"
+                                        >
+                                            {redExpand((animation, item) => {
+                                                return (
+                                                    item ===
+                                                        props.slideIndex && (
+                                                        <animated.div
+                                                            style={animation}
+                                                            className="transitionRed"
+                                                        ></animated.div>
+                                                    )
+                                                );
+                                            })}
+                                        </animated.div>
+                                    )
+                                );
+                            })}
+                        </animated.div>
                     );
                 })}
                 <div className="contentTextWrap">

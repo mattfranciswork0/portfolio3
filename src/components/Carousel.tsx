@@ -107,12 +107,15 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
         debounce(event);
         // throttle(event);
     });
-
+    const [carouselStartIndex, setCarouselStartIndex] = useState(0);
+    useEffect(() => {
+        //Useful for when user clics on back button from detail page
+        setCarouselStartIndex(props.carouselSlideIndex);
+    }, []);
     const [viewportRef, embla] = useEmblaCarousel({
         axis: "y",
         draggable: false,
-
-        // startIndex: props.carouselSlideIndex,
+        startIndex: carouselStartIndex,
     });
     const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
     const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
