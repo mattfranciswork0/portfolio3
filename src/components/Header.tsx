@@ -154,7 +154,8 @@ const Header: React.FC<HeaderProps> = (props) => {
                                 ? "backButtonWhite"
                                 : ""
                         } ${
-                            props.changeHeaderBackIconToBlack
+                            props.changeHeaderBackIconToBlack &&
+                            location.pathname !== "/projects"
                                 ? "backButtonBlack"
                                 : "backButtonWhite"
                         }`}

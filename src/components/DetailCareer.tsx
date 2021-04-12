@@ -3,10 +3,8 @@ import React, { useState, useEffect, useRef } from "react";
 import DetailBanner from "./DetailBanner";
 import DetailBack from "./DetailBack";
 import { SLIDE_CAREER_DESC } from "./SlideCareer";
-import { updateHeaderBackIconToBlack } from "../actions";
 import { connect } from "react-redux";
 import { StoreState } from "../reducers";
-import useOnScreen from "../useOnScreen";
 const careerProgress = [
     {
         company: `Wilfrid Laurier University's Comp Sci Club`,
@@ -26,19 +24,9 @@ interface DetailCareerProps {
 }
 
 const DetailCareer: React.FC<DetailCareerProps> = (props) => {
-    const ref = useRef<any>();
-    const isVisible = useOnScreen(ref);
     useEffect(() => {
         document.body.style.overflowY = "visible";
-        return () => {
-            //Umounting - change header back button to white, the default color
-            props.updateHeaderBackIconToBlack(false);
-        };
     }, []);
-    useEffect(() => {
-        if (isVisible) props.updateHeaderBackIconToBlack(true);
-        else props.updateHeaderBackIconToBlack(false);
-    }, [props, isVisible]);
 
     return (
         <div className="detailCareerContainer">
@@ -84,7 +72,7 @@ const DetailCareer: React.FC<DetailCareerProps> = (props) => {
                     );
                 })}
             </div>
-            <span ref={ref}></span>
+            {/* <span ref={ref}></span> */}
             <DetailBack />
         </div>
     );
@@ -96,6 +84,4 @@ const mapStateToProps = (state: StoreState) => {
     };
 };
 
-export default connect(mapStateToProps, {
-    updateHeaderBackIconToBlack,
-})(DetailCareer);
+export default connect(mapStateToProps, {})(DetailCareer);

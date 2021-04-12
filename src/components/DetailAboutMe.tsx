@@ -5,8 +5,6 @@ import DetailBack from "./DetailBack";
 import me1 from "../img/me1.jpg";
 import me2 from "../img/me2.jpg";
 import { SLIDE_ABOUT_ME_DESC } from "./SlideLanding";
-import useOnScreen from "../useOnScreen";
-import { updateHeaderBackIconToBlack } from "../actions";
 import { connect } from "react-redux";
 import { StoreState } from "../reducers";
 interface DetailAboutMeProps {
@@ -16,17 +14,8 @@ interface DetailAboutMeProps {
 const DetailAboutMe: React.FC<DetailAboutMeProps> = (props) => {
     useEffect(() => {
         document.body.style.overflowY = "visible";
-        return () => {
-            //Umounting - change header back button to white, the default color
-            props.updateHeaderBackIconToBlack(false);
-        };
     }, []);
-    const ref = useRef<any>();
-    const isVisible = useOnScreen(ref);
-    useEffect(() => {
-        if (isVisible) props.updateHeaderBackIconToBlack(true);
-        else props.updateHeaderBackIconToBlack(false);
-    }, [props, isVisible]);
+
     return (
         <div className="detailAboutMeContainer">
             <DetailBanner
@@ -34,6 +23,7 @@ const DetailAboutMe: React.FC<DetailAboutMeProps> = (props) => {
                 imgSrc={me1}
                 desc={SLIDE_ABOUT_ME_DESC}
             />
+            {/* <span ref={ref}></span> */}
             <div className="aboutMeWrap">
                 <div className="myStoryWrap">
                     <div className="myStoryInnerWrap">
@@ -47,7 +37,7 @@ const DetailAboutMe: React.FC<DetailAboutMeProps> = (props) => {
                         Born and raised Jakarta, Indonesia in 2000. Moved to
                         Ontario, Canada at 2011. Aspiring to be a web developer.
                     </p>
-                    <img ref={ref} src={me2} alt="" />
+                    <img src={me2} alt="" />
                 </div>
             </div>
             <DetailBack />
@@ -61,6 +51,4 @@ const mapStateToProps = (state: StoreState) => {
     };
 };
 
-export default connect(mapStateToProps, {
-    updateHeaderBackIconToBlack,
-})(DetailAboutMe);
+export default connect(mapStateToProps, {})(DetailAboutMe);
