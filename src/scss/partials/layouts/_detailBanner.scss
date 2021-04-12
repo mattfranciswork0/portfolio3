@@ -56,21 +56,6 @@
     }
 }
 
-.backButton {
-    cursor: pointer;
-    position: absolute;
-    top: 11rem;
-    left: 2rem;
-    font-size: 5rem;
-    color: white;
-    @media screen and (min-width: $sm_breakpoint) {
-        top: 80%;
-        left: 5rem;
-        font-size: 10rem;
-        font-size: 6rem;
-    }
-}
-
 .detailTitleWrap {
     position: relative;
     margin: 0;

@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { useTransition, animated, useSpring, useTrail } from "react-spring";
 import { useLocation } from "react-router-dom";
 import history from "../browserHistory";
+import { BiArrowBack } from "react-icons/bi";
 const titles = ["About Me", "Projects", "Career Timeline", "Contact"];
 
 interface HeaderProps {
@@ -68,55 +69,70 @@ const Header: React.FC<HeaderProps> = (props) => {
 
     return (
         <nav>
-            <h4 className="headerName">Matthew Francis</h4>
-            <div
-                className="burger"
-                onClick={() => setBurgerClicked(!isBurgerClicked)}
-            >
+            <div className="nameAndBurgerWrap">
+                <h4 className="headerName">Matthew Francis</h4>
+                <div
+                    className="burger"
+                    onClick={() => setBurgerClicked(!isBurgerClicked)}
+                >
+                    <animated.div
+                        className="firstLine"
+                        style={firstLineRotate}
+                    ></animated.div>
+                    <animated.div
+                        className="secondLine"
+                        style={secondLineRotate}
+                    ></animated.div>
+                </div>
                 <animated.div
-                    className="firstLine"
-                    style={firstLineRotate}
-                ></animated.div>
-                <animated.div
-                    className="secondLine"
-                    style={secondLineRotate}
-                ></animated.div>
-            </div>
-            <animated.div className="burgerDropdown" style={dropdownControl}>
-                {titles.map((title, index) => {
-                    return (
-                        <animated.div
-                            key={index}
-                            className="dropdownTitleWrap"
-                            style={translateTitle}
-                        >
-                            <h1
-                                onMouseEnter={() => setTitleIndex(index)}
-                                onMouseLeave={() => setTitleIndex(-1)}
-                                onClick={() => {
-                                    setBurgerClicked(false);
-                                    props.updateSlideIndex(index);
-                                    if (location.pathname !== "/") {
-                                        history.goBack();
-                                    }
-                                }}
+                    className="burgerDropdown"
+                    style={dropdownControl}
+                >
+                    {titles.map((title, index) => {
+                        return (
+                            <animated.div
+                                key={index}
+                                className="dropdownTitleWrap"
+                                style={translateTitle}
                             >
-                                {title}
-                                {cross((style, item) => {
-                                    return (
-                                        item === index && (
-                                            <animated.div
-                                                style={style}
-                                                className="crossTitle"
-                                            ></animated.div>
-                                        )
-                                    );
-                                })}
-                            </h1>
-                        </animated.div>
-                    );
-                })}
-            </animated.div>
+                                <h1
+                                    onMouseEnter={() => setTitleIndex(index)}
+                                    onMouseLeave={() => setTitleIndex(-1)}
+                                    onClick={() => {
+                                        setBurgerClicked(false);
+                                        props.updateSlideIndex(index);
+                                        if (location.pathname !== "/") {
+                                            history.goBack();
+                                        }
+                                    }}
+                                >
+                                    {title}
+                                    {cross((style, item) => {
+                                        return (
+                                            item === index && (
+                                                <animated.div
+                                                    style={style}
+                                                    className="crossTitle"
+                                                ></animated.div>
+                                            )
+                                        );
+                                    })}
+                                </h1>
+                            </animated.div>
+                        );
+                    })}
+                </animated.div>
+            </div>
+            {location.pathname !== "/" && (
+                <BiArrowBack
+                    onClick={() => history.goBack()}
+                    className={`backButton ${
+                        location.pathname === "/projects"
+                            ? "backButtonWhite"
+                            : ""
+                    }`}
+                />
+            )}
         </nav>
     );
 };

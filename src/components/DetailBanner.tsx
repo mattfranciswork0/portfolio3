@@ -12,10 +12,10 @@ const DetailBanner: React.FC<DetailBannerProps> = (props) => {
         <div className="detailBanner">
             <img src={props.imgSrc} alt="" />
 
-            <BiArrowBack
+            {/* <BiArrowBack
                 onClick={() => history.goBack()}
                 className="backButton"
-            />
+            /> */}
 
             <div className="detailTitleWrap">
                 <h1 className="detailTitle">{props.title}</h1>
