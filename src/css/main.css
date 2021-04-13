@@ -1162,7 +1162,7 @@ nav {
   }
 }
 
-.nameAndBurgerWrap {
+.nameAndHeaderIconsWrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1205,12 +1205,6 @@ nav {
   .headerName {
     font-size: 2.4rem;
   }
-}
-
-.hamburger {
-  font-size: 3rem;
-  font-weight: normal;
-  color: white;
 }
 
 .burger {
@@ -1305,6 +1299,24 @@ nav {
 }
 .dropdownTitleWrap h1 {
   cursor: pointer;
+}
+
+.headerLinkedInAndGithubIcon {
+  font-size: 1.4rem;
+  font-weight: normal;
+  margin-right: 2rem;
+  color: white;
+}
+@media screen and (min-width: 520px) {
+  .headerLinkedInAndGithubIcon {
+    font-size: 2.6rem;
+    margin-right: 4rem;
+  }
+}
+
+.headerIconsWrap {
+  display: flex;
+  align-items: center;
 }
 
 .loadingContainer {

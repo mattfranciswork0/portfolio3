@@ -6,6 +6,8 @@ import { useTransition, animated, useSpring, useTrail } from "react-spring";
 import { useLocation } from "react-router-dom";
 import history from "../browserHistory";
 import { BiArrowBack } from "react-icons/bi";
+import { AiOutlineLinkedin } from "react-icons/ai";
+import { FiGithub } from "react-icons/fi";
 import { StoreState } from "../reducers";
 const titles = ["About Me", "Projects", "Career Timeline", "Contact"];
 
@@ -93,20 +95,36 @@ const Header: React.FC<HeaderProps> = (props) => {
 
     return (
         <nav>
-            <div className="nameAndBurgerWrap">
+            <div className="nameAndHeaderIconsWrap">
                 <h4 className="headerName">Matthew Francis</h4>
-                <div
-                    className="burger"
-                    onClick={() => setBurgerClicked(!isBurgerClicked)}
-                >
-                    <animated.div
-                        className="firstLine"
-                        style={firstLineRotate}
-                    ></animated.div>
-                    <animated.div
-                        className="secondLine"
-                        style={secondLineRotate}
-                    ></animated.div>
+                <div className="headerIconsWrap">
+                    <a
+                        href="https://www.linkedin.com/in/matthew-francis-b9b1b31a2/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <AiOutlineLinkedin className="headerLinkedInAndGithubIcon" />
+                    </a>
+                    <a
+                        href="https://github.com/mattfrancis888"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <FiGithub className="headerLinkedInAndGithubIcon" />
+                    </a>
+                    <div
+                        className="burger"
+                        onClick={() => setBurgerClicked(!isBurgerClicked)}
+                    >
+                        <animated.div
+                            className="firstLine"
+                            style={firstLineRotate}
+                        ></animated.div>
+                        <animated.div
+                            className="secondLine"
+                            style={secondLineRotate}
+                        ></animated.div>
+                    </div>
                 </div>
                 <animated.div
                     className="burgerDropdown"
