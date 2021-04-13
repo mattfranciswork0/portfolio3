@@ -17,11 +17,13 @@ import authLg from "../img/auth_lg.jpg";
 import lowResAuthLg from "../img/lowRes/low_res_auth_lg.jpg";
 import dreamworksLg from "../img/dreamworks_lg.jpg";
 import lowResDreamworksLg from "../img/lowRes/low_res_dreamworks_lg.jpg";
-import spotifyLg from "../img/spotify_lg.jpg";
+// import spotifyLg from "../img/spotify_lg.jpg";
+import spotifyLg from "../img/spotify2_lg.jpg";
 import lowResSpotifyLg from "../img/lowRes/low_res_spotify_lg.jpg";
 import lowResAppStoreLg from "../img/lowRes/low_res_app_store_lg.jpg";
 import appStoreLg from "../img/app_store_lg.jpg";
-import pixarLg from "../img/pixar_lg.jpg";
+// import pixarLg from "../img/pixar_lg.jpg";
+import pixarLg from "../img/pixar2_lg.jpg";
 import lowResPixarLg from "../img/lowRes/low_res_pixar_lg.jpg";
 import musicStreamLg from "../img/music_stream_lg.jpg";
 import lowResMusicStreamLg from "../img/lowRes/low_res_music_stream_lg.jpg";
@@ -37,10 +39,12 @@ import netflixLg from "../img/netflix_lg.jpg";
 import lowResNetflixLg from "../img/lowRes/low_res_netflix_lg.jpg";
 import steamLg from "../img/steam_lg.jpg";
 import lowResSteamLg from "../img/lowRes/low_res_steam_lg.jpg";
-import blizzardLg from "../img/blizzard_lg.jpg";
-import lowResBlizzardLg from "../img/lowRes/low_res_blizzard_lg.jpg";
+// import blizzardLg from "../img/blizzard_lg.jpg";
+import blizzard2 from "../img/blizzard2.jpg";
+// import lowResBlizzardLg from "../img/lowRes/low_res_blizzard_lg.jpg";
+import lowResBlizzardLg from "../img/lowRes/low_res_blizzard2_lg.jpg";
 import { SLIDE_PROJECTS_DESC } from "./Carousel";
-import { BiArrowBack } from "react-icons/bi";
+import ow2 from "../img/ow2.jpg";
 import Loading from "./Loading";
 import history from "../browserHistory";
 const discoData = [
@@ -50,8 +54,8 @@ const discoData = [
         description: `Replication of Blizzard's Entertainment's website, known for developing and
         publishing games such as Call of Duty, World of Warcraft, and Overwatch.
         Built to understand physics-based animations with React Spring.`,
-        lowResLg: lowResBlizzardLg,
-        imgLg: blizzardLg,
+        lowResLg: "lowResBlizzardLg",
+        imgLg: blizzard2,
         demo: `https://blizzard-roan.vercel.app`,
         github: `https://github.com/mattfrancis888/blizzard`,
     },
@@ -348,9 +352,7 @@ const DetailProjects: React.FC<{}> = () => {
                 >
                     <DetailBanner
                         title="Projects"
-                        imgSrc={
-                            "https://miro.medium.com/max/1400/1*nAZueDDk8s5ggBsxmkqfXg.jpeg"
-                        }
+                        imgSrc={ow2}
                         desc={SLIDE_PROJECTS_DESC}
                     />
                 </div>

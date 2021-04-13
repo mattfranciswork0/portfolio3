@@ -46,8 +46,8 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
         config: {
             mass: 1,
             duration: 1000,
-            tension: 200,
-            friction: 50,
+            // tension: 200,
+            // friction: 50,
         },
     });
 

@@ -13,7 +13,8 @@ import _ from "lodash";
 import me1 from "../img/me1.jpg";
 import contact from "../img/contact.jpg";
 import Loading from "./Loading";
-
+import ow2 from "../img/ow2.jpg";
+import career from "../img/career.jpg";
 export const SLIDE_ABOUT_ME_DESC =
     "BSc Computer Science, 3rd Year Student, Wilfrid Laurier University";
 export const SLIDE_PROJECTS_DESC =
@@ -23,14 +24,12 @@ export const SLIDE_CAREER_DESC = "Why I'm a valuable asset to your team";
 const slides = [
     { imgSrc: me1, title: "Matthew Francis", desc: SLIDE_ABOUT_ME_DESC },
     {
-        imgSrc:
-            "https://miro.medium.com/max/1400/1*nAZueDDk8s5ggBsxmkqfXg.jpeg",
+        imgSrc: ow2,
         title: "Projects",
         desc: SLIDE_PROJECTS_DESC,
     },
     {
-        imgSrc:
-            "https://images.unsplash.com/photo-1542315192-1f61a1792f33?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        imgSrc: career,
         title: "Career Timeline",
         desc: SLIDE_CAREER_DESC,
     },
@@ -170,7 +169,7 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                         {slides.map((slide, index) => {
                             return (
                                 <div key={index} className="embla__slide">
-                                    <div className="overwatch2SlideInner">
+                                    <div className="slideInner">
                                         <div
                                             className="contentSlideContainer"
                                             onLoad={() => {
@@ -207,9 +206,9 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                     );
                 })}
 
-                <div className="overwatch2DotWrapAndButton">
+                <div className="carouselDotWrapAndButton">
                     <button
-                        className="embla__button embla__button--prev overwatch2CarouselButton carouselNextPrevButtonHide"
+                        className="embla__button embla__button--pre carouselNextPrevButtonHide"
                         onClick={() => {
                             scrollPrev();
                             setTimeout(() => {
@@ -222,10 +221,10 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                         disabled={!prevBtnEnabled}
                         ref={prevRef}
                     >
-                        <RiArrowUpSLine className="overwatch2CarouselArrow" />
+                        <RiArrowUpSLine />
                     </button>
                     <div
-                        className="embla__dots overwatch2DotWrap"
+                        className="embla__dots carouselDotWrap"
                         onMouseEnter={() => setShowDotText(true)}
                         onMouseLeave={() => setShowDotText(false)}
                         onClick={() => setShowDotText(false)}
@@ -234,7 +233,7 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                             <React.Fragment>
                                 <div
                                     key={index}
-                                    className="overwatch2DotParentWrap"
+                                    className="carouselDotInnerWrap"
                                 >
                                     <animated.div
                                         style={animation}
@@ -245,7 +244,7 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                                             index === selectedIndex
                                                 ? "is-selected dot-is-selected"
                                                 : ""
-                                        } overwatch2Dot`}
+                                        } carouselDot`}
                                         onClick={(e) => {
                                             e.stopPropagation();
                                             // setTimeout(() => {

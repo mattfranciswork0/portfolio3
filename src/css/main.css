@@ -414,13 +414,6 @@ body {
   height: 100%;
 }
 
-.overwatch2SlideParentContainer {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
 .contentImageAndTextWrap {
   position: relative;
   width: 100%;
@@ -668,11 +661,6 @@ body {
   }
 }
 
-.overwatch2SlideLandingParentContainer {
-  height: 100%;
-  width: 100%;
-}
-
 .meBackground {
   position: absolute;
   border-radius: 0.25rem;
@@ -804,16 +792,6 @@ body {
   color: white !important;
 }
 
-.overwatch2SlideContainer {
-  position: absolute;
-  top: -10%;
-  right: -10vw;
-  width: 120vw;
-  height: 120%;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
 .embla {
   position: relative;
   background-image: transparent;
@@ -863,7 +841,7 @@ body {
   padding: 0rem 6.5rem 0 0 !important;
 }
 
-.overwatch2DotWrapAndButton {
+.carouselDotWrapAndButton {
   pointer-events: visible;
   position: absolute;
   top: 80%;
@@ -871,22 +849,22 @@ body {
   transform: translateX(-50%) rotate(270deg);
 }
 @media screen and (min-width: 380px) {
-  .overwatch2DotWrapAndButton {
+  .carouselDotWrapAndButton {
     right: 30vw;
   }
 }
 @media screen and (min-width: 520px) {
-  .overwatch2DotWrapAndButton {
+  .carouselDotWrapAndButton {
     right: 35vw;
   }
 }
 @media screen and (min-width: 768px) {
-  .overwatch2DotWrapAndButton {
+  .carouselDotWrapAndButton {
     right: 38vw;
   }
 }
 @media screen and (min-width: 992px) {
-  .overwatch2DotWrapAndButton {
+  .carouselDotWrapAndButton {
     display: flex;
     flex-direction: column;
     top: 50%;
@@ -895,22 +873,22 @@ body {
   }
 }
 
-.overwatch2DotWrap {
+.carouselDotWrap {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 10rem;
 }
 
-.overwatch2DotParentWrap {
+.carouselDotInnerWrap {
   position: relative;
   margin-bottom: 3rem;
 }
-.overwatch2DotParentWrap:first-of-type {
+.carouselDotInnerWrap:first-of-type {
   margin-top: 3rem;
 }
 
-.overwatch2Dot {
+.carouselDot {
   border-radius: 0.25rem;
   width: 3rem;
   height: 0.3rem;
@@ -922,7 +900,7 @@ body {
   transition: all 0.5s ease-in;
 }
 
-.overwatch2SlideInner {
+.slideInner {
   position: absolute;
   width: 100%;
   height: 100%;
