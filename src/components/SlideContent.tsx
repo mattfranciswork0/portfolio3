@@ -66,7 +66,8 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
             friction: 50,
         },
     });
-
+    //Removed animation for image because it requests a new image whenever it's animated.
+    //Not good for slower connections like 3G.
     const imgTranslate = useTransition(carouselSlideIndex, {
         from: {
             // transform: "translate3d(50%,0px,0px) scale(0.7)",
@@ -143,6 +144,24 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
         },
     });
 
+    const currrentSlideNumberTranslate = useTransition(carouselSlideIndex, {
+        from: {
+            transform: "translate3d(0%,200%,0px) ",
+        },
+        enter: {
+            transform: "translate3d(0px,0px,0px)",
+        },
+
+        // leave: {
+        //     transform: "scale(0.7)",
+        // },
+        config: {
+            mass: 1,
+            tension: 120,
+            friction: 50,
+        },
+    });
+
     return (
         <React.Fragment>
             <div className="contentImageAndTextWrap">
@@ -151,6 +170,18 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                     className="contentImage"
                 >
                     <img src={props.imgSrc} alt="" />
+                    {currrentSlideNumberTranslate((animation, item) => {
+                        return (
+                            item === props.slideIndex && (
+                                <animated.h1
+                                    style={animation}
+                                    className="currentSlideNumber"
+                                >
+                                    {item + 1}/4
+                                </animated.h1>
+                            )
+                        );
+                    })}
 
                     {minimize((animation, item) => {
                         return (

@@ -384,6 +384,10 @@ body {
   font-family: "Sofia Pro";
   src: url(../fonts/SofiaProSoftRegular.woff2) format("woff2");
 }
+@font-face {
+  font-family: "Abril Fat";
+  src: url(../fonts/AbrilFatface-Regular.ttf) format("truetype");
+}
 .transitionRed {
   background-color: red;
   height: 100%;
@@ -632,6 +636,35 @@ body {
   .showMoreButton {
     font-size: 1.8rem;
     padding: 1.8rem 3.2rem;
+  }
+}
+
+.currentSlideNumber {
+  display: none;
+  position: absolute;
+  right: -5%;
+  bottom: -20%;
+  font-family: "Abril Fat";
+  font-weight: 500;
+  color: white;
+  line-height: 1.1;
+  text-shadow: 0 10px 30px rgba(2, 11, 22, 0.5);
+  z-index: 201;
+}
+@media screen and (min-width: 520px) {
+  .currentSlideNumber {
+    font-size: 10rem;
+    display: block;
+  }
+}
+@media screen and (min-width: 992px) {
+  .currentSlideNumber {
+    font-size: 12rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .currentSlideNumber {
+    font-size: 13rem;
   }
 }
 

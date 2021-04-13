@@ -221,3 +221,29 @@
     outline: none !important;
     box-shadow: none !important;
 }
+
+.currentSlideNumber {
+    display: none;
+    @media screen and (min-width: $sm_breakpoint) {
+        font-size: 10rem;
+        display: block;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        font-size: 12rem;
+    }
+    @media screen and (min-width: $xl_breakpoint) {
+        font-size: 13rem;
+    }
+
+    position: absolute;
+    // overflow-y: hidden;
+    right: -5%;
+    bottom: -20%;
+    font-family: "Abril Fat";
+    font-weight: 500;
+
+    color: white;
+    line-height: 1.1;
+    text-shadow: 0 10px 30px rgb(2 11 22 / 50%);
+    z-index: 201; //greater z index than transitionDark
+}
