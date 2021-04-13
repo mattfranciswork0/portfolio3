@@ -18,7 +18,7 @@ export const SLIDE_ABOUT_ME_DESC =
     "BSc Computer Science, 3rd Year Student, Wilfrid Laurier University";
 export const SLIDE_PROJECTS_DESC =
     "Websites I've built (Kijij, Netflix, Steam, Overwatch and many more)";
-export const SLIDE_CAREER_DESC = "Why I'm a great asset to your team";
+export const SLIDE_CAREER_DESC = "Why I'm a valuable asset to your team";
 
 const slides = [
     { imgSrc: me1, title: "Matthew Francis", desc: SLIDE_ABOUT_ME_DESC },

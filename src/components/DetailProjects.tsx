@@ -41,6 +41,7 @@ import blizzardLg from "../img/blizzard_lg.jpg";
 import lowResBlizzardLg from "../img/lowRes/low_res_blizzard_lg.jpg";
 import { SLIDE_PROJECTS_DESC } from "./Carousel";
 import { BiArrowBack } from "react-icons/bi";
+import Loading from "./Loading";
 import history from "../browserHistory";
 const discoData = [
     {
@@ -262,6 +263,7 @@ const discoData = [
 ];
 
 const DetailProjects: React.FC<{}> = () => {
+    const [loadedImages, setLoadedImages] = useState(0);
     useEffect(() => {
         document.body.style.overflowY = "visible";
     }, []);
@@ -336,25 +338,26 @@ const DetailProjects: React.FC<{}> = () => {
     };
 
     return (
-        <div className="detailProjectsContainer">
-            <DetailBanner
-                title="Projects"
-                // imgSrc={
-                //     "https://image.freepik.com/free-photo/stylish-workspace-dark-leather-desk-workplace-with-keyboard-computer_67155-175.jpg"
-                // }
-                imgSrc={
-                    "https://miro.medium.com/max/1400/1*nAZueDDk8s5ggBsxmkqfXg.jpeg"
-                }
-                desc={SLIDE_PROJECTS_DESC}
-            />
-
-            {/* <BiArrowBack
-                onClick={() => history.goBack()}
-                className="backButton2"
-            /> */}
-            <div className="projectsWrap">{renderDisco()}</div>
-            <DetailBack />
-        </div>
+        <React.Fragment>
+            <Loading imagesToLoad={1} loadedImages={loadedImages} />
+            <div className="detailProjectsContainer">
+                <div
+                    onLoad={() => {
+                        setLoadedImages(loadedImages + 1);
+                    }}
+                >
+                    <DetailBanner
+                        title="Projects"
+                        imgSrc={
+                            "https://miro.medium.com/max/1400/1*nAZueDDk8s5ggBsxmkqfXg.jpeg"
+                        }
+                        desc={SLIDE_PROJECTS_DESC}
+                    />
+                </div>
+                <div className="projectsWrap">{renderDisco()}</div>
+                <DetailBack />
+            </div>
+        </React.Fragment>
     );
 };
 

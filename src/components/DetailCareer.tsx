@@ -5,6 +5,7 @@ import DetailBack from "./DetailBack";
 import { SLIDE_CAREER_DESC } from "./Carousel";
 import { connect } from "react-redux";
 import { StoreState } from "../reducers";
+import Loading from "./Loading";
 const careerProgress = [
     {
         company: `Wilfrid Laurier University's Comp Sci Club`,
@@ -24,57 +25,73 @@ interface DetailCareerProps {
 }
 
 const DetailCareer: React.FC<DetailCareerProps> = (props) => {
+    const [loadedImages, setLoadedImages] = useState(0);
     useEffect(() => {
         document.body.style.overflowY = "visible";
     }, []);
 
     return (
-        <div className="detailCareerContainer">
-            <DetailBanner
-                title="Career Experiences"
-                imgSrc="https://images.unsplash.com/photo-1542315192-1f61a1792f33?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
-                desc={SLIDE_CAREER_DESC}
-            />
-            <div className="careerContentWrap">
-                {careerProgress.map((career, index) => {
-                    return (
-                        <React.Fragment>
-                            <h1 className="careerGridTitle">
-                                {career.company}
-                            </h1>
-                            <div className="detailCareerGrid">
-                                <div className="careerColWrap">
-                                    <h1 className="careerGridTitle">Date</h1>
-                                    <p className="careerDate">{career.date}</p>
+        <React.Fragment>
+            <Loading imagesToLoad={1} loadedImages={loadedImages} />
+            <div className="detailCareerContainer">
+                <div
+                    onLoad={() => {
+                        setLoadedImages(loadedImages + 1);
+                    }}
+                >
+                    <DetailBanner
+                        title="Career Experiences"
+                        imgSrc="https://images.unsplash.com/photo-1542315192-1f61a1792f33?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+                        desc={SLIDE_CAREER_DESC}
+                    />
+                </div>
+                <div className="careerContentWrap">
+                    {careerProgress.map((career, index) => {
+                        return (
+                            <React.Fragment>
+                                <h1 className="careerGridTitle">
+                                    {career.company}
+                                </h1>
+                                <div className="detailCareerGrid">
+                                    <div className="careerColWrap">
+                                        <h1 className="careerGridTitle">
+                                            Date
+                                        </h1>
+                                        <p className="careerDate">
+                                            {career.date}
+                                        </p>
+                                    </div>
+                                    <div className="careerColWrap">
+                                        <h1 className="careerGridTitle">
+                                            Position
+                                        </h1>
+                                        <p>{career.position}</p>
+                                    </div>
+                                    <div className="careerColWrap accomplishmentColWrap">
+                                        <h1 className="careerGridTitle ">
+                                            Accomplishments
+                                        </h1>
+                                        <ul>
+                                            {career.accomplishments.map(
+                                                (accomplishment, index) => {
+                                                    return (
+                                                        <li>
+                                                            {accomplishment}
+                                                        </li>
+                                                    );
+                                                }
+                                            )}
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div className="careerColWrap">
-                                    <h1 className="careerGridTitle">
-                                        Position
-                                    </h1>
-                                    <p>{career.position}</p>
-                                </div>
-                                <div className="careerColWrap accomplishmentColWrap">
-                                    <h1 className="careerGridTitle ">
-                                        Accomplishments
-                                    </h1>
-                                    <ul>
-                                        {career.accomplishments.map(
-                                            (accomplishment, index) => {
-                                                return (
-                                                    <li>{accomplishment}</li>
-                                                );
-                                            }
-                                        )}
-                                    </ul>
-                                </div>
-                            </div>
-                        </React.Fragment>
-                    );
-                })}
+                            </React.Fragment>
+                        );
+                    })}
+                </div>
+
+                <DetailBack />
             </div>
-            {/* <span ref={ref}></span> */}
-            <DetailBack />
-        </div>
+        </React.Fragment>
     );
 };
 

@@ -12,6 +12,7 @@ const titles = ["About Me", "Projects", "Career Timeline", "Contact"];
 interface HeaderProps {
     updateSlideIndex: any;
     changeHeaderBackIconToBlack: boolean;
+    loadingStatus: boolean;
 }
 const Header: React.FC<HeaderProps> = (props) => {
     const location = useLocation();
@@ -79,9 +80,10 @@ const Header: React.FC<HeaderProps> = (props) => {
     });
 
     const backButtonTranslate = useSpring({
-        transform: isBackButtonVisible
-            ? "translate3d(0% , 0%, 0px)"
-            : "translate3d(-100% , 0%, 0px)",
+        transform:
+            !props.loadingStatus && isBackButtonVisible
+                ? "translate3d(0% , 0%, 0px)"
+                : "translate3d(-100% , 0%, 0px)",
 
         config: {
             tension: 120,
@@ -169,6 +171,7 @@ const Header: React.FC<HeaderProps> = (props) => {
 const mapStateToProps = (state: StoreState) => {
     return {
         changeHeaderBackIconToBlack: state.changeHeaderBackIconToBlack,
+        loadingStatus: state.loadingStatus,
     };
 };
 

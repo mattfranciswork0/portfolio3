@@ -10,10 +10,11 @@ import contact from "../img/contact.jpg";
 import me1 from "../img/me1.jpg";
 interface SlideContentProps {
     carouselSlideIndex: any;
-    title?: string;
-    desc?: string;
+    title: string;
+    desc: string;
     imgSrc: any;
     slideIndex?: number; //the index of the slide, different from carouselSlideIndex, which is the current slide index the carousel is at
+    loadingStatus: boolean;
 }
 // const MIN_DELAY = 280;
 const MIN_DELAY = 0;
@@ -22,12 +23,13 @@ const SECOND_SLIDE = 1;
 const THIRD_SLIDE = 2;
 const LAST_SLIDE = 3;
 const SlideContent: React.FC<SlideContentProps> = (props) => {
-    const [carouselSlideIndex, setCarouselSlideIndex] = useState<any>(0);
+    const [carouselSlideIndex, setCarouselSlideIndex] = useState<any>(-1);
     const [isButtonHovered, setIsButtonHovered] = useState(false);
 
     useEffect(() => {
-        setCarouselSlideIndex(props.carouselSlideIndex);
-    }, [props.carouselSlideIndex]);
+        if (!props.loadingStatus)
+            setCarouselSlideIndex(props.carouselSlideIndex);
+    }, [props.carouselSlideIndex, props.loadingStatus]);
 
     const minimize = useTransition(carouselSlideIndex, {
         from: {
@@ -144,39 +146,35 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
     return (
         <React.Fragment>
             <div className="contentImageAndTextWrap">
-                {imgTranslate((animation, item) => {
-                    return (
-                        <animated.div
-                            style={item === props.slideIndex ? animation : {}}
-                            className="contentImage"
-                        >
-                            <img src={props.imgSrc} alt="" />
+                <div
+                    // style={item === props.slideIndex ? animation : {}}
+                    className="contentImage"
+                >
+                    <img src={props.imgSrc} alt="" />
 
-                            {minimize((animation, item) => {
-                                return (
-                                    item === props.slideIndex && (
-                                        <animated.div
-                                            style={animation}
-                                            className="transitionDark"
-                                        >
-                                            {redExpand((animation, item) => {
-                                                return (
-                                                    item ===
-                                                        props.slideIndex && (
-                                                        <animated.div
-                                                            style={animation}
-                                                            className="transitionRed"
-                                                        ></animated.div>
-                                                    )
-                                                );
-                                            })}
-                                        </animated.div>
-                                    )
-                                );
-                            })}
-                        </animated.div>
-                    );
-                })}
+                    {minimize((animation, item) => {
+                        return (
+                            item === props.slideIndex && (
+                                <animated.div
+                                    style={animation}
+                                    className="transitionDark"
+                                >
+                                    {redExpand((animation, item) => {
+                                        return (
+                                            item === props.slideIndex && (
+                                                <animated.div
+                                                    style={animation}
+                                                    className="transitionRed"
+                                                ></animated.div>
+                                            )
+                                        );
+                                    })}
+                                </animated.div>
+                            )
+                        );
+                    })}
+                </div>
+
                 <div className="contentTextWrap">
                     {titleTranslate((animation, item) => {
                         return (
@@ -295,6 +293,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
 const mapStateToProps = (state: StoreState) => {
     return {
         carouselSlideIndex: state.carouselSlideIndex,
+        loadingStatus: state.loadingStatus,
     };
 };
 
