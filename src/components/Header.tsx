@@ -96,7 +96,14 @@ const Header: React.FC<HeaderProps> = (props) => {
     return (
         <nav>
             <div className="nameAndHeaderIconsWrap">
-                <h4 className="headerName">Matthew Francis</h4>
+                <h4
+                    className="headerName"
+                    onClick={() => {
+                        history.push("/");
+                    }}
+                >
+                    Matthew Francis
+                </h4>
                 <div className="headerIconsWrap">
                     <a
                         href="https://www.linkedin.com/in/matthew-francis-b9b1b31a2/"

@@ -1314,6 +1314,17 @@ nav {
   }
 }
 
+.headerName,
+.headerLinkedInAndGithubIcon {
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+.headerName:hover,
+.headerLinkedInAndGithubIcon:hover {
+  color: #828c96;
+  transition: all 0.2s ease-in;
+}
+
 .headerIconsWrap {
   display: flex;
   align-items: center;

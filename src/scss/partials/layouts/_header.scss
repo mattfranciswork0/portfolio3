@@ -146,6 +146,15 @@ nav {
     color: white;
 }
 
+.headerName,
+.headerLinkedInAndGithubIcon {
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    &:hover {
+        color: $grey;
+        transition: all 0.2s ease-in;
+    }
+}
 .headerIconsWrap {
     display: flex;
     align-items: center;
