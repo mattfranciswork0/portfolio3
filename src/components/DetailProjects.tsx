@@ -43,22 +43,13 @@ import lowResSteamLg from "../img/lowRes/low_res_steam_lg.jpg";
 import blizzard2 from "../img/blizzard2.jpg";
 // import lowResBlizzardLg from "../img/lowRes/low_res_blizzard_lg.jpg";
 import lowResBlizzardLg from "../img/lowRes/low_res_blizzard2_lg.jpg";
+import lowResLolLg from "../img/lowRes/low_res_lol_lg.jpg";
+import lolLg from "../img/lol_lg.jpg";
 import { SLIDE_PROJECTS_DESC } from "./Carousel";
 import ow2 from "../img/ow2.jpg";
 import Loading from "./Loading";
 import history from "../browserHistory";
 const discoData = [
-    {
-        title: `Blizzard (Currently working on)`,
-        stack: `React, React-Spring (v9), Typescript`,
-        description: `Replication of Blizzard's Entertainment's website, known for developing and
-        publishing games such as Call of Duty, World of Warcraft, and Overwatch.
-        Built to understand physics-based animations with React Spring.`,
-        lowResLg: "lowResBlizzardLg",
-        imgLg: blizzard2,
-        demo: `https://blizzard-roan.vercel.app`,
-        github: `https://github.com/mattfrancis888/blizzard`,
-    },
     {
         title: `Steam`,
         stack: `Boyce Codd Normal Form database on
@@ -74,38 +65,6 @@ const discoData = [
         imgLg: steamLg,
         demo: `https://steam-project-matt.herokuapp.com/`,
         github: `https://github.com/mattfrancis888/steam`,
-    },
-    {
-        title: `Netflix`,
-        stack: `Boyce Codd Normal Form database on
-        PostgreSQL, React, Redux, Express, Typescript,
-        React-Testing-Library, TravisCI`,
-        description: `Replication of Netflix website. Database is created
-        in BCNF (Boyce Codd Normal Form); database diagram is
-        shown in README. Authentication is done via cookies
-        that stores access tokens and refresh tokens (JWTs);
-        users can add and remove titles to their watchlist; and
-        users can search for titles. Data is stored on
-        PostgreSQL.`,
-        lowResLg: lowResNetflixLg,
-        imgLg: netflixLg,
-        demo: `https://netflix-project.herokuapp.com/`,
-        github: `https://github.com/mattfrancis888/netflix`,
-    },
-    {
-        title: ` Multi-Docker`,
-        stack: `Docker, AWS Elastic Beanstalk,
-        TravisCI, React, PostgreSQL, Express,
-        React-Testing-Library`,
-        description: `A single-page app that shows the categories available for a Kijiji Listing.
-        Used the same database from a previous project, Kijiji. Built to understand Docker, AWS
-        infrastructure (eg: EC2, S3, RDS, VPS, Security
-        Groups, etc), the deployment process to AWS Elastic
-        Beanstalk, and CI/CD flow.`,
-        lowResLg: lowResMultiDockerLg,
-        imgLg: multiDockerLg,
-        demo: `https://multi-docker.vercel.app/`,
-        github: `https://github.com/mattfrancis888/multi-docker`,
     },
     {
         title: `Kijiji`,
@@ -124,6 +83,59 @@ const discoData = [
         demo: `https://kijiji-project.herokuapp.com/`,
         github: `https://github.com/mattfrancis888/kijiji`,
     },
+
+    {
+        title: `Netflix`,
+        stack: `Boyce Codd Normal Form database on
+        PostgreSQL, React, Redux, Express, Typescript,
+        React-Testing-Library, TravisCI`,
+        description: `Replication of Netflix website. Database is created
+        in BCNF (Boyce Codd Normal Form); database diagram is
+        shown in README. Authentication is done via cookies
+        that stores access tokens and refresh tokens (JWTs);
+        users can add and remove titles to their watchlist; and
+        users can search for titles. Data is stored on
+        PostgreSQL.`,
+        lowResLg: lowResNetflixLg,
+        imgLg: netflixLg,
+        demo: `https://netflix-project.herokuapp.com/`,
+        github: `https://github.com/mattfrancis888/netflix`,
+    },
+    {
+        title: `Blizzard`,
+        stack: `React, React-Spring (v9), Typescript`,
+        description: `Replication of Blizzard's Entertainment's website, known for developing and
+        publishing games such as Call of Duty, World of Warcraft, and Overwatch.
+        Built to understand physics-based animations with React Spring.`,
+        lowResLg: lowResBlizzardLg,
+        imgLg: blizzard2,
+        demo: `https://blizzard-roan.vercel.app`,
+        github: `https://github.com/mattfrancis888/blizzard`,
+    },
+    {
+        title: `League of Legends (Currently Working on)`,
+        stack: `React, React-Spring (v9), Typescript`,
+        description: `Replication of League of Legends website.
+        Builing to further understand physics-based animations with React Spring.`,
+        lowResLg: lowResLolLg,
+        imgLg: lolLg,
+        demo: `https://lol-kappa.vercel.app`,
+        github: `https://github.com/mattfrancis888/lol`,
+    },
+
+    {
+        title: `Dreamworks`,
+        stack: `PostgreSQL, Express, Typescript, React,
+            Redux, React-Testing-Library`,
+        description: `Shows movies from Dreamworks. Movies are stored in
+            PostgreSQL. Built to understand SQL queries, and the
+            process of integrating PostgreSQL and the front-end.`,
+        lowResLg: lowResDreamworksLg,
+        imgLg: dreamworksLg,
+        demo: `https://dreamworks.vercel.app/`,
+        github: `https://github.com/mattfrancis888/dreamworks`,
+    },
+
     {
         title: `Authentication Project`,
         stack: `MongoDB, Mongoose, Express,
@@ -137,18 +149,6 @@ const discoData = [
         imgLg: authLg,
         demo: `https://auth-cyan.vercel.app/`,
         github: `https://github.com/mattfrancis888/auth-project`,
-    },
-    {
-        title: `Dreamworks`,
-        stack: `PostgreSQL, Express, Typescript, React,
-            Redux, React-Testing-Library`,
-        description: `Shows movies from Dreamworks. Movies are stored in
-            PostgreSQL. Built to understand SQL queries, and the
-            process of integrating PostgreSQL and the front-end.`,
-        lowResLg: lowResDreamworksLg,
-        imgLg: dreamworksLg,
-        demo: `https://dreamworks.vercel.app/`,
-        github: `https://github.com/mattfrancis888/dreamworks`,
     },
 
     {
@@ -164,19 +164,6 @@ const discoData = [
         github: `https://github.com/mattfrancis888/spotify`,
     },
     {
-        title: `Apple's App Store Review`,
-        stack: `React-Testing-Library,
-        Enzyme, Typescript, React, Redux, Express`,
-        description: `Replicated Apple's App Store Review. Reviews are
-        stored in an online JSON database. Built to
-        understand unit testing, integration testing, and
-        blackbox functional testing.`,
-        lowResLg: lowResAppStoreLg,
-        imgLg: appStoreLg,
-        demo: `https://apple-review.mattfrancis888.vercel.app/`,
-        github: `https://github.com/mattfrancis888/apple_review`,
-    },
-    {
         title: `Pixar`,
         stack: `Typescript, React, Redux, Express`,
         description: `Replicated Pixar site. Films are stored in an online
@@ -189,18 +176,19 @@ const discoData = [
         github: `https://github.com/mattfrancis888/pixar`,
     },
     {
-        title: `Linkedin`,
-        stack: `GraphQL, Apollo (v2.6), React, Express`,
-        description: `Linkedin-like site where users can see other user's
-        profiles and see what companies they work for. The
-        user can also create their profile. Built to
-        understand how GraphQL is more suitable than RESTful
-        Routing when data is strongly related to each other.`,
-        lowResLg: lowResLinkedInlg,
-        imgLg: linkedinLg,
-        demo: `https://linkedin-phi.vercel.app/`,
-        github: `https://github.com/mattfrancis888/linkedin`,
+        title: `Apple's App Store Review`,
+        stack: `React-Testing-Library,
+        Enzyme, Typescript, React, Redux, Express`,
+        description: `Replicated Apple's App Store Review. Reviews are
+        stored in an online JSON database. Built to
+        understand unit testing, integration testing, and
+        blackbox functional testing.`,
+        lowResLg: lowResAppStoreLg,
+        imgLg: appStoreLg,
+        demo: `https://apple-review.mattfrancis888.vercel.app/`,
+        github: `https://github.com/mattfrancis888/apple_review`,
     },
+
     {
         title: `Music Videos Stream`,
         stack: `Redux, React, Express`,
@@ -217,7 +205,34 @@ const discoData = [
         demo: `https://music-stream.now.sh/`,
         github: `https://github.com/mattfrancis888/music-stream`,
     },
-
+    {
+        title: `Multi-Docker`,
+        stack: `Docker, AWS Elastic Beanstalk,
+        TravisCI, React, PostgreSQL, Express,
+        React-Testing-Library`,
+        description: `A single-page app that shows the categories available for a Kijiji Listing.
+        Used the same database from a previous project, Kijiji. Built to understand Docker, AWS
+        infrastructure (eg: EC2, S3, RDS, VPS, Security
+        Groups, etc), the deployment process to AWS Elastic
+        Beanstalk, and CI/CD flow.`,
+        lowResLg: lowResMultiDockerLg,
+        imgLg: multiDockerLg,
+        demo: `https://multi-docker.vercel.app/`,
+        github: `https://github.com/mattfrancis888/multi-docker`,
+    },
+    {
+        title: `Linkedin`,
+        stack: `GraphQL, Apollo (v2.6), React, Express`,
+        description: `Linkedin-like site where users can see other user's
+        profiles and see what companies they work for. The
+        user can also create their profile. Built to
+        understand how GraphQL is more suitable than RESTful
+        Routing when data is strongly related to each other.`,
+        lowResLg: lowResLinkedInlg,
+        imgLg: linkedinLg,
+        demo: `https://linkedin-phi.vercel.app/`,
+        github: `https://github.com/mattfrancis888/linkedin`,
+    },
     {
         title: `Giphy`,
         stack: `React, Bootstrap`,
