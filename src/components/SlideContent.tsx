@@ -178,7 +178,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                                     style={animation}
                                     className="currentSlideNumber"
                                 >
-                                    {item + 1}/4
+                                    {item + 1}/5
                                 </animated.h1>
                             )
                         );

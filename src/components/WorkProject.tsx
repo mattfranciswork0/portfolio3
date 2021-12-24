@@ -43,26 +43,28 @@ const DetailAboutMe: React.FC<DetailAboutMeProps> = (props) => {
                         </div>
                     </div>
                     <div className="aboutMeImageAndDescWrap">
-                        <p>
-                            Collaborated with design, operations and engineering
-                            team to develop web application for over a dozen of
-                            clients with React, React-Spring, Typescript, HTML,
-                            SCSS, CSS, JS.
-                        </p>
-                        <p>
-                            Created customized Halloween animations for over a
-                            dozen of subscription clients.
-                        </p>
-                        <p>
-                            Involved in agile methodology that included biweekly
-                            scrum, backlog refinement, check-ins, QA, and
-                            retrospective.
-                        </p>
-                        <p>
-                            Used Git and Azure DevOps to conduct code reviews,
-                            raised pull requests, pushed code, and operate a
-                            CI/CD pipeline,
-                        </p>
+                        <ul>
+                            <li>
+                                Collaborated with design, operations and
+                                engineering team to develop web application for
+                                over a dozen of clients with React,
+                                React-Spring, Typescript, HTML, SCSS, CSS, JS.
+                            </li>
+                            <li>
+                                Created customized Halloween animations for over
+                                a dozen of subscription clients.
+                            </li>
+                            <li>
+                                Involved in agile methodology that included
+                                biweekly scrum, backlog refinement, check-ins,
+                                QA, and retrospective.
+                            </li>
+                            <li>
+                                Used Git and Azure DevOps to conduct code
+                                reviews, raised pull requests, pushed code, and
+                                operate a CI/CD pipeline,
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div className="workPictures">
