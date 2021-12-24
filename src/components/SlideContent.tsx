@@ -176,7 +176,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                             item === props.slideIndex && (
                                 <animated.h1
                                     style={animation}
-                                    className="currentSlideNumber"
+                                    className="current-slide-number"
                                 >
                                     {item + 1}/5
                                 </animated.h1>
@@ -299,7 +299,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                                 return (
                                     item === props.slideIndex && (
                                         <animated.div
-                                            className="emailAndContactWrap"
+                                            className="email-and-contact"
                                             style={animation}
                                         >
                                             <a
@@ -312,7 +312,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                                                 </h3>
                                             </a>
 
-                                            <h3 className="contactPhone">
+                                            <h3 className="contact">
                                                 Phone: 289-772-7465
                                             </h3>
                                         </animated.div>

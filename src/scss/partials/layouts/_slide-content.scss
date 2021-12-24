@@ -187,10 +187,12 @@
 
 
 
-.emailAndContactWrap {
+.email-and-contact {
     margin-top: 2.4rem;
-    .email,
-    .contactPhone {
+    .contact{
+        margin-top: 1rem;
+    }
+    .email,.contact {
         text-shadow: 0 10px 30px rgb(2 11 22 / 50%);
         font-weight: normal;
         font-size: 1.2rem;
@@ -218,15 +220,13 @@
             transition: all 0.2s ease;
         }
     }
-    .contactPhone {
-        margin-top: 1rem;
-    }
+
 }
 
 
 
 
-.currentSlideNumber {
+.current-slide-number {
     display: none;
     @media screen and (min-width: $sm_breakpoint) {
         font-size: 10rem;
