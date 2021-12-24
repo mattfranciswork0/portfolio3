@@ -50,7 +50,7 @@ const Loading: React.FC<LoadingProps> = (props) => {
     });
 
     return (
-        <animated.div style={loadingTranslate} className="loadingContainer">
+        <animated.div style={loadingTranslate} className="loading">
             <animated.h1 style={loadingTextDissapear}>
                 Matthew Francis
             </animated.h1>
