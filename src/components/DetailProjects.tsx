@@ -290,7 +290,10 @@ const DetailProjects: React.FC<{}> = () => {
     const renderDisco = (): JSX.Element | JSX.Element[] => {
         return discoData.map((disco, index) => {
             return (
-                <div key={index} className={`projectContainer`}>
+                <div
+                    key={index}
+                    className={`detail-projects__projects-project`}
+                >
                     <div className="projectImageAndOverviewWrap">
                         <a
                             href={disco.demo}
@@ -359,7 +362,7 @@ const DetailProjects: React.FC<{}> = () => {
     return (
         <React.Fragment>
             <Loading imagesToLoad={1} loadedImages={loadedImages} />
-            <div className="detailProjectsContainer">
+            <div className="detail-projects">
                 <div
                     onLoad={() => {
                         setLoadedImages(loadedImages + 1);
@@ -371,7 +374,7 @@ const DetailProjects: React.FC<{}> = () => {
                         desc={SLIDE_PROJECTS_DESC}
                     />
                 </div>
-                <div className="projectsWrap">{renderDisco()}</div>
+                <div className="detail-projects__projects">{renderDisco()}</div>
                 <DetailBack />
             </div>
         </React.Fragment>

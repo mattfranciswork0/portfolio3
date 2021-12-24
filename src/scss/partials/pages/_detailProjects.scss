@@ -1,7 +1,63 @@
-.detailProjectsContainer {
+.detail-projects{
     background-color: $background-purple-dark;
     position: relative;
+    &__projects{
+        &-project{
+            position: relative;
+            color: white;
+            margin-bottom: 2rem;
+        
+            // @media screen and (min-width: $lg_breakpoint) {
+            //     font-size: 2.5rem;
+            // }
+            @media screen and (min-width: $md_breakpoint) {
+                margin-bottom: 15rem;
+            }
+            @media screen and (min-width: $xl_breakpoint) {
+                margin-bottom: 20rem;
+            }
+        
+            &:nth-child(even) {
+               &-image-and-overviewWrap {
+                    @media screen and (min-width: $md_breakpoint) {
+                        flex-direction: row-reverse;
+                    }
+                }
+                .projectOverviewWrap {
+                    left: initial;
+        
+                    @media screen and (min-width: $md_breakpoint) {
+                        right: -5rem; //same as the one in .projectOverviewWrap below
+                    }
+                    @media screen and (min-width: $lg_breakpoint) {
+                        right: -7rem;
+                    }
+                }
+                img {
+                    @media screen and (min-width: $md_breakpoint) {
+                        left: 60%;
+                    }
+                }
+            }
+            &-image-and-overview{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                @media screen and (min-width: $md_breakpoint) {
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                }
+            }
+        }
+    }
+
 }
+// .detail-projects {
+//     background-color: $background-purple-dark;
+//     position: relative;
+// }
 
 .projectImageAndOverviewWrap {
     display: flex;
@@ -47,54 +103,54 @@
         object-fit: cover;
     }
 }
-
-.projectsWrap {
-    position: relative;
-    z-index: 1;
-}
-
-.projectsWrap,
-.projectContainer {
+.detail-projects__projects,
+.detail-projects__projects-project {
     background: $background-purple-dark;
 }
-.projectContainer {
-    position: relative;
-    color: white;
-    margin-bottom: 2rem;
+// .detail-projects__projects {
+//     position: relative;
+//     z-index: 1;
+// }
 
-    // @media screen and (min-width: $lg_breakpoint) {
-    //     font-size: 2.5rem;
-    // }
-    @media screen and (min-width: $md_breakpoint) {
-        margin-bottom: 15rem;
-    }
-    @media screen and (min-width: $xl_breakpoint) {
-        margin-bottom: 20rem;
-    }
 
-    &:nth-child(even) {
-        .projectImageAndOverviewWrap {
-            @media screen and (min-width: $md_breakpoint) {
-                flex-direction: row-reverse;
-            }
-        }
-        .projectOverviewWrap {
-            left: initial;
+// .detail-projects__projects-project {
+//     position: relative;
+//     color: white;
+//     margin-bottom: 2rem;
 
-            @media screen and (min-width: $md_breakpoint) {
-                right: -5rem; //same as the one in .projectOverviewWrap below
-            }
-            @media screen and (min-width: $lg_breakpoint) {
-                right: -7rem;
-            }
-        }
-        img {
-            @media screen and (min-width: $md_breakpoint) {
-                left: 60%;
-            }
-        }
-    }
-}
+//     // @media screen and (min-width: $lg_breakpoint) {
+//     //     font-size: 2.5rem;
+//     // }
+//     @media screen and (min-width: $md_breakpoint) {
+//         margin-bottom: 15rem;
+//     }
+//     @media screen and (min-width: $xl_breakpoint) {
+//         margin-bottom: 20rem;
+//     }
+
+//     &:nth-child(even) {
+//         .projectImageAndOverviewWrap {
+//             @media screen and (min-width: $md_breakpoint) {
+//                 flex-direction: row-reverse;
+//             }
+//         }
+//         .projectOverviewWrap {
+//             left: initial;
+
+//             @media screen and (min-width: $md_breakpoint) {
+//                 right: -5rem; //same as the one in .projectOverviewWrap below
+//             }
+//             @media screen and (min-width: $lg_breakpoint) {
+//                 right: -7rem;
+//             }
+//         }
+//         img {
+//             @media screen and (min-width: $md_breakpoint) {
+//                 left: 60%;
+//             }
+//         }
+//     }
+// }
 
 .showGitHubAndExternalWrap {
     display: flex;
