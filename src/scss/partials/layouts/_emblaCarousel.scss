@@ -78,6 +78,32 @@
 
     padding: 0rem 6.5rem 0 0 !important;
 }
+
+.carousel{
+    // &__dot-and-button{
+    //     pointer-events: visible;
+    //     position: absolute;
+    //     top: 80%;
+    //     right: 20vw;
+    //     transform: translateX(-50%) rotate(270deg);
+    //     @media screen and (min-width: 380px) {
+    //         right: 30vw;
+    //     }
+    //     @media screen and (min-width: $sm_breakpoint) {
+    //         right: 35vw;
+    //     }
+    //     @media screen and (min-width: $md_breakpoint) {
+    //         right: 38vw;
+    //     }
+    //     @media screen and (min-width: $lg_breakpoint) {
+    //         display: flex;
+    //         flex-direction: column;
+    //         top: 50%;
+    //         transform: translateY(-50%);
+    //         right: 2rem;
+    //     }
+    // }
+}
 .carouselDotWrapAndButton {
     pointer-events: visible;
     position: absolute;
@@ -139,31 +165,34 @@
     left: 0;
 }
 
-.moonAndStarWrap {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    width: 110vw;
-    height: 120vh;
+.moon{
+    &--layer{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        color: white;
+    
+        background: url(/img/svg/moonlight.svg);
+        background-repeat: no-repeat;
+        background-size: 150% 200%;
+        background-position: 30% 0%;
+        width: 100%;
+        height: 100%;
+        // width: 110vw;
+        // height: 120vh;
+        animation: glow 2s infinite alternate;
+    }
+    &-and-star{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        width: 110vw;
+        height: 120vh;
+    }
 }
-.moonLayer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    color: white;
 
-    background: url(/img/svg/moonlight.svg);
-    background-repeat: no-repeat;
-    background-size: 150% 200%;
-    background-position: 30% 0%;
-    width: 100%;
-    height: 100%;
-    // width: 110vw;
-    // height: 120vh;
-    animation: glow 2s infinite alternate;
-}
 
 @keyframes glow {
     from {

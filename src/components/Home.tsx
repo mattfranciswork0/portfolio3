@@ -14,7 +14,7 @@ const Home: React.FC<{}> = () => {
             <Carousel />
 
             <div
-                className="moonAndStarWrap"
+                className="moon-and-star"
                 onMouseMove={({ clientX: x, clientY: y }) => {
                     setX(x - window.innerWidth / 2);
                     setY(y - window.innerHeight / 2);
@@ -23,7 +23,7 @@ const Home: React.FC<{}> = () => {
                     transform: trans1(xHook, yHook),
                 }}
             >
-                <div className="moonLayer"></div>
+                <div className="moon--layer"></div>
                 <div className="star"></div>
             </div>
         </div>
