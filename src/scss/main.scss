@@ -4,10 +4,11 @@
     "partials/layouts/slideContent",
     "partials/layouts/emblaCarousel",
     "partials/layouts/header",
-    "partials/pages/detailCareer", "partials/pages/detailAboutMe",
+    "partials/pages/detailCareer", 
     "partials/pages/detailProjects", "partials/pages/home",
     "partials/pages/work-project";
 
     @import "partials/layouts/detail-back";
     @import "partials/layouts/detail-banner";
     @import "partials/layouts/loading";
+    @import "partials/pages/detail-about-me-and-work";

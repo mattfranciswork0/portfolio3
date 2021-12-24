@@ -1,4 +1,4 @@
-.detail-about-me{
+.detail-about-me-and-work{
     background: white;
     &__content{
         position: relative;
@@ -10,7 +10,11 @@
             grid-template-columns: repeat(2, 1fr);
         }
         grid-template-columns: repeat(1, 1fr);
-        &-my-story{
+        &-title{
+            margin-bottom: 5rem;
+            @media screen and (min-width: $sm_breakpoint) {
+                margin-bottom: 0;
+            }
             &-content{
                 display: flex;
     
@@ -40,7 +44,7 @@
         }
     }
    
-    &__image-and-desc{
+    &__desc{
         padding: 0rem 5rem;
         @media screen and (min-width: $sm_breakpoint) {
             padding-right: 5rem;
@@ -84,52 +88,3 @@
         }
     }
 }
-
-
-
-
-
-
-// .detail-about-me__image-and-desc {
-//     padding: 0rem 5rem;
-//     @media screen and (min-width: $sm_breakpoint) {
-//         padding-right: 5rem;
-//     }
-//     @media screen and (min-width: $lg_breakpoint) {
-//         padding-right: 10rem;
-//     }
-//     @media screen and (min-width: $xl_breakpoint) {
-//         padding-right: 15rem;
-//     }
-//     h1 {
-//         margin: 0;
-//         margin-top: 5rem;
-//         @media screen and (min-width: $md_breakpoint) {
-//             margin: 0;
-//         }
-//         text-transform: uppercase;
-//         font-size: 1.6rem;
-//         letter-spacing: 0.5rem;
-//         margin-bottom: 3rem;
-//     }
-//     p, li {
-//         line-height: 2;
-//         font-family: "Futura-Boo";
-//         font-size: 1.3rem;
-//         @media screen and (min-width: $sm_breakpoint) {
-//             font-size: 1.6rem;
-//         }
-
-//         color: $grey;
-//     }
-
-//     img {
-//         margin-top: 3rem;
-//         @media screen and (min-width: $sm_breakpoint) {
-//             margin-top: 5rem;
-//         }
-//         width: 100%;
-//         object-fit: cover;
-//         box-shadow: 0px 63px 154px -20px rgb(7 33 66 / 50%);
-//     }
-// }

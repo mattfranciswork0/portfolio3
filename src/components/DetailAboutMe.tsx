@@ -22,7 +22,7 @@ const DetailAboutMe: React.FC<DetailAboutMeProps> = (props) => {
         <React.Fragment>
             <Loading imagesToLoad={1} loadedImages={loadedImages} />
 
-            <div className="detail-about-me">
+            <div className="detail-about-me-and-work">
                 <div
                     onLoad={() => {
                         setLoadedImages(loadedImages + 1);
@@ -34,14 +34,14 @@ const DetailAboutMe: React.FC<DetailAboutMeProps> = (props) => {
                         desc={SLIDE_ABOUT_ME_DESC}
                     />
                 </div>
-                <div className="detail-about-me__content">
-                    <div className="detail-about-me__content-my-story">
-                        <div className="detail-about-me__content-my-story-content">
-                            <div className="detail-about-me__content-my-story-content--block"></div>
+                <div className="detail-about-me-and-work__content">
+                    <div className="detail-about-me-and-work__content-title">
+                        <div className="detail-about-me-and-work__content-title-content">
+                            <div className="detail-about-me-and-work__content-title-content--block"></div>
                             <h1>my Story</h1>
                         </div>
                     </div>
-                    <div className="detail-about-me__image-and-desc">
+                    <div className="detail-about-me-and-work__desc">
                         <h1>Matthew Francis</h1>
                         <p>
                             Born and raised Jakarta, Indonesia in 2000. Moved to
