@@ -104,20 +104,20 @@ const Header: React.FC<HeaderProps> = (props) => {
                 >
                     Matthew Francis
                 </h4>
-                <div className="headerIconsWrap">
+                <div className="header__name-and-icons-icons">
                     <a
                         href="https://www.linkedin.com/in/matthew-francis-b9b1b31a2/"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <AiOutlineLinkedin className="headerLinkedInAndGithubIcon" />
+                        <AiOutlineLinkedin className="header__name-and-icons-icon" />
                     </a>
                     <a
                         href="https://github.com/mattfrancis888"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <FiGithub className="headerLinkedInAndGithubIcon" />
+                        <FiGithub className="header__name-and-icons-icon" />
                     </a>
                     <div
                         className="header__name-and-icons-burger"
@@ -141,7 +141,7 @@ const Header: React.FC<HeaderProps> = (props) => {
                         return (
                             <animated.div
                                 key={index}
-                                className="dropdownTitleWrap"
+                                className="header__name-and-icons-burger-dropdown-title"
                                 style={translateTitle}
                             >
                                 <h1
