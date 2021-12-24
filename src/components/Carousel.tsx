@@ -18,8 +18,8 @@ import career from "../img/career.jpg";
 import habanerHome from "../img/habanero-home.jpg";
 export const SLIDE_ABOUT_ME_DESC =
     "BSc Computer Science, 3rd Year Student, Wilfrid Laurier University";
-    export const WORK_PROJECTS_DESC =
-    "Holiday recipes from employees in Habanero shared to over a dozen of clients.";
+export const WORK_PROJECTS_DESC =
+    "Holiday recipes from employees in Habanero shared to over a dozen of clients such as Suncor, Wawanesa.";
 export const SLIDE_PROJECTS_DESC =
     "Websites I've built (Kijij, Netflix, Steam, Overwatch and many more)";
 export const SLIDE_CAREER_DESC = "Why I'm a valuable asset to your team";
@@ -132,9 +132,10 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
 
     const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
     const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
-    const scrollTo = useCallback((index) => embla && embla.scrollTo(index), [
-        embla,
-    ]);
+    const scrollTo = useCallback(
+        (index) => embla && embla.scrollTo(index),
+        [embla]
+    );
 
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);

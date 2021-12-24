@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import DetailBanner from "./DetailBanner";
 import DetailBack from "./DetailBack";
 
-import { SLIDE_ABOUT_ME_DESC } from "./Carousel";
+import { WORK_PROJECTS_DESC } from "./Carousel";
 import { connect } from "react-redux";
 import { StoreState } from "../reducers";
 import Loading from "./Loading";
@@ -32,7 +32,7 @@ const DetailAboutMe: React.FC<DetailAboutMeProps> = (props) => {
                     <DetailBanner
                         title="Habanero"
                         imgSrc={habanerHome}
-                        desc={SLIDE_ABOUT_ME_DESC}
+                        desc={WORK_PROJECTS_DESC}
                     />
                 </div>
                 <div className="aboutMeWrap">
@@ -43,11 +43,25 @@ const DetailAboutMe: React.FC<DetailAboutMeProps> = (props) => {
                         </div>
                     </div>
                     <div className="aboutMeImageAndDescWrap">
-                        <h1>Matthew Francis</h1>
                         <p>
-                            Born and raised Jakarta, Indonesia in 2000. Moved to
-                            Ontario, Canada at 2011. Aspiring to be a web
-                            developer.
+                            Collaborated with design, operations and engineering
+                            team to develop web application for over a dozen of
+                            clients with React, React-Spring, Typescript, HTML,
+                            SCSS, CSS, JS.
+                        </p>
+                        <p>
+                            Created customized Halloween animations for over a
+                            dozen of subscription clients.
+                        </p>
+                        <p>
+                            Involved in agile methodology that included biweekly
+                            scrum, backlog refinement, check-ins, QA, and
+                            retrospective.
+                        </p>
+                        <p>
+                            Used Git and Azure DevOps to conduct code reviews,
+                            raised pull requests, pushed code, and operate a
+                            CI/CD pipeline,
                         </p>
                     </div>
                 </div>
