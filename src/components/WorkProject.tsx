@@ -67,7 +67,7 @@ const DetailAboutMe: React.FC<DetailAboutMeProps> = (props) => {
                         </ul>
                     </div>
                 </div>
-                <div className="workPictures">
+                <div className="detail-about-me-and-work__work-project-pictures">
                     <img src={habanerHome} alt="" />
                     <img src={habaneroRecipe} alt="" />
                 </div>

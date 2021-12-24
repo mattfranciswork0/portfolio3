@@ -88,4 +88,28 @@
             box-shadow: 0px 63px 154px -20px rgb(7 33 66 / 50%);
         }
     }
+
+    &__work-project-pictures{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-column-gap: 1rem;
+        margin-top: 5rem;
+        width: 100%;
+    
+        img{
+            width: 100%;
+            height: 50rem;
+            
+            object-fit: cover ;
+            box-shadow: 0px 63px 154px -20px rgb(7 33 66 / 50%);
+            @media screen and (min-width: $lg_breakpoint) {
+                height: 250rem;
+            }
+        }
+        @media screen and (min-width: $lg_breakpoint) {
+            grid-column-gap: 3rem;
+           
+        }
+     
+    }
 }
