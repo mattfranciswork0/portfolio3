@@ -34,7 +34,7 @@ const DetailCareer: React.FC<DetailCareerProps> = (props) => {
     return (
         <React.Fragment>
             <Loading imagesToLoad={1} loadedImages={loadedImages} />
-            <div className="detailCareerContainer">
+            <div className="detail-career">
                 <div
                     onLoad={() => {
                         setLoadedImages(loadedImages + 1);
@@ -46,30 +46,30 @@ const DetailCareer: React.FC<DetailCareerProps> = (props) => {
                         desc={SLIDE_CAREER_DESC}
                     />
                 </div>
-                <div className="careerContentWrap">
+                <div className="detail-career__content">
                     {careerProgress.map((career, index) => {
                         return (
                             <React.Fragment>
-                                <h1 className="careerGridTitle">
+                                <h1 className="detail-career__content-grid-col-title">
                                     {career.company}
                                 </h1>
-                                <div className="detailCareerGrid">
-                                    <div className="careerColWrap">
-                                        <h1 className="careerGridTitle">
+                                <div className="detail-career__content-grid">
+                                    <div className="detail-career__content-grid-col">
+                                        <h1 className="detail-career__content-grid-col-title">
                                             Date
                                         </h1>
-                                        <p className="careerDate">
+                                        <p className="detail-career__content-grid-col-date">
                                             {career.date}
                                         </p>
                                     </div>
-                                    <div className="careerColWrap">
-                                        <h1 className="careerGridTitle">
+                                    <div className="detail-career__content-grid-col">
+                                        <h1 className="detail-career__content-grid-col-title">
                                             Position
                                         </h1>
                                         <p>{career.position}</p>
                                     </div>
-                                    <div className="careerColWrap accomplishmentColWrap">
-                                        <h1 className="careerGridTitle ">
+                                    <div className="detail-career__content-grid-col detail-career__content-grid-col--acomplishment">
+                                        <h1 className="detail-career__content-grid-col-title ">
                                             Accomplishments
                                         </h1>
                                         <ul>
