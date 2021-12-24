@@ -1,0 +1,53 @@
+.back{
+    display: flex;
+    padding: 2rem;
+    padding-bottom: 10rem;
+    display: flex;
+    margin-top: 10rem;
+    justify-content: center;
+
+    &--animated{
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    
+        .back__box {
+            width: 10rem;
+            height: 0.25rem;
+            background-color: black;
+            margin-right: 2rem;
+        }
+        h1 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            color: black;
+            font-weight: 200;
+            letter-spacing: 0.4rem;
+        }
+    }
+    &__purple-dark-background{
+        background: $background-purple-dark;
+        color: white;
+    }
+
+    &__white{
+        &-box{
+             background-color: white !important;
+        }
+        &-text{
+            color: white !important;
+        }
+    }
+
+}
+
+
+
+
+
+.back__white-box {
+    background-color: white !important;
+}
+.back__white-text {
+    color: white !important;
+}
