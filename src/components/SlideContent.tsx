@@ -21,7 +21,8 @@ const MIN_DELAY = 0;
 const FIRST_SLIDE = 0;
 const SECOND_SLIDE = 1;
 const THIRD_SLIDE = 2;
-const LAST_SLIDE = 3;
+const FOURTH_SLIDE = 3;
+const LAST_SLIDE = 4;
 const SlideContent: React.FC<SlideContentProps> = (props) => {
     const [carouselSlideIndex, setCarouselSlideIndex] = useState<any>(-1);
     const [isButtonHovered, setIsButtonHovered] = useState(false);
@@ -272,10 +273,15 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                                                     carouselSlideIndex ===
                                                     SECOND_SLIDE
                                                 )
-                                                    history.push("/projects");
+                                                    history.push("/habanero");
                                                 else if (
                                                     carouselSlideIndex ===
                                                     THIRD_SLIDE
+                                                )
+                                                    history.push("/projects");
+                                                else if (
+                                                    carouselSlideIndex ===
+                                                    FOURTH_SLIDE
                                                 )
                                                     history.push("/career");
                                             }}

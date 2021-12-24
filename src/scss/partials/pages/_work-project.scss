@@ -1,0 +1,18 @@
+.workPictures{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+
+    width: 100%;
+
+    img{
+        width: 100%;
+        height: 250rem;
+        object-fit: cover ;
+        box-shadow: 0px 63px 154px -20px rgb(7 33 66 / 50%);
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        grid-column-gap: 3rem;
+        grid-template-columns: repeat(2,1fr);
+    }
+ 
+}
