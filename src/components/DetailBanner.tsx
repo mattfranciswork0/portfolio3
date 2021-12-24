@@ -39,9 +39,9 @@ const DetailBanner: React.FC<DetailBannerProps> = (props) => {
 
                 <p className="detail-banner__desc">{props.desc}</p>
             </div>
-            <div className="scrolldown">
+            <div className="scrolldown-detail">
                 <h1>Scroll Down</h1>
-                <div className="scrolldown__block"></div>
+                <div className="scrolldown-detail--block"></div>
             </div>
         </div>
     );

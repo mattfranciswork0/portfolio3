@@ -206,11 +206,11 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                     return (
                         item === 0 && (
                             <animated.div
-                                className="scrollDownLandingWrap"
+                                className="scrolldown-landing"
                                 style={animation}
                             >
                                 <h1>Scroll Down</h1>
-                                <div className="scrollDownLandingBlock"></div>
+                                <div className="scrolldown-landing--block"></div>
                             </animated.div>
                         )
                     );

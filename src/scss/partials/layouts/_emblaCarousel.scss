@@ -226,7 +226,7 @@
     pointer-events: none;
 }
 
-.scrollDownLandingWrap {
+.scrolldown-landing{
     transform: rotate(90deg);
     display: flex;
     align-items: center;
@@ -259,10 +259,11 @@
             margin-right: 2rem;
         }
     }
-    .scrollDownLandingBlock {
-        // margin-left: 2rem;
-        width: 10rem;
-        height: 0.1rem;
-        background-color: white;
+    &--block{
+              // margin-left: 2rem;
+              width: 10rem;
+              height: 0.1rem;
+              background-color: white;
     }
 }
+
