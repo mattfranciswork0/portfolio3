@@ -10,7 +10,7 @@ const Home: React.FC<{}> = () => {
     const [xHook, setX] = useState(0);
     const [yHook, setY] = useState(0);
     return (
-        <div className="carouselAndSvgWrap">
+        <div className="carousel-and-svg">
             <Carousel />
 
             <div
