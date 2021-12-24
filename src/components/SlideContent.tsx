@@ -212,7 +212,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                         return (
                             item === props.slideIndex && (
                                 <animated.h1
-                                    className="content-slide__image-and-text-title"
+                                    className="content-slide__image-and-text-text-title"
                                     style={animation}
                                 >
                                     {props.title}
@@ -241,7 +241,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                                 item === props.slideIndex && (
                                     <animated.h3
                                         style={animation}
-                                        className="contentDesc"
+                                        className="content-slide__image-and-text-text-desc"
                                     >
                                         {props.desc}
                                     </animated.h3>
@@ -262,7 +262,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                                                 setIsButtonHovered(false);
                                             }}
                                             style={buttonHover}
-                                            className="showMoreButton"
+                                            className="content-slide__show-more-button"
                                             onClick={() => {
                                                 if (
                                                     carouselSlideIndex ===

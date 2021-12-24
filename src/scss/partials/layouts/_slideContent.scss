@@ -94,6 +94,21 @@
                 font-weight: normal;
                 text-shadow: 0 10px 30px rgb(2 11 22 / 50%);
             }
+            &-desc{
+                text-shadow: 2px 2px black;
+                font-weight: normal;
+                font-size: 1.2rem;
+                @media screen and (min-width: $sm_breakpoint) {
+                    font-size: 2rem;
+                    line-height: 1.4;
+                    width: 40%;
+                }
+            
+                @media screen and (min-width: $md_breakpoint) {
+                    font-size: 2.4rem;
+                    letter-spacing: 0.1rem;
+                }
+            }
         }
         &-image{
             position: relative;
@@ -130,76 +145,29 @@
         }
        
     }
+
+    &__show-more-button{
+        pointer-events: visible;
+        font-size: 1.4rem;
+        margin-top: 1rem;
+        padding: 1rem 2rem;
+        @media screen and (min-width: $sm_breakpoint) {
+            font-size: 1.8rem;
+            padding: 1.8rem 3.2rem;
+        }
+        border-radius: 5rem;
+        color: #fff;
+        background: $light-red;
+        cursor: pointer;
+        border: none;
+        outline: none !important;
+        box-shadow: none !important;
+    }
    
 }
 
 
 
-// .content-slide__image-and-text-title {
-//     position: relative;
-//     margin: 0;
-
-//     font-size: 4.6rem;
-//     font-weight: bold;
-//     bottom: 0;
-//     left: 0;
-//     @media screen and (min-width: $sm_breakpoint) {
-//         font-weight: normal;
-//         font-size: 7.6rem;
-//         width: 70%;
-//     }
-//     @media screen and (min-width: $md_breakpoint) {
-//         font-size: 8rem;
-//         width: 70%;
-//     }
-//     @media screen and (min-width: $lg_breakpoint) {
-//         font-size: 10rem;
-//     }
-//     @media screen and (min-width: $xl_breakpoint) {
-//         font-size: 12rem;
-//         letter-spacing: 1.5rem;
-//     }
-
-//     line-height: 1;
-//     letter-spacing: 1rem;
-//     margin-bottom: 1.6rem;
-//     font-weight: normal;
-//     text-shadow: 0 10px 30px rgb(2 11 22 / 50%);
-// }
-
-// .content-slide__image-and-text-image {
-//     position: relative;
-//     margin-top: 5rem;
-//     width: 100%;
-//     height: 48vh;
-
-//     @media screen and (min-width: $sm_breakpoint) {
-//         margin-top: 13rem;
-//         position: absolute;
-//         // right
-//         height: 60%;
-//         top: 0;
-//         width: 65%;
-//     }
-
-//     @media screen and (min-width: $md_breakpoint) {
-//         width: 60%;
-//         height: 60%;
-//     }
-//     @media screen and (min-width: $lg_breakpoint) {
-//         height: 60%;
-//         margin-right: 10rem;
-//     }
-//     @media screen and (min-width: $xl_breakpoint) {
-//         margin-right: 10rem;
-//         height: 65%;
-//     }
-//     img {
-//         width: 100%;
-//         height: 100%;
-//         object-fit: cover;
-//     }
-// }
 
 .red-blocks {
     display: block;
@@ -254,39 +222,9 @@
         margin-top: 1rem;
     }
 }
-.contentDesc {
-    text-shadow: 2px 2px black;
-    font-weight: normal;
-    font-size: 1.2rem;
-    @media screen and (min-width: $sm_breakpoint) {
-        font-size: 2rem;
-        line-height: 1.4;
-        width: 40%;
-    }
 
-    @media screen and (min-width: $md_breakpoint) {
-        font-size: 2.4rem;
-        letter-spacing: 0.1rem;
-    }
-}
 
-.showMoreButton {
-    pointer-events: visible;
-    font-size: 1.4rem;
-    margin-top: 1rem;
-    padding: 1rem 2rem;
-    @media screen and (min-width: $sm_breakpoint) {
-        font-size: 1.8rem;
-        padding: 1.8rem 3.2rem;
-    }
-    border-radius: 5rem;
-    color: #fff;
-    background: $light-red;
-    cursor: pointer;
-    border: none;
-    outline: none !important;
-    box-shadow: none !important;
-}
+
 
 .currentSlideNumber {
     display: none;
