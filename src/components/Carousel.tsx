@@ -181,7 +181,7 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                                 <div key={index} className="embla__slide">
                                     <div className="slide-inner">
                                         <div
-                                            className="contentSlideContainer"
+                                            className="content-slide"
                                             onLoad={() => {
                                                 setLoadedImages(
                                                     loadedImages + 1

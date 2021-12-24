@@ -32,9 +32,9 @@ const DetailBanner: React.FC<DetailBannerProps> = (props) => {
 
             <div className="detail-banner__title">
                 <h1 className="detail-banner__title-content">{props.title}</h1>
-                <div className="redBlocksWrap ">
-                    <div className="redBlock firstRedBlock"></div>
-                    <div className="redBlock secondRedBlock"></div>
+                <div className="red-blocks ">
+                    <div className="red-blocks--first-block"></div>
+                    <div className="red-blocks--second-block"></div>
                 </div>
 
                 <p className="detail-banner__desc">{props.desc}</p>
