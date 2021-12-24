@@ -15,8 +15,11 @@ import contact from "../img/contact.jpg";
 import Loading from "./Loading";
 import ow2 from "../img/ow2.jpg";
 import career from "../img/career.jpg";
+import habanerHome from "../img/habanero-home.jpg";
 export const SLIDE_ABOUT_ME_DESC =
     "BSc Computer Science, 3rd Year Student, Wilfrid Laurier University";
+    export const WORK_PROJECTS_DESC =
+    "Holiday recipes from employees in Habanero shared to over a dozen of clients.";
 export const SLIDE_PROJECTS_DESC =
     "Websites I've built (Kijij, Netflix, Steam, Overwatch and many more)";
 export const SLIDE_CAREER_DESC = "Why I'm a valuable asset to your team";
@@ -24,10 +27,16 @@ export const SLIDE_CAREER_DESC = "Why I'm a valuable asset to your team";
 const slides = [
     { imgSrc: me1, title: "Matthew Francis", desc: SLIDE_ABOUT_ME_DESC },
     {
+        imgSrc: habanerHome,
+        title: `Habanero`,
+        desc: WORK_PROJECTS_DESC,
+    },
+    {
         imgSrc: ow2,
         title: "Projects",
         desc: SLIDE_PROJECTS_DESC,
     },
+
     {
         imgSrc: career,
         title: "Career Timeline",
