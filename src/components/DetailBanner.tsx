@@ -27,7 +27,7 @@ const DetailBanner: React.FC<DetailBannerProps> = (props) => {
         else props.updateHeaderBackIconToBlack(true);
     }, [props, isVisible]);
     return (
-        <div className="detailBanner" ref={ref}>
+        <div className="detail-banner" ref={ref}>
             <img src={props.imgSrc} alt="" />
 
             <div className="detailTitleWrap">
@@ -37,7 +37,7 @@ const DetailBanner: React.FC<DetailBannerProps> = (props) => {
                     <div className="redBlock secondRedBlock"></div>
                 </div>
 
-                <p className="detailDesc">{props.desc}</p>
+                <p className="detail-banner__desc">{props.desc}</p>
             </div>
             <div className="scrollDownWrap">
                 <h1>Scroll Down</h1>
