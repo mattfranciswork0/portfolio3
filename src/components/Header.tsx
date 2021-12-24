@@ -124,11 +124,11 @@ const Header: React.FC<HeaderProps> = (props) => {
                         onClick={() => setBurgerClicked(!isBurgerClicked)}
                     >
                         <animated.div
-                            className="firstLine"
+                            className="header__name-and-icons-burger--first-line"
                             style={firstLineRotate}
                         ></animated.div>
                         <animated.div
-                            className="secondLine"
+                            className="header__name-and-icons-burger--second-line"
                             style={secondLineRotate}
                         ></animated.div>
                     </div>
