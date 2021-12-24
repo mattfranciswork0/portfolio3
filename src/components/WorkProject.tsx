@@ -23,7 +23,7 @@ const DetailAboutMe: React.FC<DetailAboutMeProps> = (props) => {
         <React.Fragment>
             <Loading imagesToLoad={1} loadedImages={loadedImages} />
 
-            <div className="detailAboutMeContainer">
+            <div className="detail-about-me">
                 <div
                     onLoad={() => {
                         setLoadedImages(loadedImages + 1);
@@ -35,14 +35,14 @@ const DetailAboutMe: React.FC<DetailAboutMeProps> = (props) => {
                         desc={WORK_PROJECTS_DESC}
                     />
                 </div>
-                <div className="aboutMeWrap">
-                    <div className="myStoryWrap">
-                        <div className="myStoryInnerWrap">
-                            <div className="myStoryBlock"></div>
+                <div className="detail-about-me__content">
+                    <div className="detail-about-me__content-my-story">
+                        <div className="detail-about-me__content-my-story-content">
+                            <div className="detail-about-me__content-my-story-content--block"></div>
                             <h1>Development</h1>
                         </div>
                     </div>
-                    <div className="aboutMeImageAndDescWrap">
+                    <div className="detail-about-me__image-and-desc">
                         <ul>
                             <li>
                                 Collaborated with design, operations and
