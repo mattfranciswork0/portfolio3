@@ -30,8 +30,8 @@ const DetailBanner: React.FC<DetailBannerProps> = (props) => {
         <div className="detail-banner" ref={ref}>
             <img src={props.imgSrc} alt="" />
 
-            <div className="detailTitleWrap">
-                <h1 className="detailTitle">{props.title}</h1>
+            <div className="detail-banner__title">
+                <h1 className="detail-banner__title-content">{props.title}</h1>
                 <div className="redBlocksWrap ">
                     <div className="redBlock firstRedBlock"></div>
                     <div className="redBlock secondRedBlock"></div>
@@ -39,9 +39,9 @@ const DetailBanner: React.FC<DetailBannerProps> = (props) => {
 
                 <p className="detail-banner__desc">{props.desc}</p>
             </div>
-            <div className="scrollDownWrap">
+            <div className="scrolldown">
                 <h1>Scroll Down</h1>
-                <div className="scrollDownBlock"></div>
+                <div className="scrolldown__block"></div>
             </div>
         </div>
     );

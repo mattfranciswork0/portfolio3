@@ -2,10 +2,11 @@
     "partials/base/normalize", "partials/base/elements",
     "partials/base/typography", "partials/base/fonts",
     "partials/layouts/slideContent", "partials/layouts/slideLanding","partials/layouts/carousel",
-    "partials/layouts/emblaCarousel", "partials/layouts/detailBanner",
+    "partials/layouts/emblaCarousel",
     "partials/layouts/header", "partials/layouts/loading",
     "partials/pages/detailCareer", "partials/pages/detailAboutMe",
     "partials/pages/detailProjects", "partials/pages/home",
     "partials/pages/work-project";
 
     @import "partials/layouts/detail-back";
+    @import "partials/layouts/detail-banner";
