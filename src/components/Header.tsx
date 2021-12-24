@@ -95,9 +95,9 @@ const Header: React.FC<HeaderProps> = (props) => {
 
     return (
         <nav>
-            <div className="nameAndHeaderIconsWrap">
+            <div className="header__name-and-icons">
                 <h4
-                    className="headerName"
+                    className="header__name-and-icons-name"
                     onClick={() => {
                         history.push("/");
                     }}
@@ -120,7 +120,7 @@ const Header: React.FC<HeaderProps> = (props) => {
                         <FiGithub className="headerLinkedInAndGithubIcon" />
                     </a>
                     <div
-                        className="burger"
+                        className="header__name-and-icons-burger"
                         onClick={() => setBurgerClicked(!isBurgerClicked)}
                     >
                         <animated.div
@@ -134,7 +134,7 @@ const Header: React.FC<HeaderProps> = (props) => {
                     </div>
                 </div>
                 <animated.div
-                    className="burgerDropdown"
+                    className="header__name-and-icons-burger-dropdown"
                     style={dropdownControl}
                 >
                     {titles.map((title, index) => {
@@ -176,15 +176,15 @@ const Header: React.FC<HeaderProps> = (props) => {
                 <animated.div style={backButtonTranslate}>
                     <BiArrowBack
                         onClick={() => history.goBack()}
-                        className={`backButton ${
+                        className={`back__button ${
                             location.pathname === "/projects"
-                                ? "backButtonWhite"
+                                ? "back__button--white"
                                 : ""
                         } ${
                             props.changeHeaderBackIconToBlack &&
                             location.pathname !== "/projects"
-                                ? "backButtonBlack"
-                                : "backButtonWhite"
+                                ? "back__button--black"
+                                : "back__button--white"
                         }`}
                     />
                 </animated.div>
