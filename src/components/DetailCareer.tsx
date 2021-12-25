@@ -9,14 +9,34 @@ import career from "../img/career.jpg";
 import Loading from "./Loading";
 const careerProgress = [
     {
-        company: `Wilfrid Laurier University's Comp Sci Club`,
-        date: `Sep 2020 - Present`,
-        position: `Web Dev Lead`,
+        company: `Habanro`,
+        date: `Sep 2021 – Jan 2022`,
+        position: `Frontend Software Developer`,
         accomplishments: [
-            `Leading a group of individuals new to web development in creating a 'mock-site' for the club.`,
-            `Held meetings to explain web development concepts and keep team on-track.`,
-            `By constantly putting myself in the other person's "shoes";  I'm able to create good interpersonal relationships and
-             communicate clearly.`,
+            `Collaborated with design, operations and engineering team to develop web application for over a dozen of clients with React, React-Spring, Typescript, HTML, SCSS, CSS, JS.`,
+            `Created customized Halloween animations for over a dozen of subscription clients.`,
+            `Involved in agile methodology that included biweekly scrum, backlog refinement, check-ins, QA, and retrospective.`,
+            `Used Git and Azure DevOps to conduct code reviews, raised pull requests, pushed code, and operate a CI/CD pipeline, `,
+        ],
+    },
+
+    {
+        company: `Badal`,
+        date: `May 2021 – Sep 2021`,
+        position: `Full-Stack Software Developer`,
+        accomplishments: [
+            `Collaborated with design, operations and engineering team to develop a Shopify application that automates sales for Shopify stores with over hundreds of products and users with React, Redux, Typescript, PostgreSQL, GraphQL, Node.js, Express.js, Docker, HTML, SCSS, CSS, JS. `,
+            `Involved in agile methodology that included biweekly sprints, backlog refinement and daily standups.`,
+            `Used Git and Gitlab to conduct code reviews, raised pull requests, pushed code, and operate a CI/CD pipeline.`,
+        ],
+    },
+    {
+        company: `Wilfrid Laurier University's Comp Sci Club`,
+        date: `Sep 2020 - May 2021 `,
+        position: `Lead Software Developer`,
+        accomplishments: [
+            `Guided 15 team members in creating a web application for the club with React, HTML, SCSS, CSS, JS. `,
+            `Held weekly meetings to explain technology stack and version control with GIt; used agile methodology that included biweekly sprints and backlog refinement; Used Git and Github actions to conduct code reviews, raised pull requests, pushed code, and operate a CI/CD pipeline.`,
         ],
     },
 ];

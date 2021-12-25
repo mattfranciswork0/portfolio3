@@ -17,9 +17,9 @@ import ow2 from "../img/ow2.jpg";
 import career from "../img/career.jpg";
 import habanerHome from "../img/habanero-home.jpg";
 export const SLIDE_ABOUT_ME_DESC =
-    "BSc Computer Science, 3rd Year Student, Wilfrid Laurier University";
+    "BSc Computer Science, 3rd Year Student, Wilfrid Laurier University. Software Developer";
 export const WORK_PROJECTS_DESC =
-    "Holiday recipes from employees in Habanero shared to over a dozen of clients such as Suncor, Wawanesa.";
+    "Holiday recipes from employees in Habanero shared to over a dozen of clients such as Suncor & Petro-Canada.";
 export const SLIDE_PROJECTS_DESC =
     "Websites I've built (Kijij, Netflix, Steam, Overwatch and many more)";
 export const SLIDE_CAREER_DESC = "Why I'm a valuable asset to your team";

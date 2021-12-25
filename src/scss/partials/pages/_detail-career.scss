@@ -19,6 +19,7 @@
             @media screen and (min-width: $md_breakpoint) {
                 grid-template-columns: repeat(3, 1fr);
             }
+            margin-bottom: 10rem;
             &-col{
                 p {
                     font-family: "Futura-Boo";
@@ -37,6 +38,7 @@
                     text-transform: uppercase;
                 }
                 &-title{
+                 
                     text-transform: uppercase;
                     @media screen and (min-width: $sm_breakpoint) {
                         font-size: 2rem;

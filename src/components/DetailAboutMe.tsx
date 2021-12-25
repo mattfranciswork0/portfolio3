@@ -45,8 +45,7 @@ const DetailAboutMe: React.FC<DetailAboutMeProps> = (props) => {
                         <h1>Matthew Francis</h1>
                         <p>
                             Born and raised Jakarta, Indonesia in 2000. Moved to
-                            Ontario, Canada at 2011. Aspiring to be a web
-                            developer.
+                            Ontario, Canada at 2011.
                         </p>
                         <img src={me2} alt="" />
                     </div>
