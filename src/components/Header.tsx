@@ -9,7 +9,13 @@ import { BiArrowBack } from "react-icons/bi";
 import { AiOutlineLinkedin } from "react-icons/ai";
 import { FiGithub } from "react-icons/fi";
 import { StoreState } from "../reducers";
-const titles = ["About Me", "Projects", "Career Timeline", "Contact"];
+const titles = [
+    "About Me",
+    "Habanero",
+    "Projects",
+    "Career Timeline",
+    "Contact",
+];
 
 interface HeaderProps {
     updateSlideIndex: any;
