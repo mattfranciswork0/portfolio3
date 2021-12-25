@@ -6,9 +6,12 @@ import { useTransition, animated, useSpring, useTrail } from "react-spring";
 import { useLocation } from "react-router-dom";
 import history from "../browserHistory";
 import { BiArrowBack } from "react-icons/bi";
-import { AiOutlineLinkedin } from "react-icons/ai";
+import { AiOutlineLinkedin, AiOutlineFile } from "react-icons/ai";
 import { FiGithub } from "react-icons/fi";
+//@ts-ignore because of  https://github.com/facebook/create-react-app/issues/8021
+import Pdf from "../doc/resume.pdf";
 import { StoreState } from "../reducers";
+
 const titles = [
     "About Me",
     "Habanero",
@@ -111,6 +114,9 @@ const Header: React.FC<HeaderProps> = (props) => {
                     Matthew Francis
                 </h4>
                 <div className="header__name-and-icons-icons">
+                    <a href={Pdf} rel="noopener noreferrer" target="_blank">
+                        <AiOutlineFile className="header__name-and-icons-icon" />
+                    </a>
                     <a
                         href="https://www.linkedin.com/in/matthew-francis-b9b1b31a2/"
                         target="_blank"
