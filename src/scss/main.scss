@@ -1,8 +1,7 @@
 @import "partials/utilities/variables", "partials/utilities/mixins",
     "partials/base/normalize", "partials/base/elements",
     "partials/base/typography", "partials/base/fonts",
-    "partials/layouts/header", 
-    "partials/pages/detailProjects", "partials/pages/home";
+    "partials/layouts/header", "partials/pages/home";
 
     @import "partials/layouts/detail-back";
     @import "partials/layouts/detail-banner";
@@ -11,3 +10,4 @@
     @import  "partials/pages/detail-career";
     @import "partials/layouts/embla-carousel"; 
     @import "partials/layouts/slide-content";
+    @import  "partials/pages/detail-projects"
