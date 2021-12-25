@@ -179,9 +179,9 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                         {slides.map((slide, index) => {
                             return (
                                 <div key={index} className="embla__slide">
-                                    <div className="slideInner">
+                                    <div className="slide-inner">
                                         <div
-                                            className="contentSlideContainer"
+                                            className="content-slide"
                                             onLoad={() => {
                                                 setLoadedImages(
                                                     loadedImages + 1
@@ -206,19 +206,19 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                     return (
                         item === 0 && (
                             <animated.div
-                                className="scrollDownLandingWrap"
+                                className="scrolldown-landing"
                                 style={animation}
                             >
                                 <h1>Scroll Down</h1>
-                                <div className="scrollDownLandingBlock"></div>
+                                <div className="scrolldown-landing--block"></div>
                             </animated.div>
                         )
                     );
                 })}
 
-                <div className="carouselDotWrapAndButton">
+                <div className="carousel__dots-and-button">
                     <button
-                        className="embla__button embla__button--pre carouselNextPrevButtonHide"
+                        className="embla__button embla__button--pre carousel__next-prev-button--hide"
                         onClick={() => {
                             scrollPrev();
                             setTimeout(() => {
@@ -234,7 +234,7 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                         <RiArrowUpSLine />
                     </button>
                     <div
-                        className="embla__dots carouselDotWrap"
+                        className="embla__dots carousel__dots-and-button-dots"
                         onMouseEnter={() => setShowDotText(true)}
                         onMouseLeave={() => setShowDotText(false)}
                         onClick={() => setShowDotText(false)}
@@ -243,7 +243,7 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                             <React.Fragment>
                                 <div
                                     key={index}
-                                    className="carouselDotInnerWrap"
+                                    className="carousel__dots-and-button-dots-inner"
                                 >
                                     <animated.div
                                         style={animation}
@@ -254,7 +254,7 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                                             index === selectedIndex
                                                 ? "is-selected dot-is-selected"
                                                 : ""
-                                        } carouselDot`}
+                                        } carousel__dots-and-button-dots-inner-dot`}
                                         onClick={(e) => {
                                             e.stopPropagation();
                                             // setTimeout(() => {
@@ -269,7 +269,7 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
                         ))}
                     </div>
                     <button
-                        className="embla__button embla__button--next carouselNextPrevButtonHide"
+                        className="embla__button embla__button--next carousel__next-prev-button--hide"
                         onClick={() => {
                             scrollNext();
                             setTimeout(() => {

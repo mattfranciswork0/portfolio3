@@ -165,10 +165,10 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
 
     return (
         <React.Fragment>
-            <div className="contentImageAndTextWrap">
+            <div className="content-slide__image-and-text">
                 <div
                     // style={item === props.slideIndex ? animation : {}}
-                    className="contentImage"
+                    className="content-slide__image-and-text-image"
                 >
                     <img src={props.imgSrc} alt="" />
                     {currrentSlideNumberTranslate((animation, item) => {
@@ -176,7 +176,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                             item === props.slideIndex && (
                                 <animated.h1
                                     style={animation}
-                                    className="currentSlideNumber"
+                                    className="current-slide-number"
                                 >
                                     {item + 1}/5
                                 </animated.h1>
@@ -189,14 +189,14 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                             item === props.slideIndex && (
                                 <animated.div
                                     style={animation}
-                                    className="transitionDark"
+                                    className="transition--dark"
                                 >
                                     {redExpand((animation, item) => {
                                         return (
                                             item === props.slideIndex && (
                                                 <animated.div
                                                     style={animation}
-                                                    className="transitionRed"
+                                                    className="transition--red"
                                                 ></animated.div>
                                             )
                                         );
@@ -207,12 +207,12 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                     })}
                 </div>
 
-                <div className="contentTextWrap">
+                <div className="content-slide__image-and-text-text">
                     {titleTranslate((animation, item) => {
                         return (
                             item === props.slideIndex && (
                                 <animated.h1
-                                    className="contentTitle"
+                                    className="content-slide__image-and-text-text-title"
                                     style={animation}
                                 >
                                     {props.title}
@@ -225,11 +225,11 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                         return (
                             item === props.slideIndex && (
                                 <animated.div
-                                    className="redBlocksWrap"
+                                    className="red-blocks"
                                     style={animation}
                                 >
-                                    <div className="redBlock firstRedBlock"></div>
-                                    <div className="redBlock secondRedBlock"></div>
+                                    <div className="red-blocks--first-block firstRedBlock"></div>
+                                    <div className="red-blocks--first-block red-blocks--second-block"></div>
                                 </animated.div>
                             )
                         );
@@ -241,7 +241,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                                 item === props.slideIndex && (
                                     <animated.h3
                                         style={animation}
-                                        className="contentDesc"
+                                        className="content-slide__image-and-text-text-desc"
                                     >
                                         {props.desc}
                                     </animated.h3>
@@ -262,7 +262,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                                                 setIsButtonHovered(false);
                                             }}
                                             style={buttonHover}
-                                            className="showMoreButton"
+                                            className="content-slide__show-more-button"
                                             onClick={() => {
                                                 if (
                                                     carouselSlideIndex ===
@@ -299,7 +299,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                                 return (
                                     item === props.slideIndex && (
                                         <animated.div
-                                            className="emailAndContactWrap"
+                                            className="email-and-contact"
                                             style={animation}
                                         >
                                             <a
@@ -312,7 +312,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                                                 </h3>
                                             </a>
 
-                                            <h3 className="contactPhone">
+                                            <h3 className="contact">
                                                 Phone: 289-772-7465
                                             </h3>
                                         </animated.div>

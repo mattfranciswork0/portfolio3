@@ -290,54 +290,59 @@ const DetailProjects: React.FC<{}> = () => {
     const renderDisco = (): JSX.Element | JSX.Element[] => {
         return discoData.map((disco, index) => {
             return (
-                <div key={index} className={`projectContainer`}>
-                    <div className="projectImageAndOverviewWrap">
+                <div
+                    key={index}
+                    className={`detail-projects__projects-project`}
+                >
+                    <div className="detail-projects__projects-project-image-and-overview">
                         <a
                             href={disco.demo}
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <div className={`projectImageContainer`}>
+                            <div
+                                className={`detail-projects__projects-project-image-and-overview-project-image`}
+                            >
                                 <BlurredUpImage
                                     lowRes={disco.lowResLg}
                                     highRes={disco.imgLg}
                                 />
                             </div>
                         </a>
-                        <div className="projectOverviewWrap">
+                        <div className="detail-projects__projects-project-image-and-overview-overview">
                             <h2 className="projectTitle">{disco.title}</h2>
                             <h2 className="projectStack">{disco.stack}</h2>
                             <p className={"showProjectDesc"}>
                                 {disco.description}
                             </p>
                             {!disco.githubAPI && (
-                                <div className={"showGitHubAndExternalWrap"}>
+                                <div className={"show-gitrhub-and-external"}>
                                     <a
                                         href={disco.github}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        <AiFillGithub className="githubAndExternalIcon" />
+                                        <AiFillGithub className="show-gitrhub-and-external--icon" />
                                     </a>
                                     <a
                                         href={disco.demo}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        <FiExternalLink className="githubAndExternalIcon" />
+                                        <FiExternalLink className="show-gitrhub-and-external--icon" />
                                     </a>
                                 </div>
                             )}
 
                             {disco.githubAPI && (
-                                <div className={"showGitHubAndExternalWrap"}>
+                                <div className={"show-gitrhub-and-external"}>
                                     <h2>App:</h2>
                                     <a
                                         href={disco.github}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        <AiFillGithub className="githubAndExternalIcon" />
+                                        <AiFillGithub className="show-gitrhub-and-external--icon" />
                                     </a>
                                     <h2>API: </h2>
                                     <a
@@ -345,7 +350,7 @@ const DetailProjects: React.FC<{}> = () => {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        <AiFillGithub className="githubAndExternalIcon" />
+                                        <AiFillGithub className="show-gitrhub-and-external--icon" />
                                     </a>
                                 </div>
                             )}
@@ -359,7 +364,7 @@ const DetailProjects: React.FC<{}> = () => {
     return (
         <React.Fragment>
             <Loading imagesToLoad={1} loadedImages={loadedImages} />
-            <div className="detailProjectsContainer">
+            <div className="detail-projects">
                 <div
                     onLoad={() => {
                         setLoadedImages(loadedImages + 1);
@@ -371,7 +376,7 @@ const DetailProjects: React.FC<{}> = () => {
                         desc={SLIDE_PROJECTS_DESC}
                     />
                 </div>
-                <div className="projectsWrap">{renderDisco()}</div>
+                <div className="detail-projects__projects">{renderDisco()}</div>
                 <DetailBack />
             </div>
         </React.Fragment>

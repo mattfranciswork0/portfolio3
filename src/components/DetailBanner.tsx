@@ -27,21 +27,21 @@ const DetailBanner: React.FC<DetailBannerProps> = (props) => {
         else props.updateHeaderBackIconToBlack(true);
     }, [props, isVisible]);
     return (
-        <div className="detailBanner" ref={ref}>
+        <div className="detail-banner" ref={ref}>
             <img src={props.imgSrc} alt="" />
 
-            <div className="detailTitleWrap">
-                <h1 className="detailTitle">{props.title}</h1>
-                <div className="redBlocksWrap ">
-                    <div className="redBlock firstRedBlock"></div>
-                    <div className="redBlock secondRedBlock"></div>
+            <div className="detail-banner__title">
+                <h1 className="detail-banner__title-content">{props.title}</h1>
+                <div className="red-blocks ">
+                    <div className="red-blocks--first-block"></div>
+                    <div className="red-blocks--second-block"></div>
                 </div>
 
-                <p className="detailDesc">{props.desc}</p>
+                <p className="detail-banner__desc">{props.desc}</p>
             </div>
-            <div className="scrollDownWrap">
+            <div className="scrolldown-detail">
                 <h1>Scroll Down</h1>
-                <div className="scrollDownBlock"></div>
+                <div className="scrolldown-detail--block"></div>
             </div>
         </div>
     );

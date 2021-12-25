@@ -78,60 +78,67 @@
 
     padding: 0rem 6.5rem 0 0 !important;
 }
-.carouselDotWrapAndButton {
-    pointer-events: visible;
-    position: absolute;
-    top: 80%;
-    right: 20vw;
-    transform: translateX(-50%) rotate(270deg);
-    @media screen and (min-width: 380px) {
-        right: 30vw;
+
+.carousel{
+    &__next-prev-button{
+        &--hide{
+            visibility: hidden;
+            pointer-events: none;
+        }
     }
-    @media screen and (min-width: $sm_breakpoint) {
-        right: 35vw;
+    &__dots-and-button{
+        pointer-events: visible;
+        position: absolute;
+        top: 80%;
+        right: 20vw;
+        transform: translateX(-50%) rotate(270deg);
+        @media screen and (min-width: 380px) {
+            right: 30vw;
+        }
+        @media screen and (min-width: $sm_breakpoint) {
+            right: 35vw;
+        }
+        @media screen and (min-width: $md_breakpoint) {
+            right: 38vw;
+        }
+        @media screen and (min-width: $lg_breakpoint) {
+            display: flex;
+            flex-direction: column;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 2rem;
+        }
+        &-dots{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 10rem;
+            &-inner{
+                position: relative;
+                margin-bottom: 3rem;
+                &:first-of-type {
+                    margin-top: 3rem;
+                }
+                &-dot{
+                                        // border-radius: 50%;'
+                    border-radius: 0.25rem;
+                    width: 3rem;
+                    height: 0.3rem;
+                    position: relative;
+                    z-index: 1;
+
+                    cursor: pointer;
+                    outline: none !important;
+                    background: white;
+                    transition: all 0.5s ease-in;
+                                }
+            }
+        }
     }
-    @media screen and (min-width: $md_breakpoint) {
-        right: 38vw;
-    }
-    @media screen and (min-width: $lg_breakpoint) {
-        display: flex;
-        flex-direction: column;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 2rem;
-    }
+
 }
 
-.carouselDotWrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 10rem;
-}
-
-.carouselDotInnerWrap {
-    position: relative;
-    margin-bottom: 3rem;
-    &:first-of-type {
-        margin-top: 3rem;
-    }
-}
-
-.carouselDot {
-    // border-radius: 50%;'
-    border-radius: 0.25rem;
-    width: 3rem;
-    height: 0.3rem;
-    position: relative;
-    z-index: 1;
-
-    cursor: pointer;
-    outline: none !important;
-    background: white;
-    transition: all 0.5s ease-in;
-}
-
-.slideInner {
+.slide-inner {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -139,31 +146,34 @@
     left: 0;
 }
 
-.moonAndStarWrap {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    width: 110vw;
-    height: 120vh;
+.moon{
+    &--layer{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        color: white;
+    
+        background: url(/img/svg/moonlight.svg);
+        background-repeat: no-repeat;
+        background-size: 150% 200%;
+        background-position: 30% 0%;
+        width: 100%;
+        height: 100%;
+        // width: 110vw;
+        // height: 120vh;
+        animation: glow 2s infinite alternate;
+    }
+    &-and-star{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        width: 110vw;
+        height: 120vh;
+    }
 }
-.moonLayer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    color: white;
 
-    background: url(/img/svg/moonlight.svg);
-    background-repeat: no-repeat;
-    background-size: 150% 200%;
-    background-position: 30% 0%;
-    width: 100%;
-    height: 100%;
-    // width: 110vw;
-    // height: 120vh;
-    animation: glow 2s infinite alternate;
-}
 
 @keyframes glow {
     from {
@@ -192,12 +202,12 @@
     // height: 120vh;
 }
 
-.carouselNextPrevButtonHide {
-    visibility: hidden;
-    pointer-events: none;
-}
+// .carousel__next-prev-button--hide {
+//     visibility: hidden;
+//     pointer-events: none;
+// }
 
-.scrollDownLandingWrap {
+.scrolldown-landing{
     transform: rotate(90deg);
     display: flex;
     align-items: center;
@@ -230,10 +240,11 @@
             margin-right: 2rem;
         }
     }
-    .scrollDownLandingBlock {
-        // margin-left: 2rem;
-        width: 10rem;
-        height: 0.1rem;
-        background-color: white;
+    &--block{
+              // margin-left: 2rem;
+              width: 10rem;
+              height: 0.1rem;
+              background-color: white;
     }
 }
+

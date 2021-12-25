@@ -95,53 +95,53 @@ const Header: React.FC<HeaderProps> = (props) => {
 
     return (
         <nav>
-            <div className="nameAndHeaderIconsWrap">
+            <div className="header__name-and-icons">
                 <h4
-                    className="headerName"
+                    className="header__name-and-icons-name"
                     onClick={() => {
                         history.push("/");
                     }}
                 >
                     Matthew Francis
                 </h4>
-                <div className="headerIconsWrap">
+                <div className="header__name-and-icons-icons">
                     <a
                         href="https://www.linkedin.com/in/matthew-francis-b9b1b31a2/"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <AiOutlineLinkedin className="headerLinkedInAndGithubIcon" />
+                        <AiOutlineLinkedin className="header__name-and-icons-icon" />
                     </a>
                     <a
                         href="https://github.com/mattfrancis888"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <FiGithub className="headerLinkedInAndGithubIcon" />
+                        <FiGithub className="header__name-and-icons-icon" />
                     </a>
                     <div
-                        className="burger"
+                        className="header__name-and-icons-burger"
                         onClick={() => setBurgerClicked(!isBurgerClicked)}
                     >
                         <animated.div
-                            className="firstLine"
+                            className="header__name-and-icons-burger--first-line"
                             style={firstLineRotate}
                         ></animated.div>
                         <animated.div
-                            className="secondLine"
+                            className="header__name-and-icons-burger--second-line"
                             style={secondLineRotate}
                         ></animated.div>
                     </div>
                 </div>
                 <animated.div
-                    className="burgerDropdown"
+                    className="header__name-and-icons-burger-dropdown"
                     style={dropdownControl}
                 >
                     {titles.map((title, index) => {
                         return (
                             <animated.div
                                 key={index}
-                                className="dropdownTitleWrap"
+                                className="header__name-and-icons-burger-dropdown-title"
                                 style={translateTitle}
                             >
                                 <h1
@@ -176,15 +176,15 @@ const Header: React.FC<HeaderProps> = (props) => {
                 <animated.div style={backButtonTranslate}>
                     <BiArrowBack
                         onClick={() => history.goBack()}
-                        className={`backButton ${
+                        className={`back__button ${
                             location.pathname === "/projects"
-                                ? "backButtonWhite"
+                                ? "back__button--white"
                                 : ""
                         } ${
                             props.changeHeaderBackIconToBlack &&
                             location.pathname !== "/projects"
-                                ? "backButtonBlack"
-                                : "backButtonWhite"
+                                ? "back__button--black"
+                                : "back__button--white"
                         }`}
                     />
                 </animated.div>

@@ -1,0 +1,128 @@
+.detail-banner {
+   
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        padding-bottom: 15rem;
+        @media screen and (min-width: $sm_breakpoint) {
+            display: flex;
+            flex-direction: row-reverse;
+            padding-bottom: 0rem;
+        }
+        img {
+            object-fit: cover;
+            height: 70vh;
+            max-height: 60rem;
+            @media screen and (min-width: $sm_breakpoint) {
+    
+                max-height: none;
+                width: 60%;
+                height: 100vh;
+            }
+            width: 100%;
+        }
+        background: #020b16;
+    
+
+    &__title{
+        position: relative;
+        margin: 0;
+        display: inline;
+        top: -2.5rem;
+        left: 1.5rem;
+        @media screen and (min-width: $sm_breakpoint) {
+            position: absolute;
+            width: 70%;
+            top: 15%;
+            left: 8%;
+        }
+    
+        @media screen and (min-width: $lg_breakpoint) {
+            left: 8%;
+            width: 50%;
+        }
+        &-content{
+            display: inline;
+            font-size: 3.8rem;
+            letter-spacing: 1rem;
+            font-weight: normal;
+            text-shadow: 0 3px 10px rgb(2 11 22 / 50%);
+            left: 1.5rem;
+            margin-bottom: 4rem;
+            @media screen and (min-width: $sm_breakpoint) {
+                font-size: 6rem;
+            }
+        
+            @media screen and (min-width: $lg_breakpoint) {
+                font-size: 7.6rem;
+            }
+            @media screen and (min-width: $lg_breakpoint) {
+                font-size: 12rem;
+            }
+        }
+    }
+    &__desc{
+        margin-top: 4rem;
+
+        margin-bottom: 4rem;
+        line-height: 1.5;
+        letter-spacing: 0.1rem;
+        font-size: 1.5rem;
+        width: 60%;
+        @media screen and (min-width: $sm_breakpoint) {
+            font-size: 1.7rem;
+        }
+    
+        @media screen and (min-width: $md_breakpoint) {
+            font-size: 2.4rem;
+        }
+        @media screen and (min-width: $lg_breakpoint) {
+            font-size: 2.6rem;
+        }
+        @media screen and (min-width: $xl_breakpoint) {
+            font-size: 2.8rem;
+        }
+    }
+}
+
+
+.scrolldown-detail{
+    transform: rotate(90deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 60%;
+    top: 80%;
+    @media screen and (min-width: 400px) {
+        left: 65%;
+    }
+    @media screen and (min-width: $sm_breakpoint) {
+        left: -8rem;
+        top: 50%;
+    }
+    h1 {
+        text-transform: uppercase;
+        min-width: 8rem;
+        font-size: 1.2rem;
+        margin: 0;
+        margin-right: 0.5rem;
+        width: 9rem;
+        @media screen and (min-width: $sm_breakpoint) {
+            width: 10rem;
+            font-size: 1.4rem;
+            margin-right: 2rem;
+        }
+    }
+    &--block {
+        // margin-left: 2rem;
+        width: 10rem;
+        height: 0.1rem;
+        background-color: white;
+    }
+}
+
+
+
+
+

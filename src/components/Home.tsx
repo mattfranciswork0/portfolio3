@@ -10,11 +10,11 @@ const Home: React.FC<{}> = () => {
     const [xHook, setX] = useState(0);
     const [yHook, setY] = useState(0);
     return (
-        <div className="carouselAndSvgWrap">
+        <div className="carousel-and-svg">
             <Carousel />
 
             <div
-                className="moonAndStarWrap"
+                className="moon-and-star"
                 onMouseMove={({ clientX: x, clientY: y }) => {
                     setX(x - window.innerWidth / 2);
                     setY(y - window.innerHeight / 2);
@@ -23,7 +23,7 @@ const Home: React.FC<{}> = () => {
                     transform: trans1(xHook, yHook),
                 }}
             >
-                <div className="moonLayer"></div>
+                <div className="moon--layer"></div>
                 <div className="star"></div>
             </div>
         </div>

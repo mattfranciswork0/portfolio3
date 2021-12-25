@@ -25,9 +25,9 @@ const DetailBack: React.FC<DetailBackProps> = (props) => {
 
     return (
         <div
-            className={`backWrap ${
+            className={`back ${
                 location.pathname === "/projects"
-                    ? "backPurpleDarkBackground"
+                    ? "back__purple-dark-background"
                     : ""
             }`}
         >
@@ -36,16 +36,20 @@ const DetailBack: React.FC<DetailBackProps> = (props) => {
                 onClick={() => history.goBack()}
                 onMouseEnter={() => setIsBackHovered(true)}
                 onMouseLeave={() => setIsBackHovered(false)}
-                className="backInnerWrap"
+                className="back--animated"
             >
                 <div
-                    className={`backBox ${
-                        location.pathname === "/projects" ? "whiteBackBox" : ""
+                    className={`back__box ${
+                        location.pathname === "/projects"
+                            ? "back__white-box"
+                            : ""
                     }`}
                 ></div>
                 <h1
                     className={`${
-                        location.pathname === "/projects" ? "whiteBackText" : ""
+                        location.pathname === "/projects"
+                            ? "back__white-text"
+                            : ""
                     }`}
                 >
                     Back
