@@ -9,7 +9,7 @@ import career from "../img/career.jpg";
 import Loading from "./Loading";
 const careerProgress = [
     {
-        company: `Habanro`,
+        company: `Habanero`,
         date: `Sep 2021 – Jan 2022`,
         position: `Frontend Software Developer`,
         accomplishments: [
