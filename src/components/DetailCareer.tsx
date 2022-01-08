@@ -9,11 +9,22 @@ import career from "../img/career.jpg";
 import Loading from "./Loading";
 const careerProgress = [
     {
+        company: `My Startup`,
+        date: `Aug 2021 – Present`,
+        position: `Founder and Full-Stack Software Developer`,
+        accomplishments: [
+            `Collaborated with partner for ideas, design and engineering to create a platform for people to collaborate. Built with GitHub Actions, Next.js, React-Spring, Typescript, HTML, SCSS, BEM. CSS, JS, Express.js, PostgreSQL., Figma, Lighthouse, axe.`,
+            `Collaborated with mentors in accelerator to challenge decisions, address market research and pivot on ideas.`,
+            `Collaborated with Ontario’s Co-operative Association to comprehend and apply co-operative principles. `,
+        ],
+    },
+
+    {
         company: `Habanero`,
         date: `Sep 2021 – Jan 2022`,
         position: `Frontend Software Developer`,
         accomplishments: [
-            `Collaborated with design, operations and engineering team to develop web application for over a dozen of clients with React, React-Spring, Typescript, HTML, SCSS, CSS, JS.`,
+            `Collaborated with design, operations and engineering team to develop a web application for over a dozen of clients with Azure DevOps, React, React-Spring, Typescript, HTML, SCSS, BEM, CSS, JS, Figma, Lighthouse, axe.`,
             `Created customized Halloween animations for over a dozen of subscription clients.`,
             `Involved in agile methodology that included biweekly scrum, backlog refinement, check-ins, QA, and retrospective.`,
             `Used Git and Azure DevOps to conduct code reviews, raised pull requests, pushed code, and operate a CI/CD pipeline, `,
@@ -25,7 +36,7 @@ const careerProgress = [
         date: `May 2021 – Sep 2021`,
         position: `Full-Stack Software Developer`,
         accomplishments: [
-            `Collaborated with design, operations and engineering team to develop a Shopify application that automates sales for Shopify stores with over hundreds of products and users with React, Redux, Typescript, PostgreSQL, GraphQL, Node.js, Express.js, Docker, HTML, SCSS, CSS, JS. `,
+            `Collaborated with design, operations and engineering team to develop a Shopify application that automates sales for Shopify stores with over hundreds of products and users with GitLab, React, Redux, Typescript, PostgreSQL, GraphQL, Express.js, Docker, HTML, SCSS, BEM, CSS, JS., Lighthouse, axe. `,
             `Involved in agile methodology that included biweekly sprints, backlog refinement and daily standups.`,
             `Used Git and Gitlab to conduct code reviews, raised pull requests, pushed code, and operate a CI/CD pipeline.`,
         ],
@@ -35,8 +46,8 @@ const careerProgress = [
         date: `Sep 2020 - May 2021 `,
         position: `Lead Software Developer`,
         accomplishments: [
-            `Guided 15 team members in creating a web application for the club with React, HTML, SCSS, CSS, JS. `,
-            `Held weekly meetings to explain technology stack and version control with GIt; used agile methodology that included biweekly sprints and backlog refinement; Used Git and Github actions to conduct code reviews, raised pull requests, pushed code, and operate a CI/CD pipeline.`,
+            `Led 15 team members in designing and engineering a web application for the club with React, HTML, SCSS, CSS, JS, Figma. `,
+            `Held weekly meetings to explain technology stack and version control with Git; used agile methodology that included biweekly sprints and backlog refinement; used Git and GitHub Actions to conduct code reviews, raised pull requests, pushed code, and operate a CI/CD pipeline.`,
         ],
     },
 ];
