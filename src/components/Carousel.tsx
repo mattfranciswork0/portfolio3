@@ -20,7 +20,7 @@ import bobbyhill from "../img/bobbyhill.jpg";
 export const SLIDE_ABOUT_ME_DESC =
     "Founder. Software Developer. BSc Computer Science, 4th Year Student, Wilfrid Laurier University.";
 export const STARTUP_DESC =
-    "A platform for people to collaborate. Currently, collaborating with mentors in an accelerator and Ontario's Co-operative Association.";
+    "A platform for people to collaborate. Collaborating with co-founder, mentors in accelerator, and individuals in Ontario's Co-operative Association.";
 export const WORK_PROJECTS_DESC =
     "Holiday recipes from employees in Habanero shared to over a dozen of clients such as Suncor & Petro-Canada.";
 export const SLIDE_PROJECTS_DESC =

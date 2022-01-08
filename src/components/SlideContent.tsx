@@ -23,7 +23,8 @@ const FIRST_SLIDE = 0;
 const SECOND_SLIDE = 1;
 const THIRD_SLIDE = 2;
 const FOURTH_SLIDE = 3;
-const LAST_SLIDE = 4;
+const FIFTH_SLIDE = 4;
+const LAST_SLIDE = slides.length - 1;
 const SlideContent: React.FC<SlideContentProps> = (props) => {
     const [carouselSlideIndex, setCarouselSlideIndex] = useState<any>(-1);
     const [isButtonHovered, setIsButtonHovered] = useState(false);
@@ -251,6 +252,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                         })}
 
                     {carouselSlideIndex !== LAST_SLIDE &&
+                        carouselSlideIndex !== SECOND_SLIDE &&
                         buttonTranslate((animation, item) => {
                             return (
                                 item === props.slideIndex && (
