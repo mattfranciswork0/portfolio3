@@ -14,6 +14,7 @@ import { StoreState } from "../reducers";
 
 const titles = [
     "About Me",
+    "My Startup",
     "Habanero",
     "Projects",
     "Career Timeline",

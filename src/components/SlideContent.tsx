@@ -8,6 +8,7 @@ import { connect } from "react-redux";
 import history from "../browserHistory";
 import contact from "../img/contact.jpg";
 import me1 from "../img/me1.jpg";
+import { slides } from "./Carousel";
 interface SlideContentProps {
     carouselSlideIndex: any;
     title: string;
@@ -178,7 +179,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                                     style={animation}
                                     className="current-slide-number"
                                 >
-                                    {item + 1}/5
+                                    {item + 1}/{slides.length}
                                 </animated.h1>
                             )
                         );
