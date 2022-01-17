@@ -252,6 +252,64 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                             );
                         })}
 
+                    {/* {carouselSlideIndex !== LAST_SLIDE &&
+                        carouselSlideIndex !== SECOND_SLIDE && */}
+                    {carouselSlideIndex === SECOND_SLIDE &&
+                        buttonTranslate((animation, item) => {
+                            return (
+                                item === props.slideIndex && (
+                                    <animated.div style={animation}>
+                                        <a
+                                            href={
+                                                "https://bobbyhill-prod.herokuapp.com/"
+                                            }
+                                            rel="noopener noreferrer"
+                                            target="_blank"
+                                        >
+                                            <animated.button
+                                                onMouseOver={() => {
+                                                    setIsButtonHovered(true);
+                                                }}
+                                                onMouseLeave={() => {
+                                                    setIsButtonHovered(false);
+                                                }}
+                                                style={buttonHover}
+                                                className="content-slide__show-more-button"
+                                                onClick={() => {
+                                                    if (
+                                                        carouselSlideIndex ===
+                                                        FIRST_SLIDE
+                                                    )
+                                                        history.push("/me");
+                                                    else if (
+                                                        carouselSlideIndex ===
+                                                        THIRD_SLIDE
+                                                    )
+                                                        history.push(
+                                                            "/habanero"
+                                                        );
+                                                    else if (
+                                                        carouselSlideIndex ===
+                                                        FOURTH_SLIDE
+                                                    )
+                                                        history.push(
+                                                            "/projects"
+                                                        );
+                                                    else if (
+                                                        carouselSlideIndex ===
+                                                        FIFTH_SLIDE
+                                                    )
+                                                        history.push("/career");
+                                                }}
+                                            >
+                                                Visit
+                                            </animated.button>
+                                        </a>
+                                    </animated.div>
+                                )
+                            );
+                        })}
+
                     {carouselSlideIndex !== LAST_SLIDE &&
                         carouselSlideIndex !== SECOND_SLIDE &&
                         buttonTranslate((animation, item) => {
