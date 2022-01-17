@@ -9,7 +9,7 @@ import career from "../img/career.jpg";
 import Loading from "./Loading";
 const careerProgress = [
     {
-        company: `My Startup`,
+        company: `Starty (My Startup)`,
         date: `Aug 2021 – Present`,
         position: `Founder and Full-Stack Software Developer`,
         accomplishments: [
