@@ -261,7 +261,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                                     <animated.div style={animation}>
                                         <a
                                             href={
-                                                "https://bobbyhill-prod.herokuapp.com/"
+                                                "https://www.starty.ca/"
                                             }
                                             rel="noopener noreferrer"
                                             target="_blank"

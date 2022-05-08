@@ -19,7 +19,7 @@ import habanerHome from "../img/habanero-home.jpg";
 import bobbyhill from "../img/bobbyhill.jpg";
 export const SLIDE_ABOUT_ME_DESC =
     "Founder. Software Developer. BSc Computer Science, 4th Year Student, Wilfrid Laurier University.";
-export const STARTUP_DESC = `Starty is a platform for people to collaborate. Collaborating with co-founder, accelerator, and  Ontario's Co-operative Association.`;
+export const STARTUP_DESC = `Starty is a platform for people to collaborate. Collaborating with accelerator and team to challenge decisions, address market research and pivot on ideas.`;
 export const WORK_PROJECTS_DESC =
     "Holiday recipes from employees in Habanero shared to over a dozen of clients such as Suncor & Petro-Canada.";
 export const SLIDE_PROJECTS_DESC =
