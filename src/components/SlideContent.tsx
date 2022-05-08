@@ -8,6 +8,7 @@ import { connect } from "react-redux";
 import history from "../browserHistory";
 import contact from "../img/contact.jpg";
 import me1 from "../img/me1.jpg";
+import { Link } from "react-router-dom";
 import { slides } from "./Carousel";
 interface SlideContentProps {
     carouselSlideIndex: any;
@@ -166,6 +167,14 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
         },
     });
 
+    const renderLink = () => {
+        if (carouselSlideIndex === FIRST_SLIDE) return "/me";
+        else if (carouselSlideIndex === THIRD_SLIDE) return "/habanero";
+        else if (carouselSlideIndex === FOURTH_SLIDE) return "/projects";
+        else if (carouselSlideIndex === FIFTH_SLIDE) return "/career";
+        else return ""
+    };
+
     return (
         <React.Fragment>
             <div className="content-slide__image-and-text">
@@ -260,9 +269,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                                 item === props.slideIndex && (
                                     <animated.div style={animation}>
                                         <a
-                                            href={
-                                                "https://www.starty.ca/"
-                                            }
+                                            href={"https://www.starty.ca/"}
                                             rel="noopener noreferrer"
                                             target="_blank"
                                         >
@@ -275,32 +282,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                                                 }}
                                                 style={buttonHover}
                                                 className="content-slide__show-more-button"
-                                                onClick={() => {
-                                                    if (
-                                                        carouselSlideIndex ===
-                                                        FIRST_SLIDE
-                                                    )
-                                                        history.push("/me");
-                                                    else if (
-                                                        carouselSlideIndex ===
-                                                        THIRD_SLIDE
-                                                    )
-                                                        history.push(
-                                                            "/habanero"
-                                                        );
-                                                    else if (
-                                                        carouselSlideIndex ===
-                                                        FOURTH_SLIDE
-                                                    )
-                                                        history.push(
-                                                            "/projects"
-                                                        );
-                                                    else if (
-                                                        carouselSlideIndex ===
-                                                        FIFTH_SLIDE
-                                                    )
-                                                        history.push("/career");
-                                                }}
+                                                
                                             >
                                                 Visit
                                             </animated.button>
@@ -316,40 +298,20 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                             return (
                                 item === props.slideIndex && (
                                     <animated.div style={animation}>
-                                        <animated.button
-                                            onMouseOver={() => {
-                                                setIsButtonHovered(true);
-                                            }}
-                                            onMouseLeave={() => {
-                                                setIsButtonHovered(false);
-                                            }}
-                                            style={buttonHover}
-                                            className="content-slide__show-more-button"
-                                            onClick={() => {
-                                                if (
-                                                    carouselSlideIndex ===
-                                                    FIRST_SLIDE
-                                                )
-                                                    history.push("/me");
-                                                else if (
-                                                    carouselSlideIndex ===
-                                                    THIRD_SLIDE
-                                                )
-                                                    history.push("/habanero");
-                                                else if (
-                                                    carouselSlideIndex ===
-                                                    FOURTH_SLIDE
-                                                )
-                                                    history.push("/projects");
-                                                else if (
-                                                    carouselSlideIndex ===
-                                                    FIFTH_SLIDE
-                                                )
-                                                    history.push("/career");
-                                            }}
-                                        >
-                                            Show
-                                        </animated.button>
+                                        <Link to={renderLink()}>
+                                            <animated.button
+                                                onMouseOver={() => {
+                                                    setIsButtonHovered(true);
+                                                }}
+                                                onMouseLeave={() => {
+                                                    setIsButtonHovered(false);
+                                                }}
+                                                style={buttonHover}
+                                                className="content-slide__show-more-button"
+                                            >
+                                                Show
+                                            </animated.button>
+                                        </Link>
                                     </animated.div>
                                 )
                             );
