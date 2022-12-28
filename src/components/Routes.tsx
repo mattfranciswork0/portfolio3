@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "./Home";
-import DetailCareer from "./DetailCareer";
+import DetailWork from "./DetailWork";
 import DetailProjects from "./DetailProjects";
 import DetailAboutMe from "./DetailAboutMe";
 import WorkProject from "./WorkProject";
@@ -12,7 +12,7 @@ const Routes: React.FC<{}> = () => {
             <Header />
             <Switch>
                 <Route path="/" exact component={Home} />
-                <Route path="/career" exact component={DetailCareer} />
+                <Route path="/work" exact component={DetailWork} />
                 <Route path="/habanero" exact component={WorkProject} />
                 <Route path="/projects" exact component={DetailProjects} />
                 <Route path="/me" exact component={DetailAboutMe} />

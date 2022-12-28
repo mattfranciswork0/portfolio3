@@ -25,7 +25,6 @@ const SECOND_SLIDE = 1;
 const THIRD_SLIDE = 2;
 const FOURTH_SLIDE = 3;
 const FIFTH_SLIDE = 4;
-const LAST_SLIDE = 5;
 // const LAST_SLIDE = slides.length - 1;
 const SlideContent: React.FC<SlideContentProps> = (props) => {
     const [carouselSlideIndex, setCarouselSlideIndex] = useState<any>(-1);
@@ -169,10 +168,9 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
 
     const renderLink = () => {
         if (carouselSlideIndex === FIRST_SLIDE) return "/me";
-        else if (carouselSlideIndex === THIRD_SLIDE) return "/habanero";
+        else if (carouselSlideIndex === SECOND_SLIDE) return "/work";
         else if (carouselSlideIndex === FOURTH_SLIDE) return "/projects";
-        else if (carouselSlideIndex === FIFTH_SLIDE) return "/career";
-        else return ""
+        else return "";
     };
 
     return (
@@ -247,7 +245,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                         );
                     })}
 
-                    {carouselSlideIndex !== LAST_SLIDE &&
+                    {carouselSlideIndex !== FIFTH_SLIDE &&
                         descAndRedBlockTranslate((animation, item) => {
                             return (
                                 item === props.slideIndex && (
@@ -261,9 +259,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                             );
                         })}
 
-                    {/* {carouselSlideIndex !== LAST_SLIDE &&
-                        carouselSlideIndex !== SECOND_SLIDE && */}
-                    {carouselSlideIndex === SECOND_SLIDE &&
+                    {carouselSlideIndex === THIRD_SLIDE &&
                         buttonTranslate((animation, item) => {
                             return (
                                 item === props.slideIndex && (
@@ -282,7 +278,6 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                                                 }}
                                                 style={buttonHover}
                                                 className="content-slide__show-more-button"
-                                                
                                             >
                                                 Visit
                                             </animated.button>
@@ -292,8 +287,8 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                             );
                         })}
 
-                    {carouselSlideIndex !== LAST_SLIDE &&
-                        carouselSlideIndex !== SECOND_SLIDE &&
+                    {carouselSlideIndex !== FIFTH_SLIDE &&
+                        carouselSlideIndex !== THIRD_SLIDE &&
                         buttonTranslate((animation, item) => {
                             return (
                                 item === props.slideIndex && (
@@ -317,7 +312,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                             );
                         })}
 
-                    {carouselSlideIndex === LAST_SLIDE && (
+                    {carouselSlideIndex === FIFTH_SLIDE && (
                         <React.Fragment>
                             {descAndRedBlockTranslate((animation, item) => {
                                 return (
