@@ -6,7 +6,8 @@ import { FiExternalLink } from "react-icons/fi";
 import DetailBanner from "./DetailBanner";
 import collageHabanero from "../img/collage_habanero.jpg";
 import collageLightspeed from "../img/collage_lightspeed.jpg";
-import lowResSteamLg from "../img/lowRes/low_res_steam_lg.jpg";
+import lowResCollageLightspeed from "../img/lowRes/low_res_collage_lightspeed.jpg";
+import lowResCollageHabanero from "../img/lowRes/low_res_collage_habanero.jpg";
 import { SLIDE_WORK_DESC } from "./Carousel";
 import Loading from "./Loading";
 import collage_work_mix from "../img/collage_work_mix.jpg";
@@ -15,7 +16,7 @@ const discoData = [
     {
         title: `Lightspeed - One stop shop for retail, hospitality and golf merchants around the world`,
         description: `Contributed to the development of a point of sale system in X-Series team that impacts over 130,000+ enterprises including Sony, Nordstrom, and Hudson Bay.`,
-        lowResLg: lowResSteamLg,
+        lowResLg: lowResCollageLightspeed,
         imgLg: collageLightspeed,
         demo: "https://www.lightspeedhq.com/pc/watch-demo/?_bt=632731126750&_bk=lightspeeed&_bm=e&_bn=g&_bg=64178037736&gclid=CjwKCAiA76-dBhByEiwAA0_s9U3cKnyeiZF4oG5s9rUb9SblfVy2XFGRuxPGqgi2bctIyslJ4djSyhoCa1YQAvD_BwE",
     },
@@ -23,7 +24,7 @@ const discoData = [
         title: `Habanero Consulting Group - Humanizing the world of work through consulting and crafting digital workplace solutions`,
         description: `Enhanced client relationships by developing a holiday-themed web application with GO team for 50+ enterprise clients including Petro Canada, Herschel Supply Co, GTAA.`,
         stack: `React, React Testing Library, Jest, React-Spring, Typescript, SCSS, BEM, Lighthouse, axe, Azure DevOps`,
-        lowResLg: lowResSteamLg,
+        lowResLg: lowResCollageHabanero,
         imgLg: collageHabanero,
         demo: "https://www.habaneroconsulting.com/",
     },
