@@ -7,7 +7,7 @@ import DetailBanner from "./DetailBanner";
 import collageHabanero from "../img/collage_habanero.jpg";
 import collageLightspeed from "../img/collage_lightspeed.jpg";
 import lowResSteamLg from "../img/lowRes/low_res_steam_lg.jpg";
-import { SLIDE_PROJECTS_DESC } from "./Carousel";
+import { SLIDE_WORK_DESC } from "./Carousel";
 import Loading from "./Loading";
 import collage_work_mix from "../img/collage_work_mix.jpg";
 
@@ -89,7 +89,7 @@ const DetailWork: React.FC<{}> = () => {
                     <DetailBanner
                         title="Past Work"
                         imgSrc={collage_work_mix}
-                        desc={SLIDE_PROJECTS_DESC}
+                        desc={SLIDE_WORK_DESC}
                     />
                 </div>
                 <div className="detail-projects__projects">{renderDisco()}</div>

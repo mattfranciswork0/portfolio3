@@ -13,7 +13,7 @@ import _ from "lodash";
 import me1 from "../img/me1.jpg";
 import contact from "../img/contact.jpg";
 import Loading from "./Loading";
-import ow2 from "../img/ow2.jpg";
+import blizzard from "../img/blizzard.jpg";
 import career from "../img/career.jpg";
 import collage_work_mix from "../img/collage_work_mix.jpg";
 import bobbyhill from "../img/bobbyhill.jpg";
@@ -23,9 +23,9 @@ export const STARTUP_DESC = `Starty is a social platform to help students innova
 export const WORK_PROJECTS_DESC =
     "Holiday recipes from employees in Habanero shared to over a dozen of clients such as Suncor & Petro-Canada.";
 export const SLIDE_PROJECTS_DESC =
-    "Websites I've built (Kijij, Netflix, Steam, Overwatch and many more)";
+    "Websites I've built (Blizzard, Kijij, Netflix, Steam, and many more)";
 export const SLIDE_WORK_DESC =
-    "Products I've engineered in my previous workplaces";
+    "Products I've developed in previous professional workplaces";
 export const slides = [
     { imgSrc: me1, title: "Matthew Francis", desc: SLIDE_ABOUT_ME_DESC },
     {
@@ -40,7 +40,7 @@ export const slides = [
         desc: STARTUP_DESC,
     },
     {
-        imgSrc: ow2,
+        imgSrc: blizzard,
         title: "Projects",
         desc: SLIDE_PROJECTS_DESC,
     },

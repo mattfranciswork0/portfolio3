@@ -41,6 +41,7 @@ import steamLg from "../img/steam_lg.jpg";
 import lowResSteamLg from "../img/lowRes/low_res_steam_lg.jpg";
 // import blizzardLg from "../img/blizzard_lg.jpg";
 import blizzard2 from "../img/blizzard2.jpg";
+import blizzard_showcase from "../img/blizzard_showcase.jpg";
 // import lowResBlizzardLg from "../img/lowRes/low_res_blizzard_lg.jpg";
 import lowResBlizzardLg from "../img/lowRes/low_res_blizzard2_lg.jpg";
 import lowResLolLg from "../img/lowRes/low_res_lol_lg.jpg";
@@ -372,7 +373,7 @@ const DetailProjects: React.FC<{}> = () => {
                 >
                     <DetailBanner
                         title="Projects"
-                        imgSrc={ow2}
+                        imgSrc={blizzard_showcase}
                         desc={SLIDE_PROJECTS_DESC}
                     />
                 </div>
