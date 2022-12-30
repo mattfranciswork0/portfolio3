@@ -25,7 +25,7 @@ export const WORK_PROJECTS_DESC =
 export const SLIDE_PROJECTS_DESC =
     "Websites I've built (Blizzard, Kijij, Netflix, Steam, and many more)";
 export const SLIDE_WORK_DESC =
-    "Products I've engineered in previous professional workplaces";
+    "Products I've engineered in professional workplaces, impacting entreprises such as Sony, Nordstrom, Hudson Bay, Petro Canada.";
 export const slides = [
     { imgSrc: me1, title: "Matthew Francis", desc: SLIDE_ABOUT_ME_DESC },
     {
