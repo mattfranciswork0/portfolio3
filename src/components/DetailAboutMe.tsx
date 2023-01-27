@@ -4,6 +4,8 @@ import DetailBanner from "./DetailBanner";
 import DetailBack from "./DetailBack";
 import me1 from "../img/me1.jpg";
 import me2 from "../img/me2.jpg";
+import me3 from "../img/me3.jpg";
+import me4 from "../img/me4.jpg";
 import { SLIDE_ABOUT_ME_DESC } from "./Carousel";
 import { connect } from "react-redux";
 import { StoreState } from "../reducers";
@@ -30,7 +32,7 @@ const DetailAboutMe: React.FC<DetailAboutMeProps> = (props) => {
                 >
                     <DetailBanner
                         title="About Me"
-                        imgSrc={me1}
+                        imgSrc={me3}
                         desc={SLIDE_ABOUT_ME_DESC}
                     />
                 </div>
@@ -47,7 +49,7 @@ const DetailAboutMe: React.FC<DetailAboutMeProps> = (props) => {
                             Born in Jakarta, Indonesia. Raised in Ontario,
                             Canada.
                         </p>
-                        <img src={me2} alt="" />
+                        <img src={me4} alt="" />
                     </div>
                 </div>
                 <DetailBack />
