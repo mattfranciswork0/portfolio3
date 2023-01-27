@@ -28,7 +28,7 @@ export const SLIDE_PROJECTS_DESC =
 export const SLIDE_WORK_DESC =
     "Products I've engineered in professional workplaces, impacting entreprises such as Sony, Nordstrom, Hudson Bay, Petro Canada.";
 export const slides = [
-    { imgSrc: me3, title: "Portfolio", desc: SLIDE_ABOUT_ME_DESC },
+    { imgSrc: me3, title: "Matthew Francis", desc: SLIDE_ABOUT_ME_DESC },
     {
         // imgSrc: career,
         imgSrc: collage_work_mix,
