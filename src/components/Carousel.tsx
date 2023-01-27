@@ -11,6 +11,7 @@ import { StoreState } from "../reducers";
 import SlideContent from "./SlideContent";
 import _ from "lodash";
 import me1 from "../img/me1.jpg";
+import me3 from "../img/me3.jpg";
 import contact from "../img/contact.jpg";
 import Loading from "./Loading";
 import blizzard from "../img/blizzard.jpg";
@@ -27,7 +28,7 @@ export const SLIDE_PROJECTS_DESC =
 export const SLIDE_WORK_DESC =
     "Products I've engineered in professional workplaces, impacting entreprises such as Sony, Nordstrom, Hudson Bay, Petro Canada.";
 export const slides = [
-    { imgSrc: me1, title: "Matthew Francis", desc: SLIDE_ABOUT_ME_DESC },
+    { imgSrc: me3, title: "Matthew Francis", desc: SLIDE_ABOUT_ME_DESC },
     {
         // imgSrc: career,
         imgSrc: collage_work_mix,
