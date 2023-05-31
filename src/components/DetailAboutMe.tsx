@@ -48,7 +48,7 @@ const DetailAboutMe: React.FC<DetailAboutMeProps> = (props) => {
                             poutine, and polite apologies—Canada! I'm from the
                             vibrant Greater Toronto Area in Canada. Since the
                             age of 16, I've been passionately creating software.
-                            Alongside that, I'm an avid sports enthusiast,
+                            Alongside that, I'm an avid sports enthusiast, enjoy
                             diving into immersive video games, and indulging in
                             the wonderful world of movies and TV shows.
                         </p>
