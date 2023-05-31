@@ -2,8 +2,6 @@ import { render } from "react-dom";
 import React, { useState, useEffect, useRef } from "react";
 import DetailBanner from "./DetailBanner";
 import DetailBack from "./DetailBack";
-import me1 from "../img/me1.jpg";
-import me2 from "../img/me2.jpg";
 import me3 from "../img/me3.jpg";
 import me4 from "../img/me4.jpg";
 import { SLIDE_ABOUT_ME_DESC } from "./Carousel";
@@ -46,8 +44,9 @@ const DetailAboutMe: React.FC<DetailAboutMeProps> = (props) => {
                     <div className="detail-about-me-and-work__desc">
                         <h1>Matthew Francis</h1>
                         <p>
-                            Born in Jakarta, Indonesia. Raised in Ontario,
-                            Canada.
+                            I'm Raised in Greater Toronto Area, Canada. I love
+                            creating software and have been doing it since I was
+                            16!
                         </p>
                         <img src={me4} alt="" />
                     </div>

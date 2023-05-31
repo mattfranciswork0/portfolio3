@@ -10,7 +10,6 @@ import { connect } from "react-redux";
 import { StoreState } from "../reducers";
 import SlideContent from "./SlideContent";
 import _ from "lodash";
-import me1 from "../img/me1.jpg";
 import me3 from "../img/me3.jpg";
 import contact from "../img/contact.jpg";
 import Loading from "./Loading";
