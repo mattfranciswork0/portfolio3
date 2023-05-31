@@ -44,9 +44,13 @@ const DetailAboutMe: React.FC<DetailAboutMeProps> = (props) => {
                     <div className="detail-about-me-and-work__desc">
                         <h1>Matthew Francis</h1>
                         <p>
-                            I'm Raised in Greater Toronto Area, Canada. I love
-                            creating software and have been doing it since I was
-                            16!
+                            I'm proudly representing the land of maple syrup,
+                            poutine, and polite apologies—Canada! I'm from the
+                            vibrant Greater Toronto Area in Canada. Since the
+                            age of 16, I've been passionately creating software.
+                            Alongside that, I'm an avid sports enthusiast diving
+                            into immersive video games, and indulging in the
+                            wonderful world of movies and TV shows.
                         </p>
                         <img src={me4} alt="" />
                     </div>
