@@ -8,6 +8,10 @@ import collageHabanero from "../img/collage_habanero.jpg";
 import collageLightspeed from "../img/collage_lightspeed.jpg";
 import lowResCollageLightspeed from "../img/lowRes/low_res_collage_lightspeed.jpg";
 import lowResCollageHabanero from "../img/lowRes/low_res_collage_habanero.jpg";
+import collageSilentSimon from "../img/collage_silent_simon.jpg";
+import lowResCollageEarthSuds from "../img/lowRes/low_res_collage_earth_suds.jpg";
+import lowResCollageSilentSimon from "../img/lowRes/low_res_collage_silent_simon.jpg";
+import collageEarthSuds from "../img/collage_earth_suds.jpg";
 import { SLIDE_WORK_DESC } from "./Carousel";
 import Loading from "./Loading";
 import collage_work_mix from "../img/collage_work_mix.jpg";
@@ -27,6 +31,22 @@ const discoData = [
         lowResLg: lowResCollageHabanero,
         imgLg: collageHabanero,
         demo: "https://www.habaneroconsulting.com/",
+    },
+    {
+        title: `EarthSuds - EarthSuds are sustainable, single-use shower tablets that are crafted 100% plastic-free from production to delivery. Together we can create a cleaner clean!`,
+        description: ` Engineered a Shopify application with the team to sell eco-friendly cleansing products which increased sales growth by 15\% among 70+ stores.`,
+        stack: `React, React Testing Library, Jest, SCSS, HTML, Typescript, BEM`,
+        lowResLg: lowResCollageEarthSuds,
+        imgLg: collageEarthSuds,
+        demo: "https://earthsuds.co/",
+    },
+    {
+        title: `SILENT SIMON - STAY SILENT`,
+        description: `Devised Shopify application for a fashion-forward clothing line resulting in the expansion of brand visibility to over 5000+ potential customers and earning the distinction of being showcased at Fashion Art Toronto.`,
+        stack: `React, React Testing Library, Jest, SCSS, HTML, Typescript, BEM`,
+        lowResLg: lowResCollageSilentSimon,
+        imgLg: collageSilentSimon,
+        demo: "https://www.instagram.com/simonisilent/?hl=en",
     },
 ];
 
