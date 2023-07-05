@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import DetailBanner from "./DetailBanner";
 import DetailBack from "./DetailBack";
 import me3 from "../img/me3.jpg";
-import me4 from "../img/me4.jpg";
+import me5 from "../img/me5.jpg";
 import { SLIDE_ABOUT_ME_DESC } from "./Carousel";
 import { connect } from "react-redux";
 import { StoreState } from "../reducers";
@@ -51,7 +51,7 @@ const DetailAboutMe: React.FC<DetailAboutMeProps> = (props) => {
                             into video games, and indulging in the wonderful
                             world of movies & TV shows.
                         </p>
-                        <img src={me4} alt="" />
+                        <img src={me5} alt="" />
                     </div>
                 </div>
                 <DetailBack />
