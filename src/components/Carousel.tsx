@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { useEmblaCarousel } from "embla-carousel/react";
 import useScrollDirection from "../useScrollDirection";
-
 import { useTransition, animated, useSpring, useTrail } from "react-spring";
 import { RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
 import { useMeasure } from "react-use";
