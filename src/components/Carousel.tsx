@@ -18,7 +18,7 @@ import career from "../img/career.jpg";
 import collage_work_mix from "../img/collage_work_mix.jpg";
 import bobbyhill from "../img/bobbyhill.jpg";
 export const SLIDE_ABOUT_ME_DESC =
-    "Software Development Engineer II at Lightspeed in Toronto, Canada. BSc Computer Science at Wilfrid Laurier University. Co-Founder of Starty. Roomates with 2 dogs.";
+    "Software Development Engineer II @ Lightspeed in Toronto, Canada. BSc Computer Science @ Wilfrid Laurier University. Co-Founder of Starty. Roomates with 2 dogs.";
 export const STARTUP_DESC = `Starty is a social platform to help students innovate together & stand out to employers. Collaborating with accelerator and team to challenge decisions, address market research and pivot on ideas.`;
 export const WORK_PROJECTS_DESC =
     "Holiday recipes from employees in Habanero shared to over a dozen of clients such as Suncor & Petro-Canada.";
