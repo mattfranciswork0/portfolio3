@@ -51,7 +51,7 @@ const DetailAboutMe: React.FC<DetailAboutMeProps> = (props) => {
                             into video games, and indulging in the wonderful
                             world of movies & TV shows.
                         </p>
-                        <img src={me5} alt="" />
+                        {/* <img src={me5} alt="" /> */}
                     </div>
                 </div>
                 <DetailBack />
