@@ -33,11 +33,11 @@ export const slides = [
         title: "Products I've worked on",
         desc: SLIDE_WORK_DESC,
     },
-    // {
-    //     imgSrc: bobbyhill,
-    //     title: `My Startup`,
-    //     desc: STARTUP_DESC,
-    // },
+    {
+        imgSrc: bobbyhill,
+        title: `My Startup`,
+        desc: STARTUP_DESC,
+    },
     {
         imgSrc: blizzard,
         title: "Projects",
