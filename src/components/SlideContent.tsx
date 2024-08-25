@@ -322,11 +322,11 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                                         >
                                             <a
                                                 className="mailto"
-                                                href="mailto:mattfrancis888@gmail.com"
+                                                href="mailto:mattfranciswork0@gmail.com"
                                             >
                                                 <h3 className="email">
                                                     Email:
-                                                    mattfrancis888@gmail.com
+                                                    mattfranciswork0@gmail.com
                                                 </h3>
                                             </a>
 

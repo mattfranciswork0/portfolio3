@@ -65,7 +65,7 @@ const discoData = [
         lowResLg: lowResSteamLg,
         imgLg: steamLg,
         demo: `https://steam-project-matt.herokuapp.com/`,
-        github: `https://github.com/mattfrancis888/steam`,
+        github: `https://github.com/mattfranciswork0/steam`,
     },
     {
         title: `Kijiji`,
@@ -82,7 +82,7 @@ const discoData = [
         lowResLg: lowResKijijiLg,
         imgLg: kijijiLg,
         demo: `https://kijiji-project.herokuapp.com/`,
-        github: `https://github.com/mattfrancis888/kijiji`,
+        github: `https://github.com/mattfranciswork0/kijiji`,
     },
 
     {
@@ -100,7 +100,7 @@ const discoData = [
         lowResLg: lowResNetflixLg,
         imgLg: netflixLg,
         demo: `https://netflix-project.herokuapp.com/`,
-        github: `https://github.com/mattfrancis888/netflix`,
+        github: `https://github.com/mattfranciswork0/netflix`,
     },
     {
         title: `Blizzard`,
@@ -111,7 +111,7 @@ const discoData = [
         lowResLg: lowResBlizzardLg,
         imgLg: blizzard2,
         demo: `https://blizzard-roan.vercel.app`,
-        github: `https://github.com/mattfrancis888/blizzard`,
+        github: `https://github.com/mattfranciswork0/blizzard`,
     },
     {
         title: `League of Legends (Currently Working on)`,
@@ -121,7 +121,7 @@ const discoData = [
         lowResLg: lowResLolLg,
         imgLg: lolLg,
         demo: `https://lol-kappa.vercel.app`,
-        github: `https://github.com/mattfrancis888/lol`,
+        github: `https://github.com/mattfranciswork0/lol`,
     },
 
     {
@@ -134,7 +134,7 @@ const discoData = [
         lowResLg: lowResDreamworksLg,
         imgLg: dreamworksLg,
         demo: `https://dreamworks.vercel.app/`,
-        github: `https://github.com/mattfrancis888/dreamworks`,
+        github: `https://github.com/mattfranciswork0/dreamworks`,
     },
 
     {
@@ -149,7 +149,7 @@ const discoData = [
         lowResLg: lowResAuthLg,
         imgLg: authLg,
         demo: `https://auth-cyan.vercel.app/`,
-        github: `https://github.com/mattfrancis888/auth-project`,
+        github: `https://github.com/mattfranciswork0/auth-project`,
     },
 
     {
@@ -161,8 +161,8 @@ const discoData = [
         of integrating MongoDB and the front-end.`,
         lowResLg: lowResSpotifyLg,
         imgLg: spotifyLg,
-        demo: `https://spotify.mattfrancis888.vercel.app/`,
-        github: `https://github.com/mattfrancis888/spotify`,
+        demo: `https://spotify.mattfranciswork0.vercel.app/`,
+        github: `https://github.com/mattfranciswork0/spotify`,
     },
     {
         title: `Pixar`,
@@ -174,7 +174,7 @@ const discoData = [
         lowResLg: lowResPixarLg,
         imgLg: pixarLg,
         demo: `https://pixar-three.vercel.app/`,
-        github: `https://github.com/mattfrancis888/pixar`,
+        github: `https://github.com/mattfranciswork0/pixar`,
     },
     {
         title: `Apple's App Store Review`,
@@ -186,8 +186,8 @@ const discoData = [
         blackbox functional testing.`,
         lowResLg: lowResAppStoreLg,
         imgLg: appStoreLg,
-        demo: `https://apple-review.mattfrancis888.vercel.app/`,
-        github: `https://github.com/mattfrancis888/apple_review`,
+        demo: `https://apple-review.mattfranciswork0.vercel.app/`,
+        github: `https://github.com/mattfranciswork0/apple_review`,
     },
 
     {
@@ -204,7 +204,7 @@ const discoData = [
         lowResLg: lowResMusicStreamLg,
         imgLg: musicStreamLg,
         demo: `https://music-stream.now.sh/`,
-        github: `https://github.com/mattfrancis888/music-stream`,
+        github: `https://github.com/mattfranciswork0/music-stream`,
     },
     {
         title: `Multi-Docker`,
@@ -219,7 +219,7 @@ const discoData = [
         lowResLg: lowResMultiDockerLg,
         imgLg: multiDockerLg,
         demo: `https://multi-docker.vercel.app/`,
-        github: `https://github.com/mattfrancis888/multi-docker`,
+        github: `https://github.com/mattfranciswork0/multi-docker`,
     },
     {
         title: `Linkedin`,
@@ -232,7 +232,7 @@ const discoData = [
         lowResLg: lowResLinkedInlg,
         imgLg: linkedinLg,
         demo: `https://linkedin-phi.vercel.app/`,
-        github: `https://github.com/mattfrancis888/linkedin`,
+        github: `https://github.com/mattfranciswork0/linkedin`,
     },
     {
         title: `Giphy`,
@@ -241,8 +241,8 @@ const discoData = [
         gifs. Created it to familiarize with API calls.`,
         lowResLg: lowResGiphyLg,
         imgLg: giphyLg,
-        demo: `https://giphy.mattfrancis888.vercel.app/`,
-        github: `https://github.com/mattfrancis888/giphy`,
+        demo: `https://giphy.mattfranciswork0.vercel.app/`,
+        github: `https://github.com/mattfranciswork0/giphy`,
     },
     {
         title: `Urban Outfitters`,
@@ -252,7 +252,7 @@ const discoData = [
         lowResLg: lowResUoLg,
         imgLg: uoLg,
         demo: `https://urban-outfitters.now.sh/`,
-        github: `https://github.com/mattfrancis888/Urban-Outfitters`,
+        github: `https://github.com/mattfranciswork0/Urban-Outfitters`,
     },
     {
         title: `The Movie Database`,
@@ -266,8 +266,8 @@ const discoData = [
         MVC design pattern.`,
         lowResLg: lowResTmdbLg,
         imgLg: tmdbLg,
-        demo: `https://mattfrancis888.github.io/the_movie_db/`,
-        github: `https://github.com/mattfrancis888/the_movie_db`,
+        demo: `https://mattfranciswork0.github.io/the_movie_db/`,
+        github: `https://github.com/mattfranciswork0/the_movie_db`,
     },
     {
         title: `Airbnb Android App`,
@@ -277,8 +277,8 @@ const discoData = [
         with Node.JS and Express. Used MySQL as database.`,
         lowResLg: lowResAirbnbLg,
         imgLg: airbnbLg,
-        github: `https://github.com/mattfrancis888/Airbnb`,
-        githubAPI: `https://github.com/mattfrancis888/Airbnb-API`,
+        github: `https://github.com/mattfranciswork0/Airbnb`,
+        githubAPI: `https://github.com/mattfranciswork0/Airbnb-API`,
     },
 ];
 
