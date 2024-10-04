@@ -118,14 +118,14 @@ const Header: React.FC<HeaderProps> = (props) => {
                         <AiOutlineFile className="header__name-and-icons-icon" />
                     </a>
                     <a
-                        href="https://www.linkedin.com/in/matthew-francis-b9b1b31a2/"
+                        href="https://www.linkedin.com/in/matt-francis-b9b1b31a2/"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
                         <AiOutlineLinkedin className="header__name-and-icons-icon" />
                     </a>
                     <a
-                        href="https://github.com/mattfranciswork0"
+                        href="https://github.com/mattfrancis888"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
