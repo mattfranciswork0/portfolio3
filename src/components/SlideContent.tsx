@@ -7,6 +7,7 @@ import { StoreState } from "../reducers";
 import { connect } from "react-redux";
 import history from "../browserHistory";
 import contact from "../img/contact.jpg";
+import pfp from "../img/pfp.png";
 import { Link } from "react-router-dom";
 import { slides } from "./Carousel";
 interface SlideContentProps {
@@ -220,12 +221,37 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                     {titleTranslate((animation, item) => {
                         return (
                             item === props.slideIndex && (
-                                <animated.h1
-                                    className="content-slide__image-and-text-text-title"
-                                    style={animation}
-                                >
-                                    {props.title}
-                                </animated.h1>
+                                <>
+                                    {carouselSlideIndex === FIRST_SLIDE && (
+                                        <animated.div
+                                            className="content-slide__pfp-and-title"
+                                            style={animation}
+                                        >
+                                            <animated.div className="content-slide__pfp content-slide__pfp-container">
+                                                <img
+                                                    src={pfp}
+                                                    className="content-slide__pfp"
+                                                    alt="pfp"
+                                                />
+                                            </animated.div>
+                                            <animated.h1
+                                                className="content-slide__image-and-text-text-title"
+                                                style={animation}
+                                            >
+                                                {props.title}
+                                            </animated.h1>
+                                        </animated.div>
+                                    )}
+
+                                    {carouselSlideIndex !== FIRST_SLIDE && (
+                                        <animated.h1
+                                            className="content-slide__image-and-text-text-title"
+                                            style={animation}
+                                        >
+                                            {props.title}
+                                        </animated.h1>
+                                    )}
+                                </>
                             )
                         );
                     })}

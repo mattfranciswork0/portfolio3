@@ -166,6 +166,24 @@
             height: 100%;
         }
     }
+    &__pfp-and-title{
+        display: flex;
+        align-items: center;
+    }
+    &__pfp-container{
+     margin-right: 2rem;
+     margin-bottom: 2rem;
+    }
+    &__pfp{
+        @media screen and (min-width: $lg_breakpoint) {
+            width: 20rem;
+            height: 20rem;
+        }
+     
+        width: 18rem;
+        height: 18rem;
+        border-radius: 50%,
+    }
 }
 
 .red-blocks {
