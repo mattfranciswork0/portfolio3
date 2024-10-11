@@ -148,6 +148,21 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
         },
     });
 
+    const currrentSlideImageTranslate = useTransition(carouselSlideIndex, {
+        from: {
+            filter: "blur(8px)",
+        },
+        enter: {
+            filter: "blur(0px)",
+            // opacity: "1",
+        },
+        config: {
+            mass: 1,
+            tension: 120,
+            friction: 50,
+        },
+    });
+
     const currrentSlideNumberTranslate = useTransition(carouselSlideIndex, {
         from: {
             transform: "translate3d(0%,200%,0px) ",
@@ -180,7 +195,20 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                     // style={item === props.slideIndex ? animation : {}}
                     className="content-slide__image-and-text-image"
                 >
-                    <img src={props.imgSrc} alt="" />
+                    {currrentSlideImageTranslate((animation, item) => {
+                        return (
+                            <animated.img
+                                src={props.imgSrc}
+                                alt=""
+                                style={animation}
+                                className={
+                                    item === props.slideIndex
+                                        ? " "
+                                        : "current-slide-image"
+                                }
+                            />
+                        );
+                    })}
                     {currrentSlideNumberTranslate((animation, item) => {
                         return (
                             item === props.slideIndex && (

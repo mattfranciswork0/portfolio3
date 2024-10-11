@@ -16,7 +16,7 @@ import blizzard from "../img/blizzard.jpg";
 import career from "../img/career.jpg";
 import collage_work_mix from "../img/collage_work_mix.jpg";
 import bobbyhill from "../img/bobbyhill.jpg";
-import { default as Matt } from "./EmblaCarousel";
+
 export const SLIDE_ABOUT_ME_DESC =
     "Software Engineer II @ Lightspeed in Toronto, Canada. BSc Computer Science @ Wilfrid Laurier University. Roomates with 2 dogs.";
 export const STARTUP_DESC = `Starty is a social platform to help students innovate together with over 300+ registered users. With our partnership with Laurier's accelerator, we have been able to challenge strategic decisions, conduct thorough market research, and pivot ideas to align with market needs.`;
@@ -128,44 +128,10 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
     const [viewportRef, embla] = useEmblaCarousel({
         axis: "y",
         draggable: true,
-        dragFree: true,
+
         startIndex: carouselStartIndex,
     });
 
-    // Set up the event callbacks
-    const onPointerDown = useCallback(() => {
-        console.log("Pointer down (Drag started)");
-        // Trigger your custom action
-        alert("pointer down");
-    }, []);
-
-    const onPointerUp = useCallback(() => {
-        console.log("Pointer up (Drag ended)");
-        // Trigger your custom action
-        alert("pointer up");
-    }, []);
-
-    const onScroll = useCallback(() => {
-        console.log("Carousel is scrolling (Drag is moving)");
-        // Trigger your custom action while dragging
-    }, []);
-
-    useEffect(() => {
-        if (embla) {
-            // Attach drag events when Embla is initialized
-            console.log("matt");
-            embla.on("pointerDown", onPointerDown);
-            embla.on("pointerUp", onPointerUp);
-        }
-
-        return () => {
-            // Clean up event listeners when the component is unmounted
-            if (embla) {
-                embla.off("pointerDown", onPointerDown);
-                embla.off("pointerUp", onPointerUp);
-            }
-        };
-    }, [embla, onPointerDown, onPointerUp, onScroll]);
     const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
     const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
 
@@ -186,15 +152,30 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
         setNextBtnEnabled(embla.canScrollNext());
     }, [embla, setSelectedIndex]);
 
+    // Set up the event callbacks
+    const onPointerDown = useCallback(() => {
+        // Trigger your custom action
+        // alert("pointer down");
+        if (!embla) return;
+
+        // props.updateSlideIndex(embla.selectedScrollSnap() + 1);
+        setTimeout(() => {
+            if (embla) props.updateSlideIndex(embla.selectedScrollSnap());
+        }, 0);
+        setSelectedIndex(embla.selectedScrollSnap());
+        setPrevBtnEnabled(embla.canScrollPrev());
+        setNextBtnEnabled(embla.canScrollNext());
+    }, [embla, props]);
+
     useEffect(() => {
         if (!embla) return;
         onSelect();
-
+        onPointerDown();
         setScrollSnaps(embla.scrollSnapList());
         embla.on("select", onSelect);
-        // embla.on("pointerDown", onSelect);
-        // embla.on("pointerUp", onSelect);
-    }, [embla, setScrollSnaps, onSelect]);
+        embla.on("pointerDown", onPointerDown);
+        embla.on("pointerUp", onPointerDown);
+    }, [embla, setScrollSnaps, onSelect, onPointerDown, onPointerUp]);
 
     const itemEls = useRef(new Array());
 

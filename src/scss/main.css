@@ -1046,6 +1046,9 @@ nav {
 .embla__slide {
   position: relative;
   height: 100%;
+  pointer-events: visible;
+  z-index: 999;
+  cursor: grab;
 }
 
 .embla__slide__inner {
@@ -1254,12 +1257,16 @@ nav {
   height: 100%;
 }
 .content-slide__image-and-text {
+  filter: "blur(8px)";
   position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1.5rem 3.5rem;
+}
+.content-slide__image-and-text img {
+  filter: "blur(8px)";
 }
 @media screen and (min-width: 380px) {
   .content-slide__image-and-text {
@@ -1531,6 +1538,10 @@ nav {
   .current-slide-number {
     font-size: 13rem;
   }
+}
+
+.current-slide-image {
+  opacity: 0;
 }
 
 .detail-projects {
