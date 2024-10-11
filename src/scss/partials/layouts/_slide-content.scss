@@ -145,6 +145,9 @@
                 height: 100%;
                 object-fit: cover;
                 object-position: center center;
+                &:first-of-type {
+                    object-position: 20% 40%;
+                }
             }
         }
     }
