@@ -46,10 +46,9 @@ const DetailAboutMe: React.FC<DetailAboutMeProps> = (props) => {
                         <p>
                             I'm a software engineer proudly representing the
                             land of maple syrup and poutine, Canada 🍁 Since the
-                            age of 16, I've been passionately creating software.
-                            Besides that, I'm a sports enthusiast, enjoy diving
-                            into video games, and indulging in the wonderful
-                            world of movies & TV shows.
+                            age of 16, I created software applications as a
+                            hobby. Besides that, I like playing sports,
+                            traveling , video games, movies & TV shows.
                         </p>
                         {/* <img src={me5} alt="" /> */}
                     </div>
