@@ -19,7 +19,7 @@ import bobbyhill from "../img/bobbyhill.jpg";
 
 export const SLIDE_ABOUT_ME_DESC =
     "Software Engineer II @ Lightspeed in Toronto, Canada. BSc Computer Science @ Wilfrid Laurier University. Roomates with 2 dogs.";
-export const STARTUP_DESC = `Starty is a social platform to help students innovate together with over 300+ registered users. With our partnership with Laurier's accelerator, we have been able to challenge strategic decisions, conduct thorough market research, and pivot ideas to align with market needs.`;
+export const STARTUP_DESC = `Starty is a social platform to help students innovate together with 300+ registered users. Partnered with Laurier's accelerator to meet stakeholder expectations & execute market research.`;
 export const WORK_PROJECTS_DESC =
     "Holiday recipes from employees in Habanero shared to over a dozen of clients such as Suncor & Petro-Canada.";
 export const SLIDE_PROJECTS_DESC =

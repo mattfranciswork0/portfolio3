@@ -92,13 +92,20 @@
     &__dots-and-button {
         pointer-events: visible;
         position: absolute;
-        top: 80%;
+        display: none;
         right: 20vw;
         transform: translateX(-50%) rotate(270deg);
         @media screen and (min-width: 380px) {
             right: 30vw;
         }
+
+        @media screen and (min-width: $xl_breakpoint) {
+            right: 30vw;
+        }
+
         @media screen and (min-width: $sm_breakpoint) {
+            display: block;
+            top: 80%;
             right: 35vw;
         }
         @media screen and (min-width: $md_breakpoint) {

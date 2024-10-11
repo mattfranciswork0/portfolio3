@@ -1082,7 +1082,7 @@ nav {
 .carousel__dots-and-button {
   pointer-events: visible;
   position: absolute;
-  top: 80%;
+  display: none;
   right: 20vw;
   transform: translateX(-50%) rotate(270deg);
 }
@@ -1091,8 +1091,15 @@ nav {
     right: 30vw;
   }
 }
+@media screen and (min-width: 1200px) {
+  .carousel__dots-and-button {
+    right: 30vw;
+  }
+}
 @media screen and (min-width: 520px) {
   .carousel__dots-and-button {
+    display: block;
+    top: 80%;
     right: 35vw;
   }
 }
@@ -1289,7 +1296,7 @@ nav {
 }
 .content-slide__image-and-text-text {
   position: relative;
-  top: -6rem;
+  top: -10rem;
   left: -1.5rem;
   width: 100%;
   height: 100%;
