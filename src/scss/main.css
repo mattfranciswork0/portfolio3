@@ -1050,6 +1050,7 @@ nav {
 
 .embla__slide__inner {
   position: relative;
+  overflow: hidden;
   height: 100%;
 }
 
@@ -1448,12 +1449,6 @@ nav {
   .content-slide__pfp {
     width: 20rem;
     height: 20rem;
-  }
-}
-@media screen and (min-width: 520px) {
-  .content-slide__pfp {
-    width: 15rem;
-    height: 15rem;
   }
 }
 
