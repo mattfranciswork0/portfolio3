@@ -175,7 +175,7 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
         embla.on("select", onSelect);
         embla.on("pointerDown", onPointerDown);
         embla.on("pointerUp", onPointerDown);
-    }, [embla, setScrollSnaps, onSelect, onPointerDown, onPointerUp]);
+    }, [embla, setScrollSnaps, onSelect, onPointerDown]);
 
     const itemEls = useRef(new Array());
 
