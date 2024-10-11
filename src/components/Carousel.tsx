@@ -127,6 +127,7 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = (props) => {
     const [viewportRef, embla] = useEmblaCarousel({
         axis: "y",
         draggable: true,
+        dragFree: true,
         startIndex: carouselStartIndex,
     });
     const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
