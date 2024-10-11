@@ -224,7 +224,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                                 <>
                                     {carouselSlideIndex === FIRST_SLIDE && (
                                         <animated.div
-                                            className="content-slide__pfp-and-title"
+                                            className="content-slide__pfp-and-title "
                                             style={animation}
                                         >
                                             <animated.div className="content-slide__pfp content-slide__pfp-container">
@@ -357,7 +357,7 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                                             </a>
 
                                             <h3 className="contact">
-                                                Phone: 289-772-7465
+                                                Phone: +1289-772-7465
                                             </h3>
                                         </animated.div>
                                     )

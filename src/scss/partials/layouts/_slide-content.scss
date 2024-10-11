@@ -72,7 +72,7 @@
                 left: 0;
                 @media screen and (min-width: $sm_breakpoint) {
                     font-weight: normal;
-                    font-size: 7.6rem;
+                    font-size: 6.6rem;
                     width: 70%;
                 }
                 @media screen and (min-width: $md_breakpoint) {
@@ -82,10 +82,10 @@
                 @media screen and (min-width: $lg_breakpoint) {
                     font-size: 10rem;
                 }
-                @media screen and (min-width: $xl_breakpoint) {
-                    font-size: 12rem;
-                    letter-spacing: 1.5rem;
-                }
+                // @media screen and (min-width: $xl_breakpoint) {
+                //     font-size: 12rem;
+                //     letter-spacing: 1.5rem;
+                // }
 
                 line-height: 1;
                 letter-spacing: 1rem;
@@ -166,23 +166,39 @@
             height: 100%;
         }
     }
-    &__pfp-and-title{
+    &__pfp-and-title {
+        //I CHEESED THE MARGIN BOTTOM SPACINGS FOR THIS
+        // TURN ON BACKGORUND RED AND YOU KNOW WHAT I MEAN
         display: flex;
+        align-items: flex-end;
         align-items: center;
+
+        flex-direction: column-reverse;
+        @media screen and (min-width: $sm_breakpoint) {
+            width: 20rem;
+            height: 20rem;
+            flex-direction: row;
+            align-items: flex-end;
+        }
     }
-    &__pfp-container{
-     margin-right: 2rem;
-     margin-bottom: 2rem;
+    &__pfp-container {
+        margin-right: 2rem;
+        margin-bottom: 1.6rem;
     }
-    &__pfp{
+    &__pfp {
         @media screen and (min-width: $lg_breakpoint) {
+            width: 22rem;
+            height: 22rem;
+        }
+        @media screen and (min-width: $md_breakpoint) {
             width: 20rem;
             height: 20rem;
         }
-     
-        width: 18rem;
-        height: 18rem;
-        border-radius: 50%,
+        object-fit: cover;
+        width: 15rem;
+        height: 15rem;
+        border-radius: 50%;
+        object-position: 25% 20%;
     }
 }
 
