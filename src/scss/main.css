@@ -1434,8 +1434,8 @@ nav {
 .content-slide__pfp {
   -o-object-fit: cover;
      object-fit: cover;
-  width: 15rem;
-  height: 15rem;
+  width: 10rem;
+  height: 10rem;
   border-radius: 50%;
   -o-object-position: 25% 20%;
      object-position: 25% 20%;
@@ -1450,6 +1450,12 @@ nav {
   .content-slide__pfp {
     width: 20rem;
     height: 20rem;
+  }
+}
+@media screen and (min-width: 520px) {
+  .content-slide__pfp {
+    width: 15rem;
+    height: 15rem;
   }
 }
 
