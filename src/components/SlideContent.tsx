@@ -227,13 +227,13 @@ const SlideContent: React.FC<SlideContentProps> = (props) => {
                                             className="content-slide__pfp-and-title "
                                             style={animation}
                                         >
-                                            {/* <animated.div className="content-slide__pfp content-slide__pfp-container">
+                                            <animated.div className="content-slide__pfp content-slide__pfp-container">
                                                 <img
                                                     src={pfp}
                                                     className="content-slide__pfp"
                                                     alt="pfp"
                                                 />
-                                            </animated.div> */}
+                                            </animated.div>
                                             <animated.h1
                                                 className="content-slide__image-and-text-text-title"
                                                 style={animation}

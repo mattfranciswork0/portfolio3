@@ -10,7 +10,7 @@
 }
 
 .embla__viewport {
-    overflow: hidden;
+    // overflow: hidden;
 
     width: 100%;
 }
@@ -52,7 +52,7 @@
 
 .embla__slide__inner {
     position: relative;
-    overflow: hidden;
+    // overflow: hidden;
     height: 100%;
 }
 
@@ -79,14 +79,14 @@
     padding: 0rem 6.5rem 0 0 !important;
 }
 
-.carousel{
-    &__next-prev-button{
-        &--hide{
+.carousel {
+    &__next-prev-button {
+        &--hide {
             visibility: hidden;
             pointer-events: none;
         }
     }
-    &__dots-and-button{
+    &__dots-and-button {
         pointer-events: visible;
         position: absolute;
         top: 80%;
@@ -108,19 +108,19 @@
             transform: translateY(-50%);
             right: 2rem;
         }
-        &-dots{
+        &-dots {
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 10rem;
-            &-inner{
+            &-inner {
                 position: relative;
                 margin-bottom: 3rem;
                 &:first-of-type {
                     margin-top: 3rem;
                 }
-                &-dot{
-                                        // border-radius: 50%;'
+                &-dot {
+                    // border-radius: 50%;'
                     border-radius: 0.25rem;
                     width: 3rem;
                     height: 0.3rem;
@@ -131,11 +131,10 @@
                     outline: none !important;
                     background: white;
                     transition: all 0.5s ease-in;
-                                }
+                }
             }
         }
     }
-
 }
 
 .slide-inner {
@@ -146,14 +145,14 @@
     left: 0;
 }
 
-.moon{
-    &--layer{
+.moon {
+    &--layer {
         position: absolute;
         top: 0;
         left: 0;
         z-index: 0;
         color: white;
-    
+
         background: url(/img/svg/moonlight.svg);
         background-repeat: no-repeat;
         background-size: 150% 200%;
@@ -164,7 +163,7 @@
         // height: 120vh;
         animation: glow 2s infinite alternate;
     }
-    &-and-star{
+    &-and-star {
         position: absolute;
         top: 0;
         left: 0;
@@ -173,7 +172,6 @@
         height: 120vh;
     }
 }
-
 
 @keyframes glow {
     from {
@@ -207,7 +205,7 @@
 //     pointer-events: none;
 // }
 
-.scrolldown-landing{
+.scrolldown-landing {
     transform: rotate(90deg);
     display: flex;
     align-items: center;
@@ -240,11 +238,10 @@
             margin-right: 2rem;
         }
     }
-    &--block{
-              // margin-left: 2rem;
-              width: 10rem;
-              height: 0.1rem;
-              background-color: white;
+    &--block {
+        // margin-left: 2rem;
+        width: 10rem;
+        height: 0.1rem;
+        background-color: white;
     }
 }
-

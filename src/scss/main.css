@@ -1032,7 +1032,6 @@ nav {
 }
 
 .embla__viewport {
-  overflow: hidden;
   width: 100%;
 }
 
@@ -1051,7 +1050,6 @@ nav {
 
 .embla__slide__inner {
   position: relative;
-  overflow: hidden;
   height: 100%;
 }
 
@@ -1434,8 +1432,8 @@ nav {
 .content-slide__pfp {
   -o-object-fit: cover;
      object-fit: cover;
-  width: 10rem;
-  height: 10rem;
+  width: 12rem;
+  height: 12rem;
   border-radius: 50%;
   -o-object-position: 25% 20%;
      object-position: 25% 20%;

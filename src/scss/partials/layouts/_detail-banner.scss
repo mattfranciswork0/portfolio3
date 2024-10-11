@@ -1,30 +1,27 @@
 .detail-banner {
-   
-        position: relative;
-        overflow: hidden;
-        width: 100%;
-        padding-bottom: 15rem;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-bottom: 15rem;
+    @media screen and (min-width: $sm_breakpoint) {
+        display: flex;
+        flex-direction: row-reverse;
+        padding-bottom: 0rem;
+    }
+    img {
+        object-fit: cover;
+        height: 70vh;
+        max-height: 60rem;
         @media screen and (min-width: $sm_breakpoint) {
-            display: flex;
-            flex-direction: row-reverse;
-            padding-bottom: 0rem;
+            max-height: none;
+            width: 60%;
+            height: 100vh;
         }
-        img {
-            object-fit: cover;
-            height: 70vh;
-            max-height: 60rem;
-            @media screen and (min-width: $sm_breakpoint) {
-    
-                max-height: none;
-                width: 60%;
-                height: 100vh;
-            }
-            width: 100%;
-        }
-        background: #020b16;
-    
+        width: 100%;
+    }
+    background: #020b16;
 
-    &__title{
+    &__title {
         position: relative;
         margin: 0;
         display: inline;
@@ -36,12 +33,12 @@
             top: 15%;
             left: 8%;
         }
-    
+
         @media screen and (min-width: $lg_breakpoint) {
             left: 8%;
             width: 50%;
         }
-        &-content{
+        &-content {
             display: inline;
             font-size: 3.8rem;
             letter-spacing: 1rem;
@@ -52,7 +49,7 @@
             @media screen and (min-width: $sm_breakpoint) {
                 font-size: 6rem;
             }
-        
+
             @media screen and (min-width: $lg_breakpoint) {
                 font-size: 7.6rem;
             }
@@ -61,7 +58,7 @@
             }
         }
     }
-    &__desc{
+    &__desc {
         margin-top: 4rem;
 
         margin-bottom: 4rem;
@@ -72,7 +69,7 @@
         @media screen and (min-width: $sm_breakpoint) {
             font-size: 1.7rem;
         }
-    
+
         @media screen and (min-width: $md_breakpoint) {
             font-size: 2.4rem;
         }
@@ -85,8 +82,7 @@
     }
 }
 
-
-.scrolldown-detail{
+.scrolldown-detail {
     transform: rotate(90deg);
     display: flex;
     align-items: center;
@@ -121,8 +117,3 @@
         background-color: white;
     }
 }
-
-
-
-
-
