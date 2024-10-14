@@ -197,6 +197,9 @@
         border-radius: 10rem;
         background-color: #f1f1ff;
         border-radius: 50%;
+        img {
+            background-color: #f1f1ff;
+        }
     }
     &__pfp {
         @media screen and (min-width: $sm_breakpoint) {
