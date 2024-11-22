@@ -205,6 +205,7 @@
         @media screen and (min-width: $sm_breakpoint) {
             width: 16rem;
             height: 16rem;
+            object-position: 50% 1rem;
         }
         @media screen and (min-width: $lg_breakpoint) {
             width: 22rem;
@@ -219,7 +220,7 @@
         height: 100%;
         object-fit: contain;
         border-radius: 50%;
-        object-position: 50% 1rem;
+        object-position: 50% 0.5rem;
         width: 13rem;
         height: 13rem;
     }
