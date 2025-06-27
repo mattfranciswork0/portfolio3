@@ -7,7 +7,7 @@ import { StoreState } from "../reducers";
 import { connect } from "react-redux";
 import history from "../browserHistory";
 import contact from "../img/contact.jpg";
-import pfp from "../img/pfp.png";
+import pfp from "../img/pfp2.jpg";
 import { Link } from "react-router-dom";
 import { slides } from "./Carousel";
 interface SlideContentProps {
